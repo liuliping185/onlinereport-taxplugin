@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>跨国集团成员实体名单（英文表）</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1665" height = "406" id="taxTable" style="margin-top:30px;">
+<tr>
+<td  width="1489" height="22"  align="center" valign="middle" colspan="16" class="noBorder"><B>跨国集团成员实体名单（英文表）</B></td>
+</tr>
+<tr>
+<td  width="1489" height="22"  align="center" valign="middle" colspan="16" class="noBorder">税款所属时间:<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="873" height="22"  align="left" valign="middle" colspan="8" class="noBorder">纳税人识别号:{{bt.customerStateTaxInfo.nsrsbh}}　　　纳税人名称（公章）:{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="86" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="85" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="75" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="70" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="65" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="235" height="22"  align="right" valign="middle" colspan="3" class="noBorder">填表日期:<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td width="166" height="18"  align="right" valign="middle"  >Name of the MNE group</td>
+<td  width="550" height="18"  align="left" valign="middle" colspan="5" >{{json.list[0].kgqyjtmc}}</td>
+<td width="243" height="18"  align="right" valign="middle" colspan="3" >Fiscal year concerned</td>
+<td  width="530" height="18"  align="left" valign="middle" colspan="7" >{{json.list[0].ssnd}}</td>
+</tr>
+<tr>
+<td width="1489" height="18"  align="left" valign="middle" colspan="16" ><B>List of all the constituent Entities of the MNE group included in each aggregation per tax jurisdiction</B></td>
+</tr>
+<tr>
+<td width="166" height="150"  align="center" valign="middle"  rowspan="2">Tax Jurisdiction</td>
+<td width="160" height="150"  align="center" valign="middle"  rowspan="2">Constituent Entities resident in the Tax Jurisdiction</td>
+<td width="160" height="150"  align="center" valign="middle"  rowspan="2">Tax jurisdiction of  organization or incorporation if different from Tax Jurisdiction   of  Residence</td>
+<td width="1003" height="50"  align="center" valign="middle" colspan="13" >Main business activity(ies)</td>
+</tr>
+<tr>
+<td width="85" height="100"  align="center" valign="middle"  >Research and Development</td>
+<td width="74" height="100"  align="center" valign="middle"  >Holding or Managing   intellectual property</td>
+<td width="71" height="100"  align="center" valign="middle"  >Purchasing or Procurement</td>
+<td width="71" height="100"  align="center" valign="middle"  >Manufacturing or Production </td>
+<td width="86" height="100"  align="center" valign="middle"  >Sales,Marketing or Distribution</td>
+<td width="86" height="100"  align="center" valign="middle"  >Administrative, Management or Support Services</td>
+<td width="85" height="100"  align="center" valign="middle"  >Provision   of  Services to unrelated  parties</td>
+<td width="75" height="100"  align="center" valign="middle"  >Internal Group Finance</td>
+<td width="70" height="100"  align="center" valign="middle"  >Regulated  Financial  Services </td>
+<td width="65" height="100"  align="center" valign="middle"  >Insurance</td>
+<td width="85" height="100"  align="center" valign="middle"  >Holding shares or other equity instruments</td>
+<td width="75" height="100"  align="center" valign="middle"  >Dormant</td>
+<td width="75" height="100"  align="center" valign="middle"  >Other1</td>
+</tr>
+<tr>
+<td width="166" height="50"  align="center" valign="middle"  >1</td>
+<td width="160" height="50"  align="center" valign="middle"  >2</td>
+<td width="160" height="50"  align="center" valign="middle"  >3</td>
+<td width="85" height="50"  align="center" valign="middle"  >4</td>
+<td width="74" height="50"  align="center" valign="middle"  >5</td>
+<td width="71" height="50"  align="center" valign="middle"  >6</td>
+<td width="71" height="50"  align="center" valign="middle"  >7</td>
+<td width="86" height="50"  align="center" valign="middle"  >8</td>
+<td width="86" height="50"  align="center" valign="middle"  >9</td>
+<td width="85" height="50"  align="center" valign="middle"  >10</td>
+<td width="75" height="50"  align="center" valign="middle"  >11</td>
+<td width="70" height="50"  align="center" valign="middle"  >12</td>
+<td width="65" height="50"  align="center" valign="middle"  >13</td>
+<td width="85" height="50"  align="center" valign="middle"  >14</td>
+<td width="75" height="50"  align="center" valign="middle"  >15</td>
+<td width="75" height="50"  align="center" valign="middle"  >16</td>
+</tr>
+<tr v-for="(item, index) in json.list">
+<td  width="166" height="22"  align="left" valign="middle"  >{{item.gjhdqszDm}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  >{{item.cystmc}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  >{{item.zcszd}}</td>
+<td  width="85" height="22"  align="left" valign="middle"  ><input type="checkbox" name="E10" value="ON"  :checked="item.yffy === '1'" disabled></td>
+<td  width="74" height="22"  align="left" valign="middle"  ><input type="checkbox" name="F10" value="ON"  :checked="item.wxzcje === '1'" disabled></td>
+<td  width="71" height="22"  align="left" valign="middle"  ><input type="checkbox" name="G10" value="ON"  :checked="item.wpcgfje === '1'" disabled></td>
+<td  width="71" height="22"  align="left" valign="middle"  ><input type="checkbox" name="H10" value="ON"  :checked="item.sccb1 === '1'" disabled></td>
+<td  width="86" height="22"  align="left" valign="middle"  ><input type="checkbox" name="I10" value="ON"  :checked="item.xsfyje === '1'" disabled></td>
+<td  width="86" height="22"  align="left" valign="middle"  ><input type="checkbox" name="J10" value="ON"  :checked="item.glfyje === '1'" disabled></td>
+<td  width="85" height="22"  align="left" valign="middle"  ><input type="checkbox" name="K10" value="ON"  :checked="item.tglwcbje === '1'" disabled></td>
+<td  width="75" height="22"  align="left" valign="middle"  ><input type="checkbox" name="L10" value="ON"  :checked="item.rzje === '1'" disabled></td>
+<td  width="70" height="22"  align="left" valign="middle"  ><input type="checkbox" name="M10" value="ON"  :checked="item.jrfw === '1'" disabled></td>
+<td  width="65" height="22"  align="left" valign="middle"  ><input type="checkbox" name="N10" value="ON"  :checked="item.bxfje === '1'" disabled></td>
+<td  width="85" height="22"  align="left" valign="middle"  ><input type="checkbox" name="O10" value="ON"  :checked="item.cygf === '1'" disabled></td>
+<td  width="75" height="22"  align="left" valign="middle"  ><input type="checkbox" name="P10" value="ON"  :checked="item.fyyqy === '1'" disabled></td>
+<td  width="75" height="22"  align="left" valign="middle"  ><input type="checkbox" name="Q10" value="ON"  :checked="item.qt === '1'" disabled></td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

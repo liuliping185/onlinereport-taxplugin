@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>收入支出表（适用执行事业单位会计制度的单位）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="693" height = "728" id="taxTable">
+<tr>
+<td width="627" height="46"  align="center" valign="middle" colspan="3" class="noBorder"><B>收入支出表</B></td>
+</tr>
+<tr>
+<td width="627" height="22"  align="center" valign="middle" colspan="3" class="noBorder">（适用执行事业单位会计制度的单位）</td>
+</tr>
+<tr>
+<td width="307" height="22"  align="left" valign="middle"  class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td width="320" height="22"  align="left" valign="middle" colspan="2" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td width="627" height="22"  align="left" valign="middle" colspan="3" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td width="467" height="22"  align="left" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td width="160" height="22"  align="right" valign="middle"  class="noBorder">金额单位：人民币元</td>
+</tr>
+<tr>
+<td width="307" height="22" align="center" valign="middle"  >项 目</td>
+<td width="160" height="22" align="center" valign="middle"  >本月数</td>
+<td width="160" height="22" align="center" valign="middle"  >本年累计数</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >一、本期财政补助结转结余</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-1"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-1"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >财政补助收入</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-2"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-2"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >减：事业支出（财政补助支出）</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-3"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-3"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >二、本期事业结转结余</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-4"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-4"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >（一）事业类收入</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-5"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-5"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >  1.事业收入</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-6"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-6"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >  2.上级补助收入</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-7"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-7"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >  3.附属单位上缴收入</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-8"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-8"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >  4.其他收入</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-9"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-9"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >   其中：捐赠收入</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-10"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-10"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >减：（二）事业类支出</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-11"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-11"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >  1.事业支出（非财政补助支出）</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-12"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-12"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >  2.上缴上级支出</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-13"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-13"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >  3.对附属单位补助支出</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-14"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-14"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >  4.其他支出</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-15"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-15"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >三、本期经营结余</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-16"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-16"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >经营收入</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-17"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-17"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >减：经营支出</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-18"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-18"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >四、弥补以前年度亏损后的经营结余</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-19"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-19"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >五、本年非财政补助结转结</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-20"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-20"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >减：非财政补助结转</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-21"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-21"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >六、本年非财政补助结余</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-22"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-22"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >减：应缴企业所得税</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-23"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-23"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >减：提取专用基金</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-24"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-24"'>0.00</td>
+</tr>
+<tr>
+<td width="307" height="22" align="left" valign="middle"  >七、转入事业基金</td>
+<td width="160" height="22" align="right" valign="middle"    v-fill.bys='"ewbhxh-25"'>0.00</td>
+<td width="160" height="22" align="right" valign="middle"  v-fill.bnljs='"ewbhxh-25"'>0.00</td>
+</tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

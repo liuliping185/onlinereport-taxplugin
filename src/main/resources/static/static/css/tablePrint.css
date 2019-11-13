@@ -1,0 +1,89 @@
+body{
+  padding:0px 0;
+}
+#taxTable {
+  border-collapse: collapse;
+  margin: 0 auto;
+  /* margin: 0px 0px 0px 30px;*/
+  font-size: 12px;
+}
+
+#taxTable b {
+  font-size: 16px;
+}
+
+#taxTable tr td {
+  /*padding: 5px 10px;*/
+  border: 1px solid #333;
+}
+
+.noBorder {
+  border: 0 !important;
+}
+.noBorderLeft{
+  border-left: 0 !important;
+}
+.noBorderRight{
+  border-right: 0 !important;
+}
+.noBorderTop{
+  border-top: 0 !important;
+}
+.noBorderBottom{
+  border-bottom: 0 !important;
+}
+/*�̶���*/
+#tableDiv {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0 auto;
+}
+
+#outerDiv {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.column-fixed-block {
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  /* border-right: 1px solid #ddd; */
+  z-index: 10;
+}
+
+.block-shadow {
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, .12); */
+}
+form {
+  margin-bottom:0
+}
+.lastCol{
+  width:10px !important;
+  padding: 0 !important;
+}
+.uneditable-bgColor{
+  background-color: #A6CAF0;
+}
+.editable-bgColor{
+  background-color: #C0DCC0;
+}
+#taxTable input{
+  border: 0px;
+  background-color: initial;
+  text-align: right;
+  outline: none;
+}
+@page {
+  size: auto;  /* auto is the initial value */
+  margin-top: 0mm; /* this affects the margin in the printer settings */
+  margin-bottom: 0mm; /* this affects the margin in the printer settings */
+}

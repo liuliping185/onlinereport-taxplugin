@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>高新技术企业优惠情况及明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1221" height = "987" id="taxTable">
+<tr>
+<td width="1136" height="23"  align="center" valign="middle" colspan="9" class="noBorder"><B>高新技术企业优惠情况及明细表</B></td>
+</tr>
+<tr>
+<td width="1136" height="22"  align="center" valign="middle" colspan="9" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td width="1136" height="22"  align="left" valign="middle" colspan="9" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td width="1136" height="22"  align="left" valign="middle" colspan="9" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td width="572" height="22"  align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td width="564" height="22"  align="right" valign="middle" colspan="4" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="1136" height="30"  align="center" valign="middle" colspan="9" ><B>	      基本信息			<br></B></td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >1</td>
+<td  width="158" height="22"  align="left" valign="middle" colspan="2" >高新技术企业证书编号</td>
+<td  width="218" height="22"  align="left" valign="middle"  >{{json.list[0].gxjsqyzsbh}}</td>
+<td  width="406" height="22"  align="center" valign="middle" colspan="3" >高新技术企业证书取得时间</td>
+<td  width="282" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].gxjsqyzsqdsj}}</td>
+</tr>
+<tr>
+<td  width="72" height="74"  align="center" valign="middle"  rowspan="3">2</td>
+<td  width="158" height="74"  align="left" valign="middle" colspan="2" rowspan="3">对企业主要产品（服务）发挥核心支持作用的技术所属范围</td>
+<td  width="906" height="30"  align="center" valign="middle" colspan="6" >国家重点支持的高新技术领域					<br></td>
+</tr>
+<tr>
+<td  width="218" height="22"  align="center" valign="middle"  >一级领域</td>
+<td  width="265" height="22"  align="center" valign="middle" colspan="2" >二级领域</td>
+<td  width="423" height="22"  align="center" valign="middle" colspan="3" >三级领域</td>
+</tr>
+<tr>
+<td  width="218" height="22"  align="left" valign="middle"  >{{json.list[0].cpsygdfw}}</td>
+<td  width="265" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].cpsygdfw2}}</td>
+<td  width="423" height="22"  align="left" valign="middle" colspan="3" >{{json.list[0].cpsygdfw3}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >3</td>
+<td  width="1064" height="22"  align="center" valign="middle" colspan="8" ><B>关键指标情况</B></td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >4</td>
+<td  width="79" height="154"  align="left" valign="middle"  rowspan="7">收入指标</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >一、本年高新技术产品（服务）收入（5+6）</td>
+<td width="141" height="22"  align="right" valign="middle"  >{{json.list[0].bngxjscpsr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >5</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >    其中：产品（服务）收入</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].qzcpfwsr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >6</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >          技术性收入</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].jsxsr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >7</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >二、本年企业总收入(8-9)</td>
+<td width="141" height="22"  align="right" valign="middle"  >{{json.list[0].bnqyzsr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >8</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >   其中：收入总额</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].qzsrze.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >9</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >        不征税收入</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].bzssr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >10</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >三、本年高新技术产品（服务）收入占企业总收入的比例（4÷7）</td>
+<td width="141" height="22"  align="right" valign="middle"  >{{(json.list[0].bngxjscpsrzqyzsrbl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >11</td>
+<td  width="79" height="66"  align="left" valign="middle"  rowspan="3">人员指标</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >四、本年科技人员数</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].bnkjrys.toFixed(4)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >12</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >五、本年职工总数</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].bnzgzs.toFixed(4)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >13</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >六、本年科技人员占企业当年职工总数的比例（11÷12）</td>
+<td width="141" height="22"  align="right" valign="middle"  >{{(json.list[0].bnkjryzqydnzgsbl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="72" height="44"  align="center" valign="middle"  rowspan="2">14</td>
+<td  width="79" height="396"  align="left" valign="middle"  rowspan="18">研发费用指标</td>
+<td  width="421" height="44"  align="center" valign="middle" colspan="3" rowspan="2">高新研发费用归集年度</td>
+<td  width="141" height="22"  align="center" valign="middle"  >本年度</td>
+<td  width="141" height="22"  align="center" valign="middle"  >前一年度</td>
+<td  width="141" height="22"  align="center" valign="middle"  >前二年度</td>
+<td  width="141" height="22"  align="center" valign="middle"  >合计</td>
+</tr>
+<tr>
+<td  width="141" height="22"  align="center" valign="middle"  >1</td>
+<td  width="141" height="22"  align="center" valign="middle"  >2</td>
+<td  width="141" height="22"  align="center" valign="middle"  >3</td>
+<td  width="141" height="22"  align="center" valign="middle"  >4</td>
+</tr>
+<tr v-for="(item, index) in json.listZb">
+<td  width="72" height="22"  align="center" valign="middle"  >{{index + 15}}</td>
+<td  width="421" height="22"  align="left" valign="middle" colspan="3" v-show="index !== 15">{{item.ewbhmc}}</td>
+<td  width="421" height="22"  align="left" valign="middle" colspan="6" v-show="index === 15">{{item.ewbhmc}}</td>
+<td width="141" height="22"  align="right" valign="middle"  v-show="index !== 15">{{item.kffybnd.toFixed(2)}}</td>
+<td width="141" height="22"  align="right" valign="middle"  v-show="index !== 15">{{item.kffyqynd.toFixed(2)}}</td>
+<td width="141" height="22"  align="right" valign="middle"  v-show="index !== 15">{{item.kffyqend.toFixed(2)}}</td>
+<td width="141" height="22"  align="right" valign="middle"  v-if="index !== 15">{{item.kffyhj.toFixed(2)}}</td>
+<td width="141" height="22"  align="right" valign="middle"  v-else>{{(item.kffyhj*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >31</td>
+<td  width="79" height="44"  align="left" valign="middle"  rowspan="2">减免税额</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >十、国家需要重点扶持的高新技术企业减征企业所得税</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].gjxyzdfcdgxjsqyjzqysds.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >32</td>
+<td  width="844" height="22"  align="left" valign="middle" colspan="6" >十一、经济特区和上海浦东新区新设立的高新技术企业定期减免税额</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].jjtqhpdxqxsldgxjsqydqjmse.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

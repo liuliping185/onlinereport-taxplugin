@@ -1,0 +1,153 @@
+<html>
+
+<head>
+  <title>印花税纳税申报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <div id="taxTable">
+    <table style="width:90%">
+      <tr>
+        <td width="1762" height="46" align="center" valign="middle" colspan="11" class="noBorder">
+          <B>印花税纳税申报表</B>
+        </td>
+      </tr>
+      <tr>
+        <td width="1762" height="22" align="center" valign="middle" colspan="11" class="noBorder">税款所属时间：<span v-date>{{json.list[0].skssqq}}</span>至<span v-date>{{json.list[0].skssqz}}</span></td>
+      </tr>
+      <tr>
+        <td width="1762" height="22" align="left" valign="middle" colspan="11" class="noBorder">纳税人识别号：<span v-if="json.list !== '' || json.list !== null">{{json.list[0].nsrsbh}}</span></td>
+      </tr>
+      <tr>
+        <td width="964" height="22" align="left" valign="middle" colspan="11" class="noBorder">纳税人名称（公章）：<span v-if="json.list !== '' || json.list !== null">{{json.list[0].nsrmc}}</span></td>
+      </tr>
+      <tr>
+        <td width="964" height="22" align="left" valign="middle" colspan="6" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+        <td width="294" height="22" align="right" valign="middle" colspan="5" class="noBorder">金额单位：元（列至角分） </td>
+        <td class="noBorder lastCol"></td>
+      </tr>
+    </table>
+    <div id="outerDiv">
+      <div id="tableDiv">
+        <table cellspacing="0" cellpadding="0" width="1955" height="501">
+          <tr>
+            <td class="column-fixed" width="95" height="66" align="center" valign="middle" rowspan="3">纳税人信息</td>
+            <td class="column-fixed" width="197" height="22" align="center" valign="middle">名称</td>
+            <td width="672" height="22" align="left" valign="middle" colspan="4"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].nsrmc}}</span></td>
+            <td width="168" height="22" align="center" valign="middle">纳税人类型</td>
+            <td width="630" height="22" align="left" valign="middle" colspan="4"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].nsrlx}}</span></td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="197" height="22" align="center" valign="middle">登记注册类型 </td>
+            <td width="672" height="22" align="left" valign="middle" colspan="4"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].djzclxDm}}</span></td>
+            <td width="168" height="22" align="center" valign="middle">所属行业</td>
+            <td width="630" height="22" align="left" valign="middle" colspan="4"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].hyDm}}</span></td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="197" height="22" align="center" valign="middle">身份证件号码</td>
+            <td width="168" height="22" align="left" valign="middle"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].sfzjhm}}</span></td>
+            <td width="168" height="22" align="center" valign="middle">身份证件类型</td>
+            <td width="336" height="22" align="left" valign="middle" colspan="2"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].sfzjlxDm}}</span></td>
+            <td width="168" height="22" align="center" valign="middle">联系方式</td>
+            <td width="630" height="22" align="left" valign="middle" colspan="4"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].lxdh}}</span></td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="95" height="81" align="center" valign="middle" rowspan="2">行次</td>
+            <td width="197" height="81" align="center" valign="middle" rowspan="2">应税凭证名称</td>
+            <td width="168" height="81" align="center" valign="middle" rowspan="2">计税金额或件数<br>1<br></td>
+            <td width="336" height="51" align="center" valign="middle" colspan="2">核定征收</td>
+            <td width="168" height="81" align="center" valign="middle" rowspan="2">适用<br>税率<br>4<br></td>
+            <td width="168" height="81" align="center" valign="middle" rowspan="2">本期应纳税额<br>5=1*4+2*3*4</td>
+            <td width="168" height="81" align="center" valign="middle" rowspan="2">本期已缴税额<br>6</td>
+            <td width="294" height="51" align="center" valign="middle" colspan="2">本期减免税额</td>
+            <td width="168" height="81" align="center" valign="middle" rowspan="2">本期应补（退）税额<br>9＝5－6－8<br></td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="168" height="30" align="center" valign="middle">核定依据<br>2<br></td>
+            <td width="168" height="30" align="center" valign="middle">核定比例<br>3<br></td>
+            <td width="168" height="30" align="center" valign="middle">减免性质代码<br>7<br></td>
+            <td width="126" height="30" align="center" valign="middle">减免额<br>8<br></td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr v-for='(item, index) in json.listzb'>
+            <td width="95" height="22" align="center" valign="middle">{{index+1}}</td>
+            <td width="197" height="22" align="left" valign="top">{{item.zspmDm}}</td>
+            <td width="168" height="22" align="right" valign="middle">{{item.jsje === null ? '' : item.jsje.toFixed(2)}}</td>
+            <td width="168" height="22" align="right" valign="middle">{{item.hdzsHdde === null ? '' : item.hdzsHdde.toFixed(2)}}</td>
+            <td width="168" height="22" align="right" valign="middle">{{item.hdzsHdbl === null ? '' : item.hdzsHdbl.toFixed(2)}}%</td>
+            <td width="168" height="22" align="right" valign="middle">{{item.sysl === null ? '' : item.sysl.toFixed(4)}}%</td>
+            <td width="168" height="22" align="right" valign="middle">{{item.bqynse === null ? '' : item.bqynse.toFixed(2)}}</td>
+            <td width="168" height="22" align="right" valign="middle">{{item.bqyjse1 === null ? '' : item.bqyjse1.toFixed(2)}}</td>
+            <td width="168" height="22" align="left" valign="top">{{item.ssjmxzDm}}</td>
+            <td width="126" height="22" align="right" valign="middle">{{item.jmse === null ? '' : item.jmse.toFixed(2)}}</td>
+            <td width="168" height="22" align="right" valign="middle">{{item.bqybtse === null ? '' : item.bqybtse.toFixed(2)}}</td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="292" height="22" align="center" valign="middle" colspan="2">合计</td>
+            <td width="168" height="22" align="center" valign="middle">--</td>
+            <td width="168" height="22" align="center" valign="middle">--</td>
+            <td width="168" height="22" align="center" valign="middle">--</td>
+            <td width="168" height="22" align="center" valign="middle">--</td>
+            <td width="168" height="22" align="right" valign="middle"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].bqynsehj === null ? '' : json.list[0].bqynsehj.toFixed(2)}}</span></td>
+            <td width="168" height="22" align="right" valign="middle"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].bqyjsehj === null ? '' : json.list[0].bqyjsehj.toFixed(2)}}</span></td>
+            <td width="168" height="22" align="center" valign="middle">--</td>
+            <td width="126" height="22" align="right" valign="middle"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].jmehj === null ? '' : json.list[0].jmehj.toFixed(2)}}</span></td>
+            <td width="168" height="22" align="right" valign="middle"><span v-if="json.list !== '' || json.list !== null">{{json.list[0].bqybtsehj === null ? '' : json.list[0].bqybtsehj.toFixed(2)}}</span></td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="1762" height="22" align="left" valign="middle" colspan="11">以下由纳税人填写：</td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="292" height="22" align="center" valign="middle" colspan="2">纳税人声明</td>
+            <td width="1470" height="22" align="left" valign="middle" colspan="9">此纳税申报表是根据《中华人民共和国印花税暂行条例》和国家有关税收规定填报的，是真实的、可靠的、完整的。</td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="292" height="22" align="center" valign="middle" colspan="2">经办人</td>
+            <td width="336" height="22" align="right" valign="middle" colspan="2">{{json.list[0].bsr}}</td>
+            <td width="168" height="22" align="center" valign="middle">代理人签章</td>
+            <td width="336" height="22" align="center" valign="middle" colspan="2">{{json.list[0].dlr}}</td>
+            <td width="168" height="22" align="center" valign="middle">代理人身份证号</td>
+            <td width="462" height="22" align="center" valign="middle" colspan="3">{{json.list[0].dlrsfzjhm1}}</td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="1762" height="22" align="left" valign="middle" colspan="11">以下由税务机关填写：</td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td width="292" height="22" align="center" valign="middle" colspan="2">受理人</td>
+            <td width="336" height="22" align="right" valign="middle" colspan="2">{{json.list[0].slr}}</td>
+            <td width="168" height="22" align="center" valign="middle">受理日期</td>
+            <td width="336" height="22" align="left" valign="middle" colspan="2">{{json.list[0].slrq}}</td>
+            <td width="168" height="22" align="center" valign="middle">受理税务机关签章</td>
+            <td width="462" height="22" align="center" valign="middle" colspan="3">{{json.list[0].slswjgmc}}</td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td class="noBorder" width="1762" height="22" align="left" valign="middle" colspan="11">本表一式两份，一份纳税人留存，一份税务机关留存。</td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+          <tr>
+            <td class="noBorder" width="1762" height="22" align="left" valign="middle" colspan="11">减免性质代码：减免性质代码按照税务机关最新制发的减免税政策代码表中的最细项减免性质代码填报。</td>
+            <td class="noBorder lastCol"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/fixTable.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<html>
+<head>
+<title>财政补助收入支出表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="659" height = "1212" id="taxTable">
+<tr>
+<td  width="627" height="46"  align="center" valign="middle" colspan="3" class="noBorder"><B>财政补助收入支出表</B></td>
+</tr>
+<tr>
+<td  width="627" height="22"  align="center" valign="middle" colspan="3" class="noBorder"><B>（适用执行事业单位会计制度的单位）</B></td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="320" height="22"  align="left" valign="middle" colspan="2" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="627" height="22"  align="left" valign="middle" colspan="3" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="467" height="22"  align="left" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="160" height="22"  align="right" valign="middle" class="noBorder" >金额单位：人民币元</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="center" valign="middle"  >项 目</td>
+<td  width="160" height="22"  align="center" valign="middle"  >本年数</td>
+<td  width="160" height="22"  align="center" valign="middle"  >上年数</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >一、年初财政补助结转结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ncczbzjzjyBns='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（一）基本支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcjzBns1='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >1.人员经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfBns1='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >2.日常公用经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfBns1='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（二）项目支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjzBns1='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >××项目</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmBns1='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（三）项目支出结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjyBns1='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >二、调整年初财政补助结转结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tzncczbzjzjyBns='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（一）基本支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcjzBns2='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >1.人员经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfBns2='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >2.日常公用经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfBns2='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（二）项目支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjzBns2='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >××项目</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmBns2='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（三）项目支出结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjyBns2='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >三、本年归集调入财政补助结转结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bngjdrczbzjzjyBns='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bngjdrczbzjzjySns='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（一）基本支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcjzBns3='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcjzSns3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >1.人员经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfBns3='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfSns3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >2.日常公用经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfBns3='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfSns3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（二）项目支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjzBns3='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjzSns3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >××项目</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmBns3='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmSns3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（三）项目支出结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjyBns3='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjySns3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >四、本年上缴财政补助结转结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bnsjczbzjzjyBns='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bnsjczbzjzjySns='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（一）基本支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcjzBns4='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcjzSns4='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >1.人员经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfBns4='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfSns4='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >2.日常公用经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfBns4='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfSns4='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（二）项目支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-fill.xmzcjzBns4='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-fill.xmzcjzSns4='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >××项目</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmBns4='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmSns4='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（三）项目支出结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjyBns4='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjySns4='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >五、本年财政补助收入</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bnczbzsrBns='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bnczbzsrSns='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（一）基本支出</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcBns5='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcSns5='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >1.人员经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfBns5='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfSns5='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >2.日常公用经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfBns5='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfSns5='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（二）项目支出</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcBns5='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcSns5='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >××项目</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmBns5='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmSns5='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >六、本年财政补助支出</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bnczbzzcBns='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bnczbzzcSns='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（一）基本支出</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcBns6='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcSns6='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >1.人员经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfBns6='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfSns6='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >2.日常公用经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfBns6='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfSns6='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（二）项目支出</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcBns6='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcSns6='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >××项目</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmBns6='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmSns6='""'>0.00</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >七、年末财政补助结转结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nmczbzjzjyBns='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >——</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（一）基本支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jbzcjzBns7='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >——</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >1.人员经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ryjfBns7='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >——</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >2.日常公用经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.rcgyjfBns7='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >——</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（二）项目支出结转</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjzBns7='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >——</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >××项目</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmBns7='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >——</td>
+</tr>
+<tr>
+<td  width="307" height="22"  align="left" valign="middle"  >（三）项目支出结余</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xmzcjyBns7='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >——</td>
+</tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

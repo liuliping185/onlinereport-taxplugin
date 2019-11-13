@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+</head>
+<body>
+<table id="taxTable" cellspacing="0" cellpadding="0" width="908" height="618" style="font-family: Arial; font-size: 16px; border: 0">
+    <tr>
+        <td width="876" height="46" align="center" valign="middle" colspan="6" class="noBorder"><B>负债清偿损益明细表</B></td>
+    </tr>
+    <tr>
+        <td width="375" height="22" align="left" valign="middle" colspan="3" class="noBorder"></td>
+        <td width="501" height="22" align="right" valign="middle" colspan="3" class="noBorder">金额单位： 元（列至角分）</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">行次</td>
+        <td width="164" height="22" align="center" valign="middle">项目</td>
+        <td width="165" height="22" align="center" valign="middle">账面价值(1)</td>
+        <td width="161" height="22" align="center" valign="middle">计税基础(2)</td>
+        <td width="167" height="22" align="center" valign="middle">清偿金额(3)</td>
+        <td width="173" height="22" align="center" valign="middle">负债清偿损益(4)=(2)-(3)</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">1</td>
+        <td width="164" height="22" align="left" valign="middle">短期借款</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].dqjk==null?0.00:json.listZb[0].dqjk.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].dqjk==null?0.00:json.listZb[1].dqjk.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].dqjk==null?0.00:json.listZb[2].dqjk.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].dqjk==null?0.00:json.listZb[3].dqjk.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">2</td>
+        <td width="164" height="22" align="left" valign="middle">交易性金融负债#</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].jyxjrfz==null?0.00:json.listZb[0].jyxjrfz.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].jyxjrfz==null?0.00:json.listZb[1].jyxjrfz.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].jyxjrfz==null?0.00:json.listZb[2].jyxjrfz.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].jyxjrfz==null?0.00:json.listZb[3].jyxjrfz.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">3</td>
+        <td width="164" height="22" align="left" valign="middle">应付票据</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yfpj==null?0.00:json.listZb[0].yfpj.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yfpj==null?0.00:json.listZb[1].yfpj.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yfpj==null?0.00:json.listZb[2].yfpj.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yfpj==null?0.00:json.listZb[3].yfpj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">4</td>
+        <td width="164" height="22" align="left" valign="middle">应付账款</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yfzk==null?0.00:json.listZb[0].yfzk.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yfzk==null?0.00:json.listZb[1].yfzk.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yfzk==null?0.00:json.listZb[2].yfzk.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yfzk==null?0.00:json.listZb[3].yfzk.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">5</td>
+        <td width="164" height="22" align="left" valign="middle">预收账款</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yszk==null?0.00:json.listZb[0].yszk.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yszk==null?0.00:json.listZb[1].yszk.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yszk==null?0.00:json.listZb[2].yszk.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yszk==null?0.00:json.listZb[3].yszk.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">6</td>
+        <td width="164" height="22" align="left" valign="middle">应付职工薪酬#</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yfzgxc==null?0.00:json.listZb[0].yfzgxc.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yfzgxc==null?0.00:json.listZb[1].yfzgxc.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yfzgxc==null?0.00:json.listZb[2].yfzgxc.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yfzgxc==null?0.00:json.listZb[3].yfzgxc.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">7</td>
+        <td width="164" height="22" align="left" valign="middle">应付工资*</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yfgz==null?0.00:json.listZb[0].yfgz.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yfgz==null?0.00:json.listZb[1].yfgz.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yfgz==null?0.00:json.listZb[2].yfgz.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yfgz==null?0.00:json.listZb[3].yfgz.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">8</td>
+        <td width="164" height="22" align="left" valign="middle">应付福利费*</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yfflf==null?0.00:json.listZb[0].yfflf.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yfflf==null?0.00:json.listZb[1].yfflf.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yfflf==null?0.00:json.listZb[2].yfflf.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yfflf==null?0.00:json.listZb[3].yfflf.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">9</td>
+        <td width="164" height="22" align="left" valign="middle">应交税费</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yjsf==null?0.00:json.listZb[0].yjsf.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yjsf==null?0.00:json.listZb[1].yjsf.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yjsf==null?0.00:json.listZb[2].yjsf.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yjsf==null?0.00:json.listZb[3].yjsf.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">10</td>
+        <td width="164" height="22" align="left" valign="middle">应付利息</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yflx==null?0.00:json.listZb[0].yflx.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yflx==null?0.00:json.listZb[1].yflx.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yflx==null?0.00:json.listZb[2].yflx.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yflx==null?0.00:json.listZb[3].yflx.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">11</td>
+        <td width="164" height="22" align="left" valign="middle">应付股利</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yfgl==null?0.00:json.listZb[0].yfgl.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yfgl==null?0.00:json.listZb[1].yfgl.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yfgl==null?0.00:json.listZb[2].yfgl.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yfgl==null?0.00:json.listZb[3].yfgl.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">12</td>
+        <td width="164" height="22" align="left" valign="middle">其他应交款*</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].qtyjk==null?0.00:json.listZb[0].qtyjk.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].qtyjk==null?0.00:json.listZb[1].qtyjk.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].qtyjk==null?0.00:json.listZb[2].qtyjk.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].qtyjk==null?0.00:json.listZb[3].qtyjk.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">13</td>
+        <td width="164" height="22" align="left" valign="middle">其他应付款</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].qtyfk==null?0.00:json.listZb[0].qtyfk.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].qtyfk==null?0.00:json.listZb[1].qtyfk.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].qtyfk==null?0.00:json.listZb[2].qtyfk.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].qtyfk==null?0.00:json.listZb[3].qtyfk.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">14</td>
+        <td width="164" height="22" align="left" valign="middle">预提费用*</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].ytfy==null?0.00:json.listZb[0].ytfy.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].ytfy==null?0.00:json.listZb[1].ytfy.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].ytfy==null?0.00:json.listZb[2].ytfy.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].ytfy==null?0.00:json.listZb[3].ytfy.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">15</td>
+        <td width="164" height="22" align="left" valign="middle">一年内到期的非流动负债</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].ynndqdfldfz==null?0.00:json.listZb[0].ynndqdfldfz.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].ynndqdfldfz==null?0.00:json.listZb[1].ynndqdfldfz.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].ynndqdfldfz==null?0.00:json.listZb[2].ynndqdfldfz.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].ynndqdfldfz==null?0.00:json.listZb[3].ynndqdfldfz.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">16</td>
+        <td width="164" height="22" align="left" valign="middle">其他流动负债</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].qtldfz==null?0.00:json.listZb[0].qtldfz.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].qtldfz==null?0.00:json.listZb[1].qtldfz.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].qtldfz==null?0.00:json.listZb[2].qtldfz.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].qtldfz==null?0.00:json.listZb[3].qtldfz.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">17</td>
+        <td width="164" height="22" align="left" valign="middle">长期借款</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].cqjk==null?0.00:json.listZb[0].cqjk.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].cqjk==null?0.00:json.listZb[1].cqjk.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].cqjk==null?0.00:json.listZb[2].cqjk.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].cqjk==null?0.00:json.listZb[3].cqjk.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">18</td>
+        <td width="164" height="22" align="left" valign="middle">应付债券</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yfzq==null?0.00:json.listZb[0].yfzq.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yfzq==null?0.00:json.listZb[1].yfzq.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yfzq==null?0.00:json.listZb[2].yfzq.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yfzq==null?0.00:json.listZb[3].yfzq.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">19</td>
+        <td width="164" height="22" align="left" valign="middle">长期应付款</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].cqyfk==null?0.00:json.listZb[0].cqyfk.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].cqyfk==null?0.00:json.listZb[1].cqyfk.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].cqyfk==null?0.00:json.listZb[2].cqyfk.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].cqyfk==null?0.00:json.listZb[3].cqyfk.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">20</td>
+        <td width="164" height="22" align="left" valign="middle">专项应付款</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].zxyfk==null?0.00:json.listZb[0].zxyfk.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].zxyfk==null?0.00:json.listZb[1].zxyfk.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].zxyfk==null?0.00:json.listZb[2].zxyfk.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].zxyfk==null?0.00:json.listZb[3].zxyfk.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">21</td>
+        <td width="164" height="22" align="left" valign="middle">预计负债#</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].yjfz==null?0.00:json.listZb[0].yjfz.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].yjfz==null?0.00:json.listZb[1].yjfz.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].yjfz==null?0.00:json.listZb[2].yjfz.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].yjfz==null?0.00:json.listZb[3].yjfz.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">22</td>
+        <td width="164" height="22" align="left" valign="middle">其他非流动负债</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].qtfldfz==null?0.00:json.listZb[0].qtfldfz.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].qtfldfz==null?0.00:json.listZb[1].qtfldfz.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].qtfldfz==null?0.00:json.listZb[2].qtfldfz.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].qtfldfz==null?0.00:json.listZb[3].qtfldfz.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="46" height="22" align="center" valign="middle">23</td>
+        <td width="164" height="22" align="left" valign="middle">总计</td>
+        <td width="165" height="22" align="right" valign="middle">{{json.listZb[0].zj==null?0.00:json.listZb[0].zj.toFixed(2)}}</td>
+        <td width="161" height="22" align="right" valign="middle">{{json.listZb[1].zj==null?0.00:json.listZb[1].zj.toFixed(2)}}</td>
+        <td width="167" height="22" align="right" valign="middle">{{json.listZb[2].zj==null?0.00:json.listZb[2].zj.toFixed(2)}}</td>
+        <td width="173" height="22" align="right" valign="middle">{{json.listZb[3].zj==null?0.00:json.listZb[3].zj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="375" height="22" align="left" valign="middle" colspan="3"
+            class="noBorderBottom noBorderLeft noBorderRight">经办人签字：
+        </td>
+        <td width="501" height="22" align="left" valign="middle" colspan="3"
+            class="noBorderBottom noBorderLeft noBorderRight">纳税人盖章：
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

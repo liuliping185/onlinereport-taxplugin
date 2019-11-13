@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>企业重组所得税特殊性税务处理报告表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1326" height = "735" id="taxTable">
+<tr>
+<td  width="1260" height="46"  align="center" valign="middle" colspan="6" class="noBorder"><B>企业重组所得税特殊性税务处理报告表(企业分立)</B></td>
+</tr>
+<tr>
+<td  width="1260" height="22"  align="center" valign="middle" colspan="6" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1260" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1260" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="810" height="22"  align="left" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="450" height="22"  align="right" valign="middle" colspan="2" class="noBorder"> 金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >被分立企业名称 </td>
+<td  width="376" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].bflqymc}}</td>
+<td  width="180" height="44"  align="center" valign="middle"  rowspan="2">被分立企业所属主管税务机关（全称）</td>
+<td  width="270" height="44"  align="left" valign="middle"  rowspan="2">{{json.list[0].bflqyswjg}}</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >被分立企业纳税识别号</td>
+<td  width="376" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].bflqynsrsbh}}</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >被分立企业</td>
+<td  width="197" height="22"  align="center" valign="middle"  >资产</td>
+<td  width="359" height="22"  align="center" valign="middle" colspan="2" >负债</td>
+<td  width="270" height="22"  align="center" valign="middle"  >净资产</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >计税基础</td>
+<td  width="197" height="22"  align="right" valign="middle"  >{{json.list[0].bflqyzcjsjc==null?"":json.list[0].bflqyzcjsjc.toFixed(2)}}</td>
+<td  width="359" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].bflqyfzjsjc==null?"":json.list[0].bflqyfzjsjc.toFixed(2)}}</td>
+<td  width="270" height="22"  align="right" valign="middle"  >{{json.list[0].bflqyjzcjsjc==null?"":json.list[0].bflqyjzcjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >公允价值</td>
+<td  width="197" height="22"  align="right" valign="middle"  >{{json.list[0].bflqyzcgyjz==null?"":json.list[0].bflqyzcgyjz.toFixed(2)}}</td>
+<td  width="359" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].bflqyfzgyjz==null?"":json.list[0].bflqyfzgyjz.toFixed(2)}}</td>
+<td  width="270" height="22"  align="right" valign="middle"  >{{json.list[0].bflqyjzcgyjz==null?"":json.list[0].bflqyjzcgyjz.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="209" height="22"  align="center" valign="middle"  >分立企业纳税识别号</td>
+<td  width="225" height="22"  align="center" valign="middle"  >被分立企业股东名称 </td>
+<td  width="197" height="22"  align="center" valign="middle"  >持股比例</td>
+<td  width="179" height="22"  align="center" valign="middle"  >股权公允价值</td>
+<td  width="180" height="22"  align="center" valign="middle"  >股权原计税基础</td>
+<td  width="270" height="22"  align="center" valign="middle"  >被分立企业股东所属主管税务机关（全称）</td>
+</tr>
+<tr v-for="(item,indexx) in json.listzb1" :key="item.id">
+<td  width="209" height="22"  align="left" valign="middle"  >{{item.flqynsrsbh}}</td>
+<td  width="225" height="22"  align="left" valign="middle"  >{{item.bflqygdmc}}</td>
+<td  width="197" height="22"  align="right" valign="middle"  >{{(item.cgbl==null?'0':item.cgbl*100).toFixed(2)}}%</td>
+<td  width="179" height="22"  align="right" valign="middle"  >{{item.gqgyjz==null?"":item.gqgyjz.toFixed(2)}}</td>
+<td  width="180" height="22"  align="right" valign="middle"  >{{item.gqyjsjc==null?"":item.gqyjsjc.toFixed(2)}}</td>
+<td  width="270" height="22"  align="left" valign="middle"  >{{item.swjg}}</td>
+</tr>
+
+<template  v-for="(item,index) in json.listzb3">
+	<tr>
+	<td  width="434" height="22"  align="center" valign="middle" colspan="2" >分立企业1名称</td>
+	<td  width="376" height="22"  align="left" valign="middle" colspan="2" >{{item.flqy1mc}}</td>
+	<td  width="180" height="44"  align="center" valign="middle"  rowspan="2">分立企业1所属主管税务机关（全称）</td>
+	<td  width="270" height="44"  align="left" valign="middle"  rowspan="2">{{item.flqyssswjgqc}}</td>
+	</tr>
+	<tr>
+	<td  width="434" height="22"  align="center" valign="middle" colspan="2" >分立企业1纳税识别号</td>
+	<td  width="376" height="22"  align="left" valign="middle" colspan="2" >{{item.flqy1sbh}}</td>
+	</tr>
+	<tr>
+	<td  width="434" height="22"  align="center" valign="middle" colspan="2" >分立企业1</td>
+	<td  width="197" height="22"  align="center" valign="middle"  >资产</td>
+	<td  width="359" height="22"  align="center" valign="middle" colspan="2" >负债</td>
+	<td  width="270" height="22"  align="center" valign="middle"  >净资产</td>
+	</tr>
+	<tr>
+	<td  width="434" height="22"  align="center" valign="middle" colspan="2" >计税基础</td>
+	<td  width="197" height="22"  align="right" valign="middle"  >{{item.zcjsjc==null?'':item.zcjsjc.toFixed(2)}}</td>
+	<td  width="359" height="22"  align="right" valign="middle" colspan="2" >{{item.fzjsjc==null?'':item.fzjsjc.toFixed(2)}}</td>
+	<td  width="270" height="22"  align="right" valign="middle"  >{{item.jzcjsjc==null?'':item.jzcjsjc.toFixed(2)}}</td>
+	</tr>
+	<tr>
+	<td  width="434" height="22"  align="center" valign="middle" colspan="2" >公允价值</td>
+	<td  width="197" height="22"  align="right" valign="middle"  >{{item.zcgyjz==null?'':item.zcgyjz.toFixed(2)}}</td>
+	<td  width="359" height="22"  align="right" valign="middle" colspan="2" >{{item.fzgyjz==null?'':item.fzgyjz.toFixed(2)}}</td>
+	<td  width="270" height="22"  align="right" valign="middle"  >{{item.jzcgyjz==null?'':item.jzcgyjz.toFixed(2)}}</td>
+	</tr>
+</template>
+
+<tr>
+<td  width="434" height="30"  align="center" valign="middle" colspan="2" >分立交易的支付总额</td>
+<td  width="376" height="30"  align="right" valign="middle" colspan="2" >{{json.list[0].fljyzfze==null?'':json.list[0].fljyzfze.toFixed(2)}}</td>
+<td  width="180" height="30"  align="center" valign="middle"  >股权支付额占交易支付总额的比例%</td>
+<td  width="270" height="30"  align="right" valign="middle"  >{{json.list[0].gqzfbl==null?'0':(json.list[0].gqzfbl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" class="noBorderTop" colspan="2" >股权支付额（公允价值）</td>
+<td  width="376" height="22"  align="right" valign="middle" class="noBorderTop" colspan="2" >{{json.list[0].gqzfgyjz==null?'':json.list[0].gqzfgyjz.toFixed(2)}}</td>
+<td  width="180" height="22"  align="center" valign="middle" class="noBorderTop"  >股权支付额（原计税基础）</td>
+<td  width="270" height="22"  align="right" valign="middle" class="noBorderTop"  >{{json.list[0].gqzfyjsjc==null?'':json.list[0].gqzfyjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >非股权支付额（公允价值）</td>
+<td  width="376" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].fgqzfgyjz==null?'':json.list[0].fgqzfgyjz.toFixed(2)}}</td>
+<td  width="180" height="22"  align="center" valign="middle"  >非股权支付额（原计税基础）</td>
+<td  width="270" height="22"  align="right" valign="middle"  >{{json.list[0].fgqzfyjsjc==null?'':json.list[0].fgqzfyjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="810" height="22"  align="center" valign="middle" colspan="4" >非股权支付对应的资产转让所得或损失</td>
+<td  width="450" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].fgqzfsdhss==null?'':json.list[0].fgqzfsdhss.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >被分立企业分立资产公允价值</td>
+<td  width="376" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].bflqyflzcgyjz==null?'':json.list[0].bflqyflzcgyjz.toFixed(2)}}</td>
+<td  width="180" height="22"  align="center" valign="middle"  >被分立企业全部资产公允价值</td>
+<td  width="270" height="22"  align="right" valign="middle"  >{{json.list[0].bflgyjz==null?'':json.list[0].bflgyjz.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="434" height="30"  align="center" valign="middle" colspan="2" >被分立企业未超过法定弥补期限的亏损额</td>
+<td  width="376" height="30"  align="right" valign="middle" colspan="2" >{{json.list[0].bflqymbkse==null?'':json.list[0].bflqymbkse.toFixed(2)}}</td>
+<td  width="180" height="30"  align="center" valign="middle"  >分立企业可弥补的被分立企业尚未弥补的亏损额</td>
+<td  width="270" height="30"  align="right" valign="middle"  >{{json.list[0].flmbbflkse==null?'':json.list[0].flmbbflkse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >未确认的资产损失</td>
+<td  width="376" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].wqrzcss==null?'':json.list[0].wqrzcss.toFixed(2)}}</td>
+<td  width="180" height="22"  align="center" valign="middle"  >分期确认的收入</td>
+<td  width="270" height="22"  align="right" valign="middle"  >{{json.list[0].fqqrdsr==null?'':json.list[0].fqqrdsr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="1260" height="22"  align="center" valign="middle" colspan="6" >被分立企业股东取得股权和其他资产情况</td>
+</tr>
+<tr>
+<td  width="434" height="22"  align="center" valign="middle" colspan="2" >股东名称</td>
+<td  width="376" height="22"  align="center" valign="middle" colspan="2" >项目名称</td>
+<td  width="180" height="22"  align="center" valign="middle"  >公允价值</td>
+<td  width="270" height="22"  align="center" valign="middle"  >计税基础</td>
+</tr>
+<tr v-for="(item,index) in json.listzb2" :key="item.id">
+<td  width="434" height="22"  align="left" valign="middle" colspan="2" >{{item.gdmc}}</td>
+<td  width="376" height="22"  align="left" valign="middle" colspan="2" >{{item.xmmc}}</td>
+<td  width="180" height="22"  align="right" valign="middle"  >{{item.gyjz==null?'':item.gyjz.toFixed(2)}}</td>
+<td  width="270" height="22"  align="right" valign="middle"  >{{item.jsjc==null?'':item.jsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="1260" height="22" style="padding:2px 10px"  align="left" valign="middle" colspan="6" class="noBorderBottom">谨声明：本人知悉并保证本表填报内容及所附证明材料真实、完整，并承担因资料虚假而产生的法律和行政责任。</td>
+</tr>
+<tr>
+<td  width="1260" height="22" style="padding:2px 10px"  align="left" valign="middle" colspan="4" class="noBorderTop noBorderRight" >&nbsp;</td>
+<td  width="180" height="22" style="padding:2px 10px" align="left" valign="middle" class="noBorderTop noBorderRight noBorderLeft">法定代表人签章：</td>
+<td  width="180" height="22" style="padding:2px 10px" align="left" valign="middle" class="noBorderTop noBorderLeft">年  月  日</td>
+</tr>
+<tr>
+<td  width="209" height="22"  align="left" valign="middle"  class="noBorder">填表人：                 </td>
+<td  width="225" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="197" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="179" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="180" height="22"  align="left" valign="middle"  class="noBorder">填表日期： </td>
+<td  width="270" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

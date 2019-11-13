@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>企业重组所得税特殊性税务处理报告表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1299" height = "648" id="taxTable">
+<tr>
+<td  width="1199" height="46"  align="center" valign="middle" colspan="6" class="noBorder"><B>企业重组所得税特殊性税务处理报告表(企业合并)</B></td>
+</tr>
+<tr>
+<td  width="1199" height="22"  align="center" valign="middle" colspan="6" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1199" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1199" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="499" height="22"  align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="120" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="580" height="22"  align="right" valign="middle" colspan="2" class="noBorder"> 金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="382" height="22" align="center" valign="middle" colspan="2" >合并企业名称 </td>
+<td  width="237" height="22" align="center" valign="middle" colspan="2" >合并企业纳税识别号</td>
+<td  width="295" height="44"  align="center" valign="middle"  rowspan="2">合并企业所属主管税务机关（全称）</td>
+<td  width="285" height="44"  align="left" valign="middle"  rowspan="2">{{json.list[0].hbqyswjg}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].hbqymc}}</td>
+<td  width="237" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].hbqynsrsbh}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="center" valign="middle" colspan="2" >被合并企业名称</td>
+<td  width="237" height="22"  align="center" valign="middle" colspan="2" >被合并企业纳税识别号</td>
+<td  width="580" height="22"  align="center" valign="middle" colspan="2" >被合并企业所属主管税务机关（全称）</td>
+</tr>
+<tr v-for="(item,index) in json.bhbqylist" :key="item.id">
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >{{item.bhbqymc}}</td>
+<td  width="237" height="22"  align="left" valign="middle" colspan="2" >{{item.bhbqynsrsbh}}</td>
+<td  width="580" height="22"  align="left" valign="middle" colspan="2" >{{item.bhbqyswjg}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="center" valign="middle" colspan="2" >被合并企业股东名称</td>
+<td  width="237" height="22"  align="center" valign="middle" colspan="2" >纳税识别号</td>
+<td  width="295" height="22"  align="center" valign="middle"  >持股比例%</td>
+<td  width="285" height="22"  align="center" valign="middle"  >被合并企业股东所属主管税务机关（全称）</td>
+</tr>
+<tr v-for="(item,index) in json.bhbgdgqList" :key="item.id">
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >{{item.bhbqygd}}</td>
+<td  width="237" height="22"  align="left" valign="middle" colspan="2" >{{item.nsrsbh}}</td>
+<td  width="295" height="22"  align="right" valign="middle"  >{{(item.cgbl*100).toFixed(2)}}%</td>
+<td  width="285" height="22"  align="left" valign="middle"  >{{item.swjg}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >合并交易的支付总额</td>
+<td  width="237" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].hbjyzfze.toFixed(2)}}</td>
+<td  width="295" height="22"  align="left" valign="middle"  >股权支付额占交易支付总额的比例%</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{(json.list[0].gdzfebl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >股权支付额（公允价值）</td>
+<td  width="237" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].gdzfegyjz.toFixed(2)}}</td>
+<td  width="295" height="22"  align="left" valign="middle"  >股权支付额（原计税基础）</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{json.list[0].gdzfeyjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >非股权支付额（公允价值）</td>
+<td  width="237" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].fgdzfegyjz.toFixed(2)}}</td>
+<td  width="295" height="22"  align="left" valign="middle"  >非股权支付额（原计税基础）</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{json.list[0].fgdzfeyjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >是否为同一控制下且不需要支付对价的合并</td>
+<td  width="117" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D15" value="ON" :checked="json.list[0].zfdjhb === 'Y'" disabled>是</p></form></td>
+<td  width="120" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E15" value="ON" :checked="json.list[0].zfdjhb === 'N'" disabled>否</p></form></td>
+<td  width="295" height="22"  align="left" valign="middle"  >非股权支付对应的资产转让所得或损失</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{json.list[0].fgqzrsdhss.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >被合并企业税前尚未弥补的亏损额</td>
+<td  width="237" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].bhbqysqkse.toFixed(2)}}</td>
+<td  width="295" height="22"  align="left" valign="middle"  >被合并企业净资产公允价值</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{json.list[0].bhbqygyjz.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="382" height="30"  align="left" valign="middle" colspan="2" >截至合并业务发生当年年末国家发行的最长期限的国债利率</td>
+<td  width="237" height="30"  align="right" valign="middle" colspan="2" >{{(json.list[0].cqxgzll*100).toFixed(2)}}%</td>
+<td  width="295" height="30"  align="left" valign="middle"  >可由合并企业弥补的被合并企业亏损的限额</td>
+<td  width="285" height="30"  align="right" valign="middle"  >{{json.list[0].hbqyksxe.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >被合并企业资产的原计税基础</td>
+<td  width="237" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].bhbqyzcyjsjc.toFixed(2)}}</td>
+<td  width="295" height="22"  align="left" valign="middle"  >合并企业接受被合并企业资产的计税基础</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{json.list[0].zcjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >被合并企业负债的原计税基础</td>
+<td  width="237" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].bhbqyfzyjsjc.toFixed(2)}}</td>
+<td  width="295" height="22"  align="left" valign="middle"  >合并企业接受被合并企业负债的计税基础</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{json.list[0].fzjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >未确认的资产损失</td>
+<td  width="237" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].wqrzcss.toFixed(2)}}</td>
+<td  width="295" height="22"  align="left" valign="middle"  >分期确认的收入</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{json.list[0].fqqrsr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >被合并企业有关项目所得优惠的剩余期限</td>
+<td  width="237" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].yhsyqx}}</td>
+<td  width="295" height="22"  align="center" valign="middle"  >年至</td>
+<td  width="285" height="22"  align="left" valign="middle"  >{{json.list[0].syqxz}}</td>
+</tr>
+<tr>
+<td  width="1199" height="22"  align="center" valign="middle" colspan="6" >被合并企业股东取得股权和其他资产情况</td>
+</tr>
+<tr>
+<td  width="382" height="22"  align="center" valign="middle" colspan="2" >股东名称</td>
+<td  width="237" height="22"  align="center" valign="middle" colspan="2" >项目名称</td>
+<td  width="295" height="22"  align="center" valign="middle"  >公允价值</td>
+<td  width="285" height="22"  align="center" valign="middle"  >计税基础</td>
+</tr>
+<tr v-for="(item,index) in json.bhbgdlist" :key="item.id">
+<td  width="382" height="22"  align="left" valign="middle" colspan="2" >{{item.gdmc}}</td>
+<td  width="237" height="22"  align="left" valign="middle" colspan="2" >{{item.xmmc}}</td>
+<td  width="295" height="22"  align="right" valign="middle"  >{{item.gyjz.toFixed(2)}}</td>
+<td  width="285" height="22"  align="right" valign="middle"  >{{item.jsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="1199" height="22"  align="left" valign="middle" colspan="6" style="border-bottom:none">谨声明：本人知悉并保证本表填报内容及所附证明材料真实、完整，并承担因资料虚假而产生的法律和行政责任。</td>
+</tr>
+<tr>
+<td  width="1199" height="22"  align="right" valign="middle" colspan="6" style="border-top:none">法定代表人签章：            年  月  日</td>
+</tr>
+<tr>
+<td  width="174" height="22"  align="center" valign="middle"  class="noBorder">填表人：                 </td>
+<td  width="208" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="117" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="120" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="295" height="22"  align="left" valign="middle"  class="noBorder">填表日期： </td>
+<td  width="285" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

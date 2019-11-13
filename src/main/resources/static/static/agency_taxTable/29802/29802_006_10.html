@@ -1,0 +1,249 @@
+<html>
+
+<head>
+<title>"研发支出"辅助账汇总表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="8670" height="404" id="taxTable">
+    <tr>
+      <td width="8638" height="46" align="center" valign="middle" colspan="58" class="noBorder">
+        <B>"研发支出"辅助账汇总表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="515" height="22" align="left" valign="middle" colspan="58" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="417" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+      <td width="98" height="22" align="left" valign="middle" class="noBorder">{{bt.sbSbxxBbmx.sssqQ.substring(0,4)}}</td>
+      <td width="89" height="22" align="left" valign="middle" class="noBorder">年度</td>
+      <td width="320" height="22" align="right" valign="middle" colspan="52" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+      <td width="125" height="76" align="center" valign="middle" rowspan="3">项目</td>
+      <td width="41" height="94" align="center" valign="middle" rowspan="4">序号</td>
+      <td width="119" height="94" align="center" valign="middle" rowspan="4">项目名称</td>
+      <td width="132" height="94" align="center" valign="middle" rowspan="4">项目编号</td>
+      <td width="98" height="94" align="center" valign="middle" rowspan="4">研发形式</td>
+      <td width="89" height="94" align="center" valign="middle" rowspan="4">资本化、费用化支出选项</td>
+      <td width="89" height="94" align="center" valign="middle" rowspan="4">项目实施状态选项</td>
+      <td width="93" height="94" align="center" valign="middle" rowspan="4">委托方与受托方是否存在关联关系选项</td>
+      <td width="98" height="94" align="center" valign="middle" rowspan="4">是否委托境外选项</td>
+      <td width="117" height="94" align="center" valign="middle" rowspan="4">研发成果</td>
+      <td width="117" height="94" align="center" valign="middle" rowspan="4">研发成果证书号</td>
+      <td width="480" height="20" align="center" valign="middle" colspan="3">一、人员人工费用</td>
+      <td width="1280" height="20" align="center" valign="middle" colspan="8">二、直接投入费用</td>
+      <td width="320" height="20" align="center" valign="middle" colspan="2">三、折旧费用</td>
+      <td width="480" height="20" align="center" valign="middle" colspan="3">四、无形资产摊销</td>
+      <td width="640" height="20" align="center" valign="middle" colspan="4">五、新产品设计费等</td>
+      <td width="3360" height="76" align="center" valign="middle" colspan="21" rowspan="3">六、其他相关费用</td>
+      <td width="160" height="76" align="center" valign="middle" rowspan="3">七、委托外部机构或个人进行研发活动所发生的费用</td>
+      <td width="160" height="76" align="center" valign="middle" rowspan="3">其中：委托境外进行研发活动所发生的费用（包括存在关联关系的委托研发）</td>
+      <td width="160" height="76" align="center" valign="middle" rowspan="3">八、允许加计扣除的研发费用中的第1至5类费用合计（1+2+3+4+5）</td>
+      <td width="160" height="76" align="center" valign="middle" rowspan="3">其他相关费用限额=序号8×10％/(1-10％)</td>
+      <td width="160" height="76" align="center" valign="middle" rowspan="3">九、当期费用化支出可加计扣除总额</td>
+      <td width="160" height="76" align="center" valign="middle" rowspan="3">当期资本化可加计扣除的研发费用率</td>
+    </tr>
+    <tr>
+      <td width="320" height="38" align="center" valign="middle" colspan="2">直接从事研发活动人员</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">外聘研发人员的劳务费用</td>
+      <td width="480" height="38" align="center" valign="middle" colspan="3">研发活动直接消耗</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于中间试验和产品试制的模具、工艺装备开发及制造费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于不构成固定资产的样品、样机及一般测试手段购置费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于试制产品的检验费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于研发活动的仪器、设备的运行维护、调整、检验、维修等费用</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">通过经营租赁方式租入的用于研发活动的仪器、设备租赁费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于研发活动的仪器的折旧费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于研发活动的设备的折旧费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于研发活动的软件的摊销费用</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于研发活动的专利权的摊销费用</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">用于研发活动的非专利技术（包括许可证、专有技术、设计和计算方法等）的摊销费用</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">新产品设计费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">新工艺规程制定费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">新药研制的临床试验费</td>
+      <td width="160" height="56" align="center" valign="middle" rowspan="2">勘探开发技术的现场试验费</td>
+    </tr>
+    <tr>
+      <td width="160" height="18" align="center" valign="middle">工资薪金</td>
+      <td width="160" height="18" align="center" valign="middle">五险一金</td>
+      <td width="160" height="18" align="center" valign="middle">材料</td>
+      <td width="160" height="18" align="center" valign="middle">燃料</td>
+      <td width="160" height="18" align="center" valign="middle">动力费用</td>
+    </tr>
+    <tr>
+      <td width="125" height="18" align="center" valign="middle">行次、序号</td>
+      <td width="160" height="18" align="center" valign="middle">1.1</td>
+      <td width="160" height="18" align="center" valign="middle">1.2</td>
+      <td width="160" height="18" align="center" valign="middle">1.3</td>
+      <td width="160" height="18" align="center" valign="middle">2.1</td>
+      <td width="160" height="18" align="center" valign="middle">2.2</td>
+      <td width="160" height="18" align="center" valign="middle">2.3</td>
+      <td width="160" height="18" align="center" valign="middle">2.4</td>
+      <td width="160" height="18" align="center" valign="middle">2.5</td>
+      <td width="160" height="18" align="center" valign="middle">2.6</td>
+      <td width="160" height="18" align="center" valign="middle">2.7</td>
+      <td width="160" height="18" align="center" valign="middle">2.8</td>
+      <td width="160" height="18" align="center" valign="middle">3.1</td>
+      <td width="160" height="18" align="center" valign="middle">3.2</td>
+      <td width="160" height="18" align="center" valign="middle">4.1</td>
+      <td width="160" height="18" align="center" valign="middle">4.2</td>
+      <td width="160" height="18" align="center" valign="middle">4.3</td>
+      <td width="160" height="18" align="center" valign="middle">5.1</td>
+      <td width="160" height="18" align="center" valign="middle">5.2</td>
+      <td width="160" height="18" align="center" valign="middle">5.3</td>
+      <td width="160" height="18" align="center" valign="middle">5.4</td>
+      <td width="160" height="18" align="center" valign="middle">6.1</td>
+      <td width="160" height="18" align="center" valign="middle">6.2</td>
+      <td width="160" height="18" align="center" valign="middle">6.3</td>
+      <td width="160" height="18" align="center" valign="middle">6.4</td>
+      <td width="160" height="18" align="center" valign="middle">6.5</td>
+      <td width="160" height="18" align="center" valign="middle">6.6</td>
+      <td width="160" height="18" align="center" valign="middle">6.7</td>
+      <td width="160" height="18" align="center" valign="middle">6.8</td>
+      <td width="160" height="18" align="center" valign="middle">6.9</td>
+      <td width="160" height="18" align="center" valign="middle">6.10</td>
+      <td width="160" height="18" align="center" valign="middle">6.11</td>
+      <td width="160" height="18" align="center" valign="middle">6.12</td>
+      <td width="160" height="18" align="center" valign="middle">6.13</td>
+      <td width="160" height="18" align="center" valign="middle">6.14</td>
+      <td width="160" height="18" align="center" valign="middle">6.15</td>
+      <td width="160" height="18" align="center" valign="middle">6.16</td>
+      <td width="160" height="18" align="center" valign="middle">6.17</td>
+      <td width="160" height="18" align="center" valign="middle">6.18</td>
+      <td width="160" height="18" align="center" valign="middle">6.19</td>
+      <td width="160" height="18" align="center" valign="middle">6.20</td>
+      <td width="160" height="18" align="center" valign="middle">合计</td>
+      <td width="160" height="18" align="center" valign="middle">7</td>
+      <td width="160" height="18" align="center" valign="middle">7.1</td>
+      <td width="160" height="18" align="center" valign="middle">8</td>
+      <td width="160" height="18" align="center" valign="middle">8.1</td>
+      <td width="160" height="18" align="center" valign="middle">9</td>
+      <td width="160" height="18" align="center" valign="middle">9.1</td>
+    </tr>
+    <tr v-for="(item,index) in json.slice(0,6)">
+      <td width="125" height="22" align="center" valign="middle">{{index+1}}</td>
+      <td width="993" height="22" align="center" valign="middle" colspan="10">{{item.xmmc}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f001}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f002}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f003}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f004}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f005}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f006}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f007}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f008}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f009}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f010}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f011}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f012}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f013}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f014}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f015}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f016}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f017}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f018}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f019}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f020}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f021}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f022}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f023}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f024}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f025}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f026}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f027}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f028}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f029}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f030}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f031}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f032}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f033}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f034}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f035}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f036}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f037}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f038}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f039}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f040}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f041}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f042}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f043}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f044}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f045}}</td>
+      <td width="160" height="22" align="center" valign="middle">{{item.f046=="0"?'*':item.f046.toFixed(2)}}</td>
+      <td width="160" height="22" align="center" valign="middle" >*</td>
+    </tr>
+    <tr>
+      <td width="260" height="22" align="center" valign="middle" :rowspan="json.slice(6,json.length).length+1" >项目明细（填写项目贷方发生额）</td>
+    </tr>
+    <tr v-for="(item,index) in json.slice(6,json.length)">
+      <td width="41" height="22" align="center" valign="middle">00{{(index+1)}}</td>
+      <td width="119" height="22" align="left" valign="middle">{{item.xmmc==null?"":item.xmmc}}</td>
+      <td width="132" height="22" align="left" valign="middle">{{item.xmbh==null?"":item.xmbh}}</td>
+      <td width="98" height="22" align="left" valign="middle">{{item.yfxs==null?"":item.yfxs}}</td>
+      <td width="89" height="22" align="left" valign="middle">{{item.zbhfyhzcxx==null?"":item.zbhfyhzcxx}}</td>
+      <td width="89" height="22" align="left" valign="middle">{{item.xmssztxx==null?"":item.xmssztxx}}</td>
+      <td width="93" height="22" align="left" valign="middle">{{item.wtfystfsfczglgxxx==null?"":item.wtfystfsfczglgxxx}}</td>
+      <td width="98" height="22" align="left" valign="middle">{{item.sfwtjwxx==null?"":item.sfwtjwxx}}</td>
+      <td width="117" height="22" align="left" valign="middle">{{item.yfcg==null?"":item.yfcg}}</td>
+      <td width="117" height="22" align="left" valign="middle">{{item.yfcgzsh==null?"":item.yfcgzsh}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f001}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f002}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f003}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f004}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f005}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f006}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f007}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f008}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f009}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f010}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f011}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f012}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f013}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f014}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f015}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f016}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f017}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f018}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f019}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f020}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f021}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f022}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f023}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f024}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f025}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f026}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f027}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f028}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f029}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f030}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f031}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f032}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f033}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f034}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f035}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f036}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f037}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f038}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f039}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f040}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f041}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f042}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f043}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f044}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-float="2">{{item.f045}}</td>
+      <td width="160" height="22" align="center" valign="middle" v-float="2">{{item.f046}}</td>
+      <td width="160" height="22" align="center" valign="middle" v-float="2">{{item.f047}}</td>
+    </tr>
+    <tr>
+      <td width="604" height="22" align="left" valign="middle" colspan="18" class="noBorder">法定代表人（签章）：</td>
+      <td width="160" height="22" align="left" valign="middle" colspan="40" class="noBorder">财务负责人：</td>
+      <td width="10" height="22" align="right" valign="middle" class="noBorder"></td>
+    </tr>
+  </table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

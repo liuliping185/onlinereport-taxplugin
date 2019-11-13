@@ -1,0 +1,342 @@
+<html>
+<head>
+<title>所得减免优惠明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1816" height = "738" id="taxTable">
+<tr>
+<td  width="1744" height="46"  align="center" valign="middle" colspan="13" class="noBorder"><B>所得减免优惠明细表</B></td>
+</tr>
+<tr>
+<td  width="1744" height="22"  align="center" valign="middle" colspan="13" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1744" height="22"  align="left" valign="middle" colspan="13" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1744" height="22"  align="left" valign="middle" colspan="13" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="334" height="22"  align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="141" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="141" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="141" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="141" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="141" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="141" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="564" height="22"  align="right" valign="middle" colspan="4" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="40" height="74"  align="center" valign="middle"  rowspan="3">行次</td>
+<td  width="153" height="74"  align="center" valign="middle"  rowspan="3">减免项目</td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">项目名称</td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">优惠事项名称</td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">优惠方式</td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">项目收入</td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">项目成本</td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">相关税费</td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">应分摊期间费用</td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">纳税调整额</td>
+<td  width="282" height="30"  align="center" valign="middle" colspan="2" >项目所得额	<br></td>
+<td  width="141" height="52"  align="center" valign="middle"  rowspan="2">减免所得额</td>
+</tr>
+<tr>
+<td  width="141" height="22"  align="center" valign="middle"  >免税项目</td>
+<td  width="141" height="22"  align="center" valign="middle"  >减半项目</td>
+</tr>
+<tr>
+<td  width="141" height="22"  align="center" valign="middle"  >1</td>
+<td  width="141" height="22"  align="center" valign="middle"  >2</td>
+<td  width="141" height="22"  align="center" valign="middle"  >3</td>
+<td  width="141" height="22"  align="center" valign="middle"  >4</td>
+<td  width="141" height="22"  align="center" valign="middle"  >5</td>
+<td  width="141" height="22"  align="center" valign="middle"  >6</td>
+<td  width="141" height="22"  align="center" valign="middle"  >7</td>
+<td  width="141" height="22"  align="center" valign="middle"  >8</td>
+<td  width="141" height="22"  align="center" valign="middle"  >9</td>
+<td  width="141" height="22"  align="center" valign="middle"  >10</td>
+<td  width="141" height="22"  align="center" valign="middle"  >11(9+10×50%)</td>
+</tr>
+<tr v-for="(item,index) in json.listzb1" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle">{{index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb1.length + 1" v-if="index === 0">一、农、林、牧、渔业项目</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.sdjmyhsxDm}}</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{parseInt(item.yhfs) == 0 ? '免税' : (parseInt(item.yhfs) == 1 ? '减半征收' : '')}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.msxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jbxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jmsde.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f1h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f1h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f1h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f1h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f1h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f1h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f1h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f1h11lhj.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb2" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle">{{json.listzb1.length+1+index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb2.length + 1" v-if="index === 0">二、国家重点扶持的公共基础设施项目</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.sdjmyhsxDm}}</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{parseInt(item.yhfs) == 0 ? '免税' : (parseInt(item.yhfs) == 1 ? '减半征收' : '')}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.msxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jbxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jmsde.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1+json.listzb2.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f2h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f2h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f2h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f2h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f2h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f2h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f2h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f2h11lhj.toFixed(2)}}</td>
+</tr>
+<tr  v-for="(item,index) in json.listzb3" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle">{{json.listzb1.length+1+json.listzb2.length+1+index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb3.length + 1" v-if="index === 0">三、符合条件的环境保护、节能节水项目</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.sdjmyhsxDm}}</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{parseInt(item.yhfs) == 0 ? '免税' : (parseInt(item.yhfs) == 1 ? '减半征收' : '')}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.msxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jbxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jmsde.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f3h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f3h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f3h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f3h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f3h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f3h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f3h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f3h11lhj.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb4" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle" >{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb4.length + 1" v-if="index === 0">四、符合条件的技术转让项目</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f4h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f4h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f4h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f4h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f4h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f4h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f4h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f4h11lhj.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb5" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle">{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb5.length + 1" v-if="index === 0">五、实施清洁机制发展项目</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{parseInt(item.yhfs) == 0 ? '免税' : (parseInt(item.yhfs) == 1 ? '减半征收' : '')}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.msxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jbxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jmsde.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f5h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f5h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f5h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f5h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f5h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f5h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f5h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f5h11lhj.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb6" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle">{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1+index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb6.length + 1" v-if="index === 0">六、符合条件的节能服务公司实施合同能源管理项目</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{parseInt(item.yhfs) == 0 ? '免税' : (parseInt(item.yhfs) == 1 ? '减半征收' : '')}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.msxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jbxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jmsde.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1+json.listzb6.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h11lhj.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb7" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle">{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1+json.listzb6.length+1+index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb7.length+1" v-if="index === 0">七、线宽小于130纳米的集成电路生产项目</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{parseInt(item.yhfs) == 0 ? '免税' : (parseInt(item.yhfs) == 1 ? '减半征收' : '')}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.msxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jbxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jmsde.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1+json.listzb6.length+1+json.listzb7.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h11lhj.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb8" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle">{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1+json.listzb6.length+1+json.listzb7.length+1+index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb8.length+1" v-if="index === 0">八、线宽小于65纳米或投资额超过150亿元的继承电路生产项目</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{parseInt(item.yhfs) == 0 ? '免税' : (parseInt(item.yhfs) == 1 ? '减半征收' : '')}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.msxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jbxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jmsde.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1+json.listzb6.length+1+json.listzb7.length+1+json.listzb8.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f6h11lhj.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb9" :key="item.id">
+<td  width="40" height="22"  align="center" valign="middle">{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1+json.listzb6.length+1+json.listzb7.length+1+json.listzb8.length+1+index+1}}</td>
+<td  width="153" height="44"  align="left" valign="middle"  :rowspan="json.listzb9.length +1" v-if="index === 0">九、其他</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{item.sdjmyhsxDm}}</td>
+<td  width="141" height="22"  align="left" valign="middle"  >{{parseInt(item.yhfs) == 0 ? '免税' : (parseInt(item.yhfs) == 1 ? '减半征收' : '')}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmsr.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xmcb.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.xgsf.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.yftqjfy.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.nstze.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.msxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jbxmsde.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{item.jmsde.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+1+json.listzb2.length+1+json.listzb3.length+1+json.listzb4.length+1+json.listzb5.length+1+json.listzb6.length+1+json.listzb7.length+1+json.listzb8.length+1+json.listzb9.length+1}}</td>
+<td  width="141" height="22"  align="center" valign="middle"  >小计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f7h4lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f7h5lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f7h6lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f7h7lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f7h8lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f7h9lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f7h10lhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].f7h11lhj.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >{{json.listzb1.length+json.listzb2.length+json.listzb3.length+json.listzb4.length+json.listzb5.length+json.listzb6.length+json.listzb7.length+json.listzb8.length+json.listzb9.length+10}}</td>
+<td  width="153" height="22"  align="center" valign="middle"  >合计</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="center" valign="middle"  >*</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].xmsrhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].xmcbhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].xgsfhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].yftqjfyhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].nstzehj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].msxmhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].jbxmhj.toFixed(2)}}</td>
+<td  width="141" height="22"  align="right" valign="middle"  >{{json.list[0].jmsdehj.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

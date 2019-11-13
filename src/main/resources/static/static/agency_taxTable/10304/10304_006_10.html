@@ -1,0 +1,197 @@
+<html>
+<head>
+<title>抵扣税款台账</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body>
+	<div id="taxTable"></div>
+	<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+	<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+	<script type="text/javascript">
+		function formatDate (date) {
+			    //判断是否为数字
+	  		var re = /^\d+(?=\.{0,1}\d+$|$)/ 
+	  		if (date != "") {
+      			// 是纯数字
+      			if (re.test(date)) {
+        		// 长度为6  比如 201802
+        		if (date.length == 6) {
+          			var y = date.slice(0,4);
+          			var m = date.slice(4,6);         
+          			date = y + '年' + m + '月';
+        		} else {
+          			// 长度为8 比如 20180219
+          			var y = date.slice(0,4);
+          			var m = date.slice(4,6);      
+          			var d = date.slice(6,8);      
+          			date = y + '年' + m + '月' + d + '日'
+        			}
+      			} else {
+       				// 不是纯数字 比如 2018-02-19
+       			 	var arr = date.split('-');
+        			date = arr[0] + '年' + arr[1] + '月' + arr[2] + '日'        
+      			}      
+	  		}
+	  		return date
+		}
+		var jsonNum = json.length;
+		var tableHtml = "";
+		for (i = 0; i < json.length; i++) {
+			var qt= JSON.parse(json[i]); 
+			var qckc=qt[0];  //期初库存
+			var qmkc = qt[qt.length-1]; // 期末库存 
+			tableHtml+='<table cellspacing="0" cellpadding="0" width="1756" height="420">'
+			+'<tr>'
+			+'<td width="1724" height="46" align="center" valign="middle" colspan="14" class="noBorder"><B>抵扣税款台账</B></td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="1724" height="22" align="center" valign="middle" colspan="14" class="noBorder">（从量定额征收应税消费品）</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="884" height="22" align="left" valign="middle" colspan="6" class="noBorder">税款所属时间：<span v-date>' + formatDate(bt.sbSbxxBbmx.sssqQ) + '</span>至<span v-date>' + formatDate(bt.sbSbxxBbmx.sssqZ) + '</span></td>'
+			+'<td width="840" height="22" align="left" valign="middle" colspan="7" class="noBorder">填表日期：'+formatDate(bt.sbSbxxBbmx.saveTime)+'</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="1724" height="22" align="left" valign="middle" colspan="14" class="noBorder">纳税人识别号：'+bt.customerStateTaxInfo.nsrsbh+'</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="1724" height="22" align="left" valign="middle" colspan="14" class="noBorder">纳税人名称（公章）：'+bt.customerStateTaxInfo.nsrmc+'</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="200" height="22" align="left" valign="middle" colspan="1" class="noBorder">应税消费品名称：</td>'
+			+'<td width="364" height="22" align="left" valign="middle" colspan="3" class="noBorder">'+qckc.zspmDm+'</td>'
+			+'<td width="960" height="22" align="left" valign="middle" colspan="9" class="noBorder">&nbsp;</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="200" height="22" align="left" valign="middle" colspan="1" class="noBorder">购进方式：</td>'
+			+'<td width="364" height="22" align="left" valign="middle" colspan="3" class="noBorder">'+qckc.cpygjfs+'</td>'
+			+'<td width="600" height="22" align="left" valign="middle" colspan="5" class="noBorder">&nbsp</td>'
+			+'<td width="480" height="22" align="right" valign="middle" colspan="4" class="noBorder">数量单位：升；金额单位：元</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="80" height="44" align="center" valign="middle" rowspan="2">日期</td>'
+			+'<td width="200" height="66" align="center" valign="middle" rowspan="3">摘要</td>'
+			+'<td width="180" height="66" align="center" valign="middle" rowspan="3">抵扣凭证种类</td>'
+			+'<td width="104" height="66" align="center" valign="middle" rowspan="3">抵扣凭证号码</td>'
+			+'<td width="80" height="66" align="center" valign="middle" rowspan="3">抵扣凭证<br>开具日期</td>'
+			+'<td width="480" height="22" align="center" valign="middle" colspan="4">数量</td>'
+			+'<td width="120" height="66" align="center" valign="middle" rowspan="3">消费税税率</td>'
+			+'<td width="480" height="22" align="center" valign="middle" colspan="4">已纳税额</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="120" height="44" align="center" valign="middle" rowspan="2">购进</td>'
+			+'<td width="240" height="22" align="center" valign="middle" colspan="2">领用</td>'
+			+'<td width="120" height="44" align="center" valign="middle" rowspan="2">余额</td>'
+			+'<td width="120" height="44" align="center" valign="middle" rowspan="2">购进</td>'
+			+'<td width="240" height="22" align="center" valign="middle" colspan="2">领用</td>'
+			+'<td width="120" height="44" align="center" valign="middle" rowspan="2">余额</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="80" height="22" align="center" valign="middle">--月</td>'
+			+'<td width="120" height="22" align="center" valign="middle">连续生产领用</td>'
+			+'<td width="120" height="22" align="center" valign="middle">其他领用</td>'
+			+'<td width="120" height="22" align="center" valign="middle">连续生产领用</td>'
+			+'<td width="120" height="22" align="center" valign="middle">其他领用</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="80" height="22" align="center" valign="middle">1</td>'
+			+'<td width="200" height="22" align="center" valign="middle">2</td>'
+			+'<td width="180" height="22" align="center" valign="middle">3</td>'
+			+'<td width="104" height="22" align="center" valign="middle">4</td>'
+			+'<td width="80" height="22" align="center" valign="middle">5</td>'
+			+'<td width="120" height="22" align="center" valign="middle">6</td>'
+			+'<td width="120" height="22" align="center" valign="middle">7</td>'
+			+'<td width="120" height="22" align="center" valign="middle">8</td>'
+			+'<td width="120" height="22" align="center" valign="middle">9</td>'
+			+'<td width="120" height="22" align="center" valign="middle">10</td>'
+			+'<td width="120" height="22" align="center" valign="middle">11＝6×10</td>'
+			+'<td width="120" height="22" align="center" valign="middle">12＝7×10</td>'
+			+'<td width="120" height="22" align="center" valign="middle">13＝8×10</td>'
+			+'<td width="120" height="22" align="center" valign="middle">14</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="80" height="22" align="center" valign="middle">--日</td>'
+			+'<td width="200" height="22" align="center" valign="middle">期初库存</td>'
+			+'<td width="180" height="22" align="center" valign="middle">--</td>'
+			+'<td width="104" height="22" align="center" valign="middle">--</td>'
+			+'<td width="80" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qckc.slye.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qckc.ynseye.toFixed(2)+'</td>'
+			+'</tr>';
+			for(var j=1;j<qt.length-1;j++){
+			tableHtml+='<tr>'
+			+'<td width="80" height="22" align="center" valign="middle">'+qt[j].ywfsrq+'</td>'
+			+'<td width="200" height="22" align="center" valign="middle">'+qt[j].hmc+'</td>'
+			+'<td width="180" height="22" align="left" valign="middle">'+qt[j].fpzlmc+'</td>'
+			+'<td width="104" height="22" align="center" valign="middle">'+qt[j].fphm+'</td>'
+			+'<td width="80" height="22" align="center" valign="middle">'+qt[j].kjrq+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].gjsl.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].lxsclysl.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].qtlysl.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].slye.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].sl1.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].gjynse.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].lxsclyynse.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].qtlyynse.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qt[j].ynseye.toFixed(2)+'</td>'
+			+'</tr>';
+			}
+			tableHtml+='<tr>'
+			+'<td width="80" height="66" align="left" valign="middle" rowspan="3">&nbsp;</td>'
+			+'<td width="200" height="22" align="center" valign="middle">本月购进合计</td>'
+			+'<td width="180" height="22" align="center" valign="middle">--</td>'
+			+'<td width="104" height="22" align="center" valign="middle">--</td>'
+			+'<td width="80" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qmkc.gjsl.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qmkc.gjynse.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="200" height="22" align="center" valign="middle">本月领用合计</td>'
+			+'<td width="180" height="22" align="center" valign="middle">--</td>'
+			+'<td width="104" height="22" align="center" valign="middle">--</td>'
+			+'<td width="80" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qmkc.lxsclysl.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qmkc.qtlysl.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qmkc.lxsclyynse.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qmkc.qtlyynse.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'</tr>'
+			+'<tr>'
+			+'<td width="200" height="22" align="center" valign="middle">期末库存</td>'
+			+'<td width="180" height="22" align="center" valign="middle">--</td>'
+			+'<td width="104" height="22" align="center" valign="middle">--</td>'
+			+'<td width="80" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qmkc.slye.toFixed(2)+'</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="center" valign="middle">--</td>'
+			+'<td width="120" height="22" align="right" valign="middle">'+qmkc.ynseye.toFixed(2)+'</td>'
+			+'</tr>'+'</table>';
+		}
+	$("#taxTable").html(tableHtml);
+	</script>
+</body>
+</html>

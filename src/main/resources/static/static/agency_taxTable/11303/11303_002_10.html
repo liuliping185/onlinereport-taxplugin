@@ -1,0 +1,157 @@
+<html>
+
+<head>
+  <title>水资源税纳税申报表附表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+	<div id="taxTable">
+		<div v-for="items in json">
+      <table cellspacing="0" cellpadding="0" width="1923" height="442">
+        <tr>
+          <td width="1755" height="46" align="center" valign="middle" colspan="10" class="noBorder">
+            <B>水资源税纳税申报表附表</B>
+          </td>
+        </tr>
+        <tr>
+          <td width="1755" height="22" align="center" valign="middle" colspan="10" class="noBorder">
+            <B>（本表适用于有减免税项目代码的纳税人填报）</B>
+          </td>
+        </tr>
+        <tr>
+          <td width="464" height="22" align="left" valign="middle" colspan="3" class="noBorder"></td>
+          <td width="1001" height="22" align="left" valign="middle" colspan="5" class="noBorder"></td>
+          <td width="290" height="22" align="right" valign="middle" colspan="2" class="noBorder">单位：元、角、分，立</td>
+        </tr>
+        <tr>
+          <td width="464" height="22" align="left" valign="middle" colspan="3"></td>
+          <td width="1001" height="22" align="left" valign="middle" colspan="5"></td>
+          <td width="145" height="22" align="center" valign="middle">申报类型</td>
+          <td width="145" height="22" align="left" valign="middle">{{items.listSb[0].sblx}}</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">水资源编号</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">{{items.listSb[0].sybh1}}</td>
+          <td width="263" height="22" align="center" valign="middle">纳税人所在地</td>
+          <td width="1028" height="22" align="left" valign="middle" colspan="6">{{items.listSb[0].nsrszd}}</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">取水许可状态</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">{{items.listSb[0].qsxkzt}}</td>
+          <td width="263" height="22" align="center" valign="middle">取水地点</td>
+          <td width="1028" height="22" align="left" valign="middle" colspan="6">{{items.listSb[0].qsdd}}</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">取水许可证号</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">{{items.listSb[0].qsxkzh}}</td>
+          <td width="263" height="22" align="center" valign="middle">水源类型</td>
+          <td width="486" height="22" align="left" valign="middle" colspan="3">{{items.listSb[0].sylx}}</td>
+          <td width="252" height="22" align="center" valign="middle">适用税额等次</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">{{items.listSb[0].sysedc}}</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">年取用水计划（地表水）</td>
+          <td width="290" height="22" align="right" valign="middle" colspan="2">{{items.listSb[0].nqysjhdbs.toFixed(2)}}</td>
+          <td width="263" height="22" align="center" valign="middle">年取用水计划（地下水）</td>
+          <td width="486" height="22" align="right" valign="middle" colspan="3">{{items.listSb[0].nqysjhdxs.toFixed(2)}}</td>
+          <td width="252" height="22" align="center" valign="middle">地下水取水地点供水管网是否覆盖</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">{{items.listSb[0].dxsqsddsffg === 'Y' ? '是' : '否'}}</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">地下水超采区类型</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">{{items.listSb[0].dxscclx}}</td>
+          <td width="263" height="22" align="center" valign="middle">取用水行业</td>
+          <td width="486" height="22" align="left" valign="middle" colspan="3">{{items.listSb[0].qyshy}}</td>
+          <td width="252" height="22" align="center" valign="middle">取水量核定机关</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">{{items.listSb[0].qslhdjg}}</td>
+        </tr>
+        <tr>
+          <td width="1755" height="22" align="left" valign="middle" colspan="10">
+            <B>减免表信息</B>
+          </td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">项目</td>
+          <td width="145" height="22" align="center" valign="middle">征收品目</td>
+          <td width="145" height="22" align="center" valign="middle">征收子目</td>
+          <td width="263" height="22" align="center" valign="middle">减免事项名称</td>
+          <td width="196" height="22" align="center" valign="middle">减免性质代码</td>
+          <td width="145" height="22" align="center" valign="middle">减免税水量</td>
+          <td width="145" height="22" align="center" valign="middle">适用税额</td>
+          <td width="252" height="22" align="center" valign="middle">减征比例</td>
+          <td width="145" height="22" align="center" valign="middle">本期减免税额</td>
+          <td width="145" height="22" align="center" valign="middle">备注</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">1</td>
+          <td width="145" height="22" align="center" valign="middle">2</td>
+          <td width="145" height="22" align="center" valign="middle">3</td>
+          <td width="263" height="22" align="center" valign="middle">4</td>
+          <td width="196" height="22" align="center" valign="middle">5</td>
+          <td width="145" height="22" align="center" valign="middle">6</td>
+          <td width="145" height="22" align="center" valign="middle">7</td>
+          <td width="252" height="22" align="center" valign="middle">8</td>
+          <td width="145" height="22" align="center" valign="middle">9=6*7*8</td>
+          <td width="145" height="22" align="center" valign="middle">10</td>
+        </tr>
+        <tr v-for='(item,index) in items.listJbxx'>
+          <td width="174" height="22" align="left" valign="middle">{{item.zsxmDm}}</td>
+          <td width="145" height="22" align="left" valign="middle">{{item.zspmDm}}</td>
+          <td width="145" height="22" align="left" valign="middle">{{item.zszmDm}}</td>
+          <td width="263" height="22" align="left" valign="middle">{{item.swsxDm}}</td>
+          <td width="196" height="22" align="left" valign="middle">{{item.ssjmxzDm}}</td>
+          <td width="145" height="22" align="right" valign="middle">{{item.jmssl === null ? '' : item.jmssl.toFixed(2)}}</td>
+          <td width="145" height="22" align="right" valign="middle">{{item.sl1 === null ? '' : item.sl1.toFixed(4)}}</td>
+          <td width="252" height="22" align="right" valign="middle">{{item.jzbl === null ? '' : (item.jzbl*100).toFixed(2)}}%</td>
+          <td width="145" height="22" align="right" valign="middle">{{item.bqjmse === null ? '' : item.bqjmse.toFixed(2)}}</td>
+          <td width="145" height="22" align="left" valign="middle">{{item.bz}}</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">合计</td>
+          <td width="145" height="22" align="center" valign="middle">--</td>
+          <td width="145" height="22" align="center" valign="middle">--</td>
+          <td width="263" height="22" align="center" valign="middle">--</td>
+          <td width="196" height="22" align="center" valign="middle">--</td>
+          <td width="145" height="22" align="right" valign="middle">{{items.listSb[0].jmsslhj === null ? '' : items.listSb[0].jmsslhj.toFixed(2)}}</td>
+          <td width="145" height="22" align="center" valign="middle">--</td>
+          <td width="252" height="22" align="center" valign="middle">--</td>
+          <td width="145" height="22" align="right" valign="middle">{{items.listSb[0].bqjmsehj === null ? '' : items.listSb[0].bqjmsehj.toFixed(2)}}</td>
+          <td width="145" height="22" align="center" valign="middle">--</td>
+        </tr>
+        <tr>
+          <td width="1755" height="22" align="left" valign="middle" colspan="10">
+            <B>受理信息</B>
+          </td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="left" valign="middle"> 纳税人声明</td>
+          <td width="1039" height="22" align="left" valign="middle" colspan="6">此纳税申报表是根据水资源税改革试点政策及征管办法填报的，是真实的、可靠的、完整的。</td>
+          <td width="252" height="22" align="center" valign="middle">纳税人（公章）</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="left" valign="middle"> 经税人（签章）</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">&nbsp;</td>
+          <td width="263" height="22" align="center" valign="middle">代理人（签章）</td>
+          <td width="486" height="22" align="left" valign="middle" colspan="3">&nbsp;</td>
+          <td width="252" height="22" align="center" valign="middle">代理人身份证号</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="174" height="22" align="center" valign="middle">受理人（签章）</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">&nbsp;</td>
+          <td width="263" height="22" align="center" valign="middle">主管税务机关受理专用章</td>
+          <td width="486" height="22" align="left" valign="middle" colspan="3">&nbsp;</td>
+          <td width="252" height="22" align="center" valign="middle">受理日期</td>
+          <td width="290" height="22" align="left" valign="middle" colspan="2">&nbsp;</td>
+        </tr>
+      </table>
+  </div>
+  </div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

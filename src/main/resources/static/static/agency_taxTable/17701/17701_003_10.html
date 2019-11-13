@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>废弃电器电子产品处理基金扣除凭证明细列表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1353" height = "442" id="taxTable">
+<tr>
+<td  width="1287" height="46"  align="center" valign="middle" colspan="9" class="noBorder"><B>废弃电器电子产品处理基金扣除凭证明细列表</B></td>
+</tr>
+<tr>
+<td  width="537" height="22"  align="left" valign="middle" colspan="4" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="750" height="22"  align="left" valign="middle" colspan="5" class="noBorder">税款所属时间： <span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span> </td>
+</tr>
+<tr>
+<td  width="537" height="22"  align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="750" height="22"  align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="72" height="44"  align="center" valign="middle"  rowspan="2">序号</td>
+<td  width="177" height="44"  align="center" valign="middle"  rowspan="2">扣除类别/合计</td>
+<td  width="158" height="44"  align="center" valign="middle"  rowspan="2">凭证种类</td>
+<td  width="130" height="44"  align="center" valign="middle"  rowspan="2">凭证号码</td>
+<td  width="750" height="22"  align="center" valign="middle" colspan="5" >产品种类扣除数量（台）</td>
+</tr>
+<tr>
+<td  width="150" height="22"  align="center" valign="middle"  >电视机</td>
+<td  width="150" height="22"  align="center" valign="middle"  >电冰箱</td>
+<td  width="150" height="22"  align="center" valign="middle"  >洗衣机</td>
+<td  width="150" height="22"  align="center" valign="middle"  >房间空调器</td>
+<td  width="150" height="22"  align="center" valign="middle"  >微型计算机</td>
+</tr>
+	<tbody class="KC7"></tbody>
+	<tbody class="KC8"></tbody>
+	<tbody class="KC9"></tbody>
+	<tbody class="KC10"></tbody>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+<script>
+  var KC7 = [];
+  var KC8 = [];
+  var KC9 = [];
+  var KC10 = [];
+  for (var i=0; i< json.length; i++) {
+  	if (json[i].kclb === "KC7 进口") {
+  		KC7.push(json[i])  	
+  	} else if (json[i].kclb === "KC8 国内购进") {
+  		KC8.push(json[i])  	
+  	} else if (json[i].kclb === "KC9 委托加工收回") {
+  		KC9.push(json[i])  	
+  	} else if (json[i].kclb === "KC10 已征基金产品可抵退货") {
+  		KC10.push(json[i])  	
+  	}
+  }
+  var html7 = '';
+  var html8 = '';
+  var html9 = '';
+  var html10 = '';
+  var hj = ''; 
+  hj += '<tr>';
+  hj += '<td  width="72" height="22"  align="center" valign="middle"  class="index"></td>';
+  hj += '<td  width="177" height="22"  align="center" valign="middle"  >合计</td>';
+  hj += '<td  width="158" height="22"  align="center" valign="middle"  >--</td>';
+  hj += '<td  width="130" height="22"  align="center" valign="middle"  >--</td>';
+  hj += '<td  width="150" height="22"  align="right" valign="middle"  class="hj1"></td>';
+  hj += '<td  width="150" height="22"  align="right" valign="middle"  class="hj2"></td>';
+  hj += '<td  width="150" height="22"  align="right" valign="middle"  class="hj3"></td>';
+  hj += '<td  width="150" height="22"  align="right" valign="middle"  class="hj4"></td>';
+  hj += '<td  width="150" height="22"  align="right" valign="middle"  class="hj5"></td>';
+  hj += '</tr>';
+  for (var i=0; i< KC7.length; i++) {
+  	html7 += '<tr>';
+  	html7 += '<td  width="72" height="22"  align="center" valign="middle"  class="index"></td>';
+  	html7 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC7[i].kclb+'</td>';
+  	html7 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC7[i].pzzl+'</td>';
+  	html7 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC7[i].pzhm+'</td>';
+  	html7 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC7[i].kcsldsj.toFixed(2)+'</td>';
+  	html7 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC7[i].kcsldbx.toFixed(2)+'</td>';
+  	html7 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC7[i].kcslxyj.toFixed(2)+'</td>';
+  	html7 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC7[i].kcslktq.toFixed(2)+'</td>';
+  	html7 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC7[i].kcsljsj.toFixed(2)+'</td>';
+  	html7 += '</tr>';
+  }
+  $(".KC7").html(html7);
+  
+    for (var i=0; i< KC8.length; i++) {
+  	html8 += '<tr>';
+  	html8 += '<td  width="72" height="22"  align="center" valign="middle"  class="index"></td>';
+  	html8 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC8[i].kclb+'</td>';
+  	html8 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC8[i].pzzl+'</td>';
+  	html8 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC8[i].pzhm+'</td>';
+  	html8 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC8[i].kcsldsj.toFixed(2)+'</td>';
+  	html8 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC8[i].kcsldbx.toFixed(2)+'</td>';
+  	html8 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC8[i].kcslxyj.toFixed(2)+'</td>';
+  	html8 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC8[i].kcslktq.toFixed(2)+'</td>';
+  	html8 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC8[i].kcsljsj.toFixed(2)+'</td>';
+  	html8 += '</tr>';
+  }
+  $(".KC8").html(html8);
+  
+    for (var i=0; i< KC9.length; i++) {
+  	html9 += '<tr>';
+  	html9 += '<td  width="72" height="22"  align="center" valign="middle"  class="index"></td>';
+  	html9 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC9[i].kclb+'</td>';
+  	html9 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC9[i].pzzl+'</td>';
+  	html9 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC9[i].pzhm+'</td>';
+  	html9 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC9[i].kcsldsj.toFixed(2)+'</td>';
+  	html9 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC9[i].kcsldbx.toFixed(2)+'</td>';
+  	html9 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC9[i].kcslxyj.toFixed(2)+'</td>';
+  	html9 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC9[i].kcslktq.toFixed(2)+'</td>';
+  	html9 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC9[i].kcsljsj.toFixed(2)+'</td>';
+  	html9 += '</tr>';
+  }
+  $(".KC9").html(html9);
+  
+    for (var i=0; i< KC10.length; i++) {
+  	html10 += '<tr>';
+  	html10 += '<td  width="72" height="22"  align="center" valign="middle"  class="index"></td>';
+  	html10 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC10[i].kclb+'</td>';
+  	html10 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC10[i].pzzl+'</td>';
+  	html10 += '<td  width="177" height="22"  align="center" valign="middle"  >'+KC10[i].pzhm+'</td>';
+  	html10 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC10[i].kcsldsj.toFixed(2)+'</td>';
+  	html10 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC10[i].kcsldbx.toFixed(2)+'</td>';
+  	html10 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC10[i].kcslxyj.toFixed(2)+'</td>';
+  	html10 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC10[i].kcslktq.toFixed(2)+'</td>';
+  	html10 += '<td  width="177" height="22"  align="right" valign="middle"  >'+KC10[i].kcsljsj.toFixed(2)+'</td>';
+  	html10 += '</tr>';
+  }
+  $(".KC10").html(html10);
+  $(".KC7").after(hj);
+  $(".KC8").after(hj);
+  $(".KC9").after(hj);
+  $(".KC10").after(hj);
+  var len = json.length*2;
+  for (var i=0; i<len; i++) {
+    $('.index').eq(i).text(i+1);
+  }
+  var kcslhj17 = json[0].kcslhj17 === null ? '' : json[0].kcslhj17.toFixed(2);
+  var kcslhj27 = json[0].kcslhj27 === null ? '' : json[0].kcslhj27.toFixed(2);
+  var kcslhj37 = json[0].kcslhj37 === null ? '' : json[0].kcslhj37.toFixed(2);
+  var kcslhj47 = json[0].kcslhj47 === null ? '' : json[0].kcslhj47.toFixed(2);
+  var kcslhj57 = json[0].kcslhj57 === null ? '' : json[0].kcslhj57.toFixed(2);
+  
+  var kcslhj18 = json[0].kcslhj18 === null ? '' : json[0].kcslhj18.toFixed(2);
+  var kcslhj28 = json[0].kcslhj28 === null ? '' : json[0].kcslhj28.toFixed(2);
+  var kcslhj38 = json[0].kcslhj38 === null ? '' : json[0].kcslhj38.toFixed(2);
+  var kcslhj48 = json[0].kcslhj48 === null ? '' : json[0].kcslhj48.toFixed(2);
+  var kcslhj58 = json[0].kcslhj58 === null ? '' : json[0].kcslhj58.toFixed(2);
+  
+  var kcslhj19 = json[0].kcslhj19 === null ? '' : json[0].kcslhj19.toFixed(2);
+  var kcslhj29 = json[0].kcslhj29 === null ? '' : json[0].kcslhj29.toFixed(2);
+  var kcslhj39 = json[0].kcslhj39 === null ? '' : json[0].kcslhj39.toFixed(2);
+  var kcslhj49 = json[0].kcslhj49 === null ? '' : json[0].kcslhj49.toFixed(2);
+  var kcslhj59 = json[0].kcslhj59 === null ? '' : json[0].kcslhj59.toFixed(2);
+  
+  var kcslhj11 = json[0].kcslhj11 === null ? '' : json[0].kcslhj11.toFixed(2);
+  var kcslhj21 = json[0].kcslhj21 === null ? '' : json[0].kcslhj21.toFixed(2);
+  var kcslhj31 = json[0].kcslhj31 === null ? '' : json[0].kcslhj31.toFixed(2);
+  var kcslhj41 = json[0].kcslhj41 === null ? '' : json[0].kcslhj41.toFixed(2);
+  var kcslhj51 = json[0].kcslhj51 === null ? '' : json[0].kcslhj51.toFixed(2);
+  
+  $(".KC7").next("tr").find(".hj1").html(kcslhj17);
+  $(".KC7").next("tr").find(".hj2").html(kcslhj27);
+  $(".KC7").next("tr").find(".hj3").html(kcslhj37);
+  $(".KC7").next("tr").find(".hj4").html(kcslhj47);
+  $(".KC7").next("tr").find(".hj5").html(kcslhj57);
+  
+  $(".KC8").next("tr").find(".hj1").html(kcslhj18);
+  $(".KC8").next("tr").find(".hj2").html(kcslhj28);
+  $(".KC8").next("tr").find(".hj3").html(kcslhj38);
+  $(".KC8").next("tr").find(".hj4").html(kcslhj48);
+  $(".KC8").next("tr").find(".hj5").html(kcslhj58);
+    
+  $(".KC9").next("tr").find(".hj1").html(kcslhj19);
+  $(".KC9").next("tr").find(".hj2").html(kcslhj29);
+  $(".KC9").next("tr").find(".hj3").html(kcslhj39);
+  $(".KC9").next("tr").find(".hj4").html(kcslhj49);
+  $(".KC9").next("tr").find(".hj5").html(kcslhj59);
+    
+  $(".KC10").next("tr").find(".hj1").html(kcslhj11);
+  $(".KC10").next("tr").find(".hj2").html(kcslhj21);
+  $(".KC10").next("tr").find(".hj3").html(kcslhj31);
+  $(".KC10").next("tr").find(".hj4").html(kcslhj41);
+  $(".KC10").next("tr").find(".hj5").html(kcslhj51);
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<html>
+
+<head>
+  <title>原油天然气增值税纳税申报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="1745" height="497" id="taxTable">
+    <tr>
+      <td width="1685" height="46" align="center" valign="middle" colspan="12" class="noBorder">
+        <B>原油天然气增值税纳税申报表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1685" height="22" align="center" valign="middle" colspan="12" class="noBorder">
+        <B style="font-size:12px">VALUE ADDED TAX RETURN (FOR OIL/GAS)</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="left" valign="middle" class="noBorder">申报所属期Tax Period：</td>
+      <td width="397" height="22" align="left" valign="middle" colspan="3" class="noBorder"><span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+      <td width="103" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="431" height="22" align="left" valign="middle" colspan="7" class="noBorder">申报日期Date of Filing：<span v-date>{{json.list[0].sbrq1}}</span></td>
+    </tr>
+    <tr>
+      <td width="1685" height="22" align="left" valign="middle" colspan="12">纳税人信息</td>
+    </tr>
+    <tr>
+      <td width="557" height="22" align="center" valign="middle" colspan="4">申报类型</td>
+      <td width="386" height="22" align="left" valign="middle" colspan="3">{{json.list[0].sblx}}</td>
+      <td width="148" height="22" align="center" valign="top">申报日期</td>
+      <td width="594" height="22" align="left" valign="middle" colspan="4"><span v-date>{{json.list[0].sbrq1}}</span></td>
+    </tr>
+    <tr>
+      <td width="557" height="22" align="center" valign="middle" colspan="4">纳税人识别号</td>
+      <td width="386" height="22" align="left" valign="middle" colspan="3">{{json.list[0].nsrsbh}}</td>
+      <td width="148" height="22" align="center" valign="top">纳税人名称</td>
+      <td width="594" height="22" align="left" valign="middle" colspan="4">{{json.list[0].nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="557" height="22" align="center" valign="middle" colspan="4">所属期</td>
+      <td width="1128" height="22" align="left" valign="middle" colspan="8"><span v-date>{{json.list[0].sssqQ}}</span>至<span v-date>{{json.list[0].sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="160" height="30" align="left" valign="middle">纳税人识别号Code of Enterprise</td>
+      <td width="262" height="30" align="left" valign="middle" colspan="2">{{json.list[0].nsrsbh}}</td>
+      <td width="238" height="30" align="left" valign="bottom" colspan="2">纳税人名称<br>Name Of Filer</td>
+      <td width="1025" height="30" align="left" valign="middle" colspan="7">{{json.list[0].nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="160" height="69" align="center" valign="middle" rowspan="2">油（气）田名称<br>Name of Oil/Gas Field</td>
+      <td width="144" height="69" align="center" valign="middle" rowspan="2">应税产品品目<br>Name Of Taxable Product</td>
+      <td width="118" height="69" align="center" valign="middle" rowspan="2">销售实现日<br>Date of Oil/Gas Sale</td>
+      <td width="135" height="69" align="center" valign="middle" rowspan="2">计税数量（吨/桶/立方米）<br>Amount of Sales (Ton/BBL/Cubic Meter)</td>
+      <td width="103" height="69" align="center" valign="middle" rowspan="2">税率（征收率）<br>Tax Rate</td>
+      <td width="149" height="69" align="center" valign="middle" rowspan="2">实物税数量（吨/桶/立方米）<br>VAT in Kind (Ton/BBL/Cubic Meter)</td>
+      <td width="414" height="26" align="center" valign="middle" colspan="3">单价Price</td>
+      <td width="144" height="69" align="center" valign="middle" rowspan="2">实物税销售总额<br>Total Sale Value of VAT in Kind</td>
+      <td width="150" height="69" align="center" valign="middle" rowspan="2">实物税销售费用扣除额<br>Sales Expense Deduction for VAT in Kind</td>
+      <td width="168" height="69" align="center" valign="middle" rowspan="2">应入库税额<br>Amount of VAT</td>
+    </tr>
+    <tr>
+      <td width="134" height="43" align="center" valign="middle">外 币<br>Foreign Currency amount</td>
+      <td width="148" height="43" align="center" valign="middle">兑换率<br>Exchange rate</td>
+      <td width="132" height="43" align="center" valign="middle">折合人民币RMB</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">1</td>
+      <td width="144" height="22" align="center" valign="middle">2</td>
+      <td width="118" height="22" align="center" valign="middle">3</td>
+      <td width="135" height="22" align="center" valign="middle">4</td>
+      <td width="103" height="22" align="center" valign="middle">5</td>
+      <td width="149" height="22" align="center" valign="middle">6=4*5</td>
+      <td width="134" height="22" align="center" valign="middle">7</td>
+      <td width="148" height="22" align="center" valign="middle">8</td>
+      <td width="132" height="22" align="center" valign="middle">9</td>
+      <td width="144" height="22" align="center" valign="middle">10=6*9</td>
+      <td width="150" height="22" align="center" valign="middle">11</td>
+      <td width="168" height="22" align="center" valign="middle">12=10-11</td>
+    </tr>
+    <tr v-for="(item,index) in json.listzb">
+      <td width="160" height="22" align="left" valign="middle">{{item.yqtmc}}</td>
+      <td width="144" height="22" align="left" valign="middle">{{item.yscppm}}</td>
+      <td width="118" height="22" align="left" valign="middle"><span v-date>{{item.xssxr}}</span></td>
+      <td width="135" height="22" align="right" valign="middle">{{item.jssl.toFixed(2)}}</td>
+      <td width="168" height="22" align="right" valign="middle">{{item.sl1.toFixed(4)}}%</td>
+      <td width="103" height="22" align="right" valign="middle">{{item.swssl.toFixed(2)}}</td>
+      <td width="149" height="22" align="right" valign="middle">{{item.wb.toFixed(4)}}</td>
+      <td width="134" height="22" align="right" valign="middle">{{item.dhl.toFixed(4)}}%</td>
+      <td width="148" height="22" align="right" valign="middle">{{item.zhrmbje.toFixed(6)}}</td>
+      <td width="132" height="22" align="right" valign="middle">{{item.swsxsze.toFixed(2)}}</td>
+      <td width="144" height="22" align="right" valign="middle">{{item.swsxsfykce.toFixed(2)}}</td>
+      <td width="150" height="22" align="right" valign="middle">{{item.yrkse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">合计 Total</td>
+      <td width="144" height="22" align="center" valign="middle">--</td>
+      <td width="118" height="22" align="center" valign="middle">--</td>
+      <td width="135" height="22" align="right" valign="middle">{{json.list[0].xslhj}}</td>
+      <td width="103" height="22" align="center" valign="middle">--</td>
+      <td width="149" height="22" align="right" valign="middle">{{json.list[0].swsslhj}}</td>
+      <td width="134" height="22" align="center" valign="middle">--</td>
+      <td width="148" height="22" align="center" valign="middle">--</td>
+      <td width="132" height="22" align="center" valign="middle">--</td>
+      <td width="144" height="22" align="right" valign="middle">{{json.list[0].swsxszehj}}</td>
+      <td width="150" height="22" align="right" valign="middle">{{json.list[0].swskcehj}}</td>
+      <td width="168" height="22" align="right" valign="middle">{{json.list[0].yrksehj}}</td>
+    </tr>
+    <tr>
+      <td width="1685" height="22" align="left" valign="middle" colspan="12">受理信息</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">办税人</td>
+      <td width="262" height="22" align="left" valign="bottom" colspan="2">{{json.list[0].bsr}}</td>
+      <td width="238" height="22" align="center" valign="middle" colspan="2">是否代理申报</td>
+      <td width="149" height="22" align="left" valign="middle">
+        <form>
+          <p><input type="checkbox" name="G15" value="ON" :checked="json.list[0].sfdlsb == 'Y'" disabled>是</p>
+        </form>
+      </td>
+      <td width="134" height="22" align="left" valign="middle">
+        <form>
+          <p><input type="checkbox" name="H15" value="ON" :checked="json.list[0].sfdlsb == 'N'" disabled>否</p>
+        </form>
+      </td>
+      <td width="148" height="22" align="center" valign="middle">代理人员身份证件类型</td>
+      <td width="276" height="22" align="left" valign="top" colspan="2">{{json.list[0].dlrysfzjlx}}</td>
+      <td width="150" height="22" align="center" valign="middle">代理人员身份证件号码</td>
+      <td width="168" height="22" align="left" valign="middle">{{json.list[0].dlrysfzjhm}}</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">税务代理人名称</td>
+      <td width="262" height="22" align="left" valign="bottom" colspan="2">{{json.list[0].swdlrmc}}</td>
+      <td width="238" height="22" align="center" valign="middle" colspan="2">税务代理人地址</td>
+      <td width="283" height="22" align="left" valign="bottom" colspan="2">{{json.list[0].swdlrdz}}</td>
+      <td width="148" height="22" align="center" valign="middle">详细地址</td>
+      <td width="594" height="22" align="left" valign="bottom" colspan="4">{{json.list[0].swdlrxxdz}}</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">受理人</td>
+      <td width="262" height="22" align="left" valign="bottom" colspan="2">{{json.list[0].slr}}</td>
+      <td width="238" height="22" align="center" valign="middle" colspan="2">受理日期</td>
+      <td width="283" height="22" align="left" valign="bottom" colspan="2"><span v-date>{{json.list[0].slrq}}</span></td>
+      <td width="148" height="22" align="center" valign="middle">审核日期</td>
+      <td width="276" height="22" align="left" valign="bottom" colspan="2"><span v-date>{{json.list[0].shrq}}</span></td>
+      <td width="150" height="22" align="center" valign="middle">审核人</td>
+      <td width="168" height="22" align="left" valign="bottom">{{json.list[0].shr}}</td>
+    </tr>
+    <tr>
+      <td width="1685" height="22" align="left" valign="middle" colspan="12" class="noBorder">中华人民共和国国家税务总局监制</td>
+    </tr>
+    <tr>
+      <td width="1685" height="22" align="left" valign="middle" colspan="12" class="noBorder">Printed Under the Supervision of the StateAdministration of Taxation the People’s Republic</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

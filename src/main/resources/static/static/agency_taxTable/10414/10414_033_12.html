@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>抵扣应纳税所得额明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1189" height = "642" id="taxTable">
+<tr>
+<td  width="1118" height="46"  align="center" valign="middle" colspan="5" class="noBorder"><B>抵扣应纳税所得额明细表</B></td>
+</tr>
+<tr>
+<td  width="1118" height="22"  align="center" valign="middle" colspan="5" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1118" height="22"  align="left" valign="middle" colspan="5" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1118" height="22"  align="left" valign="middle" colspan="5" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="512" height="22"  align="left" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="194" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="194" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="218" height="22"  align="right" valign="middle"  class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="72" height="44"  align="center" valign="middle"  rowspan="2">行次</td>
+<td  width="440" height="44"  align="center" valign="middle"  rowspan="2">项目</td>
+<td  width="194" height="22"  align="center" valign="middle"  >合计金额</td>
+<td  width="194" height="22"  align="center" valign="middle"  >投资于未上市中小高新技术企业</td>
+<td  width="218" height="22"  align="center" valign="middle"  >投资于种子期、初创期科技型企业</td>
+</tr>
+<tr>
+<td  width="194" height="22"  align="center" valign="middle"  >1=2+3</td>
+<td  width="194" height="22"  align="center" valign="middle"  >2</td>
+<td  width="218" height="22"  align="center" valign="middle"  >3</td>
+</tr>
+<tr>
+<td  width="1118" height="22"  align="left" valign="middle" colspan="5" ><B>一、创业投资企业直接投资按投资额一定比例抵扣应纳税所得额</B></td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >1</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年新增的符合条件的股权投资额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnxzfhtjgqtze='""'>0.00</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnxzfhtjgqtze2='""'>0.00</td>
+<td  width="218" height="22"  align="right" valign="middle"  v-fill.bnxzfhtjgqtze3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >2</td>
+<td  width="440" height="22"  align="left" valign="middle"  >税收规定的抵扣率</td>
+<td  width="194" height="22"  align="right" valign="middle"  >{{(json[0].ssgddklje * 100).toFixed(4)}}%</td>
+<td  width="194" height="22"  align="right" valign="middle"  >{{(json[0].ssgddklje2 * 100).toFixed(4)}}%</td>
+<td  width="218" height="22"  align="right" valign="middle"  >{{(json[0].ssgddklje3 * 100).toFixed(4)}}%</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >3</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年新增的可抵扣的股权投资额（1×2）</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnxzkdkgqtze='""'>0.00</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnxzkdkgqtze2='""'>0.00</td>
+<td  width="218" height="22"  align="right" valign="middle"  v-fill.bnxzkdkgqtze3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >4</td>
+<td  width="440" height="22"  align="left" valign="middle"  >以前年度结转的尚未抵扣的股权投资余额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.yqndjzswdkgqtzje='""'>0.00</td>
+<td  width="194" height="22"  align="center" valign="middle"  >*</td>
+<td  width="218" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >5</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年可抵扣的股权投资额（3+4）</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnkdkgqtze='""'>0.00</td>
+<td  width="194" height="22"  align="center" valign="middle"  >*</td>
+<td  width="218" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >6</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年可用于抵扣的应纳税所得额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnkyydkynssde='""'>0.00</td>
+<td  width="194" height="22"  align="center" valign="middle"  >*</td>
+<td  width="218" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >7</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年实际抵扣应纳税所得额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnsjdkynssde='""'>0.00</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnsjdkynssde2='""'>0.00</td>
+<td  width="218" height="22"  align="right" valign="middle"  v-fill.bnsjdkynssde3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >8</td>
+<td  width="440" height="22"  align="left" valign="middle"  >结转以后年度抵扣的股权投资余额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.jzyhnddkgqtzye='""'>0.00</td>
+<td  width="194" height="22"  align="center" valign="middle"  >*</td>
+<td  width="218" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="1118" height="22"  align="left" valign="middle" colspan="5" ><B>二、通过有限合伙制创业投资企业投资按一定比例抵扣分得的应纳税所得额</B></td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >9</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年从有限合伙创投企业应分得的应纳税所得额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bncyxhhctqysdse='""'>0.00</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bncyxhhctqysdse2='""'>0.00</td>
+<td  width="218" height="22"  align="right" valign="middle"  v-fill.bncyxhhctqysdse3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >10</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年新增的可抵扣投资额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnxzdkdktze='""'>0.00</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnxzdkdktze2='""'>0.00</td>
+<td  width="218" height="22"  align="right" valign="middle"  v-fill.bnxzdkdktze3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >11</td>
+<td  width="440" height="22"  align="left" valign="middle"  >以前年度结转的可抵扣投资额余额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.yqndjzdkdktzeye='""'>0.00</td>
+<td  width="194" height="22"  align="center" valign="middle"  >*</td>
+<td  width="218" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >12</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年可抵扣投资额（10+11）</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnkdktze='""'>0.00</td>
+<td  width="194" height="22"  align="center" valign="middle"  >*</td>
+<td  width="218" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >13</td>
+<td  width="440" height="22"  align="left" valign="middle"  >本年实际抵扣应分得的应纳税所得额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnsjdkyfdynssde='""'>0.00</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bnsjdkyfdynssde2='""'>0.00</td>
+<td  width="218" height="22"  align="right" valign="middle"  v-fill.bnsjdkyfdynssde3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >14</td>
+<td  width="440" height="22"  align="left" valign="middle"  >结转以后年度抵扣的投资额余额</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.jzyhnddkdtzrye='""'>0.00</td>
+<td  width="194" height="22"  align="center" valign="middle"  >*</td>
+<td  width="218" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="1118" height="22"  align="left" valign="middle" colspan="5" ><B>三、抵扣应纳税所得额合计</B></td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >15</td>
+<td  width="440" height="22"  align="left" valign="middle"  >合计（7+13）</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.hj='""'>0.00</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.hj2='""'>0.00</td>
+<td  width="218" height="22"  align="right" valign="middle"  v-fill.hj3='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

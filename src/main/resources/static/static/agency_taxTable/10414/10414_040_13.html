@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>境外分支机构弥补亏损明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1652" height = "312" id="taxTable" >
+<tr>
+<td width="1580" height="46"  align="left" valign="middle" colspan="10" class="noBorder" >A108020</td>
+</tr>
+<tr>
+<td width="1580" height="46"  align="center" valign="middle" colspan="10" class="noBorder"><B>境外分支机构弥补亏损明细表</B></td>
+</tr>
+<tr>
+<td width="1100" height="22"  align="left" valign="middle" colspan="7" class="noBorder" >税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td width="480" height="22"  align="right" valign="middle" colspan="3" class="noBorder" >&nbsp;</td>
+</tr>
+<tr>
+<td width="1580" height="22"  align="left" valign="middle" colspan="10" class="noBorder" >纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td width="1100" height="22" align="left" valign="middle" colspan="7" class="noBorder" >纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td width="480" height="22" align="right" valign="middle" colspan="3" class="noBorder" >&nbsp;</td>
+</tr>
+<tr>
+<td width="40" height="88" align="center" valign="middle"  rowspan="4">行次</td>
+<td width="260" height="66" align="center" valign="middle"  rowspan="3">国家<br>（地区）</td>
+<td width="640" height="22" align="center" valign="middle" colspan="4" >非实际亏损额的弥补</td>
+<td width="640" height="22" align="center" valign="middle" colspan="4" >实际亏损额的弥补</td>
+</tr>
+<tr>
+<td width="160" height="44" align="center" valign="middle"  rowspan="2">以前年度结转尚未弥补的非实际亏损额</td>
+<td width="160" height="44" align="center" valign="middle"  rowspan="2">本年发生的非实际亏损额</td>
+<td width="160" height="44" align="center" valign="middle"  rowspan="2">本年弥补的以前年度非实际亏损额</td>
+<td width="160" height="44" align="center" valign="middle"  rowspan="2">结转以后年度弥补的非实际亏损额</td>
+<td width="160" height="44" align="center" valign="middle"  rowspan="2">以前年度结转尚未弥补的实际亏损额</td>
+<td width="160" height="44" align="center" valign="middle"  rowspan="2">本年发生的实际亏损额</td>
+<td width="160" height="44" align="center" valign="middle"  rowspan="2">本年弥补的以前年度实际亏损额</td>
+<td width="160" height="44" align="center" valign="middle"  rowspan="2">结转以后年度弥补的实际亏损额</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td width="260" height="22" align="center" valign="middle"  >1</td>
+<td width="160" height="22" align="center" valign="middle"  >2</td>
+<td width="160" height="22" align="center" valign="middle"  >3</td>
+<td width="160" height="22" align="center" valign="middle"  >4</td>
+<td width="160" height="22" align="center" valign="middle"  >5（2+3-4）</td>
+<td width="160" height="22" align="center" valign="middle"  >6</td>
+<td width="160" height="22" align="center" valign="middle"  >7</td>
+<td width="160" height="22" align="center" valign="middle"  >8</td>
+<td width="160" height="22" align="center" valign="middle"  >9</td>
+</tr>
+<tr v-for="(item,index) in json.listzb">
+<td width="40" height="22" align="center" valign="middle"  >00{{index+1}}</td>
+<td width="260" height="22" align="left" valign="middle"  ><form><p>{{item.gjdq}}</p></form></td>
+<td width="160" height="22" align="right" valign="middle"  >{{item.yqndjzwmbfsjkse==null?'':item.yqndjzwmbfsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{item.bnfsfsjkse==null?'':item.bnfsfsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{item.bnmbyqfsjkse==null?'':item.bnmbyqfsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{item.jzhndmbfsjkse==null?'':item.jzhndmbfsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{item.yqjzwmbsjksexj==null?'':item.yqjzwmbsjksexj.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{item.bnfssjkse==null?'':item.bnfssjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{item.bnmbyqsjkse==null?'':item.bnmbyqsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{item.jzhndmbsjksexj==null?'':item.jzhndmbsjksexj.toFixed(2)}}</td>
+</tr>
+<tr>
+<td width="40" height="22" align="center" valign="middle"  >&nbsp;</td>
+<td width="260" height="22" align="center" valign="middle"  >合计</td>
+<td width="160" height="22" align="right" valign="middle"  >{{json.list[0].yqndjzwmbfsjkse==null?'':json.list[0].yqndjzwmbfsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{json.list[0].bnfsfsjkse==null?'':json.list[0].bnfsfsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{json.list[0].bnmbyqfsjkse==null?'':json.list[0].bnmbyqfsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{json.list[0].jzhndmbfsjkse==null?'':json.list[0].jzhndmbfsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{json.list[0].yqjzwmbsjksexj==null?'':json.list[0].yqjzwmbsjksexj.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{json.list[0].bnfssjkse==null?'':json.list[0].bnfssjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{json.list[0].bnmbyqsjkse==null?'':json.list[0].bnmbyqsjkse.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle"  >{{json.list[0].jzhndmbsjksexj==null?'':json.list[0].jzhndmbsjksexj.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

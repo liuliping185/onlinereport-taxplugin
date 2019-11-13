@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <title>部分产品销售统计表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="696" height="365" id="taxTable">
+    <tr>
+      <td width="630" height="46" align="center" valign="middle" colspan="4" class="noBorder">
+        <B>部分产品销售统计表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="630" height="22" align="left" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="630" height="22" align="left" valign="middle" colspan="4" class="noBorder" >纳税人识别号：<span v-fill.nsrsbh='""'></span></td>
+    </tr>
+    <tr>
+      <td width="630" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：<span v-fill.nsrmc='""'></span></td>
+    </tr>
+    <tr>
+      <td width="455" height="22" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-fill.tbrq='""' v-date></span></td>
+      <td width="175" height="22" align="right" valign="middle" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+      <!-- <td width="208" height="33" align="center" valign="middle">产品名称|项目</td> -->
+      <td  width="208" height="33" align="center" valign="middle" style="padding:0;background-image:url('/static/images/index/81_line.png');background-repeat:no-repeat;position:relative;background-size:100% 100%;image-rendering: -webkit-optimize-contrast;">
+        <span style="position:absolute;right:80px;top:2px">项目</span>
+        <span style="position:absolute;left:15px;bottom:5px">产品名称</span>
+      </td>
+      <td width="90" height="33" align="center" valign="middle">栏次</td>
+      <td width="157" height="33" align="center" valign="middle">销售数量</td>
+      <td width="175" height="33" align="center" valign="middle">销售额</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="left" valign="middle">一、轮 胎</td>
+      <td width="90" height="22" align="center" valign="middle">1=2+3</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.ltxssl='""'>0.00</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.ltxse='""'>0.00</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="left" valign="middle">其中：子午线轮胎</td>
+      <td width="90" height="22" align="center" valign="middle">2</td>
+      <td width="157" height="22" align="right" valign="middle"  v-fill.zwxltxssl='""'>0.00</td>
+      <td width="175" height="22" align="right" valign="middle"  v-fill.zwxltxse='""'>0.00</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="center" valign="middle"> 斜交轮胎</td>
+      <td width="90" height="22" align="center" valign="middle">3</td>
+      <td width="157" height="22" align="right" valign="middle"  v-fill.xjltxssl='""'>0.00</td>
+      <td width="175" height="22" align="right" valign="middle"  v-fill.xjltxse='""'>0.00</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="left" valign="middle">二、酒 精</td>
+      <td width="90" height="22" align="center" valign="middle">4=5+6+7</td>
+      <td width="157" height="22" align="right" valign="middle"  v-fill.jjxssl='""'>0.00</td>
+      <td width="175" height="22" align="right" valign="middle"  v-fill.jjxse='""'>0.00</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="left" valign="middle">其中：用于乙醇汽油的酒精</td>
+      <td width="90" height="22" align="center" valign="middle">5</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.yyycqydjjxssl='""'>0.00</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.yyycqydjjxse='""'>0.00</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="center" valign="middle"> 食用酒精</td>
+      <td width="90" height="22" align="center" valign="middle">6</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.syjjxssl='""'>0.00</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.syjjxse='""'>0.00</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="center" valign="middle"> 其他酒精</td>
+      <td width="90" height="22" align="center" valign="middle">7</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.qtjjxssl='""'>0.00</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.qtjjxse='""'>0.00</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="left" valign="middle">三、摩托车（排量
+        <250毫升）</td>
+          <td width="90" height="22" align="center" valign="middle">8</td>
+          <td width="157" height="22" align="right" valign="middle" v-fill.mtcxssl='""'>0.00</td>
+          <td width="175" height="22" align="right" valign="middle" v-fill.mtcxse='""'>0.00</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

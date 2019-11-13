@@ -1,0 +1,249 @@
+<html>
+
+<head>
+  <title>利润表（适用执行企业会计准则的一般企业）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+<div  id="taxTable">
+	<!-- 七月之后 -->
+	<table cellspacing="0" cellpadding="0" width="808" height = "948">
+	<tr>
+	<td  width="808" height="46"  align="center" valign="middle" colspan="4" class="noBorder"><B>利润表</B></td>
+	</tr>
+	<tr>
+	<td  width="808" height="22"  align="center" valign="middle" colspan="4" class="noBorder"><strong></strong>（适用执行企业会计准则的一般企业）</td>
+	</tr>
+	<tr>
+	<td  width="808" height="22"  align="center" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{json[0].skssqq}}</span>至<span v-date>{{json[0].skssqz}}</span></td>
+	</tr>
+	<tr>
+	<td  width="808" height="22"  align="left" valign="middle" colspan="4" class="noBorder">纳税人识别号：{{json[0].nsrsbh}}</td>
+	</tr>
+	<tr>
+	
+	<td  width="808" height="22"  align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{json[0].nsrmc}}</td>
+	</tr>
+	<tr>
+	
+	<td  width="648" height="22"  align="left" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+	<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">金额单位：人民币元</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="center" valign="middle"  >项    目</td>
+	<td  width="160" height="22"  align="center" valign="middle"  >本期金额</td>
+	<td  width="160" height="22"  align="center" valign="middle"  >上期金额</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >一、营业收入</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-1"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-1"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >  减: 营业成本</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-2"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-2"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >      税金及附加</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-3"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-3"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >      销售费用</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-4"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-4"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >      管理费用</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-5"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-5"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >      财务费用</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-6"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-6"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >      资产减值损失</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-7"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-7"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >  加：公允价值变动收益（损失以“-”号填列）</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-8"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-8"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >      投资收益（损失以“-”号填列）</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-9"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-9"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >      其中：对联营企业和合营企业的投资收益</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-10"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-10"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >    资产处置收益（损失以“-”号填列）</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-33"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-33"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >    其他收益</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-34"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-34"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >二、营业利润（亏损以“-”号填列）</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-11"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-11"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >  加：营业外收入</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-12"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-12"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >  减：营业外支出</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-13"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-13"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >三、利润总额（亏损总额以“-”号填列）</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-15"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-15"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >  减：所得税费用</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-16"' >0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-16"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >四、净利润（净亏损以“-”号填列）</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-17"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-17"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >（一）持续经营净利润（净亏损以“-”号填列）</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-35"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-35"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >（二）终止经营净利润（净亏损以“-”号填列）</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-36"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-36"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >五、其他综合收益的税后净额</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-22"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-22"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >（一）以后不能重分类进损益的其他综合收益</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-23"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-23"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >1.重新计量设定收益计划净负债或净资产的变动</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-24"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-24"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >2.权益法下在被投资单位不能重分类进损益的其他综合收益中享有的份额</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-25"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-25"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >（二）以后将重分类进损益的其他综合收益</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-26"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-26"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >1.权益法下在被投资单位以后将重分类进损益的其他综合收益中享有的份额</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-27"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-27"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >2.可供出售金融资产公允价值变动损益</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-28"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-28"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >3.将有至到期投资重分类可供出售金融资产损益</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-29"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-29"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >4.现金流经套期损益的有效部分</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-30"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-30"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >5.外币财务报表折算差额</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-31"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-31"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >六、综合收益总额</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-32"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-32"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >七、每股收益：</td>
+	<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+	<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >（一）基本每股收益</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-19"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-19"'>0.00</td>
+	</tr>
+	<tr>
+	
+	<td  width="454" height="22"  align="left" valign="middle"  >（二）稀释每股收益</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqje='"ewbhxh-20"'>0.00</td>
+	<td  width="160" height="22"  align="right" valign="middle"  v-fill.sqje1='"ewbhxh-20"' >0.00</td>
+	</tr>
+	</table>
+  </div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

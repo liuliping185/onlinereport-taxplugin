@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>税费申报与缴纳测试入口</title>
+</head>
+<body>
+    <form id="testForm" action="/online_report/declare/index" method="get">
+        <ul>
+            <li><lable>测试纳税人登记序号：</lable><input type="text" name="djxh" id="form_djxh" /></li>
+            <li><label>凭证种类代码：</label><input type="text" name="pzzlDm" id="form_pzzlDm" /></li>
+            <li><label>申报期：</label><input type="text" name="sbq" id="form_sbq" /></li>
+        </ul>
+    </form>
+    <input type='button' value='按期申报' id='delcareBtn'>
+    <hr/>
+    <br/>
+    <form id="amendForm" action="/online_report/amend/index" method="get">
+        <ul>
+            <li><lable>测试纳税人登记序号：</lable><input type="text" name="djxh" id="form_djxh_amend" /></li>
+            <li><label>申报期：</label><input type="text" name="sbq" id="form_sbq_amend" /></li>
+        </ul>
+    </form>
+    <input type='button' value='更正申报' id='amendBtn'><br/>
+    <hr/>
+    <br/>
+    <form id="overdueForm" action="/online_report/overdue/index" method="get">
+        <ul>
+            <li><lable>测试纳税人登记序号：</lable><input type="text" name="djxh" id="form_djxh_overdue" /></li>
+            <li><label>申报期：</label><input type="text" name="sbq" id="form_sbq" /></li>
+        </ul>
+    </form>
+    <input type='button' value='逾期申报' id='overdueBtn'><br/>
+    <hr/>
+    <form id="cancellationForm" action="/online_report/overdue/index" method="get">
+        <ul>
+            <li><lable>测试纳税人登记序号：</lable><input type="text" name="djxh" id="form_djxh_cancellation" /></li>
+            <li><label>申报期：</label><input type="text" name="sbq" id="form_sbq" /></li>
+        </ul>
+    </form>
+    <input type='button' value='清册注销' id='cancellationBtn'><br/>
+    <script>
+        document.getElementById("delcareBtn").onclick = function() {
+            window.location.href="declare/index.html";
+        }
+    </script>
+</body>
+</html>

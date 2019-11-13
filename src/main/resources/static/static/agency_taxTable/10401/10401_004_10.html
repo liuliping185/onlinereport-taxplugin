@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <title>企业所得税汇总纳税分支机构所得税分配表(2015年版)</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<div id="taxTable">
+<!-- 7月之前 -->
+  <table cellspacing="0" cellpadding="0" width="1691" height="332">
+    <tr>
+      <td width="1476" height="46" align="center" valign="middle" colspan="11" class="noBorder">
+        <B>企业所得税汇总纳税分支机构所得税分配表(2015年版)</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1476" height="22" align="center" valign="middle" colspan="11" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="90" height="22" align="left" valign="middle" colspan="2">总机构名称：</td>
+      <td width="1000" height="22" align="left" valign="middle" colspan="6" v-fill.listbz.zjgMc='""'></td>
+      <td width="386" height="22" align="right" valign="middle" colspan="3">金额单位: 人民币元（列至角分）</td>
+    </tr>
+    <tr>
+      <td width="200" height="22" align="center" valign="middle" colspan="3">总机构纳税人识别号</td>
+      <td width="540" height="22" align="center" valign="middle" colspan="2">应纳所得税额</td>
+      <td width="210" height="22" align="center" valign="middle" colspan="2">总机构分摊所得税额</td>
+      <td width="280" height="22" align="center" valign="middle" colspan="2"> 总机构财政集中分配所得税额</td>
+      <td width="246" height="22" align="center" valign="middle" colspan="2">分支机构分摊所得税额</td>
+    </tr>
+    <tr>
+      <td width="200" height="22" align="center" valign="middle" colspan="3" v-fill.listbz.zjgNsrsbh='""'></td>
+      <td width="540" height="22" align="right" valign="middle" colspan="2" v-fill.listbz.zjgYnsdse='""'></td>
+      <td width="210" height="22" align="right" valign="middle" colspan="2" v-fill.listbz.zjgFtsdse='""'></td>
+      <td width="280" height="22" align="right" valign="middle" colspan="2" v-fill.listbz.zyFpsdse='""'></td>
+      <td width="246" height="22" align="right" valign="middle" colspan="2" v-fill.listbz.fzjgFtsdse='""'></td>
+    </tr>
+    <tr>
+      <td width="1476" height="22" align="left" valign="middle" colspan="11">分支机构情况</td>
+    </tr>
+    <tr>
+      <td width="90" height="44" align="center" valign="middle" colspan="2" rowspan="2">序号</td>
+      <td width="150" height="44" align="center" valign="middle" colspan="2" rowspan="2">分支机构纳税人识别号</td>
+      <td width="570" height="44" align="center" valign="middle" colspan="2" rowspan="2">分支机构名称</td>
+      <td width="420" height="22" align="center" valign="middle" colspan="3">三项因素</td>
+      <td width="106" height="44" align="center" valign="middle" rowspan="2">分配比例</td>
+      <td width="140" height="44" align="center" valign="middle" rowspan="2">分配所得税额</td>
+    </tr>
+    <tr>
+      <td width="140" height="22" align="center" valign="middle">营业收入</td>
+      <td width="140" height="22" align="center" valign="middle">职工薪酬</td>
+      <td width="140" height="22" align="center" valign="middle">资产总额</td>
+    </tr>
+    <tr v-for="(item,index) in json.listtqyZb">
+      <td width="90" height="22" align="center" valign="middle" colspan="2">{{index+1}}</td>
+      <td width="150" height="22" align="center" valign="middle" colspan="2">{{item.fzjgNsrsbh}}</td>
+      <td width="570" height="22" align="center" valign="middle" colspan="2">{{item.fzjgMc}}</td>
+      <td width="140" height="22" align="right" valign="middle">{{item.sxysSrze === null ? '' : item.sxysSrze.toFixed(2)}}</td>
+      <td width="140" height="22" align="right" valign="middle">{{item.sxysGzze === null ? '' : item.sxysGzze.toFixed(2)}}</td>
+      <td width="140" height="22" align="right" valign="middle">{{item.sxysZcze === null ? '' : item.sxysZcze.toFixed(2)}}</td>
+      <td width="106" height="22" align="right" valign="middle">{{item.fpbl === null ? '' : item.fpbl.toFixed(10)}}</td>
+      <td width="140" height="22" align="right" valign="middle">{{item.fpse === null ? '' : item.fpse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="90" height="22" align="center" valign="middle" colspan="2">合计</td>
+      <td width="150" height="22" align="center" valign="middle" colspan="2">--</td>
+      <td width="570" height="22" align="center" valign="middle" colspan="2">--</td>
+      <td width="140" height="22" align="right" valign="middle">{{json.listtqyZb[0].srehj === null ? '' : json.listtqyZb[0].srehj.toFixed(2)}}</td>
+      <td width="140" height="22" align="right" valign="middle">{{json.listtqyZb[0].gzehj === null ? '' : json.listtqyZb[0].gzehj.toFixed(2)}}</td>
+      <td width="140" height="22" align="right" valign="middle">{{json.listtqyZb[0].zcehj === null ? '' : json.listtqyZb[0].zcehj.toFixed(2)}}</td>
+      <td width="106" height="22" align="right" valign="middle">{{json.listtqyZb[0].fpblhj === null ? '' : json.listtqyZb[0].fpblhj.toFixed(10)}}</td>
+      <td width="140" height="22" align="right" valign="middle">{{json.listtqyZb[0].fpsehj === null ? '' : json.listtqyZb[0].fpsehj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="810" height="22" align="left" valign="middle" colspan="6">纳税人公章：</td>
+      <td width="666" height="22" align="left" valign="middle" colspan="5">主管税务机关受理专用章：</td>
+    </tr>
+    <tr>
+      <td width="810" height="22" align="left" valign="middle" colspan="6">会计主管：</td>
+      <td width="666" height="22" align="left" valign="middle" colspan="5">受理人：</td>
+    </tr>
+    <tr>
+      <td width="810" height="22" align="left" valign="middle" colspan="6">填表日期： 　　　　　　　　　　　　　　　　　　　　　　　　　　　 年 月 日</td>
+      <td width="666" height="22" align="left" valign="middle" colspan="5">受理日期： 年 月 日</td>
+    </tr>
+  </table>
+</div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

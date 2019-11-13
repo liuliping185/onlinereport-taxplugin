@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+
+</head>
+<body>
+<table id="taxTable" cellspacing="0" cellpadding="0" width="705" height="768" style="font-family： Arial; font-size： 16px; border： 0">
+    <tr>
+        <td width="673" height="46" align="center" valign="middle" colspan="4" class="noBorder"><B>中华人民共和国企业清算所得税申报表</B>
+        </td>
+    </tr>
+    <tr>
+        <td width="173" height="22" align="left" valign="middle"  colspan="3"  class="noBorder">清算期间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+        <td width="500" height="22" align="left" valign="middle" colspan="3" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr>
+        <td width="673" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+        <td width="446" height="22" valign="middle" colspan="3" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+        <td width="227" height="22" valign="middle" class="noBorder">金额单位： 元（列至角分）</td>
+    </tr>
+    <tr>
+        <td width="173" height="22" align="center" valign="middle">类别</td>
+        <td width="41" height="22" align="center" valign="middle">行次</td>
+        <td width="232" height="22" align="center" valign="middle">项目</td>
+        <td width="227" height="22" align="center" valign="middle">金额</td>
+    </tr>
+    <tr>
+        <td width="173" height="242" align="center" valign="middle" rowspan="11">应纳税所得额计算</td>
+        <td width="41" height="22" align="center" valign="middle">1</td>
+        <td width="232" height="22" align="left" valign="middle">资产处置损益（填附表一）</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].zcczsyYnssde==null?0.00:json[0].zcczsyYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">2</td>
+        <td width="232" height="22" align="left" valign="middle">负债清偿损益（填附表二）</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].fzqcsyYnssde==null?0.00:json[0].fzqcsyYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">3</td>
+        <td width="232" height="22" align="left" valign="middle">清算费用</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].qsfyYnssde==null?0.00:json[0].qsfyYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">4</td>
+        <td width="232" height="22" align="left" valign="middle">清算税金及附加</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].qssjjfjYnssde==null?0.00:json[0].qssjjfjYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">5</td>
+        <td width="232" height="22" align="left" valign="middle">其他所得或支出</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].qtsdhzcYnssde==null?0.00:json[0].qtsdhzcYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">6</td>
+        <td width="232" height="22" align="left" valign="middle">清算所得（1+2-3-4+5）</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].qssdYnssde==null?0.00:json[0].qssdYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">7</td>
+        <td width="232" height="22" align="left" valign="middle">免税收入</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].mssrYnssde==null?0.00:json[0].mssrYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">8</td>
+        <td width="232" height="22" align="left" valign="middle">不征税收入</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].bzssrYnssde==null?0.00:json[0].bzssrYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">9</td>
+        <td width="232" height="22" align="left" valign="middle">其他免税所得</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].qtmssdYnssde==null?0.00:json[0].qtmssdYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">10</td>
+        <td width="232" height="22" align="left" valign="middle">弥补以前年度亏损</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].mbyqndksYnssde==null?0.00:json[0].mbyqndksYnssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">11</td>
+        <td width="232" height="22" align="left" valign="middle">应纳税所得额（6-7-8-9-10）</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].ynsdse==null?0.00:json[0].ynsdse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="173" height="44" align="center" valign="middle" rowspan="2">应纳所得税额计算</td>
+        <td width="41" height="22" align="center" valign="middle">12</td>
+        <td width="232" height="22" align="left" valign="middle">税率（25%）</td>
+        <td width="227" height="22" align="right" valign="middle" v-percent>{{json[0].sl25Ynsdse==null?0.00:json[0].sl25Ynsdse}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">13</td>
+        <td width="232" height="22" align="left" valign="middle">应纳所得税额（11×12）</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].ynssde==null?0.00:json[0].ynssde.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="173" height="110" align="center" valign="middle" rowspan="5">应补（退）所得税额计算</td>
+        <td width="41" height="22" align="center" valign="middle">14</td>
+        <td width="232" height="22" align="left" valign="middle">减（免）企业所得税额</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].ybtsdseJmqysdse==null?0.00:json[0].ybtsdseJmqysdse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">15</td>
+        <td width="232" height="22" align="left" valign="middle">境外应补所得税额</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].jwybsdse==null?0.00:json[0].jwybsdse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">16</td>
+        <td width="232" height="22" align="left" valign="middle">境内外实际应纳所得税额（13-14+15）</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].jnwsjynsdse==null?0.00:json[0].jnwsjynsdse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">17</td>
+        <td width="232" height="22" align="left" valign="middle">以前纳税年度应补（退）所得税额</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].yqnsndybtsdse==null?0.00:json[0].yqnsndybtsdse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="41" height="22" align="center" valign="middle">18</td>
+        <td width="232" height="22" align="left" valign="middle">实际应补（退）所得税额（16+17）</td>
+        <td width="227" height="22" align="right" valign="middle">{{json[0].sjybtsdse==null?0.00:json[0].sjybtsdse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="446" height="22" align="center" valign="middle" colspan="3">是否代理申报</td>
+        <td width="227" height="22" align="right" valign="middle">
+
+        </td>
+    </tr>
+    <tr>
+        <td width="214" height="66" align="left" valign="middle" colspan="2" rowspan="3" class="noBorderBottom">纳税人盖章：
+        </td>
+        <td width="232" height="66" align="left" valign="middle" rowspan="3" class="noBorderBottom">代理申报中介机构盖章：</td>
+        <td width="227" height="88" align="left" valign="middle" rowspan="4" class="noBorderBottom">主管税务机关受理专用章：</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td width="214" height="66" align="left" valign="middle" colspan="2" rowspan="3"
+            class="noBorderBottom noBorderTop">清算组盖章：
+        </td>
+        <td width="232" height="66" align="left" valign="middle" rowspan="3" class="noBorderBottom noBorderTop">
+            经办人签字及执业证件号码：
+        </td>
+    </tr>
+    <tr>
+        <td width="227" height="44" align="left" valign="middle" rowspan="2" class="noBorderBottom noBorderTop">受理人签字：
+        </td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td width="214" height="22" align="left" valign="middle" colspan="2" class="noBorderBottom noBorderTop">经办人签字：
+        </td>
+        <td width="232" height="22" align="left" valign="middle" class="noBorderBottom noBorderTop">&nbsp;</td>
+        <td width="227" height="22" align="left" valign="middle" class="noBorderBottom noBorderTop">&nbsp;</td>
+    </tr>
+    <tr>
+        <td width="214" height="22" align="left" valign="middle" colspan="2" class="noBorderBottom noBorderTop">申报日期：
+        </td>
+        <td width="232" height="22" align="left" valign="middle" class="noBorderBottom noBorderTop">代理申报日期：</td>
+        <td width="227" height="22" align="left" valign="middle" class="noBorderBottom noBorderTop">受理日期：</td>
+    </tr>
+    <tr>
+        <td width="214" height="22" align="center" valign="middle" colspan="2" class="noBorderTop"> 年 月 日</td>
+        <td width="232" height="22" align="center" valign="middle" class="noBorderTop">年 月 日</td>
+        <td width="227" height="22" align="center" valign="middle" class="noBorderTop"> 年 月 日</td>
+    </tr>
+
+</table>
+
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

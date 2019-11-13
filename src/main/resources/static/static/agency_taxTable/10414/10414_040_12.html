@@ -1,0 +1,125 @@
+<html>
+
+<head>
+  <title>境外分支机构弥补亏损明细表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="3252" height="312" id="taxTable">
+    <tr>
+      <td width="3180" height="46" align="center" valign="middle" colspan="20" class="noBorder"><B>境外分支机构弥补亏损明细表</B></td>
+    </tr>
+    <tr>
+      <td width="1580" height="22" align="left" valign="middle" colspan="10" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+      <td width="1600" height="22" align="right" valign="middle" colspan="10" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+    </tr>
+    <tr>
+      <td width="3180" height="22" align="left" valign="middle" colspan="20" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="1580" height="22" align="left" valign="middle" colspan="10" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+      <td width="1600" height="22" align="right" valign="middle" colspan="10" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+      <td width="40" height="88" align="center" valign="middle" rowspan="4">行次</td>
+      <td width="260" height="66" align="center" valign="middle" rowspan="3">国家<br>（地区）</td>
+      <td width="640" height="22" align="center" valign="middle" colspan="4">非实际亏损额的弥补</td>
+      <td width="2240" height="22" align="center" valign="middle" colspan="14">实际亏损额的弥补</td>
+    </tr>
+    <tr>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">以前年度结转尚未弥补的非实际亏损额</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">本年发生的非实际亏损额</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">本年弥补的以前年度非实际亏损额</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">结转以后年度弥补的非实际亏损额</td>
+      <td width="960" height="22" align="center" valign="middle" colspan="6">以前年度结转尚未弥补的实际亏损额</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">本年发生的实际亏损额</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">本年弥补的以前年度实际亏损额</td>
+      <td width="960" height="22" align="center" valign="middle" colspan="6">结转以后年度弥补的实际亏损额</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">前五年</td>
+      <td width="160" height="22" align="center" valign="middle">前四年</td>
+      <td width="160" height="22" align="center" valign="middle">前三年</td>
+      <td width="160" height="22" align="center" valign="middle">前二年</td>
+      <td width="160" height="22" align="center" valign="middle">前一年</td>
+      <td width="160" height="22" align="center" valign="middle">小计</td>
+      <td width="160" height="22" align="center" valign="middle">前四年</td>
+      <td width="160" height="22" align="center" valign="middle">前三年</td>
+      <td width="160" height="22" align="center" valign="middle">前二年</td>
+      <td width="160" height="22" align="center" valign="middle">前一年</td>
+      <td width="160" height="22" align="center" valign="middle">本年</td>
+      <td width="160" height="22" align="center" valign="middle">小计</td>
+    </tr>
+    <tr>
+      <td width="260" height="22" align="center" valign="middle">1</td>
+      <td width="160" height="22" align="center" valign="middle">2</td>
+      <td width="160" height="22" align="center" valign="middle">3</td>
+      <td width="160" height="22" align="center" valign="middle">4</td>
+      <td width="160" height="22" align="center" valign="middle">5（2+3-4）</td>
+      <td width="160" height="22" align="center" valign="middle">6</td>
+      <td width="160" height="22" align="center" valign="middle">7</td>
+      <td width="160" height="22" align="center" valign="middle">8</td>
+      <td width="160" height="22" align="center" valign="middle">9</td>
+      <td width="160" height="22" align="center" valign="middle">10</td>
+      <td width="160" height="22" align="center" valign="middle">11（6+7+8+9+10）</td>
+      <td width="160" height="22" align="center" valign="middle">12</td>
+      <td width="160" height="22" align="center" valign="middle">13</td>
+      <td width="160" height="22" align="center" valign="middle">14</td>
+      <td width="160" height="22" align="center" valign="middle">15</td>
+      <td width="160" height="22" align="center" valign="middle">16</td>
+      <td width="160" height="22" align="center" valign="middle">17</td>
+      <td width="160" height="22" align="center" valign="middle">18</td>
+      <td width="160" height="22" align="center" valign="middle">19（14+15+16+17+18）</td>
+    </tr>
+    <tr v-for="(item, index) in json.listzb">
+      <td width="40" height="22" align="center" valign="middle">00{{index + 1}}</td>
+      <td width="260" height="22" align="left" valign="middle">{{item.gjdq}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yqndjzwmbfsjkse.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bnfsfsjkse.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bnmbyqfsjkse.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jzhndmbfsjkse.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yqjzwmbsjkseqwn.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yqjzwmbsjkseqsin.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yqjzwmbsjkseqsann.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yqjzwmbsjkseqen.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yqjzwmbsjkseqyn.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yqjzwmbsjksexj.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bnfssjkse.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bnmbyqsjkse.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jzhndmbsjkseqsin.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jzhndmbsjkseqsann.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jzhndmbsjkseqen.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jzhndmbsjkseqyn.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jzhndmbsjksebn.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jzhndmbsjksexj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="40" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="260" height="22" align="center" valign="middle">合计</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj2.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj3.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj4.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj5.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj6.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj7.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj8.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj9.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj10.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj11.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj12.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj13.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj14.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj15.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj16.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj17.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj18.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{json.list[0].hj19.toFixed(2)}}</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

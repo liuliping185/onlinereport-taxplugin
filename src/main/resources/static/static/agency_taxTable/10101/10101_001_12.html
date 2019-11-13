@@ -1,0 +1,424 @@
+<html>
+
+<head>
+  <title>增值税纳税申报表（一般纳税人适用）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="1068" height="1258" id="taxTable">
+    <tr>
+      <td width="1002" height="46" align="center" valign="middle" colspan="8" class="noBorder">
+        <B>增值税纳税申报表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1002" height="22" align="center" valign="middle" colspan="8" class="noBorder">（一般纳税人适用）</td>
+    </tr>
+    <tr>
+      <td width="1002" height="22" align="left" valign="middle" colspan="8" class="noBorder"> 根据国家税收法律法规及增值税相关规定制定本表。纳税人不论有无销售额，均应按税务机关核定的纳税期限填写本表，并向当地税务机关申报。</td>
+    </tr>
+    <tr>
+      <td width="437" height="30" align="left" valign="middle" colspan="3" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+      <td width="283" height="30" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="282" height="30" align="right" valign="middle" colspan="2" class="noBorder">金额单位：元至角分 <br></td>
+    </tr>
+    <tr>
+      <td width="437" height="22" align="left" valign="middle" colspan="3">纳税人识别号：<span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.nsrsbh}}</span></td>
+      <td width="153" height="22" align="left" valign="middle" colspan="2">所属行业：</td>
+      <td width="412" height="22" align="left" valign="middle" colspan="3"><span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.hyMc}}</span></td>
+    </tr>
+    <tr>
+      <td width="294" height="22" align="left" valign="middle" colspan="2">纳税人名称：<span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.nsrmc}}</span></td>
+      <td width="143" height="22" align="left" valign="middle">法定代表人姓名：<span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.frdb}}</span></td>
+      <td width="283" height="22" align="left" valign="middle" colspan="3">注册地址：<span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.zcdz}}</span></td>
+      <td width="137" height="22" align="left" valign="middle">生产经营地址：</td>
+      <td width="145" height="22" align="left" valign="middle"><span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.yydz}}</span></td>
+    </tr>
+    <tr>
+      <td width="437" height="22" align="left" valign="middle" colspan="3">开户银行及账号：<span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.khyh}}{{json.djNsrxx.yhzh}}</span></td>
+      <td width="153" height="22" align="left" valign="middle" colspan="2">登记注册类型：</td>
+      <td width="130" height="22" align="left" valign="middle"><span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.djzclxMc}}</span></td>
+      <td width="282" height="22" align="left" valign="middle" colspan="2">电话号码：<span v-if="json.djNsrxx !== '' && json.djNsrxx !== null">{{json.djNsrxx.dhhm}}</span></td>
+    </tr>
+    <tr>
+      <td width="294" height="44" align="center" valign="middle" colspan="2" rowspan="2">项目</td>
+      <td width="143" height="44" align="center" valign="middle" rowspan="2">栏次</td>
+      <td width="283" height="22" align="center" valign="middle" colspan="3">一般项目</td>
+      <td width="282" height="22" align="center" valign="middle" colspan="2">即征即退项目</td>
+    </tr>
+    <tr>
+      <td width="153" height="22" align="center" valign="middle" colspan="2">本月数</td>
+      <td width="130" height="22" align="center" valign="middle">本年累计</td>
+      <td width="137" height="22" align="center" valign="middle">本月数</td>
+      <td width="145" height="22" align="center" valign="middle">本年累计</td>
+    </tr>
+    <tr>
+      <td width="31" height="220" align="center" valign="middle" rowspan="10">销<br>售<br>额</td>
+      <td width="263" height="22" align="left" valign="middle">（一）按适用税率计税销售额</td>
+      <td width="143" height="22" align="center" valign="middle">1</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.asysljsxse='"ewblxh-1"'></td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.asysljsxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.asysljsxse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.asysljsxse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">其中：应税货物销售额</td>
+      <td width="143" height="22" align="center" valign="middle">2</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.yshwxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.yshwxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.yshwxse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.yshwxse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 应税劳务销售额</td>
+      <td width="143" height="22" align="center" valign="middle">3</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.yslwxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.yslwxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.yslwxse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.yslwxse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 纳税检查调整的销售额</td>
+      <td width="143" height="22" align="center" valign="middle">4</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.syslNsjctzxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.syslNsjctzxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.syslNsjctzxse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.syslNsjctzxse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">（二）按简易办法计税销售额</td>
+      <td width="143" height="22" align="center" valign="middle">5</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.ajybfjsxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.ajybfjsxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.ajybfjsxse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.ajybfjsxse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 其中：纳税检查调整的销售额</td>
+      <td width="143" height="22" align="center" valign="middle">6</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.jybfNsjctzxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.jybfNsjctzxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.jybfNsjctzxse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.jybfNsjctzxse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">（三）免、抵、退办法出口销售额</td>
+      <td width="143" height="22" align="center" valign="middle">7</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.mdtbfckxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.mdtbfckxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.mdtbfckxse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.mdtbfckxse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">（四）免税销售额</td>
+      <td width="143" height="22" align="center" valign="middle">8</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.msxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.msxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.msxse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.msxse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 其中：免税货物销售额</td>
+      <td width="143" height="22" align="center" valign="middle">9</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.mshwxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.mshwxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.mshwxse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.mshwxse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 免税劳务销售额</td>
+      <td width="143" height="22" align="center" valign="middle">10</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.mslwxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.mslwxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.mslwxse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.mslwxse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="31" height="316" align="center" valign="middle" rowspan="14">税<br>款<br>计<br>算</td>
+      <td width="263" height="22" align="left" valign="middle">销项税额</td>
+      <td width="143" height="22" align="center" valign="middle">11</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.xxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.xxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.xxse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.xxse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">进项税额</td>
+      <td width="143" height="22" align="center" valign="middle">12</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.jxse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.jxse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.jxse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.jxse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">上期留抵税额</td>
+      <td width="143" height="22" align="center" valign="middle">13</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.sqldse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.sqldse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.sqldse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.sqldse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">进项税额转出</td>
+      <td width="143" height="22" align="center" valign="middle">14</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.jxsezc='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.jxsezc='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.jxsezc='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.jxsezc='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">免、抵、退应退税额</td>
+      <td width="143" height="22" align="center" valign="middle">15</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.mdtytse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.mdtytse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.mdtytse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.mdtytse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">按适用税率计算的纳税检查应补缴税额</td>
+      <td width="143" height="22" align="center" valign="middle">16</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.syslNsjcybjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.syslNsjcybjse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.syslNsjcybjse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.syslNsjcybjse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">应抵扣税额合计</td>
+      <td width="143" height="22" align="center" valign="middle">17=12+13-14-15+16</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.ydksehj='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="center" valign="middle" v-fill.list.ydksehj='"ewblxh-2"'>--</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.ydksehj='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.ydksehj='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="30" align="left" valign="middle">实际抵扣税额</td>
+      <td width="143" height="30" align="center" valign="middle">18（如17
+        <11，则为17，否则为11）</td>
+          <td width="153" height="30" align="right" valign="middle" colspan="2" v-fill.list.sjdkse='"ewblxh-1"'>0.00</td>
+          <td width="130" height="30" align="right" valign="middle" v-fill.list.sjdkse='"ewblxh-2"'>0.00</td>
+          <td width="137" height="30" align="right" valign="middle" v-fill.list.sjdkse='"ewblxh-3"'>0.00</td>
+          <td width="145" height="30" align="right" valign="middle" v-fill.list.sjdkse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">应纳税额</td>
+      <td width="143" height="22" align="center" valign="middle">19=11-18</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.ynse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.ynse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.ynse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.ynse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">期末留抵税额</td>
+      <td width="143" height="22" align="center" valign="middle">20=17-18</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.qmldse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.qmldse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.qmldse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.qmldse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">简易计税办法计算的应纳税额</td>
+      <td width="143" height="22" align="center" valign="middle">21</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.jybfYnse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.jybfYnse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.jybfYnse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.jybfYnse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">按简易计税办法计算的纳税检查应补缴税额</td>
+      <td width="143" height="22" align="center" valign="middle">22</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.jybfNsjcybjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.jybfNsjcybjse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.jybfNsjcybjse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.jybfNsjcybjse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">应纳税额减征额</td>
+      <td width="143" height="22" align="center" valign="middle">23</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.ynsejze='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.ynsejze='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.ynsejze='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.ynsejze='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">应纳税额合计</td>
+      <td width="143" height="22" align="center" valign="middle">24=19+21-23</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.ynsehj='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.ynsehj='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.ynsehj='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.ynsehj='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="31" height="308" align="center" valign="middle" rowspan="14">税<br>款<br>缴<br>纳</td>
+      <td width="263" height="22" align="left" valign="middle">期初未缴税额（多缴为负数）</td>
+      <td width="143" height="22" align="center" valign="middle">25</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.qcwjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.qcwjse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.qcwjse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.qcwjse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">实收出口开具专用缴款书退税额</td>
+      <td width="143" height="22" align="center" valign="middle">26</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.ssckkjzyjkstse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.ssckkjzyjkstse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.ssckkjzyjkstse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.ssckkjzyjkstse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">本期已缴税额</td>
+      <td width="143" height="22" align="center" valign="middle">27=28+29+30+31</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.bqyjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.bqyjse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.bqyjse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.bqyjse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">①分次预缴税额</td>
+      <td width="143" height="22" align="center" valign="middle">28</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.fcyjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="center" valign="middle" v-fill.list.fcyjse='"ewblxh-2"'>--</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.fcyjse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.fcyjse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">②出口开具专用缴款书预缴税额</td>
+      <td width="143" height="22" align="center" valign="middle">29</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.ckkjzyjksyjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="center" valign="middle" v-fill.list.ckkjzyjksyjse='"ewblxh-2"'>--</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.ckkjzyjksyjse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.ckkjzyjksyjse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">③本期缴纳上期应纳税额</td>
+      <td width="143" height="22" align="center" valign="middle">30</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.bqjnsqynse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.bqjnsqynse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.bqjnsqynse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.bqjnsqynse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">④本期缴纳欠缴税额</td>
+      <td width="143" height="22" align="center" valign="middle">31</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.bqjnqjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.bqjnqjse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.bqjnqjse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.bqjnqjse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">期末未缴税额（多缴为负数）</td>
+      <td width="143" height="22" align="center" valign="middle">32=24+25+26-27</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.qmwjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.qmwjse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.qmwjse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.qmwjse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">其中：欠缴税额（≥0）</td>
+      <td width="143" height="22" align="center" valign="middle">33=25+26-27</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.qmwjseQjse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="center" valign="middle" v-fill.list.qmwjseQjse='"ewblxh-2"'>--</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.qmwjseQjse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.qmwjseQjse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">本期应补(退)税额</td>
+      <td width="143" height="22" align="center" valign="middle">34＝24-28-29</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.bqybtse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="center" valign="middle" v-fill.list.bqybtse='"ewblxh-2"'>--</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.bqybtse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.bqybtse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">即征即退实际退税额</td>
+      <td width="143" height="22" align="center" valign="middle">35</td>
+      <td width="153" height="22" align="center" valign="middle" colspan="2" v-fill.list.jzjtsjtse='"ewblxh-1"'>--</td>
+      <td width="130" height="22" align="center" valign="middle" v-fill.list.jzjtsjtse='"ewblxh-2"'>--</td>
+      <td width="137" height="22" align="right" valign="middle" v-fill.list.jzjtsjtse='"ewblxh-3"'>0.00</td>
+      <td width="145" height="22" align="right" valign="middle" v-fill.list.jzjtsjtse='"ewblxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">期初未缴查补税额</td>
+      <td width="143" height="22" align="center" valign="middle">36</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.qcwjcbse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.qcwjcbse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.qcwjcbse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.qcwjcbse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">本期入库查补税额</td>
+      <td width="143" height="22" align="center" valign="middle">37</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.bqrkcbse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.bqrkcbse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.bqrkcbse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.bqrkcbse='"ewblxh-4"'>--</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">期末未缴查补税额</td>
+      <td width="143" height="22" align="center" valign="middle">38=16+22+36-37</td>
+      <td width="153" height="22" align="right" valign="middle" colspan="2" v-fill.list.qmwjcbse='"ewblxh-1"'>0.00</td>
+      <td width="130" height="22" align="right" valign="middle" v-fill.list.qmwjcbse='"ewblxh-2"'>0.00</td>
+      <td width="137" height="22" align="center" valign="middle" v-fill.list.qmwjcbse='"ewblxh-3"'>--</td>
+      <td width="145" height="22" align="center" valign="middle" v-fill.list.qmwjcbse='"ewblxh-4"'>--</td>
+    </tr>
+    <!-- 新增 -->
+    <tr>
+		<td  width="294" height="22"  align="center" valign="middle" colspan="2" >是否代理申报</td>
+		<td  width="111" height="22"  align="left" valign="middle"  ><form><p><input :checked="json.list[0].sfdlsb === '1'" type="checkbox" name="D48" value="ON" disabled>是</p></form></td>
+		<td  width="157" height="22"  align="left" valign="middle" colspan="2" ><form><p><input :checked="json.list[0].sfdlsb === '0'" type="checkbox" name="E48" value="ON" disabled>否</p></form></td>
+		<td  width="162" height="22"  align="center" valign="middle"  >代理人名称</td>
+		<td  width="272" height="22"  align="left" valign="top" colspan="2" >{{json.list[0].dlrmc}}</td>
+		</tr>
+		<tr>
+		<td  width="294" height="22"  align="center" valign="middle" colspan="2" >代理人地址</td>
+		<td  width="268" height="22"  align="left" valign="top" colspan="3" >{{json.list[0].dlrdz}}</td>
+		<td  width="162" height="22"  align="center" valign="middle"  >代理人员身份证件类型</td>
+		<td  width="272" height="22"  align="left" valign="top" colspan="2" >{{json.list[0].blrysfzjlx}}</td>
+		</tr>
+		<tr>
+		<td  width="294" height="22"  align="center" valign="middle" colspan="2" >代理人员身份证件号码</td>
+		<td  width="268" height="22"  align="left" valign="top" colspan="3" >{{json.list[0].dlrysfzhm}}</td>
+		<td  width="162" height="22"  align="center" valign="middle"  >授权人</td>
+		<td  width="272" height="22"  align="left" valign="top" colspan="2" >{{json.list[0].sqr}}</td>
+	</tr>
+	<!-- /新增 -->
+    <tr style="border-right:1px solid #333">
+      <td width="31" height="140" align="center" valign="middle" rowspan="6">授<br>权<br>声<br>明</td>
+      <td width="406" height="22" align="left" valign="middle" colspan="2" class="noBorder"> 如果你已委托代理人申报，请填写下列资料：</td>
+      <td width="38" height="140" align="center" valign="middle" rowspan="6">申<br>报<br>人<br>声<br>明</td>
+      <td width="527" height="22" align="center" valign="middle" colspan="4" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr style="border-right:1px solid #333">
+      <td width="406" height="22" align="left" valign="middle" colspan="2" class="noBorder">为代理一切税务事宜，现授权</td>
+      <td width="527" height="22" align="center" valign="middle" colspan="4" class="noBorder">本纳税申报表是根据国家税收法律法规及</td>
+    </tr>
+    <tr style="border-right:1px solid #333">
+      <td width="406" height="30" align="left" valign="middle" colspan="2" class="noBorder">（地址） </td>
+      <td width="527" height="30" align="center" valign="middle" colspan="4" class="noBorder">相关规定填报的，我确定它是真实的、可靠的、完整的。 </td>
+    </tr>
+    <tr style="border-right:1px solid #333">
+      <td width="406" height="22" align="left" valign="middle" colspan="2" class="noBorder">为本纳税人的代理申报人，任何与本申报表有关的往来文件，都</td>
+      <td width="527" height="22" align="center" valign="middle" colspan="4" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr style="border-right:1px solid #333">
+      <td width="406" height="22" align="left" valign="middle" colspan="2" class="noBorder">可寄予此人。</td>
+      <td width="527" height="22" align="center" valign="middle" colspan="4" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr style="border-right:1px solid #333;border-bottom:1px solid #333;">
+      <td width="406" height="22" align="center" valign="middle" colspan="2" class="noBorder">授权人签字：</td>
+      <td width="527" height="22" align="center" valign="middle" colspan="4" class="noBorder">声明人签字： </td>
+    </tr>
+    <tr>
+      <td width="294" height="22" align="left" valign="middle" colspan="2" class="noBorder">主管税务局机关：</td>
+      <td width="181" height="22" align="left" valign="middle" colspan="2" class="noBorder">接收人：</td>
+      <td width="115" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="412" height="22" align="left" valign="middle" colspan="3" class="noBorder">接收日期：</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+
+</html>

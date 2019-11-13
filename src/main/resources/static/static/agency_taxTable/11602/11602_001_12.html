@@ -1,0 +1,217 @@
+<html>
+
+<head>
+  <title>城市维护建设税 教育费附加 地方教育附加申报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body >
+<table cellspacing="0" cellpadding="0" width="2856" height = "666"  id="taxTable">
+  <tr>
+    <td  width="2552" height="46"  align="center" valign="middle" colspan="15" class="noBorder" ><B>城市维护建设税 教育费附加 地方教育附加申报表</B></td>
+
+  </tr>
+  <tr>
+    <td  width="2552" height="22"  align="left" valign="middle" colspan="15" class="noBorder" >税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+
+  </tr>
+  <tr>
+    <td  width="1040" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号（统一社会信用代码）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+
+
+  </tr>
+  <tr>
+    <td  width="1040" height="22"  align="left" valign="middle" colspan="6" class="noBorder" >纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+
+
+  </tr>
+  <tr>
+    <td  width="1040" height="22"  align="left" valign="middle" colspan="6" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+    <td  width="168" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+    <td  width="168" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+    <td  width="168" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+    <td  width="168" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+    <td  width="168" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+    <td  width="168" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+    <td  width="168" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+    <td  width="336" height="22"  align="right" valign="middle" colspan="2" class="noBorder" >金额单位：人民币元（列至角分）</td>
+
+  </tr>
+  <tr>
+    <td  width="200" height="66"  align="center" valign="middle"  rowspan="3">纳税人信息</td>
+    <td  width="504" height="22"  align="left" valign="middle" colspan="3" >名称</td>
+    <td  width="504" height="22"  align="left" valign="middle" colspan="3" >{{json[0].list[0].nsrmc}}</td>
+    <td  width="168" height="22"  align="left" valign="middle"  >登记类型</td>
+    <td  width="1176" height="22"  align="left" valign="middle" colspan="7" >{{json[0].list[0].djlx}}</td>
+
+  </tr>
+  <tr>
+    <td  width="504" height="22"  align="left" valign="middle" colspan="3" >登记注册类型</td>
+    <td  width="504" height="22"  align="left" valign="middle" colspan="3" >{{json[0].list[0].djzclxDm}}</td>
+    <td  width="168" height="22"  align="left" valign="middle"  >所属行业</td>
+    <td  width="1176" height="22"  align="left" valign="middle" colspan="7" >{{json[0].list[0].hyDm}}</td>
+
+  </tr>
+  <tr>
+    <td  width="168" height="22"  align="left" valign="middle"  >身份证件类型</td>
+    <td  width="336" height="22"  align="left" valign="middle" colspan="2" >{{json[0].list[0].sfzjlx}}</td>
+    <td  width="168" height="22"  align="left" valign="middle"  >身份证件号码</td>
+    <td  width="336" height="22"  align="left" valign="middle" colspan="2" >{{json[0].list[0].zjhm}}</td>
+    <td  width="168" height="22"  align="left" valign="middle"  >联系方式</td>
+    <td  width="1176" height="22"  align="left" valign="middle" colspan="7" >{{json[0].list[0].lxfs}}</td>
+
+  </tr>
+  <tr>
+    <td  width="872" height="44"  align="center" valign="middle" colspan="5" rowspan="2">本期是否适用增值税小规模纳税人减征政策<br>(减免性质代码__城市维护建设税：07049901，减免性质代码_教育费附加：61049901，减免性质代码_地方教育附加：99049901）<br></td>
+    <td  width="168" height="44"  align="left" valign="middle"  rowspan="2"><form><p><input type="checkbox" name="G9" value="ON" :checked="json[0].list[0].bqsfsyxgmyhzc == 'Y'" disabled>是</p></form></td>
+    <td  width="168" height="44"  align="left" valign="middle"  rowspan="2"><form><p><input type="checkbox" name="H9" value="ON" :checked="json[0].list[0].bqsfsyxgmyhzc == 'N'" disabled>否</p></form></td>
+    <td  width="672" height="44"  align="center" valign="middle" colspan="4" rowspan="2">本期是否适用产教融合型企业减征政策</td>
+    <td  width="336" height="44"  align="left" valign="middle" colspan="2" rowspan="2"><form><p><input type="checkbox" name="M9" value="ON" :checked="json[0].list[0].bqsfsycjrhxqyjzzc == 'Y'" disabled>是</p></form></td>
+    <td  width="336" height="44"  align="left" valign="middle" colspan="2" rowspan="2"><form><p><input type="checkbox" name="O9" value="ON" :checked="json[0].list[0].bqsfsycjrhxqyjzzc == 'N'" disabled>否</p></form></td>
+
+  </tr>
+  <tr>
+
+  </tr>
+  <tr>
+    <td  width="536" height="22"  align="center" valign="middle" colspan="3" >当期新增投资额</td>
+    <td  width="336" height="22"  align="right" valign="middle" colspan="2" >{{json[0].list[0].dqxztze  == null ? '0.00' :json[0].list[0].dqxztze.toFixed(2)}}</td>
+    <td  width="336" height="22"  align="center" valign="middle" colspan="2" >上期留抵可抵免金额</td>
+    <td  width="336" height="22"  align="right" valign="middle" colspan="2" >{{json[0].list[0].sqldkdmje == null ? '0.00' :json[0].list[0].sqldkdmje.toFixed(2)}}</td>
+    <td  width="504" height="22"  align="center" valign="middle" colspan="3" >结转下期可抵免金额</td>
+    <td  width="504" height="22"  align="right" valign="middle" colspan="3" >{{json[0].list[0].jzxqkdmje == null ? '0.00' :json[0].list[0].jzxqkdmje.toFixed(2)}}</td>
+
+  </tr>
+  <tr>
+    <td  width="200" height="74"  align="center" valign="middle"  rowspan="3">税（费）种</td>
+    <td  width="840" height="22"  align="center" valign="middle" colspan="5" >计税（费）依据</td>
+    <td  width="168" height="74"  align="center" valign="middle"  rowspan="3">税率（征收率）</td>
+    <td  width="168" height="74"  align="center" valign="middle"  rowspan="3">本期应纳税（费）额</td>
+    <td  width="504" height="44"  align="center" valign="middle" colspan="3" rowspan="2">本期减免税（费）额</td>
+    <td  width="336" height="44"  align="center" valign="middle" colspan="2" rowspan="2">试点建设培育产教融合型企业</td>
+    <td  width="168" height="74"  align="center" valign="middle"  rowspan="3">本期已缴税（费）额</td>
+    <td  width="168" height="74"  align="center" valign="middle"  rowspan="3">本期应补（退）税（费）额</td>
+
+  </tr>
+  <tr>
+    <td  width="336" height="22"  align="center" valign="middle" colspan="2" >增值税</td>
+    <td  width="168" height="52"  align="center" valign="middle"  rowspan="2">消费税</td>
+    <td  width="168" height="52"  align="center" valign="middle"  rowspan="2">营业税</td>
+    <td  width="168" height="52"  align="center" valign="middle"  rowspan="2">合计</td>
+  </tr>
+  <tr>
+    <td  width="168" height="30"  align="center" valign="middle"  >一般增值税</td>
+    <td  width="168" height="30"  align="center" valign="middle"  >免抵税额</td>
+    <td  width="168" height="30"  align="center" valign="middle"  >减免性质代码</td>
+    <td  width="168" height="30"  align="center" valign="middle"  >减免税（费）额</td>
+    <td  width="168" height="30"  align="center" valign="middle"  >本期增值税小规模纳税人减征额</td>
+    <td  width="168" height="30"  align="center" valign="middle"  >减免性质</td>
+    <td  width="168" height="30"  align="center" valign="middle"  >本期抵免额</td>
+  </tr>
+  <tr>
+    <td  width="200" height="22"  align="left" valign="middle"  >&nbsp;</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >1</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >2</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >3</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >4</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >5=1+2+3+4</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >6</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >7=5*6</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >8</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >9</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >10</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >11</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >12</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >13</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >14=7-9-10-12-13</td>
+
+  </tr>
+  <tr v-for="(item,index) in json[0].listZb">
+    <td  width="200" height="22"  align="left" valign="middle"  >{{item.zsxmDm}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.ybzzs.toFixed(2) }}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.zzsmdse.toFixed(6)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.xfs.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.yys.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.hj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  v-percent="4">{{(item.sl1)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.bqynsfe.toFixed(2)}}</td>.
+    <td  width="168" height="22"  align="left" valign="middle"  >{{item.jmxzDm}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.jme.toFixed(2) }}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.jze.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="left" valign="middle"  >{{item.cjrhjmxzDm}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.bqcjrhxqydmje == null ? '0.00' :json[0].list[0].bqcjrhxqydmje.toFixed(2) }}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.bqyjse.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{item.bqybtse == null ? '0.00' :json[0].list[0].bqybtse.toFixed(2)}}</td>
+
+  </tr>
+  <tr>
+    <td  width="200" height="22"  align="left" valign="middle"  >合计</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].ybzzshj  == null ? '0.00' :json[0].list[0].ybzzshj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].mdsehj  == null ? '0.00' :json[0].list[0].mdsehj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].xfshj  == null ?  '0.00' :json[0].list[0].xfshj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].yyshj  == null ? '0.00' :json[0].list[0].yyshj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].hjhj  == null ? '0.00' :json[0].list[0].hjhj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >--</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].bqynsehj  == null ? '0.00' :json[0].list[0].bqynsehj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >--</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].jmehj  == null ? '0.00' :json[0].list[0].jmehj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].xgmjzehj  == null ? '0.00' :json[0].list[0].xgmjzehj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="center" valign="middle"  >--</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].bqcjrhxqydmjehj  == null ? '0.00' :json[0].list[0].bqcjrhxqydmjehj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].bqyjsehj  == null ? '0.00' :json[0].list[0].bqyjsehj.toFixed(2)}}</td>
+    <td  width="168" height="22"  align="right" valign="middle"  >{{json[0].list[0].bqybtse  == null ? '0.00' :json[0].list[0].bqybtse.toFixed(2)}}</td>
+
+  </tr>
+  <tr>
+    <td  width="2552" height="44"  align="left" valign="middle" colspan="15" rowspan="2">谨声明：本纳税申报表是根据国家税收法律法规及相关规定填报的，是真实的、可靠的、完整的。<br>                                                                                                                                                                       纳税人（签章）：                  年  月  日<br></td>
+
+  </tr>
+  <tr>
+
+  </tr>
+  <tr>
+    <td  width="200" height="22"  align="left" valign="middle"  >纳税人</td>
+    <td  width="2352" height="22"  align="left" valign="middle" colspan="14" >{{json[0].list[0].nsr}}</td>
+
+  </tr>
+  <tr>
+    <td  width="200" height="22"  align="left" valign="middle"  >经办人：</td>
+    <td  width="1008" height="22"  align="left" valign="middle" colspan="6" >{{json[0].list[0].dlr}}</td>
+    <td  width="336" height="22"  align="left" valign="middle" colspan="2" >受理人：</td>
+    <td  width="1008" height="22"  align="left" valign="middle" colspan="6" >&nbsp;</td>
+
+  </tr>
+  <tr>
+    <td  width="200" height="22"  align="left" valign="middle"  >经办人身份证号：</td>
+    <td  width="1008" height="22"  align="left" valign="middle" colspan="6" >{{json[0].list[0].dlrsfzjzlDm1}}</td>
+    <td  width="336" height="22"  align="left" valign="middle" colspan="2" >受理税务机关（章）：</td>
+    <td  width="1008" height="22"  align="left" valign="middle" colspan="6" >&nbsp;</td>
+
+  </tr>
+  <tr>
+    <td  width="200" height="22"  align="left" valign="middle"  >代理机构：</td>
+    <td  width="1008" height="22"  align="left" valign="middle" colspan="6" >{{json[0].list[0].smrxm}}</td>
+    <td  width="336" height="22"  align="left" valign="middle" colspan="2" >受理日期：                        年  月  日</td>
+    <td  width="1008" height="22"  align="left" valign="middle" colspan="6" >&nbsp;</td>
+
+  </tr>
+  <tr>
+    <td  width="200" height="22"  align="left" valign="middle"  >代理机构统一社会信用代码：</td>
+    <td  width="1008" height="22"  align="left" valign="middle" colspan="6" >{{json[0].list[0].dzdw}}</td>
+    <td  width="336" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>
+    <td  width="1008" height="22"  align="left" valign="middle" colspan="6" >&nbsp;</td>
+
+  </tr>
+  <tr>
+    <td  width="200" height="84"  align="left" valign="middle"  >计税依据修改原因</td>
+    <td  width="2352" height="84"  align="left" valign="top" colspan="14" >{{json[0].list[0].jsyjxgyy}}</td>
+
+
+  </tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script> 
+</body>
+
+</html>

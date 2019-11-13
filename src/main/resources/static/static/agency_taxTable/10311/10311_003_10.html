@@ -1,0 +1,86 @@
+<html>
+
+<head>
+  <title>本期代收代缴税额计算表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="850" height="374" id="taxTable">
+    <tr>
+      <td width="818" height="46" align="center" valign="middle" colspan="3" class="noBorder">
+        <B>本期代收代缴税额计算表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="818" height="22" align="left" valign="middle" colspan="3" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="818" height="22" align="left" valign="middle" colspan="3" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="818" height="22" align="left" valign="middle" colspan="3" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="525" height="22" align="left" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="293" height="22" align="left" valign="middle" class="noBorder">计量单位：只&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+      <td class="column-fixed" width="240" height="42" align="center" valign="middle" style="padding:0;background-image:url('/static/images/index/81_line.png');background-repeat:no-repeat;position:relative;background-size:100% 100%;image-rendering: -webkit-optimize-contrast;">
+        <span style="position:absolute;right:10px;top:5px">应税消费品名称</span>
+        <span style="position:absolute;left:10px;bottom:5px">项目</span>
+      </td>
+      <td width="285" height="42" align="center" valign="middle">非减（免）税电池</td>
+      <td width="293" height="42" align="center" valign="middle">减（免）税电池</td>
+    </tr>
+    <tr>
+      <td width="240" height="22" align="center" valign="middle">适用税率</td>
+      <td width="285" height="22" align="right" valign="middle" v-fill.sysl='"ewblxh-1"' v-percent>0%</td>
+      <td width="293" height="22" align="right" valign="middle" v-fill.sysl='"ewblxh-2"' v-percent>0%</td>
+    </tr>
+    <tr>
+      <td width="240" height="22" align="center" valign="middle">受托加工数量</td>
+      <td width="285" height="22" align="right" valign="middle" v-fill.stjgsl='"ewblxh-1"'>0.00</td>
+      <td width="293" height="22" align="right" valign="middle" v-fill.stjgsl='"ewblxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="240" height="22" align="center" valign="middle">同类产品销售价格</td>
+      <td width="285" height="22" align="right" valign="middle" v-fill.tlcpxsjg='"ewblxh-1"'>0.00</td>
+      <td width="293" height="22" align="right" valign="middle" v-fill.tlcpxsjg='"ewblxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="240" height="22" align="center" valign="middle">材料成本</td>
+      <td width="285" height="22" align="right" valign="middle" v-fill.clcb='"ewblxh-1"'>0.00</td>
+      <td width="293" height="22" align="right" valign="middle" v-fill.clcb='"ewblxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="240" height="22" align="center" valign="middle">加工费</td>
+      <td width="285" height="22" align="right" valign="middle" v-fill.jgf='"ewblxh-1"'>0.00</td>
+      <td width="293" height="22" align="right" valign="middle" v-fill.jgf='"ewblxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="240" height="22" align="center" valign="middle">组成计税价格</td>
+      <td width="285" height="22" align="right" valign="middle" v-fill.zcjsjg='"ewblxh-1"'>0.00</td>
+      <td width="293" height="22" align="right" valign="middle" v-fill.zcjsjg='"ewblxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="240" height="22" align="center" valign="middle">
+        <B style="font-size:12px;">本期代收代缴税款</B>
+      </td>
+      <td width="285" height="22" align="right" valign="middle" v-fill.bqdsdjsk='"ewblxh-1"'>0.00</td>
+      <td width="293" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr>
+      <td width="240" height="22" align="center" valign="middle">
+        <B style="font-size:12px;">本期受托加工减（免）税款</B>
+      </td>
+      <td width="285" height="22" align="center" valign="middle">--</td>
+      <td width="293" height="22" align="right" valign="middle" v-fill.bqstjgjmsk='"ewblxh-2"'>0.00</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

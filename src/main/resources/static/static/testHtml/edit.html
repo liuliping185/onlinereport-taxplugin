@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <title>Title</title>
+</head>
+<body>
+    <div class="header">
+        <div class="title">标题</div>
+        <div class="button-group">
+            <button onClick="submitData()" class="htbutton"> 保存 </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left-bar">
+            <div class="left-title"><span>申报表列表</span></div>
+            <div class="left">增值税纳税申报表
+            </div>
+        </div>
+        <div class="breakbar">
+            <div class="middle-btn"></div>
+        </div>
+        <div class="right">
+            <div id="ss" style="width:100%;height:100%">
+                <iframe id="info" style="width:100%;height:100%" src="">
+
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div id="Modal"></div>
+
+    <!-- 导入按钮 -->
+    <div id="importData" style="">
+        <p class="import-title">
+            <span class="title">导入数据</span>
+            <span class="close">×</span>
+        </p>
+        <div class="area-div">
+            <textarea id="exportAreaData" cols="30" rows="20"></textarea>
+        </div>
+
+        <p class="text-right">
+            <button class="htbutton import" id="confirmImportBtn">导入数据</button>
+            <button class="htbutton close">关闭</button>
+        </p>
+    </div>
+
+    <div class="modal-box" id="resultModal">
+        <div class="modal-content">
+            <!-- 基本校验 -->
+            <div class="jbjy-box">
+                <div class="jbjy jy-title">基本校验</div>
+                <table class="httable  jbjy-table">
+                    <thead>
+                    <tr>
+                        <th>校验标识</th>
+                        <th>提示信息</th>
+                        <th>校验类型</th>
+                    </tr>
+                    </thead>
+                    <tbody class="modal-table">
+                    </tbody>
+                </table>
+            </div>
+            <!-- 报表校验 -->
+            <div class="bbjy-box">
+                <div class="bbjy jy-title">报表校验</div>
+                <table class="httable httable-hover bbjy-table">
+                    <thead>
+                    <tr>
+                        <th>校验标识</th>
+                        <th>提示信息</th>
+                        <th>校验类型</th>
+                    </tr>
+                    </thead>
+                    <tbody class="modal-table">
+                    </tbody>
+                </table>
+            </div>
+            <!-- 一窗式校验 -->
+            <div class="ycsjy-box">
+                <div class="sbjg jy-title"></div>
+                <table class="httable httable-hover ycsjy-table">
+                    <thead>
+                    <tr>
+                        <!-- <th>比对规则编码</th> -->
+                        <th>比对项目</th>
+                        <th>比对名称</th>
+                        <th>比对结果</th>
+                        <th>比对内容</th>
+                        <th>比对结果信息</th>
+                        <th>监控级别</th>
+                    </tr>
+                    </thead>
+                    <tbody class="modal-table">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ycsjyjg"></div>
+        <div class="modal-button">
+            <button class="htbutton" id="confirm">确定</button>
+            <button class="htbutton" id="closeModal">取消</button>
+        </div>
+    </div>
+    <div id="resultFloat" title="查看校验结果" class="htbutton">查看校验</div>
+</body>
+<script type="text/javascript" src="./js/My97DatePicker/WdatePicker.js?v=1.1"></script>
+<script type="text/javascript" src="./js/jquery-1.11.3.js?v=1.1"></script>
+</html>
+<script>
+$(function(){
+    $("#info").attr("src","http://192.168.105.153:8088/taxFormComponent/index.html?param=%20{%20%22bbDmVersion%22:%2210101_001_12%22,%20%22valueTakingMethod%22:%22ajax%22,%20%22requestRarameters%22:{%20%22zsxmDm%22:%2210101%22,%20%22bblxDm%22:%2210101%22,%20%22bbDm%22:%2210101_001%22,%20%22sksssjq%22:%2220191001%22,%20%22sksssjz%22:%2220191031%22,%20%22saveUserId%22:%221%22,%20%22nsrsbh%22:%2291120000712875155R%22,%20%22djxh%22:%2210111298000025324917%22,%20%22pcDm%22:%220%22,%20%22multiPatch%22:%22N%22,%20%22nsqxdm%22:%2206%22,%20%22nsrsbq%22:%22201911%22,%20%22versionNumber%22:%2212%22,%20%22nsrlx%22:%222%22%20},%20%22requestAddress%22:{%20%22selectSbbInfoAddress%22:%22/htftsolu/selectSbbInfo%22,%20%22deleteSbbInfoAddress%22:%22/htftsolu/deleteSbbInfo%22,%20%22tbSbbInfoAddress%22:%22/htftsolu/tbSbbInfo%22,%20%22saveSbbInfoAddress%22:%22/htftsolu/saveSbbInfo%22%20},%20%22sksssjq%22:%2220191001%22,%20%22sksssjz%22:%2220191031%22,%20%22returnBtn%22:true,%20%22pdfBtn%22:true,%20%22printBtn%22:true,%20%22saveBtn%22:true,%20%22replaceBtn%22:false,%20%22deleteBtn%22:true,%20%22getOtherData%22:false,%20%22formSaveData%22:false,%20%22readOnly%22:false%20}#/");
+     <!--$("#info").attr("src","http://localhost:63342/demo/static/index.html?_ijt=gjhe2527tatbi3rs9ukik68f7i");-->
+})
+
+</script>

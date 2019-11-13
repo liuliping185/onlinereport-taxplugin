@@ -1,0 +1,401 @@
+<html>
+<head>
+<title>纳税调整项目明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1225" height = "1222" id="taxTable">
+<tr>
+<td  width="1159" height="46"  align="center" valign="middle" colspan="6" class="noBorder"><B>纳税调整项目明细表</B></td>
+</tr>
+<tr>
+<td  width="649" height="22"  align="left" valign="middle" colspan="3" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="510" height="22"  align="right" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="1159" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="819" height="22"  align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="340" height="22"  align="right" valign="middle" colspan="2" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="59" height="44"  align="center" valign="middle"  rowspan="2">行次</td>
+<td  width="420" height="44"  align="center" valign="middle"  rowspan="2">项        目</td>
+<td  width="170" height="22"  align="center" valign="middle"  >账载金额</td>
+<td  width="170" height="22"  align="center" valign="middle"  >税收金额</td>
+<td  width="170" height="22"  align="center" valign="middle"  >调增金额</td>
+<td  width="170" height="22"  align="center" valign="middle"  >调减金额</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="center" valign="middle"  >1</td>
+<td  width="170" height="22"  align="center" valign="middle"  >2</td>
+<td  width="170" height="22"  align="center" valign="middle"  >3</td>
+<td  width="170" height="22"  align="center" valign="middle"  >4</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >1</td>
+<td  width="420" height="22"  align="left" valign="middle"  >一、收入类调整项目（2+3+…8+10+11）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.srltzxmtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.srltzxmtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >2</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （一）视同销售收入（填写A105010）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.stxsssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.stxstzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >3</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （二）未按权责发生制原则确认的收入（填写A105020）</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.waqzfszyzqrdsrzzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.waqzfszyzqrdsrssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.waqzfszyzqrdsrtzje='""' >0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"   v-fill.waqzfszyzqrdsrtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >4</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （三）投资收益（填写A105030）</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tzsyzzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tzsyssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tzsytzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tzsytjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >5</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （四）按权益法核算长期股权投资对初始投资成本调整确认收益</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.aqyhscqtztjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >6</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （五）交易性金融资产初始投资调整  </td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.jyxjrzccstztztzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >7</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （六）公允价值变动净损益</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.gyjzbdjsyzzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.gyjzbdjsytzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.gyjzbdjsytjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >8</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （七）不征税收入</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.bzssrtzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.bzssrtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >9</td>
+<td  width="420" height="22"  align="left" valign="middle"  >          其中：专项用途财政性资金（填写A105040）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zxytczxzjtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zxytczxzjtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >10</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （八）销售折扣、折让和退回</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.xszkzrhthzzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.xszkzrhthssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.xszkzrhthtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.xszkzrhthtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >11</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （九）其他</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.srltzxmqtzzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.srltzxmqtssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.srltzxmqttzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.srltzxmqttjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >12</td>
+<td  width="420" height="22"  align="left" valign="middle"  >二、扣除类调整项目（13+14+…24+26+27+28+29+30）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.kclxmtztzje ='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.kclxmtztjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >13</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （一）视同销售成本（填写A105010）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.stxszbssje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.stxszbtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >14</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （二）职工薪酬（填写A105050）</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zgxczzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zgxcssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zgxctzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zgxctjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >15</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （三）业务招待费支出</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.ywzdfzczzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.ywzdfzcssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.ywzdfzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >16</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （四）广告费和业务宣传费支出（填写A105060）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle" v-fill.ggfhywxcfzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle" v-fill.ggfhywxcfzctjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >17</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （五）捐赠支出（填写A105070）</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.jzzczzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.jzzcssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.jzzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.jzzctjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >18</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （六）利息支出</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.lxzczzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.lxzcssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.lxzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.lxzctjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >19</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （七）罚金、罚款和被没收财物的损失</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.fjfkhbmscwdsszzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.fjfkhbmscwdsstzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >20</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （八）税收滞纳金、加收利息</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ssznjjslxzzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.ssznjjslxtzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >21</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （九）赞助支出</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zzzczzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zzzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >22</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （十）与未实现融资收益相关在当期确认的财务费用</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ywsxrzsyzzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ywsxrzsyssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.ywsxrzsytzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.ywsxrzsytjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >23</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （十一）佣金和手续费支出</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjhsxfzczzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjhsxfzcssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.yjhsxfzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >24</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （十二）不征税收入用于支出所形成的费用 </td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.bzssryyzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="30"  align="center" valign="middle"  >25</td>
+<td  width="420" height="30"  align="left" valign="middle"  >           其中：专项用途财政性资金用于支出所形成的费用（填写                  A105040）</td>
+<td  width="170" height="30"  align="center" valign="middle"  >*</td>
+<td  width="170" height="30"  align="center" valign="middle"  >*</td>
+<td  width="170" height="30"  align="right" valign="middle" v-fill.zxytczxyyzctzje='""'>0.00</td>
+<td  width="170" height="30"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >26</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （十三）跨期扣除项目</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.kqkcxmzzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.kqkcxmssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.kqkcxmtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.kqkcxmtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >27</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （十四）与取得收入无关的支出</td>
+<td width="170" height="22"  align="right" valign="middle"   v-fill.yqdsrwgdzczzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"   v-fill.yqdsrwgdzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >28</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （十五）境外所得分摊的共同支出</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.jwsdftdgtzctzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >29</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （十六）党组织工作经费</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.dzzgzjfzzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.dzzgzjfssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.dzzgzjftzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.dzzgzjftjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >30</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （十七）其他</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.kcltzxmqtzzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.kcltzxmqtssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.kcltzxmqttzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.kcltzxmqttjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >31</td>
+<td  width="420" height="22"  align="left" valign="middle"  >三、资产类调整项目（32+33+34+35）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcltzxmtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"   v-fill.zcltzxmtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >32</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （一）资产折旧、摊销 （填写A105080）</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zczjtxzzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zczjtxssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zczjtxtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zczjtxtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >33</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （二）资产减值准备金</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zcjzzbjzzje='""'>0.00</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcjzzbjtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcjzzbjtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >34</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （三）资产损失（填写A105090）</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcsszzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcssssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcsstzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcsstjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >35</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （四）其他</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zcltzxmqtzzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zcltzxmqtssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcltzxmqttzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcltzxmqttjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >36</td>
+<td  width="420" height="22"  align="left" valign="middle"  >四、特殊事项调整项目（37+38+…+42）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tssxtzxmtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tssxtzxmtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >37</td>
+<td  width="420" height="22"  align="left" valign="middle"  >　  （一）企业重组及递延纳税事项（填写A105100）</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.qyczzzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.qyczssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.qycztzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.qyzctjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >38</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （二）政策性搬迁（填写A105110）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcxbqtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.zcxbqtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >39</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （三）特殊行业准备金（填写A105120）</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tshyzbjzzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tshyzbjssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tshyzbjtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.tshyzbjtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >40</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （四）房地产开发企业特定业务计算的纳税调整额(填写A105010)</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.fdckfqyssje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.fdckfqytzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.fdckfqytjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >41</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （五）有限合伙企业法人合伙方应分得的应纳税所得额</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yxhhqyfrhhfyfddynsdstzezzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yxhhqyfrhhfyfddynsdstzessje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.yxhhqyfrhhfyfddynsdstzetzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.yxhhqyfrhhfyfddynsdstzetjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >42</td>
+<td  width="420" height="22"  align="left" valign="middle"  >    （六）其他</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.qttzje1='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.qttjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >43</td>
+<td  width="420" height="22"  align="left" valign="middle"  >五、特别纳税调整应税所得</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.tbnstzyssdtzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.tbnstzyssdtjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >44</td>
+<td  width="420" height="22"  align="left" valign="middle"  >六、其他</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ztqttzje='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ztqttjje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="59" height="22"  align="center" valign="middle"  >45</td>
+<td  width="420" height="22"  align="left" valign="middle"  >合计（1+12+31+36+43+44）</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="center" valign="middle"  >*</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.hjtzje='""'>0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  v-fill.hjtjje='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

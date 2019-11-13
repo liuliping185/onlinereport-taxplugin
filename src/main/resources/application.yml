@@ -1,0 +1,35 @@
+# log4j2.xml配置
+#logging:
+#   config: classpath:log4j2.xml
+
+# log4j2.yml配置
+# logging:
+#  config: classpath:log4j2.properties
+
+#log4j2.yml配置
+logging:
+  config: classpath:Log4j2.yml
+
+#spring:
+#  quartz:
+#    #相关属性配置
+#    properties:
+#      org:
+#        quartz:
+#          scheduler:
+#            instanceName: clusteredScheduler
+#            instanceId: AUTO
+#          jobStore:
+#            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#            tablePrefix: QRTZ_
+#            isClustered: true
+#            clusterCheckinInterval: 10000
+#            useProperties: false
+#          threadPool:
+#            class: org.quartz.simpl.SimpleThreadPool
+#            threadCount: 10
+#            threadPriority: 5
+#            threadsInheritContextClassLoaderOfInitializingThread: true
+#    #数据库方式
+#    job-store-type: jdbc

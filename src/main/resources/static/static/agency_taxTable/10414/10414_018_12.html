@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>捐赠支出及纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+<style>
+  form {
+    margin: 0
+  }
+</style>
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1571" height = "430" id="taxTable">
+<tr>
+<td  width="1467" height="46"  align="center" valign="middle" colspan="11"  class="noBorder"><B>捐赠支出及纳税调整明细表</B></td>
+</tr>
+<tr>
+<td  width="507" height="22"  align="left" valign="middle" colspan="5"  class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="160" height="22"  align="right" valign="middle"  class="noBorder" >&nbsp;</td>
+<td  width="160" height="22"  align="right" valign="middle"  class="noBorder" >&nbsp;</td>
+<td  width="640" height="22"  align="right" valign="middle" colspan="4" class="noBorder" >填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="507" height="22"  align="left" valign="middle" colspan="5"  class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  class="noBorder" >&nbsp;</td>
+<td  width="160" height="22"  align="right" valign="middle"   class="noBorder">&nbsp;</td>
+<td  width="640" height="22"  align="right" valign="middle" colspan="4"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="987" height="22"  align="left" valign="middle" colspan="8"  class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="160" height="22"  align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td  width="320" height="22"  align="right" valign="middle" colspan="2"  class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td width="34" height="74"  align="center" valign="middle"  rowspan="3">行次</td>
+<td width="313" height="74"  align="center" valign="middle" colspan="3" rowspan="3">项   目</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">账载金额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">以前年度结转可扣除的捐赠额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">按税收规定计算的扣除限额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">税收金额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">纳税调增金额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">纳税调减金额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">可结转以后年度扣除的捐赠额</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td width="160" height="22"  align="center" valign="middle"  >1</td>
+<td width="160" height="22"  align="center" valign="middle"  >2</td>
+<td width="160" height="22"  align="center" valign="middle"  >3</td>
+<td width="160" height="22"  align="center" valign="middle"  >4</td>
+<td width="160" height="22"  align="center" valign="middle"  >5</td>
+<td width="160" height="22"  align="center" valign="middle"  >6</td>
+<td width="160" height="22"  align="center" valign="middle"  >7</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >1</td>
+<td width="313" height="22"  align="left" valign="middle" colspan="3" >一、非公益性捐赠</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-1"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-1"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >2</td>
+<td width="313" height="22"  align="left" valign="middle" colspan="3" >二、全额扣除的公益性捐赠</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-2"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-2"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >3</td>
+<td width="313" height="22"  align="left" valign="middle" colspan="3" >三、限额扣除的公益性捐赠(4+5+6+7)</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yqndjzkkcdjze='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.assgdjsdkcxe='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstjje='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.kjzyhndkcdjze='"ewbhxh-3"'>0.00</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >4</td>
+<td width="153" height="22"  align="left" valign="middle" style="border-right: 0px;" >   前三年度（　　　　</td>
+<td  width="57" height="22"  align="right" valign="middle" style="border-left: 0px;border-right: 0px;padding-right: 0px;" v-fill.ewbhgjz='"ewbhxh-4"'></td>
+<td width="103" height="22"  align="left" valign="middle" style="border-left: 0px;padding-left: 0px;" >年）</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yqndjzkkcdjze='"ewbhxh-4"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstjje='"ewbhxh-4"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >5</td>
+<td width="153" height="22"  align="left" valign="middle" style="border-right: 0px;" >   前二年度（　　　　</td>
+<td  width="57" height="22"  align="right" valign="middle" style="border-left: 0px;border-right: 0px;padding-right: 0px;" v-fill.ewbhgjz='"ewbhxh-5"'></td>
+<td width="103" height="22"  align="left" valign="middle" style="border-left: 0px;padding-left: 0px;" >年）</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yqndjzkkcdjze='"ewbhxh-5"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstjje='"ewbhxh-5"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.kjzyhndkcdjze='"ewbhxh-5"'>0.00</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >6</td>
+<td width="153" height="22"  align="left" valign="middle" style="border-right: 0px;" >   前一年度（　　</td>
+<td  width="57" height="22"  align="right" valign="middle" style="border-left: 0px;border-right: 0px;padding-right: 0px;" v-fill.ewbhgjz='"ewbhxh-6"' ></td>
+<td width="103" height="22"  align="left" valign="middle" style="border-left: 0px;padding-left: 0px;" >年）</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yqndjzkkcdjze='"ewbhxh-6"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstjje='"ewbhxh-6"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.kjzyhndkcdjze='"ewbhxh-6"'>0.00</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >7</td>
+<td width="153" height="22"  align="left" valign="middle" style="border-right: 0px;" >   本&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年（　　　　</td>
+<td  width="57" height="22"  align="right" valign="middle" style="border-left: 0px;border-right: 0px;padding-right: 0px;" v-fill.ewbhgjz='"ewbhxh-7"' ></td>
+<td width="103" height="22"  align="left" valign="middle" style="border-left: 0px;padding-left: 0px;" >年）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-7"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.assgdjsdkcxe='"ewbhxh-7"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-7"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-7"'>0.00</td>
+<td width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.kjzyhndkcdjze='"ewbhxh-7"'>0.00</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >8</td>
+<td width="313" height="22"  align="left" valign="middle" colspan="3" >合计（1+2+3）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yqndjzkkcdjze='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.assgdjsdkcxe='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.nstjje='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.kjzyhndkcdjze='"ewbhxh-8"'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

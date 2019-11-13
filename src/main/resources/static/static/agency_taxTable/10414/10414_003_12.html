@@ -1,0 +1,196 @@
+<html>
+<head>
+<title>企业基础信息表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+<style>
+  form {
+    margin: 0
+  }
+</style>
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1498" height = "845" id="taxTable">
+<tr>
+<td width="1432" height="46"  align="center" valign="middle" colspan="7" class="noBorder"><B>企业基础信息表</B></td>
+</tr>
+<tr>
+<td width="469" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="B3" value="ON" :checked="json.list[0].sbfs === '1'" disabled>正常申报</p></form></td>
+<td width="355" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="D3" value="ON" :checked="json.list[0].sbfs === '2'" disabled>申报错误更正</p></form></td>
+<td width="608" height="22"  align="left" valign="middle" colspan="3" ><form><p><input type="checkbox" name="F3" value="ON" :checked="json.list[0].sbfs === '3'" disabled>自行补正申报</p></form></td>
+</tr>
+<tr>
+<td  width="1432" height="22"  align="center" valign="middle" colspan="7" ><B>100基本信息</B></td>
+</tr>
+<tr>
+<td  width="274" height="82"  align="left" valign="middle"  rowspan="3">101汇总纳税企业</td>
+<td width="390" height="30"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="C5" value="ON" :checked="json.list[0].hznsqy === '1'" disabled>总机构（跨省）--适用《跨地区经营汇总纳税企业所得税征收管理办法》</p></form></td>
+<td width="299" height="30"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="E5" value="ON" :checked="json.list[0].hznsqy === '2'" disabled>总机构（跨省）--不适用《跨地区经营汇总纳税企业所得税征收管理办法》</p></form></td>
+<td width="469" height="30"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="G5" value="ON" :checked="json.list[0].hznsqy === '3'" disabled>总机构（省内）</p></form></td>
+</tr>
+<tr>
+<td width="390" height="30"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="C6" value="ON" :checked="json.list[0].hznsqy === '4'" disabled>分支机构（须进行完整年度纳税申报且按比例纳税）--就地缴纳比例=</p></form></td>
+<td width="299" height="30"  align="right" valign="middle" colspan="2" >0.000000%</td>
+<td width="469" height="30"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="G6" value="ON" :checked="json.list[0].hznsqy === '5'" disabled>分支机构（须进行完整年度纳税申报但不就地缴纳）</p></form></td>
+</tr>
+<tr>
+<td width="1158" height="22"  align="left" valign="middle" colspan="6" ><form><p><input type="checkbox" name="C7" value="ON" :checked="json.list[0].hznsqy === '6'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="left" valign="middle"  >102所属行业明细代码</td>
+<td width="390" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].sshyDm}}</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >103资产总额（万元）</td>
+<td  width="469" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].zcze.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="left" valign="middle"  >104从业人数 </td>
+<td  width="390" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].cyrs}}</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >105国家限制或禁止行业</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G9" value="ON" :checked="json.list[0].csgjfxzhjzhy === 'Y'" disabled>是</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H9" value="ON" :checked="json.list[0].csgjfxzhjzhy === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="left" valign="middle"  >106非营利组织</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C10" value="ON" :checked="json.list[0].sffylzz === 'Y'" disabled>是</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D10" value="ON" :checked="json.list[0].sffylzz === 'N'" disabled>否</p></form></td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >107存在境外关联交易</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G10" value="ON" :checked="json.list[0].czjwgljy === '0'" disabled>是</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H10" value="ON" :checked="json.list[0].czjwgljy === '1'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="left" valign="middle"  >108上市公司</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C11" value="ON" :checked="json.list[0].ssgs === '0'" disabled>境内</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D11" value="ON" :checked="json.list[0].ssgs === '1'" disabled>境外</p></form></td>
+<td  width="160" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E11" value="ON" :checked="json.list[0].ssgs === '2'" disabled>否</p></form></td>
+<td  width="139" height="22"  align="left" valign="middle"  >109从事股权投资业务</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G11" value="ON" :checked="json.list[0].zmcsgqtzyw === 'Y'" disabled>是</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H11" value="ON" :checked="json.list[0].zmcsgqtzyw === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="274" height="245"  align="left" valign="middle"  rowspan="9">110适用的会计准则或会计制度 </td>
+<td  width="195" height="69"  align="center" valign="middle"  >企业会计准则</td>
+<td  width="195" height="69"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D12" value="ON" :checked="json.list[0].qykjzz === '0'" disabled>一般企业</p></form></td>
+<td  width="160" height="69"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E12" value="ON" :checked="json.list[0].qykjzz === '1'" disabled>银行</p></form></td>
+<td  width="139" height="69"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F12" value="ON" :checked="json.list[0].qykjzz === '2'" disabled>证券</p></form></td>
+<td  width="195" height="69"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G12" value="ON" :checked="json.list[0].qykjzz === '3'" disabled>保险</p></form></td>
+<td  width="274" height="69"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H12" value="ON" :checked="json.list[0].qykjzz === '4'" disabled>担保</p></form></td>
+</tr>
+<tr>
+<td  width="1158" height="22"  align="left" valign="middle" colspan="6" ><form><p><input type="checkbox" name="C13" value="ON" :checked="json.list[0].xqykjzz === 'Y'" disabled>小企业会计准则</p></form></td>
+</tr>
+<tr>
+<td  width="1158" height="22"  align="left" valign="middle" colspan="6" ><form><p><input type="checkbox" name="C14" value="ON" :checked="json.list[0].qykjzd === 'Y'" disabled>企业会计制度</p></form></td>
+</tr>
+<tr>
+<td  width="390" height="22"  align="center" valign="middle" colspan="2" >事业单位会计准则</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="E15" value="ON" :checked="json.list[0].sydwkjzz === '0'" disabled>事业单位会计制度</p></form></td>
+<td  width="469" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="G15" value="ON" :checked="json.list[0].sydwkjzz === '1'" disabled>科学事业单位会计制度</p></form></td>
+</tr>
+<tr>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C16" value="ON" :checked="json.list[0].sydwkjzz === '2'" disabled>医院会计制度</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D16" value="ON" :checked="json.list[0].sydwkjzz === '3'" disabled>高等学校会计制度</p></form></td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="E16" value="ON" :checked="json.list[0].sydwkjzz === '4'" disabled>中小学校会计制度</p></form></td>
+<td  width="469" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="G16" value="ON" :checked="json.list[0].sydwkjzz === '5'" disabled>彩票机构会计制度</p></form></td>
+</tr>
+<tr>
+<td  width="1158" height="22"  align="left" valign="middle" colspan="6" ><form><p><input type="checkbox" name="C17" value="ON" :checked="json.list[0].mjfylzzkjzd === 'Y'" disabled>民间非营利组织会计制度</p></form></td>
+</tr>
+<tr>
+<td  width="1158" height="22"  align="left" valign="middle" colspan="6" ><form><p><input type="checkbox" name="C18" value="ON" :checked="json.list[0].cjtjjzzkjzd === '0'" disabled>村集体经济组织会计制度</p></form></td>
+</tr>
+<tr>
+<td  width="1158" height="22"  align="left" valign="middle" colspan="6" ><form><p><input type="checkbox" name="C19" value="ON" :checked="json.list[0].nmzyhzscwkjzd === '0'" disabled>农民专业合作社财务会计制度（试行）</p></form></td>
+</tr>
+<tr>
+<td  width="1158" height="22"  align="left" valign="middle" colspan="6" ><form><p><input type="checkbox" name="C20" value="ON" :checked="json.list[0].kjzdqt === 'Y'" disabled>其他</p></form></td>
+</tr>
+<tr>
+<td  width="1432" height="22"  align="center" valign="middle" colspan="7" ><B>200企业重组及递延纳税事项</B></td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="left" valign="middle"  >201发生资产（股权）划转特殊性税务处理事项</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C22" value="ON" :checked="json.list[0].fszcgqhztsxswclsx === 'Y'" disabled>是</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D22" value="ON" :checked="json.list[0].fszcgqhztsxswclsx === 'N'" disabled>否</p></form></td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >202发生非货币性资产投资递延纳税事项</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G22" value="ON" :checked="json.list[0].fsfhbxzctzdynssx === 'Y'" disabled>是</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H22" value="ON" :checked="json.list[0].fsfhbxzctzdynssx === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="left" valign="middle"  >203发生技术入股递延纳税事项</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C23" value="ON" :checked="json.list[0].fsjsrgdynssx === 'Y'" disabled>是</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D23" value="ON" :checked="json.list[0].fsjsrgdynssx === 'N'" disabled>否</p></form></td>
+<td  width="160" height="22"  align="left" valign="middle"  >204发生企业重组事项</td>
+<td  width="139" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F23" value="ON" :checked="json.list[0].fsqyczsx === '0'" disabled>一般性税务处理</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G23" value="ON" :checked="json.list[0].fsqyczsx === '1'" disabled>特殊性税务处理</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H23" value="ON" :checked="json.list[0].fsqyczsx === '2'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="left" valign="middle"  >204-1重组开始时间</td>
+<td  width="390" height="22"  align="left" valign="top" colspan="2" >{{json.list[0].czkssj}}</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >204-2重组完成时间</td>
+<td  width="469" height="22"  align="left" valign="top" colspan="2" >{{json.list[0].czwcsj}}</td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="left" valign="middle"  >204-3重组交易类型</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C25" value="ON" :checked="json.list[0].flxsgb === '01'" disabled>法律形式改变</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D25" value="ON" :checked="json.list[0].zwcz === '02'" disabled>债务重组</p></form></td>
+<td  width="160" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E25" value="ON" :checked="json.list[0].gqsg === '03'" disabled>股权收购</p></form></td>
+<td  width="139" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F25" value="ON" :checked="json.list[0].zcsg === '04'" disabled>资产收购</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G25" value="ON" :checked="json.list[0].hb === '05'" disabled>合并</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H25" value="ON" :checked="json.list[0].fenl === '06'" disabled>分立</p></form></td>
+</tr>
+<tr>
+<td  width="274" height="66"  align="left" valign="middle"  rowspan="3">204-4企业在重组业务中所属当事方类型</td>
+<td  width="195" height="66"  align="center" valign="middle"  rowspan="3">*</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D26" value="ON" :checked="json.list[0].zwczZwr === '07'" disabled>债务人</p></form></td>
+<td  width="160" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E26" value="ON" :checked="json.list[0].gqsgSgf === '09'" disabled>收购方</p></form></td>
+<td  width="139" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F26" value="ON" :checked="json.list[0].zcsgSgf === '12'" disabled>收购方</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G26" value="ON" :checked="json.list[0].fenlFlqy === '14'" disabled>合并企业</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H26" value="ON" :checked="json.list[0].flxsgb === '17'" disabled>分立企业</p></form></td>
+</tr>
+<tr>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D27" value="ON" :checked="json.list[0].zwczZqr === '08'" disabled>债权人</p></form></td>
+<td  width="160" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E27" value="ON" :checked="json.list[0].gqsgZrf === '10'" disabled>转让方</p></form></td>
+<td  width="139" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F27" value="ON" :checked="json.list[0].zcsgZrf === '13'" disabled>转让方</p></form></td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G27" value="ON" :checked="json.list[0].fenlBflqy === '15'" disabled>被合并企业</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H27" value="ON" :checked="json.list[0].flxsgb === '18'" disabled>被分立企业</p></form></td>
+</tr>
+<tr>
+<td  width="195" height="22"  align="right" valign="middle"  >&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E28" value="ON" :checked="json.list[0].gqsgBsgqy === '11'" disabled>被收购企业</p></form></td>
+<td  width="139" height="22"  align="right" valign="middle"  >&nbsp;</td>
+<td  width="195" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G28" value="ON" :checked="json.list[0].hbBhbqygd === '16'" disabled>被合并企业股东</p></form></td>
+<td  width="274" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H28" value="ON" :checked="json.list[0].fenlBflqygd === '19'" disabled>被分立企业股东</p></form></td>
+</tr>
+<tr>
+<td  width="1432" height="22"  align="center" valign="middle" colspan="7" ><B>300企业主要股东及分红情况</B></td>
+</tr>
+<tr>
+<td  width="274" height="30"  align="center" valign="middle"  >股东名称</td>
+<td  width="195" height="30"  align="center" valign="middle"  >证件种类</td>
+<td  width="355" height="30"  align="center" valign="middle" colspan="2" >证件号码</td>
+<td  width="139" height="30"  align="center" valign="middle"  >投资比例</td>
+<td  width="195" height="30"  align="center" valign="middle"  >当年（决议日）分配的股息、红利等权益性投资收益金额</td>
+<td  width="274" height="30"  align="center" valign="middle"  >国籍（注册地址）</td>
+</tr>
+<tr v-for="(item,index) in json.listZb" :key="index">
+<td  width="274" height="22"  align="left" valign="middle"  >{{item.gdmc}}</td>
+<td  width="195" height="22"  align="left" valign="middle"  >{{item.sfzjzlDm}}</td>
+<td  width="355" height="22"  align="left" valign="middle" colspan="2" >{{item.zjhm}}</td>
+<td  width="139" height="22"  align="right" valign="middle"  >{{(item.tzbl*100).toFixed(4)}}%</td>
+<td  width="195" height="22"  align="right" valign="middle"  >{{item.dnjyrfpdgxhldqyxtzsyje.toFixed(2)}}</td>
+<td  width="274" height="22"  align="left" valign="middle"  >{{item.gjdqDm}}</td>
+</tr>
+<tr>
+<td  width="274" height="22"  align="center" valign="middle"  >其余股东合计</td>
+<td  width="195" height="22"  align="center" valign="middle"  >——</td>
+<td  width="355" height="22"  align="center" valign="middle" colspan="2" >——</td>
+<td  width="139" height="22"  align="right" valign="middle"  >{{(json.list[0].tzblhj*100).toFixed(4)}}%</td>
+<td  width="195" height="22"  align="right" valign="middle"  >{{json.list[0].syjehj.toFixed(2)}}</td>
+<td  width="274" height="22"  align="center" valign="middle"  >——</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

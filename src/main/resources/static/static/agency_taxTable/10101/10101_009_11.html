@@ -1,0 +1,131 @@
+<html>
+
+<head>
+  <title>增值税纳税申报表附列资料（三）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="1325" height="406" id="taxTable">
+    <tr>
+      <td width="1259" height="46" align="center" valign="middle" colspan="8" class="noBorder">
+        <B>增值税纳税申报表附列资料（三）</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1259" height="22" align="center" valign="middle" colspan="8" class="noBorder">（服务、不动产和无形资产扣除项目明细）</td>
+    </tr>
+    <tr>
+      <td width="1259" height="22" align="center" valign="middle" colspan="8" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="939" height="22" align="left" valign="middle" colspan="6" class="noBorder">纳税人名称（公章）：<span id="nsrmc">{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</span></td>
+      <td width="320" height="22" align="right" valign="middle" colspan="2" class="noBorder">金额单位：元至角分</td>
+    </tr>
+    <tr>
+      <td width="267" height="74" align="center" valign="middle" colspan="2" rowspan="3">项目及栏次</td>
+      <td width="192" height="44" align="center" valign="middle" rowspan="2">本期服务、不动产和无形资产价税合计额（免税销售额）</td>
+      <td width="800" height="22" align="center" valign="middle" colspan="5">服务、不动产和无形资产扣除项目</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">期初余额</td>
+      <td width="160" height="22" align="center" valign="middle">本期发生额</td>
+      <td width="160" height="22" align="center" valign="middle">本期应扣除金额</td>
+      <td width="160" height="22" align="center" valign="middle">本期实际扣除金额</td>
+      <td width="160" height="22" align="center" valign="middle">期末余额</td>
+    </tr>
+    <tr>
+      <td width="192" height="30" align="center" valign="middle">1</td>
+      <td width="160" height="30" align="center" valign="middle">2</td>
+      <td width="160" height="30" align="center" valign="middle">3</td>
+      <td width="160" height="30" align="center" valign="middle">4=2+3</td>
+      <td width="160" height="30" align="center" valign="middle">5(5≤1且5≤4)</td>
+      <td width="160" height="30" align="center" valign="middle">6=4-5</td>
+    </tr>
+    <tr>
+      <td width="226" height="22" align="left" valign="middle">17%税率的项目</td>
+      <td width="41" height="22" align="center" valign="middle">1</td>
+      <td width="192" height="22" align="right" valign="middle" v-fill.msxse='"ewbhxh-1"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-1"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-1"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqykcje='"ewbhxh-1"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqsjkcje='"ewbhxh-1"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-1"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="226" height="22" align="left" valign="middle">11%税率的项目</td>
+      <td width="41" height="22" align="center" valign="middle">2</td>
+      <td width="192" height="22" align="right" valign="middle" v-fill.msxse='"ewbhxh-2"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-2"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-2"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqykcje='"ewbhxh-2"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqsjkcje='"ewbhxh-2"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="226" height="22" align="left" valign="middle">6%税率的项目（不含金融商品转让）</td>
+      <td width="41" height="22" align="center" valign="middle">3</td>
+      <td width="192" height="22" align="right" valign="middle" v-fill.msxse='"ewbhxh-3"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-3"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-3"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqykcje='"ewbhxh-3"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqsjkcje='"ewbhxh-3"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-3"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="226" height="22" align="left" valign="middle">6%税率的金融商品转让项目</td>
+      <td width="41" height="22" align="center" valign="middle">4</td>
+      <td width="192" height="22" align="right" valign="middle" v-fill.msxse='"ewbhxh-4"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-4"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-4"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqykcje='"ewbhxh-4"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqsjkcje='"ewbhxh-4"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="226" height="22" align="left" valign="middle">5%征收率的项目</td>
+      <td width="41" height="22" align="center" valign="middle">5</td>
+      <td width="192" height="22" align="right" valign="middle" v-fill.msxse='"ewbhxh-5"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-5"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-5"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqykcje='"ewbhxh-5"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqsjkcje='"ewbhxh-5"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-5"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="226" height="22" align="left" valign="middle">3%征收率的项目</td>
+      <td width="41" height="22" align="center" valign="middle">6</td>
+      <td width="192" height="22" align="right" valign="middle" v-fill.msxse='"ewbhxh-6"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-6"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-6"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqykcje='"ewbhxh-6"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqsjkcje='"ewbhxh-6"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-6"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="226" height="22" align="left" valign="middle">免抵退税的项目</td>
+      <td width="41" height="22" align="center" valign="middle">7</td>
+      <td width="192" height="22" align="right" valign="middle" v-fill.msxse='"ewbhxh-7"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-7"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-7"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqykcje='"ewbhxh-7"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqsjkcje='"ewbhxh-7"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-7"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="226" height="22" align="left" valign="middle">免税的项目</td>
+      <td width="41" height="22" align="center" valign="middle">8</td>
+      <td width="192" height="22" align="right" valign="middle" v-fill.msxse='"ewbhxh-8"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-8"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-8"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqykcje='"ewbhxh-8"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.bqsjkcje='"ewbhxh-8"'>0.00</td>
+      <td width="160" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-8"'>0.00</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<html>
+<head>
+<title>金融业增值税申报进项情况统计表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1250" height = "972" id="taxTable">
+<tr>
+<td  width="1218" height="46"  align="center" valign="middle" colspan="6" class="noBorder"><B>金融业增值税申报进项情况统计表</B></td>
+</tr>
+<tr v-for="item in json.list">
+<td  width="738" height="22"  align="left" valign="middle" colspan="3" class="noBorder">纳税人识别号：{{item.nsrsbh}}　　　纳税人名称（公章）：{{item.nsrmc}}</td>
+<td  width="320" height="22"  align="left" valign="middle" colspan="2" class="noBorder">税款所属时间：<span v-date>{{item.rqQ}}</span>至<span v-date>{{item.rqZ}}</span></td>
+<td  width="160" height="22"  align="right" valign="middle"  class="noBorder">金额单位：元至角分</td>
+</tr>
+<tr>
+<td  width="465" height="30"  align="center" valign="middle"  >支出项目</td>
+<td  width="113" height="30"  align="center" valign="middle"  >行号</td>
+<td  width="160" height="30"  align="center" valign="middle"  >当期账载支出金额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >当期增值税申报表实际申报抵扣金额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >当期增值税申报表实际抵扣税额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >计算当期应抵扣未抵扣进项税额</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="center" valign="middle"  >第1列</td>
+<td  width="113" height="22"  align="center" valign="middle"  >第2列</td>
+<td  width="160" height="22"  align="center" valign="middle"  >第3列</td>
+<td  width="160" height="22"  align="center" valign="middle"  >第4列</td>
+<td  width="160" height="22"  align="center" valign="middle"  >第5列</td>
+<td  width="160" height="22"  align="center" valign="middle"  >第6列</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >一、利息支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >1=2+3+5</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-for="item in json.zblist">{{item.lxzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （一）存款利息支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >2</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist" >{{item.cklxzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （二）金融机构往来利息支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >3</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.jrjgwalxzc.toFixed(2)}}</td>
+
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         其中：票据转贴现利息支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >4</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.pjztxlxzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （三）其他利息支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >5</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.qtlxzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >二、手续费及佣金支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >6</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.sxfjyjzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="30"  align="left" valign="middle"  >三、业务成本和费用</td>
+<td  width="113" height="30"  align="center" valign="middle"  >7=8+9+10+15+16+17+18+28+29+33</td>
+<td  width="160" height="30"  align="right" valign="middle"   v-for="item in json.zblist">{{item.ywcbyfy.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （一）新增外购不动产支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >8</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.xzwgbdzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （二）新增不动产租赁支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >9</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.xzbdczlzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （三）新增外购有形动产支出（包括货物和固定资产）    </td>
+<td  width="113" height="22"  align="center" valign="middle"  >10=11+12+13+14</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.xzwgdczc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         1.外购油、煤等燃料支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >11</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgymrlzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         2.外购水、燃气等能源支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >12</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgsrqnyzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         3.外购电力支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >13</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgdlzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         4.外购机器设备、办公用品、材料等其他货物类支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >14</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgjqsbzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （四）新增有形动产租赁支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >15</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.xzyxdczlzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （五）外购无形资产支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >16</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgwxzczc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （六）外购加工、修理修配劳务支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >17</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgjgxlzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="30"  align="left" valign="middle"  >   （七）外购营改增应税服务支出</td>
+<td  width="113" height="30"  align="center" valign="middle"  >18=19+20+21+22+24+25+26+27</td>
+<td  width="160" height="30"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgygzzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         1.外购运输服务支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >19</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgysfwzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         2.外购研发和技术服务、信息技术服务支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >20</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgyfzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         3.外购财产保险服务支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >21</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgccbxzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         4.差旅费支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >22</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.clfzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >               其中：住宿费支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >23</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.zsfzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         5.外购商务辅助服务（物业、安保、经纪代理、人力资源等）</td>
+<td  width="113" height="22"  align="center" valign="middle"  >24</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgswfzfw.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         6.外购文化创意服务（广告、会议展览、设计服务等）</td>
+<td  width="113" height="22"  align="center" valign="middle"  >25</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgwhcyfw.toFixed(2)}}</td>
+
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         7.外购鉴证咨询服务（会计税务代理、审计、律师费等）</td>
+<td  width="113" height="22"  align="center" valign="middle"  >26</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.wgjdzxfw.toFixed(2)}}</td>
+
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         8.其他</td>
+<td  width="113" height="22"  align="center" valign="middle"  >27</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-for="item in json.zblist">{{item.qt.toFixed(2)}}</td>
+
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （八)职工薪酬支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >28</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-for="item in json.zblist">{{item.zgxzzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （九）折旧或摊销</td>
+<td  width="113" height="22"  align="center" valign="middle"  >29=30+31+32</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-for="item in json.zblist">{{item.zjhtx.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         1.不动产</td>
+<td  width="113" height="22"  align="center" valign="middle"  >30</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-for="item in json.zblist">{{item.bdc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         2.有形动产</td>
+<td  width="113" height="22"  align="center" valign="middle"  >31</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-for="item in json.zblist">{{item.yxdc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >         3.无形资产</td>
+<td  width="113" height="22"  align="center" valign="middle"  >32</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-for="item in json.zblist">{{item.wxzc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="465" height="22"  align="left" valign="middle"  >   （十）其他业务支出</td>
+<td  width="113" height="22"  align="center" valign="middle"  >33</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-for="item in json.zblist">{{item.qtywzc.toFixed(2)}}</td>
+</tr>
+<tr v-for="item in json.list">
+<td  width="465" height="22"  align="left" valign="middle"  >测算理论最大可抵扣进项金额</td>
+<td  width="113" height="22"  align="center" valign="middle"  >34</td>
+<td  width="640" height="22"  align="right" valign="middle" colspan="4" >{{item.csllzdjxje.toFixed(2)}}</td>
+</tr>
+<tr v-for="item in json.list">
+<td  width="465" height="22"  align="left" valign="middle"  >测算理论最大可抵扣进项税额</td>
+<td  width="113" height="22"  align="center" valign="middle"  >35</td>
+<td  width="640" height="22"  align="right" valign="middle" colspan="4" >{{item.csllzdjxse.toFixed(2)}}</td>
+</tr>
+<tr v-for="item in json.list">
+<td  width="465" height="22"  align="left" valign="middle"  >本期实际抵扣进项税额</td>
+<td  width="113" height="22"  align="center" valign="middle"  >36</td>
+<td  width="640" height="22"  align="right" valign="middle" colspan="4" >{{item.bqsjdkjxse.toFixed(2)}}</td>
+</tr>
+<tr v-for="item in json.list">
+<td  width="465" height="22"  align="left" valign="middle"  >本期应抵扣未抵扣进项税额</td>
+<td  width="113" height="22"  align="center" valign="middle"  >37</td>
+<td  width="640" height="22"  align="right" valign="middle" colspan="4" >{{item.bqydkwdkjxse.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

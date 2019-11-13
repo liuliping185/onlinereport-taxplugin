@@ -1,0 +1,186 @@
+<html>
+
+<head>
+  <title>车船税纳税申报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<style>
+  form {
+    margin: 0
+  }
+</style>
+<body "">
+  <table cellspacing="0" cellpadding="0" width="3537" height="441" id="taxTable">
+    <tr>
+      <td width="2997" height="46" align="center" valign="middle" colspan="19" class="noBorder"><B>车船税纳税申报表</B></td>
+    </tr>
+    <tr>
+      <td width="2997" height="22" align="center" valign="middle" colspan="19" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="1075" height="22" align="left" valign="middle" colspan="8" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="236" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="236" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="178" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="1075" height="22" align="left" valign="middle" colspan="8" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="236" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="236" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="178" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="477" height="22" align="left" valign="middle" colspan="3" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="1075" height="22" colspan="8" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="159" height="22" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" class="noBorder">&nbsp;</td>
+      <td width="236" height="22" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" class="noBorder">&nbsp;</td>
+      <td width="236" height="22" class="noBorder">&nbsp;</td>
+      <td width="159" height="22" class="noBorder">&nbsp;</td>
+      <td width="178" height="22" class="noBorder">&nbsp;</td>
+      <td width="477" height="22" align="right" valign="middle" colspan="3" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+      <td width="170" height="22" align="left" valign="middle" colspan="2">纳税人识别号</td>
+      <td width="525" height="22" align="left" valign="middle" colspan="3">{{json.list[0].nsrsbh}}</td>
+      <td width="212" height="22" align="left" valign="middle" colspan="2">纳税人名称</td>
+      <td width="486" height="22" align="left" valign="middle" colspan="3">{{json.list[0].nsrmc}}</td>
+      <td width="236" height="22" align="left" valign="middle">申报日期</td>
+      <td width="1368" height="22" align="left" valign="middle" colspan="8" v-date>{{json.list[0].sbrq1}}</td>
+    </tr>
+    <tr>
+      <td width="170" height="22" align="left" valign="middle" colspan="2">申报类型</td>
+      <td width="525" height="22" align="left" valign="middle" colspan="3">{{json.list[0].sblx}}</td>
+      <td width="212" height="22" align="left" valign="middle" colspan="2">纳税人身份证照类型</td>
+      <td width="486" height="22" align="left" valign="middle" colspan="3">{{json.list[0].sfzjlxDm}}</td>
+      <td width="236" height="22" align="left" valign="middle">纳税人身份证照号码</td>
+      <td width="1368" height="22" align="left" valign="middle" colspan="8">{{json.list[0].sfzjhm}}</td>
+    </tr>
+    <tr>
+      <td width="170" height="22" align="left" valign="middle" colspan="2">税款所属期</td>
+      <td width="525" height="22" align="left" valign="middle" colspan="3" v-date>{{json.list[0].skssqq}}</td>
+      <td width="212" height="22" align="center" valign="middle" colspan="2">至</td>
+      <td width="486" height="22" align="left" valign="middle" colspan="3" v-date>{{json.list[0].skssqz}}</td>
+      <td width="236" height="22" align="left" valign="middle">填表日期</td>
+      <td width="1368" height="22" align="left" valign="middle" colspan="8" v-date>{{json.list[0].tbrq}}</td>
+    </tr>
+    <tr>
+      <td width="170" height="22" align="left" valign="middle" colspan="2">居住（单位）地址</td>
+      <td width="525" height="22" align="left" valign="middle" colspan="3">{{json.list[0].dz}}</td>
+      <td width="212" height="22" align="left" valign="middle" colspan="2">联系人</td>
+      <td width="486" height="22" align="left" valign="middle" colspan="3">{{json.list[0].lxr}}</td>
+      <td width="236" height="22" align="left" valign="middle">联系方式</td>
+      <td width="1368" height="22" align="left" valign="middle" colspan="8">{{json.list[0].lxdh}}</td>
+    </tr>
+    <tr>
+      <td width="47" height="43" align="center" valign="middle">序号</td>
+      <td width="123" height="43" align="center" valign="middle">车船牌照号码<br>1</td>
+      <td width="155" height="43" align="center" valign="middle">车船识别代码<br>2</td>
+      <td width="271" height="43" align="center" valign="middle">征收品目<br>3</td>
+      <td width="99" height="43" align="center" valign="middle">征收子目<br>4</td>
+      <td width="99" height="43" align="center" valign="middle">*计税单位<br>5</td>
+      <td width="113" height="43" align="center" valign="middle">计税单位的数量<br>6</td>
+      <td width="168" height="43" align="center" valign="middle">单位税额<br>7</td>
+      <td width="159" height="43" align="center" valign="middle">本年应纳税额<br>8=7*6</td>
+      <td width="159" height="43" align="center" valign="middle">本年减免税额1<br>9</td>
+      <td width="236" height="43" align="center" valign="middle">减免性质1<br>10</td>
+      <td width="159" height="43" align="center" valign="middle">减免税证明号1<br>11</td>
+      <td width="159" height="43" align="center" valign="middle">本年减免税额2<br>12</td>
+      <td width="236" height="43" align="center" valign="middle">减免性质2<br>13</td>
+      <td width="159" height="43" align="center" valign="middle">减免税证明号2<br>14</td>
+      <td width="178" height="43" align="center" valign="middle">本期应纳税额<br>15=（8-9-12）/12*计税月份数</td>
+      <td width="159" height="43" align="center" valign="middle">本期已缴税额<br>16</td>
+      <td width="159" height="43" align="center" valign="middle">已缴税费凭证号码<br>17</td>
+      <td width="159" height="43" align="center" valign="middle">本期应补退税额<br>18=15-16</td>
+    </tr>
+    <tr v-for="(item, index) in json.listzb" :key="index">
+      <td width="47" height="22" align="center" valign="middle">00{{index + 1 }}</td>
+      <td width="123" height="22" align="left" valign="middle">{{item.clpzhm}}</td>
+      <td width="155" height="22" align="left" valign="middle">{{item.clsbdm}}</td>
+      <td width="271" height="22" align="left" valign="middle">{{item.zspmDm}}</td>
+      <td width="99" height="22" align="left" valign="middle">{{item.zszmDm}}</td>
+      <td width="99" height="22" align="left" valign="middle">{{item.jldwDm}}</td>
+      <td width="113" height="22" align="right" valign="middle">{{item.jsdwsl.toFixed(2)}}</td>
+      <td width="168" height="22" align="right" valign="middle">{{item.dwse.toFixed(2)}}</td>
+      <td width="159" height="22" align="right" valign="middle">{{item.bnynse.toFixed(2)}}</td>
+      <td width="159" height="22" align="right" valign="middle">{{item.jmse.toFixed(2)}}</td>
+      <td width="236" height="22" align="left" valign="middle">{{item.ssjmxzDm}}</td>
+      <td width="159" height="22" align="left" valign="middle">{{item.jmszmbh}}</td>
+      <td width="159" height="22" align="right" valign="middle">{{item.jmse2.toFixed(2)}}</td>
+      <td width="236" height="22" align="left" valign="middle">{{item.ssjmxzDm2}}</td>
+      <td width="159" height="22" align="left" valign="middle">{{item.jmszmbh2}}</td>
+      <td width="178" height="22" align="right" valign="middle">{{item.bqynse.toFixed(2)}}</td>
+      <td width="159" height="22" align="right" valign="middle">{{item.bqyjse.toFixed(2)}}</td>
+      <td width="159" height="22" align="right" valign="middle">{{item.yjsfpzhm}}</td>
+      <td width="159" height="22" align="right" valign="middle">{{item.bqybtse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="47" height="22" align="center" valign="middle">合计</td>
+      <td width="123" height="22" align="center" valign="middle">--</td>
+      <td width="155" height="22" align="center" valign="middle">--</td>
+      <td width="271" height="22" align="center" valign="middle">--</td>
+      <td width="99" height="22" align="center" valign="middle">--</td>
+      <td width="99" height="22" align="center" valign="middle">--</td>
+      <td width="113" height="22" align="center" valign="middle">--</td>
+      <td width="168" height="22" align="center" valign="middle">--</td>
+      <td width="159" height="22" align="right" valign="middle">{{json.list[0].nyjsehj.toFixed(2)}}</td>
+      <td width="159" height="22" align="right" valign="middle">{{json.list[0].jmsehj.toFixed(2)}}</td>
+      <td width="236" height="22" align="center" valign="middle">--</td>
+      <td width="159" height="22" align="center" valign="middle">--</td>
+      <td width="159" height="22" align="center" valign="middle">--</td>
+      <td width="236" height="22" align="center" valign="middle">--</td>
+      <td width="159" height="22" align="center" valign="middle">--</td>
+      <td width="178" height="22" align="right" valign="middle">{{json.list[0].dnyjhj.toFixed(2)}}</td>
+      <td width="159" height="22" align="right" valign="middle">{{json.list[0].wnbjhj.toFixed(2)}}</td>
+      <td width="159" height="22" align="center" valign="middle">--</td>
+      <td width="159" height="22" align="right" valign="middle">{{json.list[0].sjjnhj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="325" height="22" align="left" valign="middle" colspan="3">申报车辆总数（辆）</td>
+      <td width="750" height="22" align="right" valign="middle" colspan="5">{{json.list[0].sbczs}}</td>
+      <td width="318" height="22" align="left" valign="middle" colspan="2">申报船舶总数（艘）</td>
+      <td width="1604" height="22" align="right" valign="middle" colspan="9">{{json.list[0].sbcbzs}}</td>
+    </tr>
+    <tr>
+      <td width="2997" height="22" align="left" valign="middle" colspan="19">受理人信息</td>
+    </tr>
+    <tr>
+      <td width="170" height="22" align="left" valign="middle" colspan="2">代理人名称</td>
+      <td width="525" height="22" align="left" valign="middle" colspan="3">{{json.list[0].dlr}}</td>
+      <td width="212" height="22" align="left" valign="middle" colspan="2">代理人身份证号</td>
+      <td width="327" height="22" align="left" valign="middle" colspan="2">{{json.list[0].dlrsfzjhm1}}</td>
+      <td width="159" height="22" align="left" valign="middle">受理人</td>
+      <td width="1604" height="22" align="left" valign="middle" colspan="9">{{json.list[0].slr}}</td>
+    </tr>
+    <tr>
+      <td width="170" height="22" align="left" valign="middle" colspan="2">受理日期</td>
+      <td width="525" height="22" align="center" valign="middle" colspan="3" v-date>{{json.list[0].slrq}}</td>
+      <td width="212" height="22" align="left" valign="middle" colspan="2">受理税务机关</td>
+      <td width="327" height="22" align="center" valign="middle" colspan="2">{{json.list[0].slswjg}}</td>
+      <td width="1763" height="22" align="right" valign="middle" colspan="10">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="2997" height="22" align="left" valign="middle" colspan="19" class="noBorder"> 本表一式两份，一份纳税人留存，一份税务机关留存。</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

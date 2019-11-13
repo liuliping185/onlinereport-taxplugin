@@ -1,0 +1,214 @@
+<html>
+<head>
+<title>税收优惠明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="887" height = "927" id="taxTable" style="margin-top:30px;">
+<tr>
+<td  width="803" height="23"  align="center" valign="middle" colspan="4" class="noBorder"><B>税收优惠明细表</B></td>
+</tr>
+<tr>
+<td  width="803" height="22"  align="center" valign="middle" colspan="4" class="noBorder">税款所属时间:<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</td>
+</tr>
+<tr>
+<td  width="411" height="22"  align="left" valign="middle" colspan="2" class="noBorder">纳税人识别号:{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="392" height="22"  align="right" valign="middle" colspan="2" class="noBorder">填表日期:<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="411" height="22"  align="left" valign="middle" colspan="2" class="noBorder">纳税人名称（公章）:{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="392" height="22"  align="right" valign="middle" colspan="2" class="noBorder">金额单位：人民币元（列至角分）</td>
+</tr>
+<tr>
+<td  width="57" height="22" align="center" valign="middle"  >行次</td>
+<td  width="533" height="22"  align="center" valign="middle" colspan="2" >项          目</td>
+<td  width="213" height="22"  align="center" valign="middle"  >金    额</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >1</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >一、免税、减计收入及加计扣除  1=2+11+17</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.msjjsrjjjkc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >2</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >    （一）免税收入  2=3+4+5+6+7+8+9+10</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.mssr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >3</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     1.国债利息收入</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.gzlxsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >4</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     2.从居民企业取得与该机构、场所有实际联系的股息、红利</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.cjmqyqdygjgcsysjlxdgxhl='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >5</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     3.符合条件的非营利组织的收入</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.fhtjdfylzzdsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >6</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     4.取得的地方政府债券利息所得或收入</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qdddfzfzqlxsdhsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >7</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     5.海峡两岸海上直航</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.hxlahszh='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >8</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     6.海峡两岸空中直航</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.hxlakzzh='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >9</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     7.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm1='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje1='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >10</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     8.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm2='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje2='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >11</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >   （二）减计收入  11=12+13+14+15+16</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.jjsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >12</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     1.综合利用资源生产产品取得的收入</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.zhlyzysccpqddsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >13</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     2.金融、保险等机构取得的涉农利息、保费收入</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.jrbxdjgqddsnlxbfsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >14</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     3.取得的中国铁路建设债券利息收入</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qddzgtljszqlxsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >15</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     4.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm3='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje3='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >16</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     5.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm4='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje4='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >17</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >  （三）加计扣除  17=18+19+20</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.jjkc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >18</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     1.安置残疾人员及国家鼓励安置的其他就业人员所支付的工资加计扣除</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.azcjryjgjglazdqtjyryszfdgzjjkc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >19</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     2.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm5='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje5='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >20</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     3.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm6='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje6='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >21</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >二、减免所得税  21=22+23+24+25+26</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.jmsde='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >22</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     1.设在西部地区的鼓励类产业企业</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.szxbdqdgllcyqy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >23</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     2.横琴新区、平潭综合实验区和前海深港现代服务业合作区企业</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.hqxqptzhsyqhqhsgxdfwyhzqqy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >24</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     3.国际运输减免所得税</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.gjysjmsds='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >25</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     4.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm7='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje7='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >26</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     5.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm8='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje8='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >27</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >三、抵免所得税  27=28+29+30</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.dmsds='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >28</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >     1.本年允许抵免的环境保护、节能节水、安全生产专用设备投资额</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.bnyxdmdhjbhjnjsaqsczysbtze='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >29</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     2.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm9='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje9='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >30</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     3.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm10='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje10='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >31</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >四、其他  31=32+33</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qt='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >32</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     1.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm011='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje11='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >33</td>
+<td  width="354" height="22"  align="left" valign="middle"  >     2.其他减免项目名称及减免性质代码：</td>
+<td  width="179" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdm012='""'>&nbsp;</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.qtjmxmmcjjmxzdmje12='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >34</td>
+<td  width="533" height="22"  align="left" valign="middle" colspan="2" >合计 34=1+21+27+31</td>
+<td  width="213" height="22"  align="right" valign="middle"  v-fill.hj='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+
+<head>
+  <title>增值税差额征税扣除项目清单</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="2400" height="200" id="taxTable">
+    <tr>
+      <td width="2130" height="46" align="center" valign="middle" colspan="11" class="noBorder">
+        <B>增值税差额征税扣除项目清单								</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="200" height="22" align="left" valign="middle" class="noBorder">纳税人名称（公章）：<span id="nsrmc">{{bt.customerStateTaxInfo.nsrmc}}</span></td>
+      <td width="500" height="22" align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号：<span id="nsrsbh">{{bt.customerStateTaxInfo.nsrsbh}}</span></td>
+      <td width="295" height="22" align="right" valign="middle" class="noBorder">差额扣除所属时期：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+      <td width="287" height="22" align="left" valign="middle" class="noBorder"></td>
+      <td width="232" height="22" align="right" valign="middle" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="350" height="22" align="center" valign="middle">开具单位名称</td>
+      <td width="150" height="22" align="center" valign="middle">开具单位纳税人识别号</td>
+      <td width="138" height="22" align="center" valign="middle">凭证类型</td>
+      <td width="150" height="22" align="center" valign="middle">凭证代码</td>
+      <td width="150" height="22" align="center" valign="middle">凭证号码</td>
+      <td width="100" height="22" align="center" valign="middle">凭证开具日期</td>
+      <td width="250" height="22" align="center" valign="middle">凭证开具的可扣除项目名称</td>
+      <td width="289" height="22" align="center" valign="middle">凭证开具的可扣除项目适用的差额扣除政策</td>
+      <td width="287" height="22" align="center" valign="middle">凭证开具的可扣除项目适用的差额扣除项目</td>
+      <td width="232" height="22" align="center" valign="middle">凭证开具的可扣除项目金额（元）</td>
+    </tr>
+    <tr>
+      <td width="350" height="22" align="center" valign="middle">1</td>
+      <td width="150" height="22" align="center" valign="middle">2</td>
+      <td width="138" height="22" align="center" valign="middle">3</td>
+      <td width="150" height="22" align="center" valign="middle">4</td>
+      <td width="150" height="22" align="center" valign="middle">5</td>
+      <td width="100" height="22" align="center" valign="middle">6</td>
+      <td width="250" height="22" align="center" valign="middle">7</td>
+      <td width="289" height="22" align="center" valign="middle">8</td>
+      <td width="287" height="22" align="center" valign="middle">9</td>
+      <td width="232" height="22" align="center" valign="middle">10</td>
+    </tr>
+    <tr v-for='(item, index) in json'>
+      <td width="350" height="22" align="center" valign="bottom">{{item.kjdwmc}}</td>
+      <td width="150" height="22" align="center" valign="middle">{{item.kjdwmsh}}</td>
+      <td width="138" height="22" align="center" valign="middle">{{item.hfyxpzlx}}</td>
+      <td width="150" height="22" align="center" valign="middle">{{item.hfyxpzdm}}</td>
+      <td width="150" height="22" align="center" valign="middle">{{item.hfyxpzhm}}</td>
+      <td width="100" height="22" align="center" valign="middle">{{item.kjrq}}</td>
+      <td width="250" height="22" align="center" valign="middle">{{item.hfyxxmmc}}</td>
+      <td width="289" height="22" align="center" valign="middle">{{item.kclx}}</td>
+      <td width="287" height="22" align="center" valign="middle">{{item.kcxm}}</td>
+      <td width="232" height="22" align="center" valign="middle">{{item.jshj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="350" height="22" align="center" valign="middle">--</td>
+      <td width="150" height="22" align="center" valign="middle">--</td>
+      <td width="138" height="22" align="center" valign="middle">--</td>
+      <td width="150" height="22" align="center" valign="middle">--</td>
+      <td width="150" height="22" align="center" valign="middle">--</td>
+      <td width="100" height="22" align="center" valign="middle">--</td>
+      <td width="250" height="22" align="center" valign="middle">--</td>
+      <td width="289" height="22" align="center" valign="middle">--</td>
+      <td width="287" height="22" align="right" valign="middle">合计：</td>
+      <td width="232" height="22" align="right" valign="middle">{{json[0].jehj === null ? '' : json[0].jehj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="500" height="22" align="left" valign="middle" colspan="2" class="noBorder">财务负责人：</td>
+      <td width="138" height="22" align="left" valign="bottom" class="noBorder">经办人：</td>
+      <td width="150" height="22" align="left" valign="bottom" class="noBorder">&nbsp;</td>
+      <td width="789" height="22" align="left" valign="bottom" colspan="4" class="noBorder">&nbsp;</td>
+      <td width="519" height="22" align="left" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

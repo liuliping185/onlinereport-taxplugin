@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>减免所得税优惠明细表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<div  id="taxTable" style="margin-top:20px;">
+<!-- 七月之后 -->
+<table cellspacing="0" cellpadding="0" width="900" height = "847">
+<tr>
+<td  width="834" height="23"  align="center" valign="middle" colspan="7" class="noBorder"><B>减免所得税优惠明细表</B></td>
+</tr>
+<tr>
+<td  width="834" height="22"  align="center" valign="middle" colspan="7" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="834" height="22"  align="left" valign="middle" colspan="7" class="noBorder">纳税人识别号（统一社会信用代码）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="448" height="22"  align="left" valign="middle" colspan="2" class="noBorder" >纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="51" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="48" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="28" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="65" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="194" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >行次</td>
+<td  width="594" height="22"  align="center" valign="middle" colspan="5" >项    目</td>
+<td  width="194" height="22"  align="center" valign="middle"  >本年累计金额</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >1</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >一、符合条件的小型微利企业减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.fhtjdxxwlqyjmqysdsLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >2</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二、国家需要重点扶持的高新技术企业减按15%的税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.zdfcgxjsqyjmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >3</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >三、经济特区和上海浦东新区新设立的高新技术企业在区内取得的所得定期减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.jjtqpdxqxslgxjsqyjmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >4</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >四、受灾地区农村信用社免征企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.szdqncxysLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >5</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >五、动漫企业自主开发、生产动漫产品定期减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.dmqyzzkfLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >6</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >六、线宽小于0.8微米（含）的集成电路生产企业减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bwmjcdlLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >7</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >七、线宽小于0.25微米的集成电路生产企业减按15%税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.ewwmjcdljaswslLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >8</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >八、投资额超过80亿元的集成电路生产企业减按15%税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bsyyjcdljaswslLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >9</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >九、线宽小于0.25微米的集成电路生产企业减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.ewwmjcdlLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >10</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十、投资额超过80亿元的集成电路生产企业减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bsyyjcdlLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >11</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十一、线宽小于130纳米的集成电路生产企业减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.xkxyybsnmdjcdlscqyjmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >12</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十二、线宽小于65纳米或投资额超过150亿元的集成电路生产企业减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.xkxylwnmhtzecgywlyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >13</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十三、新办集成电路设计企业减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.xbjcdlsjqyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >14</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十四、国家规划布局内集成电路设计企业可减按10%的税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.gjghbjjcdljasslLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >15</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十五、符合条件的软件企业减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.fhtjrjqyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >16</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十六、国家规划布局内重点软件企业可减按10%的税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.gjghbjnzdrjqyjasslLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >17</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十七、符合条件的集成电路封装、测试企业定期减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.fhtjjcdlfzcsqyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >18</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十八、符合条件的集成电路关键专用材料生产企业、集成电路专用设备生产企业定期减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.fhtjjcdlzyclscqyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >19</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >十九、经营性文化事业单位转制为企业的免征企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.jyxwhsydwLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >20</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二十、符合条件的生产和装配伤残人员专门用品企业免征企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.fhtjsczpscryypLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >21</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二十一、技术先进型服务企业减按15%的税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.jsxjxfwqyjaswslLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >22</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二十二、服务贸易类技术先进型服务企业减按15%的税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.fwmycxfzsdjsxjxfwqyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >23</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二十三、设在西部地区的鼓励类产业企业减按15%的税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.xbdqgllqyjaswLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >24</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二十四、新疆困难地区新办企业定期减免企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.xjkndqxbqyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >25</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二十五、新疆喀什、霍尔果斯特殊经济开发区新办企业定期免征企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.xjkstsjjkfqxbqyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >26</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二十六、广东横琴、福建平潭、深圳前海等地区的鼓励类产业企业减按15%税率征收企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.hqptqhgllqyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >27</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >二十七、北京冬奥组委、北京冬奥会测试赛赛事组委会免征企业所得税</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.bjdazwsszwhLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >28</td>
+<td  width="402" height="22"  align="left" valign="middle"  >二十八、其他</td>
+<td  width="192" height="22"  align="left" valign="middle" colspan="4" >&nbsp;</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.qt='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="30"  align="center" valign="middle"  >29</td>
+<td  width="402" height="30"  align="left" valign="middle"  >二十九、民族自治地方的自治机关对本民族自治地方的企业应缴纳的企业所得税中属于地方分享的部分减征或免征</td>
+<td  width="51" height="30"  align="right" valign="middle"  ><form><p><input type="checkbox" name="D35" value="ON" :checked="json[0].jzmzlx == '2'" disabled>免征</p></form></td>
+<td  width="76" height="30"  align="right" valign="middle" colspan="2" ><form><p><input type="checkbox" name="E35" value="ON" :checked="json[0].jzmzlx == '1'" disabled>减征：减征幅度</p></form></td>
+<td  width="65" height="30"  align="right" valign="middle"  v-percent="2">{{json[0].jzfd}}</td>
+<td  width="194" height="30"  align="right" valign="middle"  v-fill.mzzzdfqydffxbfLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="46" height="22"  align="center" valign="middle"  >30</td>
+<td  width="594" height="22"  align="left" valign="middle" colspan="5" >合计(1+2+3+4+5+6+…+29)</td>
+<td  width="194" height="22"  align="right" valign="middle"  v-fill.hjLj='""'>0.00</td>
+</tr>
+</table>
+</div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

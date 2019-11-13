@@ -1,0 +1,125 @@
+<html>
+
+<head>
+  <title>成品油购销存情况明细表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="2713" height="243" id="taxTable">
+    <tr>
+      <td width="2681" height="46" align="center" valign="middle" colspan="19" class="noBorder">
+        <B>成品油购销存情况明细表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="2681" height="22" align="left" valign="middle" colspan="19" class="noBorder">纳税人识别号：<span id="nsrsbh">{{bt.customerStateTaxInfo.nsrsbh}}</span></td>
+    </tr>
+    <tr>
+      <td width="2105" height="22" align="left" valign="middle" colspan="14" class="noBorder">纳税人名称（公章）：<span id="nsrmc">{{bt.customerStateTaxInfo.nsrmc}}</span></td>
+      <td width="576" height="22" align="right" valign="middle" colspan="5" class="noBorder">单位：吨、元</td>
+    </tr>
+    <tr>
+      <td width="130" height="109" align="center" valign="middle" rowspan="4">油品型号</td>
+      <td width="548" height="22" align="center" valign="middle" colspan="4">期初库存</td>
+      <td width="552" height="22" align="center" valign="middle" colspan="4">本期入库</td>
+      <td width="899" height="22" align="center" valign="middle" colspan="6">本期出库</td>
+      <td width="552" height="22" align="center" valign="middle" colspan="4">期末库存</td>
+    </tr>
+    <tr>
+      <td width="350" height="22" align="center" valign="middle" colspan="2">数量</td>
+      <td width="198" height="22" align="center" valign="middle" colspan="2">金额</td>
+      <td width="350" height="22" align="center" valign="middle" colspan="2">数量</td>
+      <td width="202" height="22" align="center" valign="middle" colspan="2">金额</td>
+      <td width="350" height="22" align="center" valign="middle" colspan="2">应税部分</td>
+      <td width="549" height="22" align="center" valign="middle" colspan="4">非应税部分</td>
+      <td width="350" height="22" align="center" valign="middle" colspan="2">数量</td>
+      <td width="202" height="22" align="center" valign="middle" colspan="2">金额</td>
+    </tr>
+    <tr>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="23" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="27" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="350" height="22" align="center" valign="middle" colspan="2">数量</td>
+      <td width="199" height="22" align="center" valign="middle" colspan="2">金额</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="175" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="27" height="22" align="center" valign="middle">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="175" height="43" align="center" valign="middle">自购<br>1</td>
+      <td width="175" height="43" align="center" valign="middle">代储<br>2</td>
+      <td width="175" height="43" align="center" valign="middle">自购<br>3</td>
+      <td width="23" height="43" align="center" valign="middle">代储<br>4</td>
+      <td width="175" height="43" align="center" valign="middle">自购<br>5</td>
+      <td width="175" height="43" align="center" valign="middle">代储<br>6</td>
+      <td width="175" height="43" align="center" valign="middle">自购<br>7</td>
+      <td width="27" height="43" align="center" valign="middle">代储<br>8</td>
+      <td width="175" height="43" align="center" valign="middle">数量<br>9</td>
+      <td width="175" height="43" align="center" valign="middle">金额<br>10</td>
+      <td width="175" height="43" align="center" valign="middle">自用<br>11</td>
+      <td width="175" height="43" align="center" valign="middle">代储<br>12</td>
+      <td width="175" height="43" align="center" valign="middle">自用<br>13</td>
+      <td width="24" height="43" align="center" valign="middle">代储<br>14</td>
+      <td width="175" height="43" align="center" valign="middle">自购<br>15</td>
+      <td width="175" height="43" align="center" valign="middle">代储<br>16</td>
+      <td width="175" height="43" align="center" valign="middle">自购<br>17</td>
+      <td width="27" height="43" align="center" valign="middle">代储<br>18</td>
+    </tr>
+    <tr v-for='(item, index) in json'>
+      <td width="130" height="22" align="center" valign="middle" class="ypxh">{{item.ypxh}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.qckcZgsl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.qckcDcsl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.qckcZgje.toFixed(2)}}</td>
+      <td width="23" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.bqrkZgsl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.bqrkDcsl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.bqrkZgje.toFixed(2)}}</td>
+      <td width="27" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.bqckYsbfsl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.bqckYsbfje.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.bqckFysbfZysl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.bqckFysbfDcsl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.bqckFysbfZyje.toFixed(2)}}</td>
+      <td width="24" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.qmkcZgsl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.qmkcDcsl.toFixed(2)}}</td>
+      <td width="175" height="22" align="right" valign="middle">{{item.qmkcZgje.toFixed(2)}}</td>
+      <td width="27" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr>
+      <td width="130" height="22" align="center" valign="middle">合计</td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.qcrkjezghj='""'></td>
+      <td width="23" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.bqrkjezghj='""'></td>
+      <td width="27" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.bqckysjehj='""'></td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.bqckfysjezyhj='""'></td>
+      <td width="24" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="center" valign="middle">--</td>
+      <td width="175" height="22" align="right" valign="middle" v-fill.qmkcjezghj='""'></td>
+      <td width="27" height="22" align="center" valign="middle">--</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

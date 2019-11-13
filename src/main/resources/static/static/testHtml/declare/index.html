@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/bootstrap.css?v=1.1" rel="stylesheet">
+    <!--滚动条-->
+    <link rel="stylesheet" href="../css/scroll.css" />
+    <!--table样式-->
+    <link rel="stylesheet" href="../css/table.css" />
+    <!--样式-->
+    <link rel="stylesheet" href="../css/encapsulation.css" />
+    <!--时间插件-->
+    <link rel="stylesheet" href="../js/My97DatePicker/skin/WdatePicker.css" />
+    <!--declare-->
+    <link rel="stylesheet" href="/online_report/static/css/declare/declare.css" />
+    <!-- 页面自定义样式 -->
+    <title>在线填报</title>
+</head>
+<body>
+<div style="background-color:#FFFFFF;">
+    <div style="padding: 25px;">
+        <div class="div-border" style="padding-bottom: 20px;height: 60px;">
+            <img style="float:left;display:block" src="../images/zxtb.png">&nbsp;&nbsp;
+            <span style="float:left;display:block;margin-left: 10px;margin-top: 9px;top: 10px;" class="span-title">按期应申报</span>
+        </div>
+        <div>
+            <div class="div-float" style="padding-bottom: 8px; width: 100%;position :relative">
+                <span>申报月份：</span>
+                <input readonly id="getInputValue" name="birth_date" style="width: 10%;  display: inline;min-width: 150px" type="text" class="Wdate checkId-input check-items-birthday form-control">
+                <input id="reset" class="btn btn-primary tdDong-btn" style="margin-right: 10%;margin-right: 10px;height: 32px;margin-top: 5px;position:absolute;right: 120px;" type="button" value="重置申报清册" />
+            </div>
+        </div>
+        </br>
+        <div class="div-clear-folat">
+            <strong>税费申报</strong>
+        </div>
+        <hr class="hr-margin" />
+        <div id="taxGrid"></div>
+        <!-- <div style="height:16px"></div> -->
+        <div class="font-clo" style="padding-top: 20px;">
+            <div style="font-size:12px">温馨提示：</div>
+            <div class="reminder"><span class="span-font-size">1、如近期有税费种认定、纳税人资格、备案等发生变动，页面展现清册与实际说需不符的，</span></div>
+            <div class="reminder"><span class="span-font-size">请点此处&nbsp;&nbsp;“<label for="reset" id="reset1"  class="label_declare">重置申报清册</label>”&nbsp;&nbsp;对该户清册进行重新生成。</span>
+            </div>
+            <div class="reminder"><span class="span-font-size">2、点击页眉&nbsp;&nbsp;“申报缴税”&nbsp;&nbsp;即会触发下属首个菜单&nbsp;&nbsp;“按期应申报”&nbsp;&nbsp;，无需再点击&nbsp;&nbsp;“按期应申报”&nbsp;&nbsp;，</span></div>
+            <div class="reminder"><span class="span-font-size">如发现清册重复，也请点击前述链接&nbsp;&nbsp;“重置申报清册”&nbsp;&nbsp;。</span></div>
+            <div class="reminder"><span class="span-font-size">无上述1、2情况请勿点击重置。</span></div>
+            <div class="reminder"><span class="span-font-size">3、仅当操作期间申报状态有变化时点&nbsp;&nbsp;“刷新”&nbsp;&nbsp;，切换月份、刚进入本页面、申报完成后本页面已显示&nbsp;&nbsp;“已申报”&nbsp;&nbsp;等情形无需刷新。</span></div>
+            <div class="reminder"><span class="span-font-size">4、如发现&nbsp;&nbsp;“刷新”&nbsp;&nbsp;后的申报日期和状态不是最新情况，通常是因为&nbsp;&nbsp;“刷新”&nbsp;&nbsp;按钮所查数据同步延时所致，</span></div>
+            <div class="reminder"><span class="span-font-size">如遇此情况，等几秒钟再&nbsp;&nbsp;“刷新”&nbsp;&nbsp;或退出后稍后重进申报清册查看。</span></div>
+            <div class="reminder"><span class="span-font-size">5、没有财务报表清册，可能是以下原因之一：</span></div>
+            <div class="reminder"><span class="span-font-size">未做财务报表备案，<label id="goRecord" class="label_declare">&nbsp;现在去备案；</label></span>
+            </div>
+            <div class="reminder"><span class="span-font-size">只做了备案报告书但未做具体的会计报表名称；</span></div>
+        </div>
+    </div>
+</div>
+
+    <div id="myMask" class="myMask" hidden></div>
+    <div id="myModal" class="myModal" hidden>
+        <div class="myModal-title">
+            选择申报方式
+        </div>
+        <div class="myModal-body">
+            <div class="myModal-body-div">
+                <div style="line-height: 40px;margin: 10px;font-size: 14px;"><div id="dName"></div>
+                    <button class="btn btn-primary" id="normalDeclaration" onclick="initpage.declarationMethod('N')">一般申报</button>
+                </div>
+            </div>
+            <div class="myModal-body-div" style="clear:both;padding-top: 10px;">
+                <div style="line-height: 40px;margin: 10px;font-size: 14px;"><div id="ybName"></div>
+                    <button class="btn btn-primary ybDeclaration1"  id="ybDeclaration"  onmouseover="this.className='btn ybDeclaration'"  onmouseout="this.className='btn btn-primary ybDeclaration1'" onclick="initpage.declarationMethod('Y')">一表集成</button></div>
+            </div>
+            <img class="img-ybjc-modal" onclick="initpage.closeModal()" src="../images/close.png">
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-1.11.3.js?v=1.1"></script>
+<script src="../js/jquery.nicescroll.js?v=1.1"></script>
+<script src="../js/bootstrap.js?v=1.1"></script>
+<script src="../js/encapsulation.js?v=1.3"></script>
+<script src="../js/minScroll.js?v=1.1"></script>
+<script src="../js/My97DatePicker/WdatePicker.js?v=1.1"></script>
+<script src="../taxInfo.js"></script>
+<script src="../biz/declare_grid.js?v=1.0"></script>
+<script>
+    // <!-- // 使用 el 表达式，将返回的信息写到此处，然后调用页面绘制方法绘制页面
+    <!--var companyInfo = ${json};-->
+
+    <!--if (companyInfo.success) {-->
+        <!--var initpage = initPage(companyInfo.bean);-->
+        var initpage = initPage();
+        $("#getInputValue").on("focus", function() {
+            WdatePicker({
+                isShowClear:false,
+                dateFmt: 'yyyy-MM',
+                onpicking: function(dp){
+                    initpage.changeDate(this, dp);
+                }
+            });
+        });
+    <!--} else {-->
+        <!--alertWarning("请求失败！");-->
+        <!--// 弹出错误对话框-->
+    <!--}-->
+</script>
+</html>

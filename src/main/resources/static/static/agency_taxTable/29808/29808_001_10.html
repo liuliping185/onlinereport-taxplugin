@@ -1,0 +1,395 @@
+<html>
+
+<head>
+  <title>资产负债表（适用执行企业会计制度的企业）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="1245" height="1036" id="taxTable">
+    <tr>
+      <td width="1213" height="46" align="center" valign="middle" colspan="8" class="noBorder">
+        <B>资产负债表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1213" height="22" align="center" valign="middle" colspan="8" class="noBorder">(适用执行企业会计制度的企业)</td>
+    </tr>
+    <tr>
+      <td width="1213" height="22" align="center" valign="middle" colspan="8" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="816" height="22" align="left" valign="middle" colspan="5" class="noBorder">纳税人识别号:<span id="nsrsbh">{{bt.customerStateTaxInfo.nsrsbh}}</span></td>
+      <td width="79" height="22" align="center" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="318" height="22" align="left" valign="middle" colspan="2" class="noBorder">会企01表</td>
+    </tr>
+    <tr>
+      <td width="1213" height="22" align="left" valign="middle" colspan="8" class="noBorder">纳税人名称（公章）:<span id="nsrmc">{{bt.customerStateTaxInfo.nsrmc}}</span></td>
+    </tr>
+    <tr>
+      <td width="816" height="22" align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="79" height="22" align="center" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="318" height="22" align="left" valign="middle" colspan="2" class="noBorder">单位：元</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="center" valign="middle">资 产</td>
+      <td width="61" height="22" align="center" valign="middle">行次 </td>
+      <td width="159" height="22" align="center" valign="middle">年初数</td>
+      <td width="159" height="22" align="center" valign="middle">期末数</td>
+      <td width="234" height="22" align="center" valign="middle">负债和所有者权益（或股东权益）</td>
+      <td width="79" height="22" align="center" valign="middle">行次 </td>
+      <td width="159" height="22" align="center" valign="middle">年初数</td>
+      <td width="159" height="22" align="center" valign="middle">期末数</td>
+    </tr>
+    <tr>
+      <td width="582" height="22" align="left" valign="middle" colspan="4">流动资产：</td>
+      <td width="631" height="22" align="left" valign="middle" colspan="4">流动负债：</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 货币资金</td>
+      <td width="61" height="22" align="center" valign="middle">1</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-1"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-1"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 短期借款</td>
+      <td width="79" height="22" align="center" valign="middle">68</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-1"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-1"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 短期投资</td>
+      <td width="61" height="22" align="center" valign="middle">2</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-2"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-2"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 应付票据</td>
+      <td width="79" height="22" align="center" valign="middle">69</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-2"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 应收票据</td>
+      <td width="61" height="22" align="center" valign="middle">3</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-3"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-3"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 应付账款</td>
+      <td width="79" height="22" align="center" valign="middle">70</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-3"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-3"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 应收股利</td>
+      <td width="61" height="22" align="center" valign="middle">4</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-4"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-4"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 预收账款</td>
+      <td width="79" height="22" align="center" valign="middle">71</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-4"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 应收利息</td>
+      <td width="61" height="22" align="center" valign="middle">5</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-5"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-5"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 应付工资</td>
+      <td width="79" height="22" align="center" valign="middle">72</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-5"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-5"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 应收账款</td>
+      <td width="61" height="22" align="center" valign="middle">6</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-6"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-6"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 应付福利费</td>
+      <td width="79" height="22" align="center" valign="middle">73</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-6"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-6"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 其他应收款</td>
+      <td width="61" height="22" align="center" valign="middle">7</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-7"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-7"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 应付股利</td>
+      <td width="79" height="22" align="center" valign="middle">74</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-7"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-7"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 预付账款</td>
+      <td width="61" height="22" align="center" valign="middle">8</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-8"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-8"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 应交税金</td>
+      <td width="79" height="22" align="center" valign="middle">75</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-8"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-8"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 应收补贴款</td>
+      <td width="61" height="22" align="center" valign="middle">9</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-9"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-9"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 其他应交款</td>
+      <td width="79" height="22" align="center" valign="middle">80</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-9"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-9"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 存货</td>
+      <td width="61" height="22" align="center" valign="middle">10</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-10"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-10"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 其他应付款</td>
+      <td width="79" height="22" align="center" valign="middle">81</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-10"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-10"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 待摊费用</td>
+      <td width="61" height="22" align="center" valign="middle">11</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-11"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-11"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 预提费用</td>
+      <td width="79" height="22" align="center" valign="middle">82</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-11"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-11"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 一年内到期的长期债权投资</td>
+      <td width="61" height="22" align="center" valign="middle">21</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-12"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-12"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 预计负债</td>
+      <td width="79" height="22" align="center" valign="middle">83</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-12"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-12"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 其他流动资产</td>
+      <td width="61" height="22" align="center" valign="middle">24</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-13"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-13"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 一年内到期的长期负债</td>
+      <td width="79" height="22" align="center" valign="middle">86</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-13"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-13"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 流动资产合计</td>
+      <td width="61" height="22" align="center" valign="middle">31</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-14"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-14"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 其他流动负债</td>
+      <td width="79" height="22" align="center" valign="middle">90</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-14"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-14"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="1213" height="22" align="left" valign="middle" colspan="8">长期投资：</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 长期股权投资</td>
+      <td width="61" height="22" align="center" valign="middle">32</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-15"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-15"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle">流动负债合计</td>
+      <td width="79" height="22" align="center" valign="middle">100</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-15"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-15"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 长期债权投资</td>
+      <td width="61" height="22" align="center" valign="middle">34</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-16"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-16"'>0.00</td>
+      <td width="631" height="22" align="left" valign="middle" colspan="4">长期负债：</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 长期投资合计</td>
+      <td width="61" height="22" align="center" valign="middle">38</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-17"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-17"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 长期借款</td>
+      <td width="79" height="22" align="center" valign="middle">101</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-17"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-17"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="582" height="22" align="left" valign="middle" colspan="4">固定资产：</td>
+      <td width="234" height="22" align="left" valign="middle"> 应付债券</td>
+      <td width="79" height="22" align="center" valign="middle">102</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-18"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-18"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 固定资产原价</td>
+      <td width="61" height="22" align="center" valign="middle">39</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-19"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-19"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 长期应付款</td>
+      <td width="79" height="22" align="center" valign="middle">103</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-19"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-19"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 减：累计折旧</td>
+      <td width="61" height="22" align="center" valign="middle">40</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-20"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-20"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 专项应付款</td>
+      <td width="79" height="22" align="center" valign="middle">106</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-20"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-20"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 固定资产净值</td>
+      <td width="61" height="22" align="center" valign="middle">41</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-21"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-21"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 其他长期负债</td>
+      <td width="79" height="22" align="center" valign="middle">108</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-21"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-21"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 减：固定资产减值准备</td>
+      <td width="61" height="22" align="center" valign="middle">42</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-22"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-22"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 长期负债合计</td>
+      <td width="79" height="22" align="center" valign="middle">110</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-22"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-22"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 固定资产净额</td>
+      <td width="61" height="22" align="center" valign="middle">43</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-23"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-23"'>0.00</td>
+      <td width="631" height="22" align="left" valign="middle" colspan="4">递延税项：</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 工程物资</td>
+      <td width="61" height="22" align="center" valign="middle">44</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-24"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-24"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 递延税款贷项</td>
+      <td width="79" height="22" align="center" valign="middle">111</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-24"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-24"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 在建工程</td>
+      <td width="61" height="22" align="center" valign="middle">45</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-25"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-25"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle">负债合计</td>
+      <td width="79" height="22" align="center" valign="middle">114</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-25"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-25"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 固定资产清理</td>
+      <td width="61" height="22" align="center" valign="middle">46</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-26"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-26"'>0.00</td>
+      <td width="631" height="22" align="left" valign="middle" colspan="4">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 固定资产合计</td>
+      <td width="61" height="22" align="center" valign="middle">50</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-27"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-27"'>0.00</td>
+      <td width="631" height="22" align="left" valign="middle" colspan="4">所有者权益（或股东权益）：</td>
+    </tr>
+    <tr>
+      <td width="582" height="22" align="left" valign="middle" colspan="4">无形资产及其他资产：</td>
+      <td width="234" height="22" align="left" valign="middle"> 实收资本(或股本)</td>
+      <td width="79" height="22" align="center" valign="middle">115</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-28"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-28"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 无形资产</td>
+      <td width="61" height="22" align="center" valign="middle">51</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-29"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-29"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 减：已归还投资</td>
+      <td width="79" height="22" align="center" valign="middle">116</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-29"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-29"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 长期待摊费用</td>
+      <td width="61" height="22" align="center" valign="middle">52</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-30"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-30"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 实收资本(或股本)净额</td>
+      <td width="79" height="22" align="center" valign="middle">117</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-30"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-30"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 其他长期资产</td>
+      <td width="61" height="22" align="center" valign="middle">53</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-31"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-31"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 资本公积</td>
+      <td width="79" height="22" align="center" valign="middle">118</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-31"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-31"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle"> 无形资产及其他资产合计</td>
+      <td width="61" height="22" align="center" valign="middle">60</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-32"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-32"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle"> 盈余公积</td>
+      <td width="79" height="22" align="center" valign="middle">119</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-32"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-32"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="582" height="22" align="left" valign="middle" colspan="4">&nbsp;</td>
+      <td width="234" height="22" align="left" valign="middle"> 其中：法定公益金</td>
+      <td width="79" height="22" align="center" valign="middle">120</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-33"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-33"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="582" height="22" align="left" valign="middle" colspan="4">递延税项：</td>
+      <td width="234" height="22" align="left" valign="middle"> 未分配利润</td>
+      <td width="79" height="22" align="center" valign="middle">121</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-34"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-34"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="center" valign="middle">递延税款借项</td>
+      <td width="61" height="22" align="center" valign="middle">61</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-35"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-35"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle">所有者权益（或股东权益）合计</td>
+      <td width="79" height="22" align="center" valign="middle">122</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-35"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-35"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="203" height="22" align="left" valign="middle">资产合计</td>
+      <td width="61" height="22" align="center" valign="middle">67</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsZc='"ewbhxh-36"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsZc='"ewbhxh-36"'>0.00</td>
+      <td width="234" height="22" align="left" valign="middle">负债和所有者权益（或股东权益）总计</td>
+      <td width="79" height="22" align="center" valign="middle">135</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.ncsQy='"ewbhxh-36"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.qmsQy='"ewbhxh-36"'>0.00</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>
+
+</html>

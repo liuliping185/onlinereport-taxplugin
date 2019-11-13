@@ -1,0 +1,251 @@
+<html>
+
+<head>
+  <title>企业重组所得税特殊性税务处理报告表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <div id="taxTable">
+    <div v-for="items in json">
+      <table cellspacing="0" cellpadding="0" width="1140" height="764">
+        <tr>
+          <td width="1108" height="46" align="center" valign="middle" colspan="7" class="noBorder"><B>企业重组所得税特殊性税务处理报告表</B></td>
+        </tr>
+        <tr>
+          <td width="1108" height="22" align="center" valign="middle" colspan="7" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span
+              v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+        </tr>
+        <tr>
+          <td width="1108" height="22" align="left" valign="middle" colspan="7" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+        </tr>
+        <tr>
+          <td width="1108" height="22" align="left" valign="middle" colspan="7" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+        </tr>
+        <tr>
+          <td width="544" height="22" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+          <td width="564" height="22" align="right" valign="middle" colspan="4" class="noBorder">金额单位：元（列至角分）</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">纳税人名称（盖章）</td>
+          <td width="595" height="22" align="left" valign="middle" colspan="3">{{items.listZb[0].nsrmc}}</td>
+          <td width="166" height="22" align="left" valign="middle">纳税人识别号</td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">{{items.listZb[0].nsrsbh}}</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">单位地址</td>
+          <td width="595" height="22" align="left" valign="middle" colspan="3">{{items.listZb[0].zcdz}}</td>
+          <td width="166" height="22" align="left" valign="middle">财务负责人</td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">{{items.listZb[0].cwfzrxm}}</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">主管税务机关（全称）</td>
+          <td width="595" height="22" align="left" valign="middle" colspan="3">{{items.listZb[0].zgswjgmc}}</td>
+          <td width="166" height="22" align="left" valign="middle">联系电话</td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">{{items.listZb[0].zcdlxdh}}</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">重组日：</td>
+          <td width="191" height="22" align="left" valign="middle">{{items.listZb[0].czri}}</td>
+          <td width="194" height="22" align="left" valign="middle">重组业务开始年度：</td>
+          <td width="210" height="22" align="left" valign="middle">{{items.listZb[0].czywksnd}}</td>
+          <td width="166" height="22" align="left" valign="middle">重组业务完成年度：</td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">{{items.listZb[0].czywwcnd}}</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="center" valign="middle">重组交易类型</td>
+          <td width="949" height="22" align="center" valign="middle" colspan="6">企业在重组业务中所属当事方类型</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">
+            <form>
+              <p><input type="checkbox" name="B11" value="ON" :checked="items.listZb[0].flxsgb === '1'" disabled>法律形式改变</p>
+            </form>
+          </td>
+          <td width="949" height="22" align="left" valign="middle" colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">
+            <form>
+              <p><input type="checkbox" name="B12" value="ON" :checked="items.listZb[0].zwcz !== ''" disabled>债务重组</p>
+            </form>
+          </td>
+          <td width="385" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="C12" value="ON"  :checked="items.listZb[0].zwcz === '2'" disabled>债务人</p>
+            </form>
+          </td>
+          <td width="376" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="E12" value="ON"  :checked="items.listZb[0].zwcz === '3'" disabled>债权人</p>
+            </form>
+          </td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">
+            <form>
+              <p><input type="checkbox" name="B13" value="ON" :checked="items.listZb[0].gqsg !== ''" disabled>股权收购</p>
+            </form>
+          </td>
+          <td width="385" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="C13" value="ON" :checked="items.listZb[0].gqsg === '4'" disabled>收购方</p>
+            </form>
+          </td>
+          <td width="376" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="E13" value="ON" :checked="items.listZb[0].gqsg === '5'" disabled>转让方</p>
+            </form>
+          </td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="G13" value="ON" :checked="items.listZb[0].gqsg === '6'" disabled>被收购企业</p>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">
+            <form>
+              <p><input type="checkbox" name="B14" value="ON" :checked="items.listZb[0].zcsg !== ''" disabled>资产收购</p>
+            </form>
+          </td>
+          <td width="385" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="C14" value="ON" :checked="items.listZb[0].zcsg === '7'" disabled>收购方</p>
+            </form>
+          </td>
+          <td width="376" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="E14" value="ON" :checked="items.listZb[0].zcsg === '8'" disabled>转让方</p>
+            </form>
+          </td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">
+            <form>
+              <p><input type="checkbox" name="B15" value="ON" :checked="items.listZb[0].hb !== ''" disabled>合并</p>
+            </form>
+          </td>
+          <td width="385" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="C15" value="ON" :checked="items.listZb[0].hb === '9'" disabled>合并企业</p>
+            </form>
+          </td>
+          <td width="376" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="E15" value="ON" :checked="items.listZb[0].hb === '10'" disabled>被合并企业</p>
+            </form>
+          </td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="G15" value="ON" :checked="items.listZb[0].hb === '11'" disabled>被合并企业股东</p>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle">
+            <form>
+              <p><input type="checkbox" name="B16" value="ON" :checked="items.listZb[0].fenl !== ''" disabled>分立</p>
+            </form>
+          </td>
+          <td width="385" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="C16" value="ON" :checked="items.listZb[0].fenl === '12'" disabled>分立企业</p>
+            </form>
+          </td>
+          <td width="376" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="E16" value="ON" :checked="items.listZb[0].fenl === '13'" disabled>被分立企业</p>
+            </form>
+          </td>
+          <td width="188" height="22" align="left" valign="middle" colspan="2">
+            <form>
+              <p><input type="checkbox" name="G16" value="ON" :checked="items.listZb[0].fenl === '14'" disabled>被分立企业股东</p>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td width="159" height="110" align="left" valign="middle" rowspan="5">特殊性税务处理条件</td>
+          <td width="595" height="22" align="left" valign="middle" colspan="3">（一）具有合理的商业目的，且不以减少、免除或者推迟缴纳税款为主要目的。</td>
+          <td width="354" height="22" align="right" valign="middle" colspan="3">
+            <form>
+              <p><input type="checkbox" name="F17" value="ON" :checked="items.listZb[0].tsxswcltjsymd === '1'" disabled> </p>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td width="595" height="22" align="left" valign="middle" colspan="3">（二）被收购、合并或分立部分的资产或股权比例符合规定的比例。</td>
+          <td width="166" height="22" align="right" valign="middle">
+            <form>
+              <p><input type="checkbox" name="F18" value="ON" :checked="items.listZb[0].tsxswcltjbsghbflbz === '1'" disabled> </p>
+            </form>
+          </td>
+          <td width="91" height="22" align="center" valign="middle">比例</td>
+          <td width="97" height="22" align="right" valign="middle" >{{(items.listZb[0].tsxswcltjbsghbflbzbl).toFixed(2)}}%</td>
+        </tr>
+        <tr>
+          <td width="595" height="22" align="left" valign="middle" colspan="3">（三）企业重组后的连续12个月内不改变重组资产原来的实质性经营活动。</td>
+          <td width="354" height="22" align="right" valign="middle" colspan="3">
+            <form>
+              <p><input type="checkbox" name="F19" value="ON" :checked="items.listZb[0].tsxswcltjqyczhd === '1'" disabled> </p>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td width="595" height="22" align="left" valign="middle" colspan="3">（四）重组交易对价中涉及股权支付金额符合规定比例。</td>
+          <td width="166" height="22" align="right" valign="middle">
+            <form>
+              <p><input type="checkbox" name="F20" value="ON" :checked="items.listZb[0].tsxswcltjczjydjbz === '1'" disabled> </p>
+            </form>
+          </td>
+          <td width="91" height="22" align="center" valign="middle">比例</td>
+          <td width="97" height="22" align="right" valign="middle" >{{items.listZb[0].tsxswcltjczjydjbl.toFixed(2)}}%</td>
+        </tr>
+        <tr>
+          <td width="595" height="22" align="left" valign="middle" colspan="3">（五）企业重组中取得股权支付的原主要股东，在重组后连续12个月内，不得转让所取得的股权。</td>
+          <td width="354" height="22" align="right" valign="middle" colspan="3">
+            <form>
+              <p><input type="checkbox" name="F21" value="ON" :checked="items.listZb[0].tsxswcltjgqzf === '1'" disabled> </p>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td width="159" height="80" align="left" valign="middle" rowspan="2">主管税务机关受理意见</td>
+          <td width="949" height="58" align="left" valign="middle" colspan="6">{{items.listZb[0].zgswjgslyj}}</td>
+        </tr>
+        <tr>
+          <td width="949" height="22" align="right" valign="middle" colspan="6">（受理专用章） 年 月 日</td>
+        </tr>
+        <tr>
+          <td width="1108" height="22" align="left" valign="middle" colspan="7">其他需要说明的事项（重组业务其他需要说明的事项，如没有则填“无”）： </td>
+        </tr>
+        <tr>
+          <td width="1108" height="66" align="left" valign="middle" colspan="7">{{items.listZb[0].qtxysmdshx}}</td>
+        </tr>
+        <tr>
+          <td width="159" height="44" align="left" valign="middle" rowspan="2">纳税人声明</td>
+          <td width="949" height="22" align="left" valign="middle" colspan="6">谨声明：本人知悉并保证本表填报内容及所附证明材料真实、完整，并承担因资料虚假而产生的法律和行政责任。
+          </td>
+        </tr>
+        <tr>
+          <td width="949" height="22" align="right" valign="middle" colspan="6"> 法定代表人签章： 年 月 日 </td>
+        </tr>
+        <tr>
+          <td width="159" height="22" align="left" valign="middle" class="noBorder">填表人：</td>
+          <td width="385" height="22" align="left" valign="middle" class="noBorder" colspan="2">&nbsp;</td>
+          <td width="210" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="166" height="22" align="center" valign="middle" class="noBorder">填表日期： </td>
+          <td width="91" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="97" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <title>固定资产（不含不动产）进项税额抵扣情况表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="832" height="186" id="taxTable">
+    <tr>
+      <td width="800" height="46" align="center" valign="middle" colspan="9" class="noBorder">
+        <B>固定资产（不含不动产）进项税额抵扣情况表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="333" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）:<span id="nsrsbh">{{bt.customerStateTaxInfo.nsrmc}}</span></td>
+      <td width="192" height="22" align="left" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="158" height="22" align="right" valign="top" class="noBorder">金额单位：元至角分</td>
+    </tr>
+    <tr>
+      <td width="252" height="30" align="center" valign="middle" colspan="3">项目</td>
+      <td width="273" height="30" align="center" valign="middle" colspan="3">当期申报抵扣的<br>固定资产进项税额<br></td>
+      <td width="275" height="30" align="center" valign="middle" colspan="3">申报抵扣的固定资产进项税额累计</td>
+    </tr>
+    <tr>
+      <td width="252" height="22" align="center" valign="middle" colspan="3">增值税专用发票</td>
+      <td width="273" height="22" align="right" valign="middle" colspan="3" v-fill.zzszyfpJxse='""'></td>
+      <td width="275" height="22" align="right" valign="middle" colspan="3" v-fill.zzszyfpJxselj='""'></td>
+    </tr>
+    <tr>
+      <td width="252" height="22" align="center" valign="middle" colspan="3">海关进口增值税专用缴款书</td>
+      <td width="273" height="22" align="right" valign="middle" colspan="3" v-fill.hgjkzzszyjksJxse='""'></td>
+      <td width="275" height="22" align="right" valign="middle" colspan="3" v-fill.hgjkzzszyjksJxselj='""'></td>
+    </tr>
+    <tr>
+      <td width="252" height="22" align="center" valign="middle" colspan="3">合 计</td>
+      <td width="273" height="22" align="right" valign="middle" colspan="3" v-fill.gdzcjxsehj='""'></td>
+      <td width="275" height="22" align="right" valign="middle" colspan="3" v-fill.gdzcjxseljhj='""'></td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

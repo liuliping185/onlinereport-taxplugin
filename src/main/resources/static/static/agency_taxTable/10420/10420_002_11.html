@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>企业年度关联业务往来报告表填报表单</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="740" height = "878" id="taxTable">
+<tr>
+<td  width="708" height="46"  align="center" valign="middle" colspan="4" class="noBorder"><B>企业年度关联业务往来报告表填报表单</B></td>
+</tr>
+<tr>
+<td  width="708" height="22"  align="center" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="708" height="22"  align="left" valign="middle" colspan="4" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="708" height="22"  align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="708" height="22"  align="left" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle" colspan="3" >1、本年度是否与关联方之间存在业务往来？</td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="E6" value="1" :checked="json.list[0].czywwl === 'Y'" disabled>是<br><input type="Radio" name="E6" value="2" :checked="json.list[0].czywwl === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle" colspan="3" >2、本年度是否与境外关联方之间存在业务往来？</td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="E7" value="1" :checked="json.list[0].jwglfczywwl === 'Y'" disabled>是<br><input type="Radio" name="E7" value="2" :checked="json.list[0].jwglfczywwl === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="708" height="22"  align="left" valign="middle" colspan="4" >3、若存在关联业务往来，请选择关联交易类型？</td>
+</tr>
+<tr>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="B9" value="ON" :checked="json.list[0].gljylx1 === 'Y'" disabled>有形资产所有权交易</p></form></td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C9" value="ON" :checked="json.list[0].gljylx2 === 'Y'" disabled>无形资产所有权交易</p></form></td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D9" value="ON" :checked="json.list[0].gljylx3 === 'Y'" disabled>有形资产使用权交易</p></form></td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E9" value="ON" :checked="json.list[0].gljylx4 === 'Y'" disabled>无形资产使用权交易</p></form></td>
+</tr>
+<tr>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="B10" value="ON" :checked="json.list[0].gljylx5 === 'Y'" disabled>金融资产交易</p></form></td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C10" value="ON" :checked="json.list[0].gljylx6 === 'Y'" disabled>融通资金交易</p></form></td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="D10" value="ON" :checked="json.list[0].gljylx7 === 'Y'" disabled>关联劳务</p></form></td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E10" value="ON" :checked="json.list[0].gljylx8 === 'Y'" disabled>权益性投资</p></form></td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle" colspan="3" >4、本年度是否存在成本分摊协议情况？</td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="E11" value="1" :checked="json.list[0].czcbftxy === 'Y'" disabled>是<br><input type="Radio" name="E11" value="2" :checked="json.list[0].czcbftxy === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle" colspan="3" >5、本年度是否存在对外支付款项情况？</td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="E12" value="1" :checked="json.list[0].czdwzfkx === 'Y'" disabled>是<br><input type="Radio" name="E12" value="2" :checked="json.list[0].czdwzfkx === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle" colspan="3" >6、是否在本报告年度所属期间内编制合并财务报表？</td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="E13" value="1" :checked="json.list[0].bzbhcwbb === 'Y'" disabled>是<br><input type="Radio" name="E13" value="2" :checked="json.list[0].bzbhcwbb === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle" colspan="3" >7、本年度是否被指定为国别报告报送企业？</td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="E14" value="1" :checked="json.list[0].gbbgbsqy === 'Y'" disabled>是<br><input type="Radio" name="E14" value="2" :checked="json.list[0].gbbgbsqy === 'N'" disabled>否</p></form></td>
+</tr>
+<tr>
+<td  width="177" height="22"  align="center" valign="middle"  >表单编号</td>
+<td  width="354" height="22"  align="center" valign="middle" colspan="2" >表单名称</td>
+<td  width="177" height="22"  align="center" valign="middle"  >选择填报情况</td>
+</tr>
+<tr v-for='(item,index) in json.listzb'>
+<td  width="177" height="22"  align="center" valign="middle"  >{{item.bdbh}}</td>
+<td  width="354" height="22"  align="left" valign="middle" colspan="2" >{{item.bdmc}}</td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E16" value="ON" :checked="item.glb === 'Y'" disabled> </p></form></td>
+</tr>
+<td  width="708" height="22"  align="left" valign="middle" colspan="4" class="noBorder">说明：企业应当根据实际情况选择需要填报的表单。</td>
+</tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

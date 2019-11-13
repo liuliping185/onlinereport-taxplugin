@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>资产损失税前扣除及纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1615" height = "840" id="taxTable">
+<tr>
+<td width="1549" height="46"  align="left" valign="middle" colspan="8" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>A105090</FONT></td>
+</tr>
+<tr>
+<td width="1549" height="46"  align="center" valign="middle" colspan="8" class="noBorder" ><FONT FACE="宋体"  COLOR=#000000><B>资产损失税前扣除及纳税调整明细表</B></FONT></td>
+</tr>
+<tr>
+<td width="589" height="22"  align="left" valign="middle" colspan="2" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></FONT></td>
+<td width="160" height="22"  align="left" valign="middle" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>&nbsp;</FONT></td>
+<td width="160" height="22"  align="left" valign="middle" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>&nbsp;</FONT></td>
+<td width="160" height="22"  align="left" valign="middle" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>&nbsp;</FONT></td>
+<td width="480" height="22"  align="right" valign="middle" colspan="3" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></FONT></td>
+</tr>
+<tr>
+<td width="589" height="22"  align="left" valign="middle" colspan="2" class="noBorder"><FONT FACE="宋体" SIZE=-1 COLOR=#000000>纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</FONT></td>
+<td width="640" height="22"  align="left" valign="middle" colspan="4" class="noBorder"><FONT FACE="宋体" SIZE=-1 COLOR=#000000>纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</FONT></td>
+<td width="320" height="22"  align="right" valign="middle" colspan="2" class="noBorder"><FONT FACE="宋体" SIZE=-1 COLOR=#000000>金额单位：元（列至角分）</FONT></td>
+</tr>
+<tr>
+<td width="35" height="44"  align="left" valign="middle"  rowspan="2"><FONT FACE="宋体" SIZE=-1 COLOR=#000000>行次</FONT></td>
+<td width="554" height="44"  align="center" valign="middle"  rowspan="2"><FONT FACE="宋体" SIZE=-1 COLOR=#000000>项        目</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>资产损失的账载金额</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>资产处置收入</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>赔偿收入</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>资产计税基础</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>资产损失的税收金额</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>纳税调整金额</FONT></td>
+</tr>
+<tr>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>1</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>2</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>3</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>4</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>5（4-2-3）</FONT></td>
+<td width="160" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>6（1-5）</FONT></td>
+</tr>
+<tr v-for="(item,index) in json">
+<td width="35" height="22"  align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{index+1}}</FONT></td>
+<td width="554" height="22"  align="left" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.ewbhmc}}</FONT></td>
+<td width="160" height="22"  align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.zzje==null?'':item.zzje.toFixed(2)}}</FONT></td>
+<td width="160" height="22"  align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.zcczsr==null?'':item.zcczsr.toFixed(2)}}</FONT></td>
+<td width="160" height="22"  align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.pcsr==null?'':item.pcsr.toFixed(2)}}</FONT></td>
+<td width="160" height="22"  align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.zcjsjc==null?'':item.zcjsjc.toFixed(2)}}</FONT></td>
+<td width="160" height="22"  align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#FF0000>{{item.ssje==null?'':item.ssje.toFixed(2)}}</FONT></td>
+<td width="160" height="22"  align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#FF0000>{{item.nstzje==null?'':item.nstzje.toFixed(2)}}</FONT></td>
+</tr>
+
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

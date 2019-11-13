@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>一般企业收入明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="720" height = "755" id="taxTable" style="margin-top:30px;">
+<tr>
+<td  width="651" height="27"  align="center" valign="middle" colspan="3" class="noBorder"><B>一般企业收入明细表</B></td>
+</tr>
+<tr>
+<td  width="651" height="22"  align="center" valign="middle" colspan="3" class="noBorder">税款所属时间:<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="427" height="22"  align="left" valign="middle" colspan="2" class="noBorder">纳税人识别号:{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="224" height="22"  align="right" valign="middle"  class="noBorder">填表日期:<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="427" height="22"  align="left" valign="middle" colspan="2" class="noBorder">纳税人名称（公章）:{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="224" height="22"  align="right" valign="middle"  class="noBorder">金额单位：人民币元（列至角分）</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >行次</td>
+<td  width="370" height="22"  align="center" valign="middle"  >项        目 </td>
+<td  width="224" height="22"  align="center" valign="middle"  >金    额</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >1</td>
+<td  width="370" height="22" align="left" valign="middle"  >一、营业收入（2+9）</td>
+<td  width="224" height="22" align="right" valign="middle"  v-fill.yysr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >2</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （一）主营业务收入（3+5+6+7+8）</td>
+<td  width="224" height="22" align="right" valign="middle"  v-fill.zyywsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >3</td>
+<td  width="370" height="22" align="left" valign="middle"  >       1.销售商品收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.xsspsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >4</td>
+<td  width="370" height="22" align="left" valign="middle"  >         其中：非货币性资产交换收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.xsspsrQzfhbxzcjhsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >5</td>
+<td  width="370" height="22" align="left" valign="middle"  >       2.提供劳务收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.tglwsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >6</td>
+<td  width="370" height="22" align="left" valign="middle"  >       3.建造合同收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.jzhtsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >7</td>
+<td  width="370" height="22" align="left" valign="middle"  >       4.让渡资产使用权收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.rdzcsyqsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >8</td>
+<td  width="370" height="22" align="left" valign="middle"  >       5.其他</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.zyywsrqt='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >9</td>
+<td  width="370" height="22" align="left" valign="middle"  >  （二）其他业务收入（10+12+13+14+15）</td>
+<td  width="224" height="22" align="right" valign="middle"  v-fill.qtywsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >10</td>
+<td  width="370" height="22" align="left" valign="middle"  >       1.销售材料收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.xsclsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >11</td>
+<td  width="370" height="22" align="left" valign="middle"  >         其中：非货币性资产交换收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.xsclsrQzfhbxzcjhsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >12</td>
+<td  width="370" height="22" align="left" valign="middle"  >       2.出租固定资产收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.czgdzcsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >13</td>
+<td  width="370" height="22" align="left" valign="middle"  >       3.出租无形资产收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.czwxzcsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >14</td>
+<td  width="370" height="22" align="left" valign="middle"  >       4.出租包装物和商品收入</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.czbzwhspsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >15</td>
+<td  width="370" height="22" align="left" valign="middle"  >       5.其他</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.qtywsrqt='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >16</td>
+<td  width="370" height="22" align="left" valign="middle"  >二、营业外收入（17+18+19+20+21+22+23+24+25+26）</td>
+<td  width="224" height="22" align="right" valign="middle"  v-fill.yywsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >17</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （一）非流动资产处置利得</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.fldzcczld='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >18</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （二）非货币性资产交换利得</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.fhbxzcjhld='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >19</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （三）债务重组利得</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.zwczld='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >20</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （四）政府补助利得</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.zfbzld='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >21</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （五）盘盈利得</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.pyld='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >22</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （六）捐赠利得</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.jzld='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >23</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （七）罚没利得</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.fmld='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >24</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （八）确实无法偿付的应付款项</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.qswfcfdyfkx='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >25</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （九）汇兑收益</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.hzsy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >26</td>
+<td  width="370" height="22" align="left" valign="middle"  >   （十）其他</td>
+<td width="224" height="22" align="right" valign="middle"  v-fill.yywsrqt='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

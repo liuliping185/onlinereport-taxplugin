@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>海上油气生产设施弃置费情况表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="2209" height = "244" id="taxTable">
+<tr>
+<td  width="2177" height="46"  align="center" valign="middle" colspan="18" class="noBorder"><B>海上油气生产设施弃置费情况表</B></td>
+</tr>
+<tr>
+<td  width="2177" height="22"  align="center" valign="middle" colspan="18"  class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="701" height="22"  align="left" valign="middle" colspan="5"  class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}　　　纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="112" height="22"  align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td  width="112" height="22"  align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td  width="112" height="22"  align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td  width="112" height="22"  align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td  width="112" height="22"  align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td  width="672" height="22"  align="left" valign="middle" colspan="6"  class="noBorder">&nbsp;</td>
+<td  width="244" height="22"  align="left" valign="middle" colspan="2"  class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="2177" height="22"  align="center" valign="middle" colspan="18" >油（气）田名称及投资比例</td>
+</tr>
+<tr>
+<td  width="214" height="44"  align="center" valign="middle"  rowspan="2">油（气）田名称</td>
+<td  width="97" height="44"  align="center" valign="middle"  rowspan="2">投资比例</td>
+<td  width="166" height="44"  align="center" valign="middle"  rowspan="2">弃置费专款帐号</td>
+<td  width="224" height="22"  align="center" valign="middle" colspan="2" >一、弃置费计提总额</td>
+<td  width="224" height="22"  align="center" valign="middle" colspan="2" >二、弃置费调整后金额</td>
+<td  width="224" height="22"  align="center" valign="middle" colspan="2" >三、年初弃置费账户金额</td>
+<td  width="224" height="22"  align="center" valign="middle" colspan="2" >四、本年度提取弃置费金额</td>
+<td  width="224" height="22"  align="center" valign="middle" colspan="2" >五、本年度弃置费资金损益</td>
+<td  width="224" height="22"  align="center" valign="middle" colspan="2" >六、本年度弃置费汇兑损益</td>
+<td  width="224" height="22"  align="center" valign="middle" colspan="2" >七、年末弃置费账户金额</td>
+<td  width="132" height="44"  align="center" valign="middle"  rowspan="2">八、兑换率</td>
+</tr>
+<tr>
+<td  width="112" height="22"  align="center" valign="middle"  >美元</td>
+<td  width="112" height="22"  align="center" valign="middle"  >人民币</td>
+<td  width="112" height="22"  align="center" valign="middle"  >美元</td>
+<td  width="112" height="22"  align="center" valign="middle"  >人民币</td>
+<td  width="112" height="22"  align="center" valign="middle"  >美元</td>
+<td  width="112" height="22"  align="center" valign="middle"  >人民币</td>
+<td  width="112" height="22"  align="center" valign="middle"  >美元</td>
+<td  width="112" height="22"  align="center" valign="middle"  >人民币</td>
+<td  width="112" height="22"  align="center" valign="middle"  >美元</td>
+<td  width="112" height="22"  align="center" valign="middle"  >人民币</td>
+<td  width="112" height="22"  align="center" valign="middle"  >美元</td>
+<td  width="112" height="22"  align="center" valign="middle"  >人民币</td>
+<td  width="112" height="22"  align="center" valign="middle"  >美元</td>
+<td  width="112" height="22"  align="center" valign="middle"  >人民币</td>
+</tr>
+<tr v-for="(item,index) in json.listzb" :key="item.id">
+<td  width="214" height="22"  align="left" valign="middle"  >{{item.yqtmc}}</td>
+<td  width="97" height="22"  align="right" valign="middle"  >{{(item.tzbl*100).toFixed(8)}}%</td>
+<td  width="166" height="22"  align="left" valign="middle"  >{{item.qzfzkzh}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.qzfjtzeMy.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.qzfjtzeRmb.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.qzfdzhjeMy.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.qzfdzhjeRmb.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.ncqzfzhjeMy.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.ncqzfzhjeRmb.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.bndtqqzfjeMy.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.bndtqqzfjeRmb.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.bndqzfzjsyMy.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.bndqzfzjsyRmb.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.bndqzfhdsyMy.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.bndqzfhdsyRmb.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.nmqzfzhjEmy === null ? '' : item.nmqzfzhjEmy.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{item.nmqzfzhjeRmb.toFixed(2)}}</td>
+<td  width="132" height="22"  align="right" valign="middle"  >{{item.dhl.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="214" height="22"  align="center" valign="middle"  >-</td>
+<td  width="97" height="22"  align="center" valign="middle"  >-</td>
+<td  width="166" height="22"  align="center" valign="middle"  >-</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].myhj1.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].rmbhj1.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].myhj2.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].rmbhj2.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].myhj3.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].rmbhj3.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].myhj4.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].rmbhj4.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].myhj5.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].rmbhj5.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].myhj6.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].rmbhj6.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].myhj7.toFixed(2)}}</td>
+<td  width="112" height="22"  align="right" valign="middle"  >{{json.list[0].rmbhj7.toFixed(2)}}</td>
+<td  width="132" height="22"  align="right" valign="middle"  >{{json.list[0].dhlhj8.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="214" height="44"  align="center" valign="middle"  rowspan="2">九、备注</td>
+<td  width="1963" height="44"  align="left" valign="middle" colspan="17" rowspan="2">{{json.list[0].bz}}</td>
+</tr>
+<tr>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

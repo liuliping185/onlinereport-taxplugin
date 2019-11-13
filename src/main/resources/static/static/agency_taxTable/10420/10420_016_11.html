@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>境外关联方信息表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<div id="taxTable">
+	<div v-for="items in json">
+		<table cellspacing="0" cellpadding="0" width="1268" height = "399" style="margin-top:30px;">
+		<tr>
+		<td  width="1236" height="23"  align="center" valign="middle" colspan="12" class="noBorder"><B>境外关联方信息表</B></td>
+		</tr>
+		<tr>
+		<td  width="1236" height="22"  align="left" valign="middle" colspan="12" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+		</tr>
+		<tr>
+		<td  width="1236" height="22"  align="left" valign="middle" colspan="12" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+		</tr>
+		<tr>
+		<td  width="1236" height="22"  align="left" valign="middle" colspan="12" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+		</tr>
+		<tr>
+		<td  width="1236" height="22"  align="right" valign="middle" colspan="12" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+		</tr>
+		<tr>
+		<td  width="1236" height="22" align="left" valign="middle" colspan="12" ><B style="font-size:14px">境外关联方信息表</B></td>
+		</tr>
+		<tr>
+		<td  width="235" height="22"  align="left" valign="middle" colspan="2" >纳税人名称</td>
+		<td  width="315" height="22"  align="left" valign="middle" colspan="3" >{{items.listZb[0].nsrmc}}</td>
+		<td  width="217" height="22"  align="left" valign="middle" colspan="2" >注册地址</td>
+		<td  width="278" height="22"  align="left" valign="middle" colspan="3" >国家（地区）</td>
+		<td  width="191" height="22"  align="left" valign="middle" colspan="2" >{{items.listZb[0].zcdgj}}</td>
+		</tr>
+		<tr>
+		<td  width="235" height="22"  align="left" valign="middle" colspan="2" >纳税人识别号</td>
+		<td  width="315" height="22"  align="left" valign="middle" colspan="3" >{{items.listZb[0].nsrsbh}}</td>
+		<td  width="217" height="22"  align="left" valign="middle" colspan="2" >经营地址</td>
+		<td  width="278" height="22"  align="left" valign="middle" colspan="3" >国家（地区）</td>
+		<td  width="191" height="22"  align="left" valign="middle" colspan="2" >{{items.listZb[0].jydgj}}</td>
+		</tr>
+		<tr>
+		<td  width="235" height="22"  align="left" valign="middle" colspan="2" >经营范围</td>
+		<td  width="1001" height="22"  align="left" valign="middle" colspan="10" >{{items.listZb[0].jyfw}}</td>
+		</tr>
+		<tr>
+		<td  width="235" height="22"  align="left" valign="middle" colspan="2" >适用所得税性质的税种名称</td>
+		<td  width="1001" height="22"  align="left" valign="middle" colspan="10" >{{items.listZb[0].sysdsxzdszmc}}</td>
+		</tr>
+		<tr>
+		<td  width="74" height="22"  align="left" valign="middle"  >实际税负</td>
+		<td  width="161" height="22"  align="right" valign="middle"  >{{items.listZb[0].sjsf==null?'':items.listZb[0].sjsf.toFixed(2)}}</td>
+		<td  width="62" height="22"  align="left" valign="middle"  >注册资本</td>
+		<td  width="81" height="22"  align="left" valign="middle"  >币种</td>
+		<td  width="172" height="22"  align="left" valign="middle"  >{{items.listZb[0].zczbbz}}</td>
+		<td  width="81" height="22"  align="left" valign="middle"  >金额</td>
+		<td  width="136" height="22"  align="right" valign="middle"  >{{items.listZb[0].zczb==null?'':items.listZb[0].zczb.toFixed(2)}}</td>
+		<td  width="72" height="22"  align="left" valign="middle"  >投资总额</td>
+		<td  width="72" height="22"  align="left" valign="middle"  >币种</td>
+		<td  width="134" height="22"  align="left" valign="middle"  >{{items.listZb[0].tzzebz}}</td>
+		<td  width="106" height="22"  align="left" valign="middle"  >金额</td>
+		<td  width="85" height="22"  align="right" valign="middle"  >{{items.listZb[0].tzze==null?'':items.listZb[0].tzze.toFixed(2)}}</td>
+		</tr>
+		<tr>
+		<td  width="235" height="22"  align="left" valign="middle" colspan="2" >享受所得税性质的税种的税收优惠</td>
+		<td  width="1001" height="22"  align="left" valign="middle" colspan="10" >{{items.listZb[0].ssyh}}</td>
+		</tr>
+		<tr>
+		<td  width="74" height="22"  align="left" valign="middle"  >所属行业</td>
+		<td  width="161" height="22"  align="left" valign="middle"  >{{items.listZb[0].hyDm}}</td>
+		<td  width="315" height="22"  align="left" valign="middle" colspan="3" >所在国纳税年度起始日期</td>
+		<td  width="217" height="22"  align="left" valign="middle" colspan="2" >{{items.listZb[0].nsndqsrq}}</td>
+		<td  width="278" height="22"  align="left" valign="middle" colspan="3" >所在国纳税年度截止日期</td>
+		<td  width="191" height="22"  align="left" valign="middle" colspan="2" >{{items.listZb[0].nsndjzrq}}</td>
+		</tr>
+		<tr>
+		<td  width="74" height="22"  align="left" valign="middle"  >独立法人</td>
+		<td  width="161" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="C15" value="1" :checked="items.listZb[0].sfdlfr === '1'" disabled>是<input type="Radio" name="C15" value="2" :checked="items.listZb[0].sfdlfr === '0'" disabled>否</p></form></td>
+		<td  width="143" height="22"  align="left" valign="middle" colspan="2" >法定代表人或负责人</td>
+		<td  width="172" height="22"  align="left" valign="middle"  >{{items.listZb[0].fddbr}}</td>
+		<td  width="81" height="22"  align="left" valign="middle"  >独立核算</td>
+		<td  width="136" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="H15" value="1" :checked="items.listZb[0].sfdlhs === '1'" disabled>是<input type="Radio" name="H15" value="2" :checked="items.listZb[0].sfdlhs === '0'" disabled>否</p></form></td>
+		<td  width="278" height="22"  align="left" valign="middle" colspan="3" >编制个别财务报表</td>
+		<td  width="191" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="Radio" name="L15" value="1" :checked="items.listZb[0].sfbzgbcwbb === '1'" disabled>是<input type="Radio" name="L15" value="2" :checked="items.listZb[0].sfbzgbcwbb === '0'" disabled>否</p></form></td>
+		</tr>
+		<tr>
+		<td  width="74" height="22"  align="left" valign="middle"  >上市公司</td>
+		<td  width="161" height="22"  align="left" valign="middle"  ><form><p><input type="Radio" name="C16" value="1" :checked="items.listZb[0].sfyss === '1'" disabled>是<input type="Radio" name="C16" value="2" :checked="items.listZb[0].sfyss === '0'" disabled>否</p></form></td>
+		<td  width="143" height="22"  align="left" valign="middle" colspan="2" >上市股票代码</td>
+		<td  width="172" height="22"  align="left" valign="middle"  >{{items.listZb[0].ssgpdm}}</td>
+		<td  width="81" height="22"  align="left" valign="middle"  >上市交易所</td>
+		<td  width="136" height="22"  align="left" valign="middle"  >{{items.listZb[0].ssjysmc}}</td>
+		<td  width="278" height="22"  align="left" valign="middle" colspan="3" >记账本位币</td>
+		<td  width="191" height="22"  align="left" valign="middle" colspan="2" >{{items.listZb[0].jzbwb}}</td>
+		</tr>
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

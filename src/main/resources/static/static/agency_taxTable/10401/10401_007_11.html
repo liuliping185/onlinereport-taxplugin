@@ -1,0 +1,242 @@
+<html>
+<head>
+<title>免税收入、减计收入、所得减免等优惠明细表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<div  id="taxTable" style="margin-top:20px;">
+<!-- 7月之后 -->
+<table cellspacing="0" cellpadding="0" width="858" height = "1085">
+<tr>
+<td  width="826" height="27"  align="center" valign="middle" colspan="4" class="noBorder"><B>免税收入、减计收入、所得减免等优惠明细表</B></td>
+</tr>
+<tr>
+<td  width="826" height="22"  align="center" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="826" height="22"  align="left" valign="middle" colspan="4" class="noBorder">纳税人识别号（统一社会信用代码）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="649" height="22"  align="left" valign="middle" colspan="3" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="177" height="22"  align="right" valign="middle" class="noBorder" >&nbsp;</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >行次</td>
+<td  width="579" height="22"  align="center" valign="middle" colspan="2" >项    目</td>
+<td  width="177" height="22"  align="center" valign="middle"  >本年累计金额</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >1</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >一、免税收入（2+3+6+7+…+15）</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.mssrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >2</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（一）国债利息收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.gzlxsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >3</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（二）符合条件的居民企业之间的股息、红利等权益性投资收益免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.fhtjdjmqyzjdgxhldqyxsyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >4</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >其中：内地居民企业通过沪港通投资且连续持有H股满12个月取得的股息红利所得免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.hgttzgxhlLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >5</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >      内地居民企业通过深港通投资且连续持有H股满12个月取得的股息红利所得免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.sgttzgxhlLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >6</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（三）符合条件的非营利组织的收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.fhtjdfylzzdsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >7</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（四）符合条件的非营利组织（科技企业孵化器）的收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.fhtjdfylzzkjqyfhqLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >8</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（五）符合条件的非营利组织（国家大学科技园）的收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.fhtjdfylzzgjdxkjyqLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >9</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（六）中国清洁发展机制基金取得的收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.zgqjfzjzjjqddsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >10</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（七）投资者从证券投资基金分配中取得的收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.zqtzjjtzzqddmssrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >11</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（八）取得的地方政府债券利息收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.dfzfzqlxsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >12</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（九）中国保险保障基金有限责任公司取得的保险保障基金等收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.zgbxbzjjyxzrgsqdbxbzjjsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >13</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（十）中国奥委会取得北京冬奥组委支付的收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.zgawhqdbjdazwsfsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >14</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（十一）中国残奥委会取得北京冬奥组委分期支付的收入免征企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.zgcawhqdbjdazwfqzfsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >15</td>
+<td  width="402" height="22"  align="left" valign="middle"  >（十二）其他</td>
+<td  width="177" height="22"  align="left" valign="middle"  >&nbsp;</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.qtmssrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >16</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >二、减计收入（17+18+22+23）</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.jjsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >17</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（一）综合利用资源生产产品取得的收入在计算应纳税所得额时减计收入</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.zhlyzysccpqddsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >18</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（二）金融、保险等机构取得的涉农利息、保费减计收入（19+20+21）</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.jrbxdjgqddsllxbfsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >19</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >1.金融机构取得的涉农贷款利息收入在计算应纳税所得额时减计收入</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.jrjgqdsndklxsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >20</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >2.保险机构取得的涉农保费收入在计算应纳税所得额时减计收入</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.bxjgqdsnbfsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >21</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >3.小额贷款公司取得的农户小额贷款利息收入在计算应纳税所得额时减计收入</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.xedkgsqdnhxedklxsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >22</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（三）取得铁路债券利息收入减半征收企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.qddzgtljszqlxsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >23</td>
+<td  width="402" height="22"  align="left" valign="middle"  >（四）其他</td>
+<td  width="177" height="22"  align="left" valign="middle"  >&nbsp;</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.qtjjsrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >24</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >三、加计扣除（25+26+27+28）</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.jjkcLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >25</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（一）开发新技术、新产品、新工艺发生的研究开发费用加计扣除</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.xcpxgyxjsyffyjjkcLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >26</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（二）科技型中小企业开发新技术、新产品、新工艺发生的研究开发费用加计扣除</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.kjxzxqykfxjsyjkffyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >27</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（三）企业为获得创新性、创意性、突破性的产品进行创意设计活动而发生的相关费用加计扣除</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.qywhdcxxcpjxcysjhdfsdxgfyLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >28</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（四）安置残疾人员所支付的工资加计扣除</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.azcjryzfgzLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >29</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >四、所得减免（30+33+34+35+36+37+38+39+40）</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.sdjmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >30</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（一）从事农、林、牧、渔业项目的所得减免征收企业所得税（31+32）</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.nlmyxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >31</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >1.免税项目</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.msxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >32</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >2.减半征收项目</td>
+<td  width="177" height="22"  align="right" valign="middle" v-fill.jbzsxmLj='""' >0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >33</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（二）从事国家重点扶持的公共基础设施项目投资经营的所得定期减免企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.gjzdfcdggjcssxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >34</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（三）从事符合条件的环境保护、节能节水项目的所得定期减免企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.fhtjdhjbhjnjsxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >35</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（四）符合条件的技术转让所得减免征收企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.fhtjdjszrxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >36</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（五）实施清洁发展机制项目的所得定期减免企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.ssqjfzjzxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >37</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（六）符合条件的节能服务公司实施合同能源管理项目的所得定期减免企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.jnfwgssshtnyglxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >38</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（七）线宽小于130纳米的集成电路生产项目的所得减免企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.xkxyybsnmjcdlscxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >39</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >（八）线宽小于65纳米或投资额超过150亿元的集成电路生产项目的所得减免企业所得税</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.xkxylswnmhtzecgybwyyxmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >40</td>
+<td  width="402" height="22"  align="left" valign="middle"  >（九）其他</td>
+<td  width="177" height="22"  align="left" valign="middle"  >&nbsp;</td>
+<td  width="177" height="22"  align="right" valign="middle"  v-fill.qtsdjmLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="70" height="22"  align="center" valign="middle"  >41</td>
+<td  width="579" height="22"  align="left" valign="middle" colspan="2" >合计（1+16+24+29）</td>
+<td  width="177" height="22"  align="right" valign="middle" v-fill.hjLj='""' >0.00</td>
+</tr>
+</table>
+</div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

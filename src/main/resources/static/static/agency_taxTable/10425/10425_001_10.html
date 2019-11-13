@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+
+</head>
+<body>
+    <table id="taxTable"  cellspacing="0" cellpadding="0" width="1029" height = "1552"      style=" margin-top: 10px;">
+<tr>
+<td  width="963" height="23"  align="center" valign="middle" colspan="8"  class="noBorder"><B>中华人民共和国非居民企业所得税年度纳税申报表</B></td>
+</tr>
+<tr>
+<td  width="963" height="23"  align="center" valign="middle" colspan="8" class="noBorder"><B>（2019年版）</B></td>
+</tr>
+<tr>
+<td  width="963" height="22"  align="center" valign="middle" colspan="8" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="963" height="22"  align="left" valign="middle" colspan="8" class="noBorder">纳税人识别号（统一社会信用代码）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="963" height="22"  align="left" valign="middle" colspan="8" class="noBorder">纳税人境内名称：{{bt.customerStateTaxInfo === null ? '' :bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="366" height="22"  align="left" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="196" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="401" height="22"  align="right" valign="middle" colspan="3" class="noBorder">金额单位：人民币元（列至角分）</td>
+</tr>
+<tr>
+<td  width="133" height="30"  align="center" valign="middle" colspan="2" >境外成立地代码</td>
+<td  width="130" height="30"  align="left" valign="middle"  >{{json.list[0].jmgdqszDm}}</td>
+<td  width="103" height="30"  align="left" valign="middle"  >在境外成立地<br>法定名称</td>
+<td  width="196" height="30"  align="left" valign="middle"  >{{json.list[0].zjwcldfdmc}}</td>
+<td  width="115" height="30"  align="left" valign="middle"  >境外成立地<br>纳税人识别号</td>
+<td  width="286" height="30"  align="left" valign="middle" colspan="2" >{{json.list[0].zqjmgnsrsbh}}</td>
+</tr>
+<tr>
+<td  width="133" height="22"  align="center" valign="middle" colspan="2" >企业类型</td>
+<td  width="233" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="D9" value="ON" disabled :checked="json.list[0].sbqylx=='0' ">单独纳税机构、场所</p></form></td>
+<td  width="311" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="F9" value="ON" disabled :checked="json.list[0].sbqylx=='1' ">汇总纳税主要机构、场所</p></form></td>
+<td  width="286" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="H9" value="ON" disabled :checked="json.list[0].sbqylx=='2' ">汇总纳税其他机构、场所</p></form></td>
+</tr>
+<tr>
+<td  width="133" height="22"  align="center" valign="middle" colspan="2" >计税方式</td>
+<td  width="233" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="D10" value="ON" disabled :checked="json.list[0].jsfs=='1' ">据实计算</p></form></td>
+<td  width="597" height="22"  align="left" valign="middle" colspan="4" ><form><p><input type="checkbox" name="F10" value="ON" disabled :checked="json.list[0].jsfs=='2' ">核定征收</p></form></td>
+</tr>
+<tr>
+<td  width="963" height="22"  align="center" valign="middle" colspan="8" ><B>年   度   税   款   计   算</B></td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >行次</td>
+<td  width="625" height="22"  align="center" valign="middle" colspan="5" >项      目</td>
+<td  width="143" height="22"  align="center" valign="middle"  >据实计算申报金额</td>
+<td  width="143" height="22"  align="center" valign="middle"  >核定征收申报金额</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >1</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >一、利润总额</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].lrzejssb==null?'0.00':json.list[0].lrzejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >2</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >&emsp;&emsp;减：境外所得</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jwsdjssb==null?'0.00':json.list[0].jwsdjssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jwsdhdzs==null?'0.00':json.list[0].jwsdhdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >3</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >&emsp;&emsp;    加：纳税调整增加</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].nstzzjejssb==null?'0.00':json.list[0].nstzzjejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].nstzzjehdzs==null?'0.00':json.list[0].nstzzjehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >4</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >&emsp;&emsp;    减：纳税调整减少额（填报F210）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].nstzjsejssb==null?'0.00':json.list[0].nstzjsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].nstzjsehdzs==null?'0.00':json.list[0].nstzjsehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >5</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >&emsp;&emsp;    减：免税、减计收入及加计扣除</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].mssrjssb==null?'0.00':json.list[0].mssrjssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].mssrhdzs==null?'0.00':json.list[0].mssrhdzs.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb1 ">
+<td  width="52" height="22"  align="center" valign="middle"  >{{5+index+1}}</td>
+<td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index==0">其中：项目({{index+1}})</td>
+    <td  width="211" height="22"  align="center" valign="middle" colspan="2"  v-if="index!=0">项目({{index+1}})</td>
+    <td  width="299" height="22"  align="left" valign="middle" colspan="2" >{{item.ssjmxzDm}}</td>
+<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.jssbje==null?'0.00':item.jssbje.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.hdzsje==null?'0.00':item.hdzsje.toFixed(2)}}</td>
+</tr>
+<!--<tr>-->
+<!--<td  width="52" height="22"  align="center" valign="middle"  >7</td>-->
+<!--<td  width="211" height="22"  align="center" valign="middle" colspan="2" >              项目②</td>-->
+<!--<td  width="299" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>-->
+<!--<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>-->
+<!--<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>-->
+<!--<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td  width="52" height="22"  align="center" valign="middle"  >8</td>-->
+<!--<td  width="211" height="22"  align="center" valign="middle" colspan="2" >              项目③</td>-->
+<!--<td  width="299" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>-->
+<!--<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>-->
+<!--<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>-->
+<!--<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td  width="52" height="22"  align="center" valign="middle"  >9</td>-->
+<!--<td  width="211" height="22"  align="center" valign="middle" colspan="2" >              项目④</td>-->
+<!--<td  width="299" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>-->
+<!--<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>-->
+<!--<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>-->
+<!--<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td  width="52" height="22"  align="center" valign="middle"  >10</td>-->
+<!--<td  width="211" height="22"  align="center" valign="middle" colspan="2" >              项目⑤</td>-->
+<!--<td  width="299" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>-->
+<!--<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>-->
+<!--<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>-->
+<!--<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>-->
+<!--</tr>-->
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{5+json.listzb1.length+1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >&emsp;&emsp;    加：境外应税所得抵减境内亏损</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jwsddjjnksjssb==null?'0.00':json.list[0].jwsddjjnksjssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jwsddjjnkshdzs==null?'0.00':json.list[0].jwsddjjnkshdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{6+json.listzb1.length+1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >二、纳税调整后所得（1-2+3-4-5+11）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].nstzhsdjssb==null?'0.00':json.list[0].nstzhsdjssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].nstzhsdhdzs==null?'0.00':json.list[0].nstzhsdhdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{7+json.listzb1.length+1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" > &emsp;&emsp;   减：所得减免</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].sdjmjssb==null?'0.00':json.list[0].sdjmjssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].sdjmhdzs==null?'0.00':json.list[0].sdjmhdzs.toFixed(2)}}</td>
+</tr>
+<tr  v-for="(item,index) in json.listzb2 ">
+<td  width="52" height="22"  align="center" valign="middle"  >{{7+json.listzb1.length+json.listzb2.length  + index}}</td>
+<td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index == 0">         其中：项目({{index+1}})</td>
+    <td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index!=0">       项目({{index+1}})</td>
+    <td  width="299" height="22"  align="left" valign="middle" colspan="2" >{{item.ssjmxzDm}}</td>
+<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.jssbje==null?'0.00':item.jssbje.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.hdzsje==null?'0.00':item.hdzsje.toFixed(2)}}</td>
+</tr>
+<!--<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{11+json.listzb1.length-1}}</td>
+<td  width="211" height="22"  align="center" valign="middle" colspan="2" >              项目②</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>
+<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>
+<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>
+</tr>-->
+
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{7+json.listzb1.length+1 +json.listzb2.length+1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >&emsp;&emsp;    减：弥补以前年度亏损（填报F220）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].mbyqndksjssb==null?'0.00':json.list[0].mbyqndksjssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].mbyqndkshdzs==null?'0.00':json.list[0].mbyqndkshdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{8+json.listzb1.length+1 +json.listzb2.length+1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" > &emsp;&emsp;    减：抵扣应纳税所得额</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].dkynssdejssb==null?'0.00':json.list[0].dkynssdejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].dkynssdehdzs==null?'0.00':json.list[0].dkynssdehdzs.toFixed(2)}}</td>
+</tr>
+<tr  v-for="(item,index) in json.listzb3 ">
+<td  width="52" height="22"  align="center" valign="middle"  >{{12+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+index}}</td>
+    <td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index == 0">         其中：项目({{index+1}})</td>
+    <td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index!=0">       项目({{index+1}})</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >{{item.ssjmxzDm}}</td>
+<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.jssbje==null?'0.00':item.jssbje.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.hdzsje==null?'0.00':item.hdzsje.toFixed(2)}}</td>
+</tr>
+
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{14+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >三、应纳税所得额（12-13-16-17）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].ynssdejssb==null?'0.00':json.list[0].ynssdejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].ynssdehdzs==null?'0.00':json.list[0].ynssdehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{15+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >税率（25%）</td>
+<td  width="143" height="22"  align="right" valign="middle"  v-percent>{{json.list[0].sljssb==null?0.00:json.list[0].sljssb}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  v-percent>{{json.list[0].slhdzs==null?0.00:json.list[0].slhdzs}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{16+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >四、应纳所得税额（19×20）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].ynsdsejssb==null?'0.00':json.list[0].ynsdsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].ynsdsehdzs==null?'0.00':json.list[0].ynsdsehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{17+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >&emsp;&emsp;     减：减免所得税额</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jmsdsejssb==null?'0.00':json.list[0].jmsdsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jmsdsehdzs==null?'0.00':json.list[0].jmsdsehdzs.toFixed(2)}}</td>
+</tr>
+<tr  v-for="(item,index) in json.listzb4 ">
+<td  width="52" height="22"  align="center" valign="middle"  >{{17+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+index}}</td>
+    <td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index == 0">         其中：项目({{index+1}})</td>
+    <td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index!=0">       项目({{index+1}})</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >{{item.ssjmxzDm}}</td>
+<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>
+    <td  width="143" height="22"  align="right" valign="middle"  >{{item.jssbje==null?'0.00':item.jssbje.toFixed(2)}}</td>
+    <td  width="143" height="22"  align="right" valign="middle"  >{{item.hdzsje==null?'0.00':item.hdzsje.toFixed(2)}}</td>
+</tr>
+<!--<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >24</td>
+<td  width="211" height="22"  align="center" valign="middle" colspan="2" >              项目②</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >{{item.ssjmxzDm}}</td>
+<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.jssbje==null?'0.00':item.jssbje.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.hdzsje==null?'0.00':item.hdzsje.toFixed(2)}}</td>
+</tr>-->
+
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{19+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" > &emsp;&emsp;    减：抵免所得税额</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].dmsdsejssb==null?'0.00':json.list[0].dmsdsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].dmsdsehdzs==null?'0.00':json.list[0].dmsdsehdzs.toFixed(2)}}</td>
+</tr>
+<tr  v-for="(item,index) in json.listzb5 ">
+<td  width="52" height="22"  align="center" valign="middle"  >{{19+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1+index}}</td>
+    <td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index == 0">         其中：项目({{index+1}})</td>
+    <td  width="211" height="22"  align="center" valign="middle" colspan="2" v-if="index!=0">       项目({{index+1}})</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >{{item.ssjmxzDm}}</td>
+<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.jssbje==null?'0.00':item.jssbje.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.hdzsje==null?'0.00':item.hdzsje.toFixed(2)}}</td>
+</tr>
+<!--<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >27</td>
+<td  width="211" height="22"  align="center" valign="middle" colspan="2" >              项目②</td>
+<td  width="299" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>
+<td  width="115" height="22"  align="left" valign="middle"  >（减免性质代码）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>
+<td  width="143" height="22"  align="right" valign="middle"  >0.00</td>
+</tr>-->
+
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{21+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >五、应纳税额（21-22-25）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].ynsejssb==null?'0.00':json.list[0].ynsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].ynsehdzs==null?'0.00':json.list[0].ynsehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{22+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" > &emsp;&emsp;    加：境外所得应纳所得税额</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jwsdynsdsejssb==null?'0.00':json.list[0].jwsdynsdsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jwsdynsdsehdzs==null?'0.00':json.list[0].jwsdynsdsehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{23+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >  &emsp;&emsp;   减：境外所得抵免所得税额</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jwsddmsdsejssb==null?'0.00':json.list[0].jwsddmsdsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].jwsddmsdsehdzs==null?'0.00':json.list[0].jwsddmsdsehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{24+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >  &emsp;&emsp;   减：享受协定待遇减免税额</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].xsxddyjmsejssb==null?'0.00':json.list[0].xsxddyjmsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].xsxddyjmsehdzs==null?'0.00':json.list[0].xsxddyjmsehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{25+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >六、实际应纳所得税额（28+29-30-31）</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].sjynsdsejssb==null?'0.00':json.list[0].sjynsdsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].sjynsdsehdzs==null?'0.00':json.list[0].sjynsdsehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{26+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" > &emsp;&emsp;   减：本年累计实际已缴纳的所得税额</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].sjyyjsdsejssb==null?'0.00':json.list[0].sjyyjsdsejssb.toFixed(2)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{json.list[0].sjyyjsdsehdzs==null?'0.00':json.list[0].sjyyjsdsehdzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{27+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="625" height="22"  align="left" valign="middle" colspan="5" >七、本年应补（退）所得税额（32-33）</td>
+<td  width="143" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].ybtsdsejssb==null?'0.00':json.list[0].ybtsdsejssb.toFixed(2)}}</td>
+
+</tr>
+<tr>
+<td  width="963" height="22"  align="center" valign="middle" colspan="8" ><B>汇   总   纳   税   税   款  分   配</B></td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{28+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="81" height="132"  align="left" valign="middle"  rowspan="6">主要机构、场所填报</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >本机构、场所本年应分摊所得税额（36+37+38）</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].zyjgyftsdse==null?'0.00':json.list[0].zyjgyftsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{29+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >&emsp;&emsp;       其中：主要机构、场所直接分摊所得税额</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].zyjgzjftsdse==null?'0.00':json.list[0].zyjgzjftsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{30+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;主要机构、场所财政集中分配所得税额</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].zyjgczjzfpsdse==null?'0.00':json.list[0].zyjgczjzfpsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{31+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;          主要机构、场所从事主体生产经营业务分摊所得税额</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].zyjgztscjyftsdse==null?'0.00':json.list[0].zyjgztscjyftsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{32+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >&emsp;&emsp; 减：本机构、场所本年累计实际已缴纳的所得税额</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].zyjgsjyjnsdse==null?'0.00':json.list[0].zyjgsjyjnsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{33+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >本机构、场所本年应补（退）所得税额（35-39）</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].zyjgybtsdse==null?'0.00':json.list[0].zyjgybtsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{34+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="81" height="66"  align="left" valign="middle"  rowspan="3">其他机构、场所填报</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >本机构、场所本年应分摊所得税额</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].qtjgyftsdse==null?'0.00':json.list[0].qtjgyftsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{35+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >&emsp;&emsp; 减：本机构、场所本年累计实际已缴纳的所得税额</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].qtjgsjyjnsdse==null?'0.00':json.list[0].qtjgsjyjnsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="52" height="22"  align="center" valign="middle"  >{{36+json.listzb1.length-1 +json.listzb2.length -1 +json.listzb3.length -1+json.listzb4.length -1+json.listzb5.length -1}}</td>
+<td  width="544" height="22"  align="left" valign="middle" colspan="4" >本机构、场所本年应补（退）所得税额（41-42）</td>
+<td  width="286" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].qtjgybtsdse==null?'0.00':json.list[0].qtjgybtsdse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="963" height="22"  align="left" valign="middle" colspan="8" class="noBorderBottom"> &emsp;&emsp;  声明：此表是根据国家税收法律法规及相关规定填写的，对填报内容（及附带资料）的真实性、可靠性、完整性负责。</td>
+</tr>
+
+<td  width="963" height="22"  align="center" valign="middle" colspan="8"  class="noBorderTop">                                                                                       纳税人（签章）：                   年   月   日</td>
+</tr>
+<tr>
+<td  width="263" height="22"  align="left" valign="middle" colspan="3" >经办人签字：</td>
+<td  width="299" height="22"  align="left" valign="top" colspan="2" >{{json.list[0].jbr}}</td>
+<td  width="401" height="22"  align="left" valign="middle" colspan="3" >受理人：</td>
+</tr>
+<tr>
+<td  width="263" height="22"  align="left" valign="middle" colspan="3" >经办人身份证件号码：</td>
+<td  width="299" height="22"  align="left" valign="top" colspan="2" >{{json.list[0].jbrsfzjhm}}</td>
+<td  width="401" height="22"  align="left" valign="middle" colspan="3" >受理税务机关（章）：</td>
+</tr>
+<tr>
+<td  width="562" height="22"  align="left" valign="middle" colspan="5" >代理机构签章：</td>
+<td  width="401" height="22"  align="left" valign="middle" colspan="3" >&nbsp;</td>
+</tr>
+<tr>
+<td  width="562" height="22"  align="left" valign="middle" colspan="5" >代理机构统一社会信用代码：{{json.list[0].dljgtyshxydm}}</td>
+<td  width="401" height="22"  align="left" valign="middle" colspan="3" >受理日期： {{json.list[0].slrq}}</td>
+</tr>
+<tr>
+<td  width="562" height="22"  align="left" valign="middle" colspan="5"   class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+<td  width="401" height="22"  align="right" valign="middle" colspan="3"  class="noBorderBottom noBorderLeft noBorderRight">国家税务总局监制</td>
+</tr>
+
+</table>
+
+
+    <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+    <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

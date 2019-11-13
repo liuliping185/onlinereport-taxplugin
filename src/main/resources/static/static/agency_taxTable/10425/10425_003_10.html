@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+</head>
+<body>
+<table id="taxTable"  cellspacing="0" cellpadding="0" width="2010" height = "605" style=" margin-top: 10px;">
+
+    <tr>
+        <td  width="1842" height="23"  align="center" valign="middle" colspan="13"  class="noBorder"><B>企业所得税弥补亏损明细表</B></td>
+    </tr>
+    <tr>
+        <td  width="1842" height="22"  align="center" valign="middle" colspan="13"  class="noBorder">税款所属时间:<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</td>
+    </tr>
+    <tr>
+        <td  width="345" height="22"  align="center" valign="middle" colspan="4"   class="" >发生政策性搬迁且停止生产经营无所得年度</td>
+        <td  width="160" height="22"  align="right" valign="middle"  ><form><p><input type="checkbox" name="F6" value="ON"  :checked="json[0].fszcxbqqtzscjywsdnd=='Y' ">&nbsp;&nbsp;是</p></form></td>
+        <td  width="160" height="22"  align="right" valign="middle"  ><form><p><input type="checkbox" name="G6" value="ON" :checked="json[0].fszcxbqqtzscjywsdnd=='N' ">&nbsp;&nbsp;否</p></form></td>
+        <td  width="377" height="22"  align="right" valign="middle" colspan="2" class="noBorder noBorderTop" >&nbsp;</td>
+        <td  width="160" height="22"  align="right" valign="middle"  class="noBorder noBorderTop" >&nbsp;</td>
+        <td  width="160" height="22"  align="right" valign="middle"   class="noBorder noBorderTop">&nbsp;</td>
+        <td  width="160" height="22"  align="right" valign="middle"   class="noBorder noBorderTop">&nbsp;</td>
+        <td  width="320" height="22"  align="right" valign="middle" colspan="2"  class="noBorderBottom noBorderLeft noBorderTop">金额单位：人民币元（列至角分）</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="74"  align="center" valign="middle"  rowspan="3">行次</td>
+        <td  width="93" height="74"  align="center" valign="middle"  rowspan="3">项目</td>
+        <td  width="58" height="52"  align="center" valign="middle"  rowspan="2">年度</td>
+        <td  width="160" height="52"  align="center" valign="middle"  rowspan="2">当年境内所得额</td>
+        <td  width="160" height="52"  align="center" valign="middle"  rowspan="2">分立转出的亏损额</td>
+        <td  width="320" height="30"  align="center" valign="middle" colspan="2" >合并、分立转入的亏损额<br></td>
+        <td  width="217" height="52"  align="center" valign="middle"  rowspan="2">弥补亏损企业类型</td>
+        <td  width="160" height="52"  align="center" valign="middle"  rowspan="2">上年及本年结转的可弥补亏损额</td>
+        <td  width="160" height="52"  align="center" valign="middle"  rowspan="2">当年待弥补的亏损额</td>
+        <td  width="320" height="30"  align="center" valign="middle" colspan="2" >用本年度所得额弥补的以前年度亏损额</td>
+        <td  width="160" height="52"  align="center" valign="middle"  rowspan="2">当年可结转以后年度弥补的亏损额</td>
+
+    </tr>
+    <tr>
+
+        <td  width="160" height="22"  align="center" valign="middle"  >可弥补年限5年</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >可弥补年限10年</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >使用境内所得弥补</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >使用境外所得弥补</td>
+
+    </tr>
+    <tr>
+
+        <td  width="58" height="22"  align="center" valign="middle"  >1</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >2</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >3</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >4</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >5</td>
+        <td  width="217" height="22"  align="center" valign="middle"  >6</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >7</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >8</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >9</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >10</td>
+        <td  width="160" height="22"  align="center" valign="middle"  >11</td>
+
+    </tr>
+    <tr >
+
+        <td  width="34" height="30"  align="right" valign="middle"  >1</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[0].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >  {{json[0].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[0].kshylje==null?0.00:json[0].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[0].flzckse==null?0.00:json[0].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="center" valign="middle" >*</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[0].hbqyzrkseSn==null?0.00:json[0].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  > {{json[0].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[0].kmbdsdehj==null?0.00:json[0].kmbdsdehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[0].dndmbdksehj==null?0.00:json[0].dndmbdksehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[0].bnjnmbyjndksjehj==null?0.00:json[0].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[0].bnjwmbyjndksjehj==null?0.00:json[0].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="center" valign="middle" >*</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >2</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[1].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[1].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[1].kshylje==null?0.00:json[1].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[1].flzckse==null?0.00:json[1].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="center" valign="middle"  >*</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[1].hbqyzrkseSn==null?0.00:json[1].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[1].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[1].kmbdsdehj==null?0.00:json[1].kmbdsdehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[1].dndmbdksehj==null?0.00:json[1].dndmbdksehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[1].bnjnmbyjndksjehj==null?0.00:json[1].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[1].bnjwmbyjndksjehj==null?0.00:json[1].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[1].kjzwmbwdksjehj==null?0.00:json[1].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >3</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[2].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[2].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[2].kshylje==null?0.00:json[2].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[2].flzckse==null?0.00:json[2].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="center" valign="middle"  >*</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[2].hbqyzrkseSn==null?0.00:json[2].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[2].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[2].kmbdsdehj==null?0.00:json[2].kmbdsdehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[2].dndmbdksehj==null?0.00:json[2].dndmbdksehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[2].bnjnmbyjndksjehj==null?0.00:json[2].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[2].bnjwmbyjndksjehj==null?0.00:json[2].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[2].kjzwmbwdksjehj==null?0.00:json[2].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >4</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[3].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[3].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[3].kshylje==null?0.00:json[3].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[3].flzckse==null?0.00:json[3].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="center" valign="middle"  >*</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[3].hbqyzrkseSn==null?0.00:json[3].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[3].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[3].kmbdsdehj==null?0.00:json[3].kmbdsdehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[3].dndmbdksehj==null?0.00:json[3].dndmbdksehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[3].bnjnmbyjndksjehj==null?0.00:json[3].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[3].bnjwmbyjndksjehj==null?0.00:json[3].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[3].kjzwmbwdksjehj==null?0.00:json[3].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >5</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[4].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[4].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[4].kshylje==null?0.00:json[4].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[4].flzckse==null?0.00:json[4].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="center" valign="middle"  >*</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[4].hbqyzrkseSn==null?0.00:json[4].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[4].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[4].kmbdsdehj==null?0.00:json[4].kmbdsdehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[4].dndmbdksehj==null?0.00:json[4].dndmbdksehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[4].bnjnmbyjndksjehj==null?0.00:json[4].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[4].bnjwmbyjndksjehj==null?0.00:json[4].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[4].kjzwmbwdksjehj==null?0.00:json[4].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >6</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[5].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[5].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].kshylje==null?0.00:json[5].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].flzckse==null?0.00:json[5].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].hbqyzrkse==null?0.00:json[5].hbqyzrkse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].hbqyzrkseSn==null?0.00:json[5].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  > {{json[5].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].kmbdsdehj==null?0.00:json[5].kmbdsdehj.toFixed(2)}}     </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].dndmbdksehj==null?0.00:json[5].dndmbdksehj.toFixed(2)}} </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].bnjnmbyjndksjehj==null?0.00:json[5].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].bnjwmbyjndksjehj==null?0.00:json[5].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[5].kjzwmbwdksjehj==null?0.00:json[5].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >7</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[6].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[6].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].kshylje==null?0.00:json[6].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].flzckse==null?0.00:json[6].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].hbqyzrkse==null?0.00:json[6].hbqyzrkse.toFixed(2)}}    </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].hbqyzrkseSn==null?0.00:json[6].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[6].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].kmbdsdehj==null?0.00:json[6].kmbdsdehj.toFixed(2)}}     </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].dndmbdksehj==null?0.00:json[6].dndmbdksehj.toFixed(2)}} </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].bnjnmbyjndksjehj==null?0.00:json[6].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].bnjwmbyjndksjehj==null?0.00:json[6].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[6].kjzwmbwdksjehj==null?0.00:json[6].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >8</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[7].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[7].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].kshylje==null?0.00:json[7].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].flzckse==null?0.00:json[7].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].hbqyzrkse==null?0.00:json[7].hbqyzrkse.toFixed(2)}}    </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].hbqyzrkseSn==null?0.00:json[7].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[7].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].kmbdsdehj==null?0.00:json[7].kmbdsdehj.toFixed(2)}}     </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].dndmbdksehj==null?0.00:json[7].dndmbdksehj.toFixed(2)}} </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].bnjnmbyjndksjehj==null?0.00:json[7].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].bnjwmbyjndksjehj==null?0.00:json[7].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[7].kjzwmbwdksjehj==null?0.00:json[7].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >9</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[8].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[8].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].kshylje==null?0.00:json[8].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].flzckse==null?0.00:json[8].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].hbqyzrkse==null?0.00:json[8].hbqyzrkse.toFixed(2)}}    </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].hbqyzrkseSn==null?0.00:json[8].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[8].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].kmbdsdehj==null?0.00:json[8].kmbdsdehj.toFixed(2)}}     </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].dndmbdksehj==null?0.00:json[8].dndmbdksehj.toFixed(2)}} </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].bnjnmbyjndksjehj==null?0.00:json[8].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].bnjwmbyjndksjehj==null?0.00:json[8].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[8].kjzwmbwdksjehj==null?0.00:json[8].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >10</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[9].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[9].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].kshylje==null?0.00:json[9].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].flzckse==null?0.00:json[9].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].hbqyzrkse==null?0.00:json[9].hbqyzrkse.toFixed(2)}}    </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].hbqyzrkseSn==null?0.00:json[9].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[9].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].kmbdsdehj==null?0.00:json[9].kmbdsdehj.toFixed(2)}}    </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].dndmbdksehj==null?0.00:json[9].dndmbdksehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].bnjnmbyjndksjehj==null?0.00:json[9].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].bnjwmbyjndksjehj==null?0.00:json[9].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[9].kjzwmbwdksjehj==null?0.00:json[9].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="30"  align="right" valign="middle"  >11</td>
+        <td  width="93" height="30"  align="center" valign="middle"  >{{json[10].xmmc}}</td>
+        <td  width="58" height="30"  align="left" valign="middle"  >{{json[10].nd}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].kshylje==null?0.00:json[10].kshylje.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].flzckse==null?0.00:json[10].flzckse.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].hbqyzrkse==null?0.00:json[10].hbqyzrkse.toFixed(2)}}    </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].hbqyzrkseSn==null?0.00:json[10].hbqyzrkseSn.toFixed(2)}}</td>
+        <td  width="217" height="30"  align="left" valign="middle"  >{{json[10].qysdsmbksqylxDm}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].kmbdsdehj==null?0.00:json[10].kmbdsdehj.toFixed(2)}}    </td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].dndmbdksehj==null?0.00:json[10].dndmbdksehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].bnjnmbyjndksjehj==null?0.00:json[10].bnjnmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].bnjwmbyjndksjehj==null?0.00:json[10].bnjwmbyjndksjehj.toFixed(2)}}</td>
+        <td  width="160" height="30"  align="right" valign="middle"  >{{json[10].kjzwmbwdksjehj==null?0.00:json[10].kjzwmbwdksjehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="34" height="22"  align="right" valign="middle"   class=" noBorderRight">12</td>
+        <td  width="1648" height="22"  align="left" valign="middle" colspan="11"  class=" noBorderLeft noBorderRight">可结转以后年度弥补的亏损额合计</td>
+        <td  width="34" height="22"  align="right" valign="middle"   class="  ">{{json[0].kjzyhndmbdksehj==null?0.00:json[0].kjzyhndmbdksehj.toFixed(2)}}</td>
+
+    </tr>
+
+</table>
+
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

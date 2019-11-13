@@ -1,0 +1,307 @@
+<html>
+<head>
+<title>期间费用明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1287" height = "795" id="taxTable" style="margin-top:30px;">
+<tr>
+<td  width="1255" height="23"  align="center" valign="middle" colspan="8" class="noBorder"><B>期间费用明细表</B></td>
+</tr>
+<tr>
+<td  width="1255" height="22"  align="center" valign="middle" colspan="8" class="noBorder">税款所属时间:<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1255" height="22"  align="left" valign="middle" colspan="8" class="noBorder">纳税人识别号:{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1255" height="22"  align="left" valign="middle" colspan="8" class="noBorder">纳税人名称（公章）:{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="766" height="22"  align="left" valign="middle" colspan="5" class="noBorder">填表日期:<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="489" height="22"  align="right" valign="middle" colspan="3" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="72" height="44"  align="center" valign="middle"  rowspan="2">行次</td>
+<td  width="205" height="44"  align="center" valign="middle"  rowspan="2">项        目</td>
+<td  width="163" height="22"  align="center" valign="middle"  >销售费用</td>
+<td  width="163" height="22"  align="center" valign="middle"  >其中：境外支付</td>
+<td  width="163" height="22"  align="center" valign="middle"  >管理费用</td>
+<td  width="163" height="22"  align="center" valign="middle"  >其中：境外支付</td>
+<td  width="163" height="22"  align="center" valign="middle"  >财务费用</td>
+<td  width="163" height="22"  align="center" valign="middle"  >其中：境外支付</td>
+</tr>
+<tr>
+<td  width="163" height="22"  align="center" valign="middle"  >1</td>
+<td  width="163" height="22"  align="center" valign="middle"  >2</td>
+<td  width="163" height="22"  align="center" valign="middle"  >3</td>
+<td  width="163" height="22"  align="center" valign="middle"  >4</td>
+<td  width="163" height="22"  align="center" valign="middle"  >5</td>
+<td  width="163" height="22"  align="center" valign="middle"  >6</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >1</td>
+<td  width="205" height="22"  align="left" valign="middle"  >一、职工薪酬</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[0].xsfy === null ? '' : json[0].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[0].glfy === null ? '' : json[0].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >2</td>
+<td  width="205" height="22"  align="left" valign="middle"  >二、劳务费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[1].xsfy === null ? '' : json[1].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[1].jwzf === null ? '' : json[1].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[1].glfy === null ? '' : json[1].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[1].jwzfe === null ? '' : json[1].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >3</td>
+<td  width="205" height="22"  align="left" valign="middle"  >三、咨询顾问费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[2].xsfy === null ? '' : json[2].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[2].jwzf === null ? '' : json[2].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[2].glfy === null ? '' : json[2].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[2].jwzfe === null ? '' : json[2].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >4</td>
+<td  width="205" height="22"  align="left" valign="middle"  >四、业务招待费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[3].xsfy === null ? '' : json[3].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[3].glfy === null ? '' : json[3].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >5</td>
+<td  width="205" height="22"  align="left" valign="middle"  >五、广告费和业务宣传费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[4].xsfy === null ? '' : json[4].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[4].glfy === null ? '' : json[4].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >6</td>
+<td  width="205" height="22"  align="left" valign="middle"  >六、佣金和手续费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[5].xsfy === null ? '' : json[5].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[5].jwzf === null ? '' : json[5].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[5].glfy === null ? '' : json[5].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[5].jwzfe === null ? '' : json[5].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[5].cwfy === null ? '' : json[5].cwfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[5].jwzfee === null ? '' : json[5].jwzfee.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >7</td>
+<td  width="205" height="22"  align="left" valign="middle"  >七、资产折旧摊销费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[6].xsfy === null ? '' : json[6].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[6].glfy === null ? '' : json[6].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >8</td>
+<td  width="205" height="22"  align="left" valign="middle"  >八、财产损耗、盘亏及毁损损失</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[7].xsfy === null ? '' : json[7].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[7].glfy === null ? '' : json[7].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >9</td>
+<td  width="205" height="22"  align="left" valign="middle"  >九、办公费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[8].xsfy === null ? '' : json[8].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[8].glfy === null ? '' : json[8].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >10</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十、董事会费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[9].xsfy === null ? '' : json[9].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[9].glfy === null ? '' : json[9].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >11</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十一、租赁费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[10].xsfy === null ? '' : json[10].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[10].jwzf === null ? '' : json[10].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[10].glfy === null ? '' : json[10].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[10].jwzfe === null ? '' : json[10].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >12</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十二、诉讼费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[11].xsfy === null ? '' : json[11].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[11].glfy === null ? '' : json[11].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >13</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十三、差旅费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[12].xsfy === null ? '' : json[12].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[12].glfy === null ? '' : json[12].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >14</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十四、保险费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[13].xsfy === null ? '' : json[13].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[13].glfy === null ? '' : json[13].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >15</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十五、运输、仓储费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[14].xsfy === null ? '' : json[14].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[14].jwzf === null ? '' : json[14].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[14].glfy === null ? '' : json[14].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[14].jwzfe === null ? '' : json[14].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >16</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十六、修理费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[15].xsfy === null ? '' : json[15].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[15].jwzf === null ? '' : json[15].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[15].glfy === null ? '' : json[15].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[15].jwzfe === null ? '' : json[15].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >17</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十七、包装费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[16].xsfy === null ? '' : json[16].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[16].glfy === null ? '' : json[16].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >18</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十八、技术转让费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[17].xsfy === null ? '' : json[17].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[17].jwzf === null ? '' : json[17].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[17].glfy === null ? '' : json[17].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[17].jwzfe === null ? '' : json[17].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >19</td>
+<td  width="205" height="22"  align="left" valign="middle"  >十九、研究费用</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[18].xsfy === null ? '' : json[18].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[18].jwzf === null ? '' : json[18].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[18].glfy === null ? '' : json[18].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[18].jwzfe === null ? '' : json[18].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >20</td>
+<td  width="205" height="22"  align="left" valign="middle"  >二十、各项税费</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[19].xsfy === null ? '' : json[19].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[19].glfy === null ? '' : json[19].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >21</td>
+<td  width="205" height="22"  align="left" valign="middle"  >二十一、利息收支</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[20].cwfy === null ? '' : json[20].cwfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[20].jwzfee === null ? '' : json[20].jwzfee.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >22</td>
+<td  width="205" height="22"  align="left" valign="middle"  >二十二、汇兑差额</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[21].cwfy === null ? '' : json[21].cwfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[21].jwzfee === null ? '' : json[21].jwzfee.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >23</td>
+<td  width="205" height="22"  align="left" valign="middle"  >二十三、现金折扣</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[22].cwfy === null ? '' : json[22].cwfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >24</td>
+<td  width="205" height="22"  align="left" valign="middle"  >二十四、分摊的总机构费用</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[23].xsfy === null ? '' : json[23].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[23].jwzf === null ? '' : json[23].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[23].glfy === null ? '' : json[23].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[23].jwzfe === null ? '' : json[23].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[23].cwfy === null ? '' : json[23].cwfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[23].jwzfee === null ? '' : json[23].jwzfee.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >25</td>
+<td  width="205" height="22"  align="left" valign="middle"  >二十五、其他</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[24].xsfy === null ? '' : json[24].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[24].jwzf === null ? '' : json[24].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[24].glfy === null ? '' : json[24].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[24].jwzfe === null ? '' : json[24].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[24].cwfy === null ? '' : json[24].cwfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[24].jwzfee === null ? '' : json[24].jwzfee.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >26</td>
+<td  width="205" height="22"  align="left" valign="middle"  >合计(1+2+3+…25)</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[25].xsfy === null ? '' : json[25].xsfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[25].jwzf === null ? '' : json[25].jwzf.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[25].glfy === null ? '' : json[25].glfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[25].jwzfe === null ? '' : json[25].jwzfe.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[25].cwfy === null ? '' : json[25].cwfy.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json[25].jwzfee === null ? '' : json[25].jwzfee.toFixed(2)}}</td>
+</tr>
+</table>
+ <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

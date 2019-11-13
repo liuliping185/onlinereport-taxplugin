@@ -1,0 +1,90 @@
+<html>
+
+<head>
+  <title>国别报告－所得、税收和业务活动国别分布表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="1870" height="224" id="taxTable">
+    <tr>
+      <td width="166" height="46" align="left" valign="middle" class="noBorder">G114010</td>
+      <td width="1600" height="46" align="center" valign="middle" colspan="10" class="noBorder">
+        <B>国别报告－所得、税收和业务活动国别分布表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="480" height="18" align="center" valign="middle" colspan="12" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="1126" height="18" align="left" valign="middle" colspan="7" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}　　　纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="806" height="18" align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="160" height="18" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="160" height="18" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="160" height="18" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="160" height="18" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="320" height="18" align="right" valign="top" colspan="2" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+      <td width="166" height="18" align="right" valign="middle">跨国企业集团名称：</td>
+      <td width="640" height="18" align="left" valign="middle" colspan="4">{{json[0].kgqyjtmc}}</td>
+      <td width="160" height="18" align="right" valign="middle">会计年度：</td>
+      <td width="320" height="18" align="left" valign="middle" colspan="2">{{json[0].skssqq}}</td>
+      <td width="160" height="18" align="right" valign="middle">至</td>
+      <td width="320" height="18" align="left" valign="middle" colspan="2">{{json[0].skssqz}}</td>
+      <td width="80" height="18" align="right" valign="middle" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="166" height="44" align="center" valign="middle" rowspan="2">国家（地区）</td>
+      <td width="480" height="22" align="center" valign="middle" colspan="3">收入</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">税前利润（亏损）</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">已缴纳企业所得税（收付实现制）</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">本年度计提的企业所得税</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">注册资本</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">留存收益</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">雇员人数</td>
+      <td width="160" height="44" align="center" valign="middle" rowspan="2">有形资产<br>（除现金及现金等价物）</td>
+      <td width="80" height="22" align="right" valign="middle" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">非关联方</td>
+      <td width="160" height="22" align="center" valign="middle">关联方</td>
+      <td width="160" height="22" align="center" valign="middle">总计</td>
+    </tr>
+    <tr>
+      <td width="166" height="22" align="center" valign="middle">1</td>
+      <td width="160" height="22" align="center" valign="middle">2</td>
+      <td width="160" height="22" align="center" valign="middle">3</td>
+      <td width="160" height="22" align="center" valign="middle">4=2+3</td>
+      <td width="160" height="22" align="center" valign="middle">5</td>
+      <td width="160" height="22" align="center" valign="middle">6</td>
+      <td width="160" height="22" align="center" valign="middle">7</td>
+      <td width="160" height="22" align="center" valign="middle">8</td>
+      <td width="160" height="22" align="center" valign="middle">9</td>
+      <td width="160" height="22" align="center" valign="middle">10</td>
+      <td width="160" height="22" align="center" valign="middle">11</td>
+      <td width="80" height="22" align="right" valign="middle" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr v-for='(item,index) in json'>
+      <td width="166" height="22" align="left" valign="middle">{{item.gjhdqszDm}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.fglfsr.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.glfsr.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.zjsr.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.sqlr.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yjnqysds.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bnjtdsqysds.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.zczb.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.lcsy.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle" v-int>{{item.gyrs}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.yxzc.toFixed(2)}}</td>
+      <td width="80" height="22" align="right" valign="middle" class="noBorder">&nbsp;</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

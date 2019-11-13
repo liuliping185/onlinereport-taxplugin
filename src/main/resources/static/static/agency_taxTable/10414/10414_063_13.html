@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>非货币性资产投资递延纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="3089" height = "382" id="taxTable">
+<tr>
+<td  width="3023" height="46"  align="center" valign="middle" colspan="20"  class="noBorder"><B>非货币性资产投资递延纳税调整明细表</B></td>
+</tr>
+<tr>
+<td  width="3023" height="22"  align="center" valign="middle" colspan="20"  class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1299" height="22"  align="left" valign="middle" colspan="9"  class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="1724" height="22"  align="left" valign="middle" colspan="11"  class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="1299" height="22"  align="left" valign="middle" colspan="9"  class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="1724" height="22"  align="right" valign="middle" colspan="11"  class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td width="55" height="54"  align="center" valign="middle"  rowspan="2">行次</td>
+<td width="648" height="22"  align="center" valign="middle" colspan="4" >被投资企业情况</td>
+<td width="492" height="22"  align="center" valign="middle" colspan="3" >非货币性资产情况</td>
+<td width="680" height="22"  align="center" valign="middle" colspan="5" >非货币性资产投资基本信息</td>
+<td width="164" height="54"  align="center" valign="middle"  rowspan="2">本年税收金额</td>
+<td width="820" height="22"  align="center" valign="middle" colspan="5" >递延纳税差异调整额</td>
+<td width="164" height="54"  align="center" valign="middle"  rowspan="2">结转以后年度递延确认所得税收金额</td>
+</tr>
+<tr>
+<td width="274" height="32"  align="center" valign="middle"  >企业名称</td>
+<td width="132" height="32"  align="center" valign="middle"  >纳税人识别号</td>
+<td width="150" height="32"  align="center" valign="middle"  >主管税务机关</td>
+<td width="92" height="32"  align="center" valign="middle"  >与投资方是否为关联企业</td>
+<td width="164" height="32"  align="center" valign="middle"  >公允价值</td>
+<td width="164" height="32"  align="center" valign="middle"  >账面价值</td>
+<td width="164" height="32"  align="center" valign="middle"  >计税基础</td>
+<td width="104" height="32"  align="center" valign="middle"  >非货币性资产转让收入实现年度</td>
+<td width="164" height="32"  align="center" valign="middle"  >本年账载金额</td>
+<td width="164" height="32"  align="center" valign="middle"  >非货币性资产转让所得（税收金额）</td>
+<td width="84" height="32"  align="center" valign="middle"  >分期确认税收所得年限</td>
+<td width="164" height="32"  align="center" valign="middle"  >分期均匀确认税收所得额</td>
+<td width="164" height="32"  align="center" valign="middle"  >前四年度</td>
+<td width="164" height="32"  align="center" valign="middle"  >前三年度</td>
+<td width="164" height="32"  align="center" valign="middle"  >前二年度</td>
+<td width="164" height="32"  align="center" valign="middle"  >前一年度</td>
+<td width="164" height="32"  align="center" valign="middle"  >本年</td>
+</tr>
+<tr>
+<td width="55" height="74"  align="center" valign="middle"  >&nbsp;</td>
+<td width="274" height="74"  align="center" valign="middle"  >1</td>
+<td width="132" height="74"  align="center" valign="middle"  >2</td>
+<td width="150" height="74"  align="center" valign="middle"  >3</td>
+<td width="92" height="74"  align="center" valign="middle"  >4</td>
+<td width="164" height="74"  align="center" valign="middle"  >5</td>
+<td width="164" height="74"  align="center" valign="middle"  >6</td>
+<td width="164" height="74"  align="center" valign="middle"  >7</td>
+<td width="104" height="74"  align="center" valign="middle"  >8</td>
+<td width="164" height="74"  align="center" valign="middle"  >9</td>
+<td width="164" height="74"  align="center" valign="middle"  >10=5-7</td>
+<td width="84" height="74"  align="center" valign="middle"  >11</td>
+<td width="164" height="74"  align="center" valign="middle"  >12</td>
+<td width="164" height="74"  align="center" valign="middle"  >13</td>
+<td width="164" height="74"  align="center" valign="middle"  >14</td>
+<td width="164" height="74"  align="center" valign="middle"  >15</td>
+<td width="164" height="74"  align="center" valign="middle"  >16</td>
+<td width="164" height="74"  align="center" valign="middle"  >17</td>
+<td width="164" height="74"  align="center" valign="middle"  >18=13-9</td>
+<td width="164" height="74"  align="center" valign="middle"  >19=[本表第10列-第13列(第1年该项目填报时)]或=[上年度明细表的相应行次第19列-本表第13列(以后递延期间该项目填报时)]</td>
+</tr>
+<tr  v-for="(item,index) in json.listzb" :key="item.id">
+<td  width="55" height="22"  align="center" valign="middle"  >00{{index + 1}}</td>
+<td  width="274" height="22"  align="left" valign="middle"  >{{item.nsrmc}}</td>
+<td  width="132" height="22"  align="left" valign="middle"  >{{item.nsrsbh}}</td>
+<td  width="150" height="22"  align="left" valign="middle"  >{{item.zgswjgmc}}</td>
+<td  width="92" height="22"  align="left" valign="middle"  >{{item.sfwglqy === 'Y' ? '是' : '否'}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.gyjz.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.zmjz.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.jsjc.toFixed(2)}}</td>
+<td  width="104" height="22"  align="left" valign="middle"  >{{item.fhbxzczrsrsxnd}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.bnzzje.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.fhbxzczrsd.toFixed(2)}}</td>
+<td  width="84" height="22"  align="right" valign="middle"  >{{item.fqqrsssdnx}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.fqjyqrsssde.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.bnssje.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.qsind.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.qsannd.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.qernd.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.qyind.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.bn.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{item.jzyhnddyqrsdssje.toFixed(2)}}</td>
+</tr>
+<tr>
+<td width="55" height="22"  align="center" valign="middle"  >合计</td>
+<td width="274" height="22"  align="center" valign="middle"  >--</td>
+<td width="132" height="22"  align="center" valign="middle"  >--</td>
+<td width="150" height="22"  align="center" valign="middle"  >--</td>
+<td width="92" height="22"  align="center" valign="middle"  >--</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].gyjzhj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].zmjzhj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].jsjchj.toFixed(2)}}</td>
+<td width="104" height="22"  align="center" valign="middle"  >--</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].bnzzjehj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].ssjehj.toFixed(2)}}</td>
+<td width="84" height="22"  align="center" valign="middle"  >--</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].fqjyhj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].bnssjehj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].q4hj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].q3hj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].q2hj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].q1hj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].bnhj.toFixed(2)}}</td>
+<td  width="164" height="22"  align="right" valign="middle"  >{{json.list[0].jzdysdsjehj.toFixed(2)}}</td>
+</tr>
+<tr>
+<td width="2223" height="32"  align="left" valign="middle" colspan="15" >谨声明：本人知悉并保证本表填报内容及所附证明材料真实、完整，并承担因资料虚假而产生的法律和行政责任。</td>
+<td width="800" height="32"  align="right" valign="middle" colspan="5" >法定代表人签章：</td>
+</tr>
+<tr>
+<td width="3023" height="22"  align="right" valign="middle" colspan="20" >年  月  日    </td>
+</tr>
+<tr>
+<td  width="329" height="22"  align="left" valign="middle" colspan="2" class="noBorder">填表人：</td>
+<td  width="132" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="150" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="92" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">填表日期：</td>
+<td  width="104" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="84" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="164" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

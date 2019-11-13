@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>应税服务减除项目清单</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1132" height = "222" id="taxTable">
+<tr>
+<td width="1100" height="46"  align="center" valign="middle" colspan="6" class="noBorder"><B>应税服务减除项目清单</B></td>
+</tr>
+<tr>
+<td width="558" height="22"  align="left" valign="middle" colspan="2" class="noBorder">缴纳义务人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td width="542" height="22"  align="left" valign="middle" colspan="4" class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td width="706" height="22"  align="left" valign="middle" colspan="3" class="noBorder">缴纳义务人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td width="123" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="271" height="22"  align="right" valign="middle" colspan="2"class="noBorder" >金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td width="829" height="22" align="left" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td width="271" height="22" align="left" valign="bottom" colspan="2" class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="162" height="44"  align="center" valign="middle"  rowspan="2">开票方纳税人识别号</td>
+<td  width="396" height="44"  align="center" valign="middle"  rowspan="2">开票方单位名称</td>
+<td  width="148" height="44"  align="center" valign="middle"  rowspan="2">服务项目名称</td>
+<td  width="123" height="44"  align="center" valign="middle"  rowspan="2">凭证种类</td>
+<td  width="111" height="44"  align="center" valign="middle"  rowspan="2">凭证号码</td>
+<td  width="160" height="44"  align="center" valign="middle"  rowspan="2">金额</td>
+</tr>
+<tr>
+</tr>
+<tr v-for="item in json">
+<td  width="162" height="22"  align="center" valign="middle"  >{{item.kpfnsrsbh}}</td>
+<td  width="396" height="22"  align="center" valign="middle"  >{{item.kpfdwmc}}</td>
+<td  width="148" height="22"  align="center" valign="middle"  >{{item.fwxmmc}}</td>
+<td  width="123" height="22"  align="center" valign="middle"  >{{item.pzzlDm1 === '1' ? '发票' : (item.pzzlDm1 === '2' ? '财政票据' : '境外支付单据')}}</td>
+<td  width="111" height="22"  align="center" valign="middle"  >{{item.pzhm2}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.je.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="162" height="22"  align="center" valign="middle"  >合计</td>
+<td  width="396" height="22"  align="center" valign="middle"  >--</td>
+<td  width="148" height="22"  align="center" valign="middle"  >--</td>
+<td  width="123" height="22"  align="center" valign="middle"  >--</td>
+<td  width="111" height="22"  align="center" valign="middle"  >--</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{json[0].jehj === null ? '' : json[0].jehj.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

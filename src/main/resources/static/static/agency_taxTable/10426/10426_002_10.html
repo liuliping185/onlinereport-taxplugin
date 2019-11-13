@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body>
+<table  id="taxTable" cellspacing="0" cellpadding="0" width="1804" height = "399" style="margin-top: 10px">
+
+    <tr>
+        <td  width="1419" height="23"  align="center" valign="middle" colspan="9" class="noBorder"><B>非居民企业机构、场所汇总缴纳所得税税款分配表</B></td>
+
+    </tr>
+    <tr>
+        <td  width="1419" height="22"  align="center" valign="middle" colspan="9"class="noBorder" >税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+
+    </tr>
+    <tr>
+        <td  width="1419" height="22"  align="left" valign="middle" colspan="9"class="noBorder" >主要机构、场所名称：{{bt.customerStateTaxInfo === null ? '' :bt.customerStateTaxInfo.nsrmc}}</td>
+
+    </tr>
+    <tr>
+        <td  width="1419" height="22"  align="left" valign="middle" colspan="9" class="noBorder">主要机构、场所纳税人识别号（统一社会信用代码）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="315" height="22"  align="left" valign="middle" colspan="2" class="noBorder">跨省总机构行政区划</td>
+        <td  width="318" height="22"  align="left" valign="middle"  class="noBorder">{{json.list[0].zyjgcsxzqh}}</td>
+        <td  width="135" height="22"  align="left" valign="bottom" class="noBorder" >&nbsp;</td>
+        <td  width="135" height="22"  align="left" valign="bottom"  class="noBorder">&nbsp;</td>
+        <td  width="135" height="22"  align="left" valign="bottom"  class="noBorder">&nbsp;</td>
+        <td  width="135" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+        <td  width="246" height="22"  align="right" valign="middle" colspan="2" class="noBorder">金额单位：人民币元（列至角分）</td>
+
+    </tr>
+    <tr>
+
+        <td width="315" height="22"  align="center" valign="middle" colspan="2" >可分摊所得税额</td>
+        <td width="453" height="22"  align="left" valign="middle" colspan="2" >主要机构、场所直接分摊所得税额</td>
+        <td width="405" height="22"  align="center" valign="middle" colspan="3" >主要机构、场所财政集中分配所得税额</td>
+        <td width="246" height="22"  align="center" valign="middle" colspan="2" >主体生产经营业务分摊所得税额</td>
+
+    </tr>
+    <tr>
+
+        <td  width="315" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].kftsdse==null?"0.00":json.list[0].kftsdse.toFixed(2)}}</td>
+        <td  width="453" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].zyjgcszjftsdse==null?"0.00":json.list[0].zyjgcszjftsdse.toFixed(2)}}</td>
+        <td  width="405" height="22"  align="right" valign="middle" colspan="3" >{{json.list[0].zyjgcsczjzfpsdse==null?"0.00":json.list[0].zyjgcsczjzfpsdse.toFixed(2)}}</td>
+        <td  width="246" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].ztscjyywftsdse==null?"0.00":json.list[0].ztscjyywftsdse.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td width="94" height="88"  align="center" valign="middle"  :rowspan= "3+json.listzb1.length">主体生产经营业务分摊所得税情况</td>
+        <td width="221" height="44"  align="center" valign="middle"  rowspan="2">从事主体生产经营业务的机构、场所统一社会信用代码（纳税人识别号）</td>
+        <td width="318" height="44"  align="center" valign="middle"  rowspan="2">从事主体生产经营业务的机构、场所名称</td>
+        <td width="135" height="44"  align="center" valign="middle"  rowspan="2">行政区划</td>
+        <td width="405" height="22"  align="center" valign="middle" colspan="3" >三项因素</td>
+        <td width="106" height="44"  align="center" valign="middle"  rowspan="2">分配比例</td>
+        <td width="140" height="44"  align="center" valign="middle"  rowspan="2">分配所得税额</td>
+
+    </tr>
+    <tr>
+
+        <td width="135" height="22"  align="center" valign="middle"  >营业收入</td>
+        <td width="135" height="22"  align="center" valign="middle"  >职工薪酬</td>
+        <td width="135" height="22"  align="center" valign="middle"  >资产总额</td>
+    </tr>
+    <tr v-for="(item,index) in json.listzb1" :key="item.id">
+
+        <td  width="221" height="22"  align="center" valign="middle"  >{{item.qtjgnsrsbh}}</td>
+        <td  width="318" height="22"  align="left" valign="middle"  >{{item.qtjgnsrmc}}</td>
+        <td  width="135" height="22"  align="left" valign="middle"  >{{item.qtjgcsxzqh}}</td>
+        <td  width="135" height="22"  align="right" valign="middle"  >{{item.yysr==null?0.00:item.yysr.toFixed(2)}}</td>
+        <td  width="135" height="22"  align="right" valign="middle"  >{{item.zgxc==null?0.00:item.zgxc.toFixed(2)}}</td>
+        <td  width="135" height="22"  align="right" valign="middle"  >{{item.zcze==null?0.00:item.zcze.toFixed(2)}}</td>
+        <td  width="106" height="22"  align="right" valign="middle"  v-percent = "10">{{item.fpbl}}</td>
+        <td  width="140" height="22"  align="right" valign="middle"  >{{item.fpsdse==null?0.00:item.fpsdse.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td width="221" height="22"  align="center" valign="middle"  >合计</td>
+        <td width="318" height="22"  align="center" valign="middle"  >-</td>
+        <td width="135" height="22"  align="center" valign="middle"  >-</td>
+        <td  width="135" height="22"  align="right" valign="middle"  >{{json.list[0].yysrhj==null?0.00:json.list[0].yysrhj.toFixed(2)}}</td>
+        <td  width="135" height="22"  align="right" valign="middle"  >{{json.list[0].zgxchj==null?0.00:json.list[0].zgxchj.toFixed(2)}}</td>
+        <td  width="135" height="22"  align="right" valign="middle"  >{{json.list[0].zczehj==null?0.00:json.list[0].zczehj.toFixed(2)}}</td>
+        <td  width="106" height="22"  align="right" valign="middle"  v-percent="10">{{json.list[0].fpblhj}}</td>
+        <td  width="140" height="22"  align="right" valign="middle"  >{{json.list[0].fpsdsehj==null?0.00:json.list[0].fpsdsehj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td width="94" height="66" align="center" valign="middle"   :rowspan= "1+json.listzb2.length">汇总纳税但未分摊所得税机构、场所情况</td>
+        <td width="539" height="22"  align="center" valign="middle" colspan="2" >汇总纳税但未分摊所得税的机构、场所统一社会信用代码（纳税人识别号）</td>
+        <td width="405" height="22"  align="center" valign="middle" colspan="3" >汇总纳税但未分摊所得税的机构、场所名称</td>
+        <td width="135" height="22"  align="center" valign="middle"  >行政区划</td>
+        <td width="106" height="22"  align="center" valign="middle"  >成本费用额</td>
+        <td width="140" height="22"  align="center" valign="middle"  >资产额</td>
+
+    </tr>
+    <tr v-for="(item,index) in json.listzb2" :key="item.id">
+        <td  width="539" height="22"  align="center" valign="middle" colspan="2" >{{item.wftjgnsrsbh}}</td>
+        <td  width="405" height="22"  align="center" valign="middle" colspan="3" > {{item.wftjgmc}}</td>
+        <td  width="135" height="22"  align="left" valign="middle"  >{{item.wftjgxzqh}}</td>
+        <td  width="106" height="22"  align="right" valign="middle"  >{{item.cbfye==null?0.00:item.cbfye.toFixed(2)}}</td>
+        <td  width="140" height="22"  align="right" valign="middle"  >{{item.zcze==null?0.00:item.zcze.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+
+        <td  width="94" height="22"  align="left" valign="middle" class="noBorderBottom noBorderLeft noBorderRight" >&nbsp;</td>
+        <td  width="221" height="22"  align="left" valign="middle"  class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+        <td  width="318" height="22"  align="left" valign="middle"  class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+        <td  width="135" height="22"  align="left" valign="middle"  class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+        <td  width="135" height="22"  align="left" valign="middle"  class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+        <td  width="135" height="22"  align="left" valign="middle" class="noBorderBottom noBorderLeft noBorderRight" >&nbsp;</td>
+        <td  width="135" height="22"  align="left" valign="middle"  class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+        <td  width="246" height="22"  align="left" valign="middle" colspan="2" class="noBorderBottom noBorderLeft noBorderRight" >国家税务总局监制</td>
+
+    </tr>
+
+</table>
+    <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+    <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

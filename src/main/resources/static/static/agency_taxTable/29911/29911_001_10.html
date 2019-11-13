@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>企业同期资料登记表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<style>
+  form {
+    margin: 0
+  }
+</style>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1143" height = "266" id="taxTable">
+<tr>
+<td  width="1111" height="46"  align="center" valign="middle" colspan="10" class="noBorder"><B>企业同期资料登记表</B></td>
+</tr>
+<tr>
+<td  width="1111" height="22"  align="center" valign="middle" colspan="10" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1111" height="22"  align="left" valign="middle" colspan="10" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1111" height="22"  align="left" valign="middle" colspan="10" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="321" height="22"  align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="459" height="22"  align="left" valign="middle" colspan="4" class="noBorder">&nbsp;</td>
+<td  width="119" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="212" height="22"  align="right" valign="middle" colspan="2" class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td width="164" height="22" align="center" valign="middle"  >同期资料编号</td>
+<td  width="947" height="22"  align="left" valign="middle" colspan="9" v-fill.tqzlbh="''"></td>
+</tr>
+<tr>
+<td width="164" height="22" align="center" valign="middle"  >纳税人识别号</td>
+<td  width="375" height="22"  align="left" valign="middle" colspan="4" v-fill.nsrsbh="''"></td>
+<td width="164" height="22"  align="center" valign="middle"  >纳税人名称</td>
+<td  width="408" height="22"  align="left" valign="middle" colspan="4" v-fill.nsrmc="''">天津神州浩天科技集团</td>
+</tr>
+<tr>
+<td width="164" height="22" align="center" valign="middle"  >同期资料类型</td>
+<td  width="66" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C8" value="ON" :checked="json[0].tqzllx === '1'" disabled>无</p></form></td>
+<td  width="91" height="22" align="left" valign="middle"  ><form><p><input type="checkbox" name="D8" value="ON" :checked="json[0].tqzllx === '2'" disabled>主体文档</p></form></td>
+<td  width="96" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E8" value="ON" :checked="json[0].tqzllx === '3'" disabled>本地文档</p></form></td>
+<td  width="122" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F8" value="ON" :checked="json[0].tqzllx === '4'" disabled>特殊事项文档</p></form></td>
+<td width="164" height="22"  align="center" valign="middle"  >同期资料报送日期</td>
+<td  width="408" height="22"  align="left" valign="middle" colspan="4" v-fill.tqzlbsrq="''" v-date>&nbsp;</td>
+</tr>
+<tr>
+<td width="164" height="22" align="center" valign="middle"  >登记人</td>
+<td  width="947" height="22"  align="left" valign="middle" colspan="9" v-fill.djrDm="''">&nbsp;</td>
+</tr>
+<tr>
+<td width="164" height="22" align="center" valign="middle"  >特别纳税调查案件编号</td>
+<td  width="375" height="22"  align="left" valign="middle" colspan="4" v-fill.tbnsdzajbh="''">&nbsp;</td>
+<td width="164" height="22"  align="center" valign="middle"  >特别纳税调查案件名称</td>
+<td  width="408" height="22"  align="left" valign="middle" colspan="4" v-fill.tbnsdcajmc="''">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

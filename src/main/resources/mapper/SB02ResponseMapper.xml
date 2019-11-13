@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.demo.dao.SB02ResponseDao">
+    <insert id="insertSB02Response" parameterType="com.springboot.demo.entity.SB02Response" >
+        INSERT INTO sb02response VALUES(#{id},#{djxh},#{sbsqq},#{sbsqz},#{pzzlDm},#{resopnseParam})
+    </insert>
+    <select id="selectSB02Response" parameterType="java.lang.String"  resultType="com.springboot.demo.entity.SB02Response">
+        SELECT
+          *
+        FROM
+          sb02response
+        WHERE
+          id = #{id,jdbcType=VARCHAR}
+  </select>
+</mapper>

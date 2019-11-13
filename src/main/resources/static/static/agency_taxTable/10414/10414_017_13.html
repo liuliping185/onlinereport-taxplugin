@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>广告费和业务宣传费跨年度纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+<style>
+  form {
+    margin: 0
+  }
+</style>
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1024" height = "510" id="taxTable">
+<tr>
+<td width="958" height="46"  align="center" valign="middle" colspan="3" class="noBorder"><B>广告费和业务宣传费跨年度纳税调整明细表</B></td>
+</tr>
+<tr>
+<td width="958" height="22"  align="left" valign="middle" colspan="3" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td width="958" height="22"  align="left" valign="middle" colspan="3" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td width="958" height="22"  align="left" valign="middle" colspan="3" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td width="712" height="22"  align="left" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td width="246" height="22"  align="right" valign="middle"  class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >行次</td>
+<td  width="643" height="22"  align="center" valign="middle"  >项        目</td>
+<td  width="246" height="22"  align="center" valign="middle"  >金    额</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >1</td>
+<td  width="643" height="22"  align="left" valign="middle"  >一、本年广告费和业务宣传费支出</td>
+<td  width="246" height="22"  align="right" valign="middle"  v-fill.bnggfhywxcfzc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >2</td>
+<td  width="643" height="22"  align="left" valign="middle"  >    减：不允许扣除的广告费和业务宣传费支出</td>
+<td  width="246" height="22"  align="right" valign="middle"  v-fill.byxkcdggfhywxczc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >3</td>
+<td  width="643" height="22"  align="left" valign="middle"  >二、本年符合条件的广告费和业务宣传费支出（1-2） </td>
+<td width="246" height="22"  align="right" valign="middle"   v-fill.bnfhtjdggfhywxcfzc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >4</td>
+<td  width="643" height="22"  align="left" valign="middle"  >三、本年计算广告费和业务宣传费扣除限额的销售（营业）收入</td>
+<td  width="246" height="22"  align="right" valign="middle"  v-fill.bnjsggfhywxcfkcedxssr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >5</td>
+<td  width="643" height="22"  align="left" valign="middle"  >    乘：税收规定扣除率</td>
+<td  width="246" height="22"  align="right" valign="middle" >{{(json[0].ssgdkce*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >6</td>
+<td  width="643" height="22"  align="left" valign="middle"  >四、本企业计算的广告费和业务宣传费扣除限额（4×5）</td>
+<td width="246" height="22"  align="right" valign="middle"   v-fill.bqyjsdggfhywxcfkcxe='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >7</td>
+<td  width="643" height="22"  align="left" valign="middle"  >五、本年结转以后年度扣除额（3＞6，本行=3-6；3≤6，本行=0）</td>
+<td width="246" height="22"  align="right" valign="middle"  v-fill.bnjzyhndkce='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >8</td>
+<td  width="643" height="22"  align="left" valign="middle"  >    加：以前年度累计结转扣除额</td>
+<td width="246" height="22"  align="right" valign="middle"  v-fill.yqndljjzkce='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >9</td>
+<td  width="643" height="22"  align="left" valign="middle"  >    减：本年扣除的以前年度结转额[3＞6，本行=0；3≤6，本行=8与（6-3）孰小值]</td>
+<td width="246" height="22"  align="right" valign="middle"  v-fill.bnkcdyqndjze='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >10</td>
+<td  width="643" height="22"  align="left" valign="middle"  >六、按照分摊协议归集至其他关联方的广告费和业务宣传费（10≤3与6孰小值）</td>
+<td  width="246" height="22"  align="right" valign="middle"  v-fill.anftxygjzqtdffy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >11</td>
+<td  width="643" height="22"  align="left" valign="middle"  >    按照分摊协议从其他关联方归集至本企业的广告费和业务宣传费</td>
+<td  width="246" height="22"  align="right" valign="middle"  v-fill.azftxycqtdfgjzbqyfy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >12</td>
+<td  width="643" height="22"  align="left" valign="middle"  >七、本年广告费和业务宣传费支出纳税调整金额（3＞6，本行=2+3-6+10-11；3≤6，本行=2+10-11-9）</td>
+<td width="246" height="22"  align="right" valign="middle"  v-fill.bnggfhywxcfzcnstzje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="69" height="22"  align="center" valign="middle"  >13</td>
+<td  width="643" height="22"  align="left" valign="middle"  >八、累计结转以后年度扣除额（7+8-9）</td>
+<td width="246" height="22"  align="right" valign="middle"  v-fill.ljjzyhndkce='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

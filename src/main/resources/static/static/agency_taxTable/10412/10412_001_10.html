@@ -1,0 +1,267 @@
+<html>
+<head>
+<title>跨地区经营汇总纳税企业的分支机构年度纳税申报表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="900" height = "1098" id="taxTable" style="margin-top:30px;">
+<tr>
+<td  width="834" height="46"  align="center" valign="middle" colspan="7" class="noBorder"><B>跨地区经营汇总纳税企业的分支机构年度纳税申报表</B></td>
+</tr>
+<tr>
+<td  width="834" height="22"  align="center" valign="middle" colspan="7" class="noBorder">税款所属时间:<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="834" height="22"  align="left" valign="middle" colspan="7" class="noBorder">纳税人识别号:{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="514" height="22"  align="left" valign="middle" colspan="5" class="noBorder">纳税人名称（公章）:{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="320" height="22"  align="right" valign="middle" colspan="2" class="noBorder"> 金额单位:人民币元(列至角分)</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >行次</td>
+<td  width="484" height="22"  align="center" valign="middle" colspan="4" >项     目</td>
+<td  width="160" height="22"  align="center" valign="middle"  >本期金额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >累计金额</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >1</td>
+<td  width="804" height="22"  align="left" valign="middle" colspan="6" ><B>一、按照实际利润额预缴</B></td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >2</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >营业收入</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yysrBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yysrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >3</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >营业成本</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yycbBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yycbLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >4</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >利润总额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.lrzeBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.lrzeLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >5</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >加：特定业务计算的应纳税所得额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tdywjsdynssdeBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tdywjsdynssdeLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >6</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >减：不征税收入</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bzssrBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bzssrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >7</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >    免税收入</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.mssrBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.mssrLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >8</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >    减征、免征应纳税所得额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jzmzynssdeBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jzmzynssdeLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >9</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >    弥补以前年度亏损</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.mbyqndksBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.mbyqndksLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >10</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >实际利润额（4行+5行-6行-7行-8行-9行）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.sjlreBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.sjlreLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >11</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >税率(25%)</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.sl1='""' v-percent>0%</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.slLj='""' v-percent>0%</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >12</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >应纳所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ynsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ynsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >13</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >减：减免所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xxwlqyjmsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.xxwlqyjmsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >14</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >    其中：符合条件的小型微利企业减免所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jmsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jmsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >15</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >减：实际已预缴所得税额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.sjyyjsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >16</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >减：特定业务预缴（征）所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tdywyjzsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tdywyjzsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >17</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >应补（退）所得税额（12行-13行-15行-16行）</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ybtsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >18</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >减：以前年度多缴在本期抵缴所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yqnddjzbqdjsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yqnddjzbqdjsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >19</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >本月（季）实际应补（退）所得税额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjsjybtsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >20</td>
+<td  width="804" height="22"  align="left" valign="middle" colspan="6" ><B>二、按照上一纳税年度应纳税所得额平均额预缴</B></td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >21</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >上一纳税年度应纳税所得额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.synsndynssdeLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >22</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >本月（季）应纳税所得额（21行×1/4或1/12）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjynssdeBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjynssdeLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >23</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >税率(25%)</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.asnpjeyjslBq='""' v-percent>0%</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.asnpjeyjslLj='""' v-percent>0%</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >24</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >本月（季）应纳所得税额（22行×23行）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjynsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjynsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >25</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >减：符合条件的小型微利企业减免所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.asnpjexxwlqyjmsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.asnpjexxwlqyjmsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >26</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >本月（季）实际应纳所得税额（24行-25行）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjsjynsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjsjynsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >27</td>
+<td  width="804" height="22"  align="left" valign="middle" colspan="6" ><B>三、按照税务机关确定的其他方法预缴</B></td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >28</td>
+<td  width="484" height="22"  align="left" valign="middle" colspan="4" >本月（季）确定预缴的所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjswjgqdyjsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.byjswjgqdyjsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >29</td>
+<td  width="804" height="22"  align="center" valign="middle" colspan="6" ><B>总分机构纳税人</B></td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >30</td>
+<td  width="35" height="88"  align="center" valign="middle"  rowspan="4">总机构</td>
+<td  width="449" height="22"  align="left" valign="middle" colspan="3" >总机构分摊所得税额（19行或26行或28行×总机构分摊预缴比例）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zjgyftsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zjgljyftdsdse='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >31</td>
+<td  width="449" height="22"  align="left" valign="middle" colspan="3" >财政集中分配所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.czjzfpsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.czjzfpsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >32</td>
+<td  width="449" height="22"  align="left" valign="middle" colspan="3" >分支机构分摊所得税额(19行或26行或28行×分支机构分摊比例）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.fzjgyftsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.fzjgyftsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >33</td>
+<td  width="449" height="22"  align="left" valign="middle" colspan="3" >其中：总机构独立生产经营部门应分摊所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zjgdlscjybmyftsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zjgdlscjybmyftsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >34</td>
+<td  width="35" height="44"  align="center" valign="middle"  rowspan="2">分支机构</td>
+<td  width="449" height="22"  align="left" valign="middle" colspan="3" >分配比例</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.fpbl='""' v-float='10'>0.0000000000</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.fzjgfpblLj='""' v-float='10'>0.0000000000</td>
+</tr>
+<tr>
+<td  width="30" height="22"  align="center" valign="middle"  >35</td>
+<td  width="449" height="22"  align="left" valign="middle" colspan="3" >分配所得税额</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.fzjgfpsdseBq='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.fzjgfpsdseLj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="834" height="40"  align="left" valign="middle" colspan="7" >　　谨声明：此纳税申报表是根据《中华人民共和国企业所得税法》、《中华人民共和国企业所得税法实施条例》和国家有关税收规定填报的，是真实的、可靠的、完整的。</td>
+</tr>
+<tr>
+<td  width="834" height="22"  align="left" valign="middle" colspan="7" >                   法定代表人（签字）：                  年  月  日</td>
+</tr>
+<tr>
+<td  width="174" height="22"  align="left" valign="middle" colspan="3" >纳税人公章：</td>
+<td  width="340" height="22"  align="left" valign="middle" colspan="2" >代理申报中介机构公章：</td>
+<td  width="320" height="44"  align="left" valign="middle" colspan="2" rowspan="2">主管税务机关受理专用章：</td>
+
+</tr>
+<tr>
+<td  width="174" height="44"  align="left" valign="middle" colspan="3" rowspan="2">会计主管：    </td>
+<td  width="340" height="22"  align="left" valign="middle" colspan="2" >经办人：</td>
+
+</tr>
+<tr>
+<td  width="340" height="22"  align="left" valign="middle" colspan="2" >经办人执业证件号码：</td>
+<td  width="320" height="22"  align="left" valign="middle" colspan="2" >受理人：</td>
+
+</tr>
+<tr>
+<td  width="174" height="22"  align="left" valign="middle" colspan="3" >填表日期：    年  月  日</td>
+<td  width="340" height="22"  align="left" valign="middle" colspan="2" >代理申报日期：      年  月  日</td>
+<td  width="320" height="22"  align="left" valign="middle" colspan="2" >受理日期：年 月 日</td>
+
+</tr>
+<tr>
+<td  width="834" height="22"  align="right" valign="middle" colspan="7" class="noBorder">国家税务总局监制 </td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

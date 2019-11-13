@@ -1,0 +1,237 @@
+<html>
+
+<head>
+  <title>利润表（适用执行小企业会计准则的企业）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="939" height="904" id="taxTable">
+    <tr>
+      <td width="873" height="46" align="center" valign="middle" colspan="4" class="noBorder">
+        <B> 利润表 </B>
+      </td>
+    </tr>
+    <tr>
+      <td width="873" height="22" align="center" valign="middle" colspan="4" class="noBorder">（适用执行小企业会计准则的企业）</td>
+    </tr>
+    <tr>
+      <td width="873" height="22" align="center" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="682" height="22" align="left" valign="middle" colspan="3" class="noBorder">纳税人识别号：<span id="nsrsbh">{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</span></td>
+      <td width="191" height="22" align="left" valign="middle" class="noBorder">会小企02表</td>
+    </tr>
+    <tr>
+      <td width="682" height="22" align="left" valign="middle" colspan="3" class="noBorder">纳税人名称（公章）：<span id="nsrmc">{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</span></td>
+      <td width="191" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="682" height="22" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="191" height="22" align="left" valign="middle" class="noBorder">单位：元</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="center" valign="middle">项 目 </td>
+      <td width="125" height="22" align="center" valign="middle"> 行次</td>
+      <td width="191" height="22" align="center" valign="middle">本年累计金额 </td>
+      <td width="191" height="22" align="center" valign="middle">上年金额</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle">一、营业收入 </td>
+      <td width="125" height="22" align="center" valign="middle">1</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-1"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-1"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle">减：营业成本 </td>
+      <td width="125" height="22" align="center" valign="middle">2</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-2"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 税金及附加 </td>
+      <td width="125" height="22" align="center" valign="middle">3</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-3"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-3"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 其中：消费税 </td>
+      <td width="125" height="22" align="center" valign="middle">4</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-4"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 营业税 </td>
+      <td width="125" height="22" align="center" valign="middle">5</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-5"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-5"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 城市维护建设税 </td>
+      <td width="125" height="22" align="center" valign="middle">6</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-6"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-6"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 资源税 </td>
+      <td width="125" height="22" align="center" valign="middle">7</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-7"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-7"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 土地增值税 </td>
+      <td width="125" height="22" align="center" valign="middle">8</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-8"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-8"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 城镇土地使用税、房产税、车船税、印花税 </td>
+      <td width="125" height="22" align="center" valign="middle">9</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-9"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-9"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 教育费附加、矿产资源补偿费、排污费 </td>
+      <td width="125" height="22" align="center" valign="middle">10</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-10"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-10"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 销售费用 </td>
+      <td width="125" height="22" align="center" valign="middle">11</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-11"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-11"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 其中：商品维修费 </td>
+      <td width="125" height="22" align="center" valign="middle">12</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-12"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-12"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 广告费和业务宣传费 </td>
+      <td width="125" height="22" align="center" valign="middle">13</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-13"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-13"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 管理费用 </td>
+      <td width="125" height="22" align="center" valign="middle">14</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-14"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-14"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 其中：开办费 </td>
+      <td width="125" height="22" align="center" valign="middle">15</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-15"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-15"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 业务招待费 </td>
+      <td width="125" height="22" align="center" valign="middle">16</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-16"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-16"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 研究费用 </td>
+      <td width="125" height="22" align="center" valign="middle">17</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-17"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-17"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 财务费用 </td>
+      <td width="125" height="22" align="center" valign="middle">18</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-18"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-18"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 其中：利息费用（收入以"-"号填列） </td>
+      <td width="125" height="22" align="center" valign="middle">19</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-19"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-19"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 加：投资收益（亏损以"-"号填列） </td>
+      <td width="125" height="22" align="center" valign="middle">20</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-20"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-20"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle">二、营业利润（亏损以"-"号填列） </td>
+      <td width="125" height="22" align="center" valign="middle">21</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-21"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-21"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 加：营业外收入 </td>
+      <td width="125" height="22" align="center" valign="middle">22</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-22"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-22"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 其中：政府补助 </td>
+      <td width="125" height="22" align="center" valign="middle">23</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-23"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-23"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 减：营业外支出 </td>
+      <td width="125" height="22" align="center" valign="middle">24</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-24"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-24"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 其中：坏账损失 </td>
+      <td width="125" height="22" align="center" valign="middle">25</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-25"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-25"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 无法收回的长期债券投资损失 </td>
+      <td width="125" height="22" align="center" valign="middle">26</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-26"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-26"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 无法收回的长期股权投资损失 </td>
+      <td width="125" height="22" align="center" valign="middle">27</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-27"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-27"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 自然灾害等不可抗力因素造成的损失 </td>
+      <td width="125" height="22" align="center" valign="middle">28</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-28"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-28"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 税收滞纳金 </td>
+      <td width="125" height="22" align="center" valign="middle">29</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-29"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-29"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle">三、利润总额（亏损总额以"-"号填列） </td>
+      <td width="125" height="22" align="center" valign="middle">30</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-30"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-30"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle"> 减：所得税费用 </td>
+      <td width="125" height="22" align="center" valign="middle">31</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-31"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-31"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="366" height="22" align="left" valign="middle">四、净利润（净亏损以"-"号填列） </td>
+      <td width="125" height="22" align="center" valign="middle">32</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.bnljje='"ewbhxh-32"'>0.00</td>
+      <td width="191" height="22" align="right" valign="middle" v-fill.snje='"ewbhxh-32"'>0.00</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

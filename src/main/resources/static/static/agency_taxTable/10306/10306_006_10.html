@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <title>本期减（免）税额明细表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="1365" id="taxTable">
+    <tr>
+      <td width="1127" height="46" align="center" valign="middle" colspan="8" class="noBorder">
+        <B>本期减（免）税额明细表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1127" height="22" align="left" valign="middle" colspan="8" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="645" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+      <td width="482" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="745" height="22" align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="382" height="22" align="left" valign="middle" colspan="3" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+      <td width="253" height="66" align="center" valign="middle" style="padding:0;background-image:url('/static/images/index/81_line.png');background-repeat:no-repeat;position:relative;background-size:100% 100%;image-rendering: -webkit-optimize-contrast;">
+        <span style="position:absolute;right:10px;top:10px">项目</span>
+        <span style="position:absolute;left:10px;bottom:10px">应税消费品名称</span>
+      </td>
+      <td width="115" height="66" align="center" valign="middle">减（免）性质代码</td>
+      <td width="150" height="66" align="center" valign="middle">减（免）项目名称</td>
+      <td width="150" height="66" align="center" valign="middle">减（免）金额</td>
+      <td width="100" height="66" align="center" valign="middle">适用税率<br>（从价定率）</td>
+      <td width="150" height="66" align="center" valign="middle">减（免）数量</td>
+      <td width="100" height="66" align="center" valign="middle">适用税率<br>（从量定额）</td>
+      <td width="132" height="66" align="center" valign="middle">减（免）税额</td>
+    </tr>
+    <tr>
+      <td width="230" height="22" align="center" valign="middle">1</td>
+      <td width="115" height="22" align="center" valign="middle">2</td>
+      <td width="150" height="22" align="center" valign="middle">3</td>
+      <td width="150" height="22" align="center" valign="middle">4</td>
+      <td width="100" height="22" align="center" valign="middle">5</td>
+      <td width="150" height="22" align="center" valign="middle">6</td>
+      <td width="100" height="22" align="center" valign="middle">7</td>
+      <td width="132" height="22" align="center" valign="middle">8＝4×5＋6×7</td>
+    </tr>
+    <tr v-for='(item,index) in json'>
+      <td width="230" height="22" align="center" valign="middle">{{item.zspmDm}}</td>
+      <td width="115" height="22" align="center" valign="middle">{{item.ssjmxzDm}}</td>
+      <td width="150" height="22" align="center" valign="middle">{{item.ssjmxzMc}}</td>
+      <td width="150" height="22" align="right" valign="middle">{{item.bqjmxse.toFixed(2)}}</td>
+      <td width="100" height="22" align="right" valign="middle">{{(item.blsl*100).toFixed(4)}}%</td>
+      <td width="150" height="22" align="right" valign="middle">{{item.bqjmsl.toFixed(2)}}</td>
+      <td width="100" height="22" align="right" valign="middle">{{item.desl1.toFixed(6)}}</td>
+      <td width="132" height="22" align="right" valign="middle">{{item.bqjmse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td height="22" align="center" valign="middle">合 计</td>
+      <td width="115" height="22" align="center" valign="middle">--</td>
+      <td width="150" height="22" align="center" valign="middle">--</td>
+      <td width="150" height="22" align="center" valign="middle">--</td>
+      <td width="100" height="22" align="center" valign="middle">--</td>
+      <td width="150" height="22" align="center" valign="middle">--</td>
+      <td width="100" height="22" align="center" valign="middle">--</td>
+      <td width="132" height="22" align="right" valign="middle">{{json[0].hj === null ? '' : json[0].hj.toFixed(2)}}</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

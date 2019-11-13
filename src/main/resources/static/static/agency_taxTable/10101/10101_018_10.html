@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title>航空运输企业分支机构传递单</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="957" height="354" id="taxTable">
+    <tr>
+      <td width="925" height="46" align="center" valign="middle" colspan="6" class="noBorder">
+        <B>航空运输企业分支机构传递单</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="420" height="22" align="left" valign="middle" class="noBorder">分支机构名称：（签章）<span class="name"></span></td>
+      <td width="391" height="22" align="left" valign="middle" colspan="3" class="noBorder"></td>
+      <td width="131" height="22" align="left" valign="middle" colspan="2" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="233" height="22" align="center" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="391" height="22" align="center" valign="middle" colspan="3" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+      <td width="131" height="22" align="center" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="190" height="22" align="right" valign="middle" class="noBorder">金额单位：元(至角、分)</td>
+    </tr>
+    <tr>
+      <td width="925" height="22" align="center" valign="middle" colspan="6">已缴纳增值税情况</td>
+    </tr>
+    <tr>
+      <td width="233" height="22" align="center" valign="middle">征税项目</td>
+      <td width="130" height="22" align="center" valign="middle">销售额</td>
+      <td width="131" height="22" align="center" valign="middle">预征率</td>
+      <td width="130" height="22" align="center" valign="middle">预缴税额</td>
+      <td width="131" height="22" align="center" valign="middle">补缴税额</td>
+      <td width="170" height="22" align="center" valign="middle">备注</td>
+    </tr>
+    <tr v-for="(item,index) in json.list">
+      <td width="233" height="22" align="left" valign="middle">{{item.zsxm === '0101' ? '交通运输服务' : (item.zsxm === '0102' ? '有形动产租赁服务' : '其他《应税服务范围注释》所列业务')}}</td>
+      <td width="130" height="22" align="right" valign="middle">{{item.xse.toFixed(2)}}</td>
+      <td width="131" height="22" align="right" valign="middle">{{(item.yzl * 100).toFixed(2) + '%' }}</td>
+      <td width="130" height="22" align="right" valign="middle">{{item.yjse1.toFixed(2)}}</td>
+      <td width="131" height="22" align="center" valign="middle">--</td>
+      <td width="170" height="22" align="center" valign="middle">{{item.bz}}</td>
+    </tr>
+    <tr>
+      <td width="233" height="22" align="center" valign="middle">小计</td>
+      <td width="130" height="22" align="right" valign="middle">{{json.list[0].xsehj === null ? "" : json.list[0].xsehj.toFixed(2)}}</td>
+      <td width="131" height="22" align="center" valign="middle">--</td>
+      <td width="130" height="22" align="right" valign="middle">{{json.list[0].yjsehj === null ? "" : json.list[0].yjsehj.toFixed(2)}}</td>
+      <td width="131" height="22" align="center" valign="middle">--</td>
+      <td width="170" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr>
+      <td width="925" height="22" align="center" valign="middle" colspan="6">取得进项税额情况</td>
+    </tr>
+    <tr>
+      <td width="233" height="22" align="center" valign="middle">发票代码及号码/缴款书号码</td>
+      <td width="130" height="22" align="center" valign="middle">金额</td>
+      <td width="131" height="22" align="center" valign="middle">进项税额</td>
+      <td width="130" height="22" align="center" valign="middle">认证/稽核月份</td>
+      <td width="301" height="22" align="center" valign="middle" colspan="2">备注</td>
+    </tr>
+    <tr v-for="item in json.qdjlist">
+      <td width="233" height="22" align="center" valign="middle">{{item.fpdmjhmhjkshm}}</td>
+      <td width="130" height="22" align="right" valign="middle">{{item.je.toFixed(2)}}</td>
+      <td width="131" height="22" align="right" valign="middle">{{item.jxse.toFixed(2)}}</td>
+      <td width="130" height="22" align="right" valign="middle">{{item.rzhjhyf}}</td>
+      <td width="301" height="22" align="center" valign="middle" colspan="2">{{item.bz}}</td>
+    </tr>
+    <tr>
+      <td width="925" height="22" align="left" valign="middle" colspan="6" class="noBorder">注：本表一式四份，填报单位及其主管国税机关、总机构及其主管国税机关各一份。</td>
+    </tr>
+    <tr>
+      <td width="925" height="22" align="right" valign="middle" colspan="6" class="noBorder">主管国税机关：（签章） </td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+  <script>
+    $(".name").text(json.qdjlist[0].fzjgmc)
+  </script>
+</body>
+
+</html>

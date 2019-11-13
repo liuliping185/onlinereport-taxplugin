@@ -1,0 +1,205 @@
+<html>
+<head>
+<title>受控外国企业信息报告表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<div id="taxTable">
+    <div  v-for="items in json" >
+        <table cellspacing="0" cellpadding="0" width="1244" height = "873" >
+            <tr>
+                <td  width="1212" height="46"  align="center" valign="middle" colspan="11" class="noBorder"><B>受控外国企业信息报告表</B></td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+            </tr>
+            <tr>
+                <td  width="799" height="22"  align="left" valign="middle" colspan="7" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+                <td  width="413" height="22"  align="left" valign="middle" colspan="4" class="noBorder">金额单位：元（列至角分）</td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" >一、报告人信息</td>
+            </tr>
+            <tr>
+                <td  width="162" height="22"  align="center" valign="middle"  >企业名称</td>
+                <td  width="533" height="22"  align="left" valign="middle" colspan="5" >{{items.list2[0].qymc}}</td>
+                <td  width="104" height="22"  align="center" valign="middle"  >纳税人识别号</td>
+                <td  width="413" height="22"  align="left" valign="middle" colspan="4" >{{items.list2[0].qynsrsbh}}</td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" >二、受控外国企业信息</td>
+            </tr>
+            <tr>
+                <td  width="162" height="22"  align="center" valign="middle"  >企业名称</td>
+                <td  width="533" height="22"  align="left" valign="middle" colspan="5" >{{items.list2[0].skwgqyqymc}}</td>
+                <td  width="104" height="22"  align="center" valign="middle"  >纳税人识别号</td>
+                <td  width="413" height="22"  align="left" valign="middle" colspan="4" >{{items.list2[0].skwgqynsrsbh}}</td>
+            </tr>
+            <tr>
+                <td  width="162" height="22"  align="center" valign="middle"  >注册地址</td>
+                <td  width="533" height="22"  align="left" valign="middle" colspan="5" >{{items.list2[0].skwgqyzcdz}}</td>
+                <td  width="104" height="22"  align="center" valign="middle"  >法定代表人</td>
+                <td  width="413" height="22"  align="left" valign="middle" colspan="4" >{{items.list2[0].skwgqyfddbr}}</td>
+            </tr>
+            <tr>
+                <td  width="162" height="22"  align="center" valign="middle"  >成立时间</td>
+                <td  width="533" height="22"  align="left" valign="middle" colspan="5" >{{items.list2[0].skwgqyclsj}}</td>
+                <td  width="104" height="22"  align="center" valign="middle"  >纳税年度起止</td>
+                <td  width="100" height="22"  align="left" valign="middle"  >{{items.list2[0].skwgqynsndq}}</td>
+                <td  width="207" height="22"  align="center" valign="middle" colspan="2" >--</td>
+                <td  width="106" height="22"  align="left" valign="middle"  >{{items.list2[0].skwgqynsndz}}</td>
+            </tr>
+            <tr>
+                <td  width="162" height="30"  align="center" valign="middle"  >记账本位货币</td>
+                <td  width="533" height="30"  align="left" valign="middle" colspan="5" >{{items.list2[0].skwgqyjzbwhb}}</td>
+                <td  width="104" height="30"  align="center" valign="middle"  >折合人民币汇率选用</td>
+                <td  width="413" height="30"  align="right" valign="middle" colspan="4" >{{items.list2[0].skwgqydrmbhl}}</td>
+            </tr>
+            <tr>
+                <td  width="162" height="22"  align="center" valign="middle"  >主营业务范围</td>
+                <td  width="1050" height="22"  align="left" valign="middle" colspan="10" >{{items.list2[0].zyywfw}}</td>
+            </tr>
+            <tr>
+                <td  width="695" height="22"  align="left" valign="middle" colspan="6" >三、受控外国企业构成条件  </td>
+                <td  width="304" height="22"  align="left" valign="middle" colspan="3" ><form><p><input type="checkbox" name="H14" value="ON" :checked="items.list2[0].skwgqygctj === '0'" disabled>持股比例</p></form></td>
+                <td  width="213" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="K14" value="ON" :checked="items.list2[0].skwgqygctj === '1'" disabled>实质控制</p></form></td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" >四、持有受控外国企业股份的中国居民股东持股信息</td>
+            </tr>
+            <tr>
+                <td  width="162" height="22"  align="center" valign="middle"  >股东名称</td>
+                <td  width="163" height="22"  align="center" valign="middle"  >持股数量</td>
+                <td  width="73" height="22"  align="center" valign="middle"  >持股比例</td>
+                <td  width="201" height="22"  align="center" valign="middle" colspan="2" >直接持股数量和比例</td>
+                <td  width="96" height="22"  align="center" valign="middle"  >起始时间</td>
+                <td  width="104" height="22"  align="center" valign="middle"  >截止时间</td>
+                <td  width="200" height="22"  align="center" valign="middle" colspan="2" >间接持股数量和比例</td>
+                <td  width="107" height="22"  align="center" valign="middle"  >起始时间</td>
+                <td  width="106" height="22"  align="center" valign="middle"  >截止时间</td>
+            </tr>
+            <tr v-for="(item, index) in items.list">
+                <td  width="162" height="22"  align="left" valign="middle"  >{{item.cyskwgqyzgjmgdgdmc}}</td>
+                <td  width="163" height="22"  align="right" valign="middle"  >{{item.cyskwgqyzgjmgdcgsl}}</td>
+                <td  width="73" height="22"  align="right" valign="middle"  >{{(item.cyskwgqyzgjmgdcgbl*100).toFixed(4)}}%</td>
+                <td  width="101" height="22"  align="right" valign="middle"  >{{item.cyskwgqyzgjmgdzjcgsl}}</td>
+                <td  width="100" height="22"  align="right" valign="middle"  >{{(item.cyskwgqyzgjmgdzjcgbl*100).toFixed(4)}}%</td>
+                <td  width="96" height="22"  align="left" valign="middle"  >{{item.cyskwgqyzgjmgdzjqssj}}</td>
+                <td  width="104" height="22"  align="left" valign="middle"  >{{item.cyskwgqyzgjmgdzjzzsj}}</td>
+                <td  width="100" height="22"  align="right" valign="middle"  >{{item.cyskwgqyzgjmgdxxjjcgsl}}</td>
+                <td  width="100" height="22"  align="right" valign="middle"  >{{(item.cyskwgqyzgjmgdjjcgbl*100).toFixed(4)}}%</td>
+                <td  width="107" height="22"  align="left" valign="middle"  >{{item.cyskwgqyzgjmgdjjqssj}}</td>
+                <td  width="106" height="22"  align="left" valign="middle"  >{{item.cyskwgqyzgjmgdjjzzsj}}</td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" >五、例外适用情况</td>
+            </tr>
+            <tr>
+                <td  width="695" height="22"  align="left" valign="middle" colspan="6" >1. 受控外国企业是否在国家税务总局指定的非低税率国家（地区）</td>
+                <td  width="304" height="22"  align="left" valign="middle" colspan="3" ><form><p><input type="checkbox" name="H19" value="ON"  :checked="items.list3[0].skwgqysfzgjswzjzddfdslgj === 'Y'" disabled>是</p></form></td>
+                <td  width="213" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="K19" value="ON"  :checked="items.list3[0].skwgqysfzgjswzjzddfdslgj === 'N'" disabled>否</p></form></td>
+            </tr>
+            <tr>
+                <td  width="162" height="22"  align="center" valign="middle"  >实际税负： </td>
+                <td  width="236" height="22"  align="right" valign="middle" colspan="2" >{{items.list3[0].sjsf.toFixed(2)}}</td>
+                <td  width="814" height="22"  align="left" valign="middle" colspan="8" >&nbsp;</td>
+            </tr>
+            <tr>
+                <td  width="695" height="22"  align="left" valign="middle" colspan="6" >2. 受控外国企业年度利润是否不高于500万元人民币      </td>
+                <td  width="304" height="22"  align="left" valign="middle" colspan="3" ><form><p><input type="checkbox" name="H21" value="ON" :checked="items.list3[0].skwgqyndlrsfbgy500wyrmb === 'Y'" disabled>是</p></form></td>
+                <td  width="213" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="K21" value="ON" :checked="items.list3[0].skwgqyndlrsfbgy500wyrmb === 'N'" disabled>否</p></form></td>
+            </tr>
+            <tr>
+                <td  width="695" height="22"  align="left" valign="middle" colspan="6" >3. 受控外国企业主要取得积极经营活动所得</td>
+                <td  width="304" height="22"  align="left" valign="middle" colspan="3" ><form><p><input type="checkbox" name="H22" value="ON" :checked="items.list3[0].skwgqyzyqdjjjyhdsd === 'Y'" disabled>是</p></form></td>
+                <td  width="213" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="K22" value="ON" :checked="items.list3[0].skwgqyzyqdjjjyhdsd === 'N'" disabled>否</p></form></td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" >六、受控外国企业利润分配</td>
+            </tr>
+            <tr>
+                <td  width="398" height="22"  align="left" valign="middle" colspan="3" >可分配利润总额</td>
+                <td  width="297" height="22"  align="right" valign="middle" colspan="3" >{{items.list3[0].skwgqykfplrze.toFixed(2)}}</td>
+                <td  width="304" height="22"  align="center" valign="middle" colspan="3" >可抵免外国税额</td>
+                <td  width="213" height="22"  align="right" valign="middle" colspan="2" >{{items.list3[0].skwgqykdmwgse1.toFixed(2)}}</td>
+            </tr>
+            <tr>
+                <td  width="398" height="22"  align="left" valign="middle" colspan="3" >以前年度已视同分配额</td>
+                <td  width="297" height="22"  align="right" valign="middle" colspan="3" >{{items.list3[0].skwgqyyqndystfpe.toFixed(2)}}</td>
+                <td  width="304" height="22"  align="center" valign="middle" colspan="3" >可抵免外国税额</td>
+                <td  width="213" height="22"  align="right" valign="middle" colspan="2" >{{items.list3[0].skwgqykdmwgse2.toFixed(2)}}</td>
+            </tr>
+            <tr>
+                <td  width="398" height="22"  align="left" valign="middle" colspan="3" >本年度分配额超出以前年度已视同分配额的数额</td>
+                <td  width="297" height="22"  align="right" valign="middle" colspan="3" >{{items.list3[0].skwgqybndfpeccyqndystfpe.toFixed(2)}}</td>
+                <td  width="304" height="22"  align="center" valign="middle" colspan="3" >可抵免外国税额</td>
+                <td  width="213" height="22"  align="right" valign="middle" colspan="2" >{{items.list3[0].skwgqykdmwgse3.toFixed(2)}}</td>
+            </tr>
+            <tr>
+                <td  width="398" height="22"  align="left" valign="middle" colspan="3" >未分配利润额</td>
+                <td  width="297" height="22"  align="right" valign="middle" colspan="3" >{{items.list3[0].skwgqywfplre.toFixed(2)}}</td>
+                <td  width="304" height="22"  align="center" valign="middle" colspan="3" >可抵免外国税额</td>
+                <td  width="213" height="22"  align="right" valign="middle" colspan="2" >{{items.list3[0].skwgqykdmwgse4.toFixed(2)}}</td>
+            </tr>
+            <tr>
+                <td  width="398" height="22"  align="left" valign="middle" colspan="3" >视同分配给报告人股息</td>
+                <td  width="297" height="22"  align="right" valign="middle" colspan="3" >{{items.list3[0].skwgqystfpgbgrgx.toFixed(2)}}</td>
+                <td  width="304" height="22"  align="center" valign="middle" colspan="3" >可抵免外国税额</td>
+                <td  width="213" height="22"  align="right" valign="middle" colspan="2" >{{items.list3[0].skwgqykdmwgse5.toFixed(2)}}</td>
+            </tr>
+            <tr>
+                <td  width="398" height="22"  align="left" valign="middle" colspan="3" >视同分配给其他中国居民股东的股息</td>
+                <td  width="297" height="22"  align="right" valign="middle" colspan="3" >{{items.list3[0].skwgqystfpgqtzgjmgdgx.toFixed(2)}}</td>
+                <td  width="304" height="22"  align="center" valign="middle" colspan="3" >可抵免外国税额</td>
+                <td  width="213" height="22"  align="right" valign="middle" colspan="2" >{{items.list3[0].skwgqykdmwgse6.toFixed(2)}}</td>
+            </tr>
+            <tr>
+                <td  width="398" height="22"  align="left" valign="middle" colspan="3" >备注</td>
+                <td  width="814" height="22"  align="left" valign="middle" colspan="8" >{{items.list3[0].bz}}</td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" >七、报告人声明</td>
+            </tr>
+            <tr>
+                <td  width="1212" height="27"  align="left" valign="middle" colspan="1" class="noBorderBottom noBorderRight"> </td>
+                <td  width="1212" height="27"  align="left" valign="middle" colspan="10" class="noBorderBottom noBorderLeft">我谨在此声明：以上呈报事项准确无误，如有不实，愿承担相应的法律责任。</td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" class="noBorderBottom noBorderTop" >&nbsp;</td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="1" class="noBorderTop noBorderRight">     </td>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="6" class="noBorderTop noBorderLeft noBorderRight">报告人签字和盖章： {{items.list3[0].bgrqz}} 报告日期：</td>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="4" class="noBorderTop noBorderLeft">报告日期：<span v-date>{{items.list3[0].bgrq}}</span></td>
+            </tr>
+            <tr>
+                <td  width="1212" height="22"  align="left" valign="middle" colspan="11" > 以下由主管税务机关填写</td>
+            </tr>
+            <tr>
+                <td  width="695" height="22"  align="left" valign="middle" colspan="6" class="noBorderBottom">受理人：{{items.list3[0].slr}}</td>
+                <td  width="517" height="22"  align="left" valign="middle" colspan="5" class="noBorderBottom">                         税务机关（盖章）{{items.list3[0].zgswjgDm}}</td>
+            </tr>
+            <tr>
+            <tr>
+                <td  width="695" height="22"  align="left" valign="middle" colspan="6" class="noBorderTop" >联系电话：{{items.list3[0].lxdh}}</td>
+                <td  width="517" height="22"  align="left" valign="middle" colspan="2" class="noBorderTop noBorderRight" > </td>
+                <td  width="517" height="22"  align="left" valign="middle" colspan="1" style="text-align: center;" class="noBorderTop noBorderLeft noBorderRight" >年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日   </td>
+                <td  width="517" height="22"  align="left" valign="middle" colspan="2" class="noBorderTop noBorderLeft" ></td>
+            </tr>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

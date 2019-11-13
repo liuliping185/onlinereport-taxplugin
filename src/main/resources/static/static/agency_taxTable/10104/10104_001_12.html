@@ -1,0 +1,161 @@
+<html>
+
+<head>
+	<title>增值税预缴税款表</title>
+	<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+	<style>
+		form {
+			margin-bottom:0;
+		}
+	</style>
+</head>
+<body>
+	<div id="taxTable">
+		<div v-for="items in json">
+			<table cellspacing="0" cellpadding="0" width="942" height="540" style="margin-bottom:50px;">
+				<tr>
+					<td width="910" height="46" align="center" valign="middle" colspan="6" class="noBorder">
+						<B>增值税预缴税款表</B>
+					</td>
+				</tr>
+				<tr v-for="item in items.nsrxxList">
+					<td width="910" height="22" align="center" valign="middle" colspan="6" class="noBorder">税款所属时间： {{item.skssqq}}至{{item.skssqz}}</td>
+				</tr>
+				<tr v-for="item in items.nsrxxList">
+					<td width="415" height="22" align="left" valign="middle" colspan="3" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+					<td width="165" height="22" align="left" valign="middle" class="noBorder">是否适用一般计税方法</td>
+					<td width="165" height="22" align="left" valign="middle" class="noBorder">
+						<form autocomplate="off">
+							<p>
+								<input class="checkbox" type="checkbox" name="F3" value="ON" :checked="item.syybjsff == 'Y'" disabled>是</p>
+						</form>
+					</td>
+					<td width="165" height="22" align="left" valign="middle" class="noBorder">
+						<form autocomplate="off">
+							<p>
+								<input class="checkbox" type="checkbox" name="G3" value="ON" :checked="item.syybjsff == 'N'" disabled>否</p>
+						</form>
+					</td>
+				</tr>
+				<tr  v-for="item in items.nsrxxList">
+					<td width="415" height="22" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+					<td width="165" height="22" align="left" valign="middle" class="noBorder">是否增值税一般纳税人</td>
+					<td width="165" height="22" align="left" valign="middle" class="noBorder">
+						<form autocomplate="off">
+							<p>
+								<input class="checkbox" type="checkbox" name="F3" value="ON" :checked="item.syybnsr== 'Y'" disabled>是</p>
+						</form>
+					</td>
+					<td width="165" height="22" align="left" valign="middle" class="noBorder">
+						<form autocomplate="off">
+							<p>
+								<input class="checkbox" type="checkbox" name="G3" value="ON" :checked="item.syybnsr == 'N'" disabled>否</p>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td width="165" height="22" align="left" valign="middle">纳税人名称：（公章） </td>
+					<td width="415" height="22" align="left" valign="middle" colspan="3">{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</td>
+					<td width="330" height="22" align="right" valign="middle" colspan="2">金额单位：元（列至角分）</td>
+				</tr>
+				<tr v-for="(item,index) in items.nsrxxList">
+					<td width="250" height="22" align="center" valign="middle" colspan="2">项目编号</td>
+					<td width="165" height="22" align="left" valign="middle">{{item.xmbh}}</td>
+					<td width="165" height="22" align="center" valign="middle">项目名称</td>
+					<td width="330" height="22" align="left" valign="middle" colspan="2">{{item.xmmc}}</td>
+				</tr>
+				<tr v-for="(item,index) in items.nsrxxList">
+					<td width="250" height="22" align="center" valign="middle" colspan="2">项目地址</td>
+					<td width="660" height="22" align="left" valign="middle" colspan="4">{{item.xmdz}}</td>
+				</tr>
+				<tr>
+					<td width="250" height="44" align="center" valign="middle" colspan="2" rowspan="2">预征项目和栏次</td>
+					<td width="165" height="22" align="center" valign="middle">销售额</td>
+					<td width="165" height="22" align="center" valign="middle">扣除金额</td>
+					<td width="165" height="22" align="center" valign="middle">预征率</td>
+					<td width="165" height="22" align="center" valign="middle"> 预征税额</td>
+				</tr>
+				<tr>
+					<td width="165" height="22" align="center" valign="middle">1</td>
+					<td width="165" height="22" align="center" valign="middle">2</td>
+					<td width="165" height="22" align="center" valign="middle">3</td>
+					<td width="165" height="22" align="center" valign="middle">4</td>
+				</tr>
+				<tr v-for="(item,index) in items.tzlist">
+					<td width="165" height="22" align="left" valign="middle">{{item.yzxmDm === '101017100' ? '建筑服务' : (item.yzxmDm === '101017700' ? '销售不动产' : (item.yzxmDm === '101016600' ? '出租不动产' : ''))}}</td>
+					<td width="85" height="22" align="center" valign="middle">{{index+1}}</td>
+					<td width="165" height="22" align="right" valign="middle">{{item.xse.toFixed(2)}}</td>
+					<td width="165" height="22" align="right" valign="middle">{{item.kcje.toFixed(2)}}</td>
+					<td width="165" height="22" align="right" valign="middle">{{(item.yzl * 100).toFixed(2) + '%' }}</td>
+					<td width="165" height="22" align="right" valign="middle">{{item.yzse.toFixed(2)}}</td>
+				</tr>
+				<tr>
+					<td width="165" height="22" align="left" valign="middle"></td>
+					<td width="85" height="22" align="center" valign="middle">{{items.tzlist.length + 1}}</td>
+					<td width="165" height="22" align="right" valign="middle">0.00</td>
+					<td width="165" height="22" align="right" valign="middle">0.00</td>
+					<td width="165" height="22" align="right" valign="middle">0.00%</td>
+					<td width="165" height="22" align="right" valign="middle">0.00</td>
+				</tr>
+				<tr>
+					<td width="165" height="22" align="left" valign="middle"></td>
+					<td width="85" height="22" align="center" valign="middle">{{items.tzlist.length + 2}}</td>
+					<td width="165" height="22" align="right" valign="middle">0.00</td>
+					<td width="165" height="22" align="right" valign="middle">0.00</td>
+					<td width="165" height="22" align="right" valign="middle">0.00%</td>
+					<td width="165" height="22" align="right" valign="middle">0.00</td>
+				</tr>
+				<tr>
+					<td width="165" height="22" align="center" valign="middle">合计</td>
+					<td width="85" height="22" align="center" valign="middle">{{items.tzlist.length + 3}}</td>
+					<td width="165" height="22" align="right" valign="middle">{{items.tzlist[0].xsehj === null ? '' : items.tzlist[0].xsehj.toFixed(2)}}</td>
+					<td width="165" height="22" align="right" valign="middle">{{items.tzlist[0].kcjehj === null ? '' : items.tzlist[0].kcjehj.toFixed(2)}}</td>
+					<td width="165" height="22" align="center" valign="middle">--</td>
+					<td width="165" height="22" align="right" valign="middle">{{items.tzlist[0].yzsehj === null ? '' : items.tzlist[0].yzsehj.toFixed(2)}}</td>
+				</tr>
+				 <!-- 新增 -->
+				<tr>
+					<td width="254" height="22"  align="center" valign="middle" colspan="2" >是否自行申报</td>
+					<td  width="142" height="22"  align="left" valign="middle"  ><form><p><input :checked="items.tzlist[0].sfzxsb === '1'" type="checkbox" name="D16" value="ON" disabled>是</p></form></td>
+					<td  width="150" height="22"  align="left" valign="middle"  ><form><p><input :checked="items.tzlist[0].sfzxsb === '0'" type="checkbox" name="E16" value="ON" disabled>否</p></form></td>
+					<td width="178" height="22"  align="center" valign="middle"  >代理人</td>
+					<td  width="160" height="22"  align="left" valign="middle"  >{{items.tzlist[0].dlr}}</td>
+				</tr>
+				<tr>
+					<td width="254" height="22"  align="center" valign="middle" colspan="2" >代理人员身份证件类型</td>
+					<td  width="292" height="22"  align="left" valign="middle"   colspan="2">{{items.tzlist[0].dlrysfzjlx}}</td>
+					<td width="178" height="22"  align="center" valign="middle"  >代理人员身份证件号码</td>
+					<td  width="160" height="22"  align="left" valign="middle"  >{{items.tzlist[0].dlrysfzjhm}}</td>
+				</tr>
+				<!-- 2018-9-26 -->
+				<tr>
+					<td width="254" height="22"  align="center" valign="middle" colspan="2" >详细地址</td>
+					<td  width="630" height="22"  align="left" valign="middle"   colspan="4">{{items.tzlist[0].xxdz}}</td>
+				</tr>
+				<!-- /新增 -->
+				<tr>
+					<td width="165" height="132" align="center" valign="middle" rowspan="6">授权声明</td>
+					<td width="250" height="132" align="left" valign="middle" colspan="2" rowspan="6"> 如果你已委托代理人填报，请填写下列资料：
+						<br> 为代理一切税务事宜，现授权 （地址） 为本次纳税人的代理填报人，任何与本表有关的往来文件，都可寄予此人。
+						<br> 授权人签字：</td>
+					<td width="165" height="132" align="center" valign="middle" rowspan="6">填表人申明</td>
+					<td width="330" height="132" align="left" valign="middle" colspan="2" rowspan="6">以上内容是真实的、可靠的、完整的。
+						<br>
+						<br>
+						<br>纳税人签字：</td>
+				</tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+				<tr></tr>
+			</table>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+	<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

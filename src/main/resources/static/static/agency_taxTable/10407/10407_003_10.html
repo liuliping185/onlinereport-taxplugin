@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>企业所得税弥补亏损明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1779" height = "443" id="taxTable" style="margin-top:30px;">
+<tr>
+<td  width="1713" height="23"  align="center" valign="middle" colspan="12" class="noBorder"><B>企业所得税弥补亏损明细表</B></td>
+</tr>
+<tr>
+<td  width="1713" height="22"  align="center" valign="middle" colspan="12" class="noBorder">税款所属时间:<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1713" height="22"  align="left" valign="middle" colspan="12" class="noBorder">纳税人识别号:{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1713" height="22"  align="left" valign="middle" colspan="12" class="noBorder">纳税人名称（公章）:{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="699" height="22"  align="left" valign="middle" colspan="6" class="noBorder">填表日期:<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="1014" height="22"  align="right" valign="middle" colspan="6" class="noBorder">金额单位：人民币元（列至角分）</td>
+</tr>
+<tr>
+<td  width="57" height="110"  align="center" valign="middle"  rowspan="5">行次</td>
+<td  width="72" height="110"  align="center" valign="middle"  rowspan="5">项目</td>
+<td  width="72" height="88"  align="center" valign="middle"  rowspan="4">年度</td>
+<td  width="169" height="88"  align="center" valign="middle"  rowspan="4">纳税调整后所得</td>
+<td  width="169" height="88"  align="center" valign="middle"  rowspan="4">当年可弥补的亏损额</td>
+<td  width="836" height="44"  align="center" valign="middle" colspan="5" rowspan="2">以前年度亏损已弥补额</td>
+<td  width="169" height="88"  align="center" valign="middle"  rowspan="4">本年度实际弥补的以前年度亏损额</td>
+<td  width="169" height="88"  align="center" valign="middle"  rowspan="4">可结转以后年度弥补的亏损额</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td  width="160" height="44"  align="center" valign="middle"  rowspan="2">前四年度</td>
+<td  width="169" height="44"  align="center" valign="middle"  rowspan="2">前三年度</td>
+<td  width="169" height="44"  align="center" valign="middle"  rowspan="2">前二年度</td>
+<td  width="169" height="44"  align="center" valign="middle"  rowspan="2">前一年度</td>
+<td  width="169" height="44"  align="center" valign="middle"  rowspan="2">合计</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td  width="72" height="22"  align="center" valign="middle"  >1</td>
+<td  width="169" height="22"  align="center" valign="middle"  >2</td>
+<td  width="169" height="22"  align="center" valign="middle"  >3</td>
+<td  width="160" height="22"  align="center" valign="middle"  >4</td>
+<td  width="169" height="22"  align="center" valign="middle"  >5</td>
+<td  width="169" height="22"  align="center" valign="middle"  >6</td>
+<td  width="169" height="22"  align="center" valign="middle"  >7</td>
+<td  width="169" height="22"  align="center" valign="middle"  >8</td>
+<td  width="169" height="22"  align="center" valign="middle"  >9</td>
+<td  width="169" height="22"  align="center" valign="middle"  >10</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >1</td>
+<td  width="72" height="22"  align="left" valign="middle"  >前五年度</td>
+<td  width="72" height="22"  align="left" valign="middle"  >{{json[0].nd}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[0].ylehkse === null ? '' : json[0].ylehkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[0].dnkmbdsde === null ? '' : json[0].dnkmbdsde.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json[0].yqndksmbeqsnd === null ? '' : json[0].yqndksmbeqsnd.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[0].yqndksmbeqsannd === null ? '' : json[0].yqndksmbeqsannd.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[0].yqndksmbeqernd === null ? '' : json[0].yqndksmbeqernd.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[0].yqndksmbeqyind === null ? '' : json[0].yqndksmbeqyind.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[0].hj === null ? '' : json[0].hj.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[0].bndsjmbdyqndkse === null ? '' : json[0].bndsjmbdyqndkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >2</td>
+<td  width="72" height="22"  align="left" valign="middle"  >前四年度</td>
+<td  width="72" height="22"  align="left" valign="middle"  >{{json[1].nd}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[1].ylehkse === null ? '' : json[1].ylehkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[1].dnkmbdsde === null ? '' : json[1].dnkmbdsde.toFixed(2)}}</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[1].yqndksmbeqsannd === null ? '' : json[1].yqndksmbeqsannd.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[1].yqndksmbeqernd === null ? '' : json[1].yqndksmbeqernd.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[1].yqndksmbeqyind === null ? '' : json[1].yqndksmbeqyind.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[1].hj === null ? '' : json[1].hj.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[1].bndsjmbdyqndkse === null ? '' : json[1].bndsjmbdyqndkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[1].kjzyhndmbdkse === null ? '' : json[1].kjzyhndmbdkse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >3</td>
+<td  width="72" height="22"  align="left" valign="middle"  >前三年度</td>
+<td  width="72" height="22"  align="left" valign="middle"  >{{json[2].nd}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[2].ylehkse === null ? '' : json[2].ylehkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[2].dnkmbdsde === null ? '' : json[2].dnkmbdsde.toFixed(2)}}</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[2].yqndksmbeqernd === null ? '' : json[2].yqndksmbeqernd.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[2].yqndksmbeqyind === null ? '' : json[2].yqndksmbeqyind.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[2].hj === null ? '' : json[2].hj.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[2].bndsjmbdyqndkse === null ? '' : json[2].bndsjmbdyqndkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[2].kjzyhndmbdkse === null ? '' : json[2].kjzyhndmbdkse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >4</td>
+<td  width="72" height="22"  align="left" valign="middle"  >前二年度</td>
+<td  width="72" height="22"  align="left" valign="middle"  >{{json[3].nd}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[3].ylehkse === null ? '' : json[3].ylehkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[3].dnkmbdsde === null ? '' : json[3].dnkmbdsde.toFixed(2)}}</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[3].yqndksmbeqyind === null ? '' : json[3].yqndksmbeqyind.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[3].hj === null ? '' : json[3].hj.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[3].bndsjmbdyqndkse === null ? '' : json[3].bndsjmbdyqndkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[3].kjzyhndmbdkse === null ? '' : json[3].kjzyhndmbdkse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >5</td>
+<td  width="72" height="22"  align="left" valign="middle"  >前一年度</td>
+<td  width="72" height="22"  align="left" valign="middle"  >{{json[4].nd}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[4].ylehkse === null ? '' : json[4].ylehkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[4].dnkmbdsde === null ? '' : json[4].dnkmbdsde.toFixed(2)}}</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[4].bndsjmbdyqndkse === null ? '' : json[4].bndsjmbdyqndkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[4].kjzyhndmbdkse === null ? '' : json[4].kjzyhndmbdkse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >6</td>
+<td  width="72" height="22"  align="left" valign="middle"  >本年度</td>
+<td  width="72" height="22"  align="left" valign="middle"  >{{json[5].nd}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[5].ylehkse === null ? '' : json[5].ylehkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[5].dnkmbdsde === null ? '' : json[5].dnkmbdsde.toFixed(2)}}</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="center" valign="middle"  >*</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[5].bndsjmbdyqndkse === null ? '' : json[5].bndsjmbdyqndkse.toFixed(2)}}</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[5].kjzyhndmbdkse === null ? '' : json[5].kjzyhndmbdkse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="57" height="22"  align="center" valign="middle"  >7</td>
+<td  width="150" height="22"  align="left" valign="middle" colspan="10" >可结转以后年度弥补的亏损额合计</td>
+<td  width="169" height="22"  align="right" valign="middle"  >{{json[0].kjzyhndmbdksehj === null ? '' : json[0].kjzyhndmbdksehj.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

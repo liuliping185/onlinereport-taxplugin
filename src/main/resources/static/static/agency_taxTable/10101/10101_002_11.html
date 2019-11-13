@@ -1,0 +1,535 @@
+<html>
+
+<head>
+  <title>增值税纳税申报表附列资料（一）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+<div  id="taxTable">
+  <table style="width:90%">
+    <tr>
+      <td width="2596" height="46" align="center" valign="middle" colspan="19" class="noBorder">
+        <B>增值税纳税申报表附列资料（一）</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="2596" height="22" align="center" valign="middle" colspan="19" class="noBorder">
+        （本期销售情况明细）
+      </td>
+    </tr>
+    <tr>
+      <td width="2596" height="22" align="center" valign="middle" colspan="19" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="1626" height="22" align="left" valign="middle" colspan="13" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</td>
+      <td width="970" height="22" align="right" valign="middle" colspan="6" class="noBorder">金额单位：元至角分</td>
+      <td class="noBorder lastCol"></td>
+    </tr>
+  </table>
+  <div id="outerDiv">
+    <div id="tableDiv">
+      <table cellspacing="0" cellpadding="0" width="2662" height="730">
+        <tr>
+          <td class="column-fixed" width="346" height="74" align="center" valign="middle" colspan="5" rowspan="3">项目及栏次</td>
+          <td width="320" height="22" align="center" valign="middle" colspan="2">开具增值税专用发票</td>
+          <td width="320" height="22" align="center" valign="middle" colspan="2">开具其他发票</td>
+          <td width="320" height="22" align="center" valign="middle" colspan="2">未开具发票</td>
+          <td width="320" height="22" align="center" valign="middle" colspan="2">纳税检查调整</td>
+          <td width="480" height="22" align="center" valign="middle" colspan="3">合计</td>
+          <td width="170" height="44" align="center" valign="middle" rowspan="2">服务、不动产和无形资产扣除项目本期实际扣除金额</td>
+          <td width="320" height="22" align="center" valign="middle" colspan="2">扣除后</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="160" height="22" align="center" valign="middle">销售额</td>
+          <td width="160" height="22" align="center" valign="middle">销项(应纳)税额</td>
+          <td width="160" height="22" align="center" valign="middle">销售额</td>
+          <td width="160" height="22" align="center" valign="middle">销项(应纳)税额</td>
+          <td width="160" height="22" align="center" valign="middle">销售额</td>
+          <td width="160" height="22" align="center" valign="middle">销项(应纳)税额</td>
+          <td width="160" height="22" align="center" valign="middle">销售额</td>
+          <td width="160" height="22" align="center" valign="middle">销项(应纳)税额</td>
+          <td width="160" height="22" align="center" valign="middle">销售额</td>
+          <td width="160" height="22" align="center" valign="middle">销项(应纳)税额</td>
+          <td width="160" height="22" align="center" valign="middle">价税合计</td>
+          <td width="160" height="22" align="center" valign="middle">含税(免税)销售额</td>
+          <td width="160" height="22" align="center" valign="middle">销项(应纳)税额</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="160" height="30" align="center" valign="middle">1</td>
+          <td width="160" height="30" align="center" valign="middle">2</td>
+          <td width="160" height="30" align="center" valign="middle">3</td>
+          <td width="160" height="30" align="center" valign="middle">4</td>
+          <td width="160" height="30" align="center" valign="middle">5</td>
+          <td width="160" height="30" align="center" valign="middle">6</td>
+          <td width="160" height="30" align="center" valign="middle">7</td>
+          <td width="160" height="30" align="center" valign="middle">8</td>
+          <td width="160" height="30" align="center" valign="middle">9=1+3+5+7</td>
+          <td width="160" height="30" align="center" valign="middle">10=2+4+6+8</td>
+          <td width="160" height="30" align="center" valign="middle">11=9+10</td>
+          <td width="170" height="30" align="center" valign="middle">12</td>
+          <td width="160" height="30" align="center" valign="middle">13=11-12</td>
+          <td width="160" height="30" align="center" valign="middle">14=13÷(100%+税率或征收率)×税率或征收率</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="40" height="192" align="center" valign="middle" rowspan="8">一、一般计税方法计税</td>
+          <td width="48" height="148" align="center" valign="middle" rowspan="6">全部征税项目</td>
+          <td width="225" height="30" align="left" valign="middle" colspan="2">17%税率的货物及加工修理修配劳务</td>
+          <td width="33" height="30" align="center" valign="middle">1</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.nsjctzdxse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.xse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-1"'>0.00</td>
+          <td width="160" height="30" align="center" valign="middle" v-fill.jshj='"ewbhxh-1"'>--</td>
+          <td width="170" height="30" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-1"'>--</td>
+          <td width="160" height="30" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-1"'>--</td>
+          <td width="160" height="30" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-1"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="30" align="left" valign="middle" colspan="2">17%税率的服务、不动产和无形资产</td>
+          <td width="33" height="30" align="center" valign="middle">2</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.nsjctzdxse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.xse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.jshj='"ewbhxh-2"'>0.00</td>
+          <td width="170" height="30" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-2"'>0.00</td>
+          <td width="160" height="30" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-2"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">13%税率 </td>
+          <td width="33" height="22" align="center" valign="middle">3</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.nsjctzdxse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-3"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-3"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-3"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-3"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-3"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">11%税率的货物及加工修理修配劳务</td>
+          <td width="33" height="22" align="center" valign="middle">4a</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.nsjctzdxse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-23"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-23"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-23"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-23"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-23"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">11%税率的服务、不动产和无形资产</td>
+          <td width="33" height="22" align="center" valign="middle">4b</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.nsjctzdxse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-4"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-4"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-4"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">6%税率</td>
+          <td width="33" height="22" align="center" valign="middle">5</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.nsjctzdxse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-5"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-5"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-5"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="48" height="44" align="center" valign="middle" rowspan="2">其中：即征即退项目</td>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">即征即退货物及加工修理修配劳务</td>
+          <td width="33" height="22" align="center" valign="middle">6</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-6"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-6"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-6"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-6"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-6"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">即征即退服务、不动产和无形资产</td>
+          <td width="33" height="22" align="center" valign="middle">7</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-7"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-7"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXse='"ewbhxh-7"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-7"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXse='"ewbhxh-7"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-7"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-7"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-7"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-7"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-7"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-7"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-7"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-7"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-7"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="40" height="242" align="center" valign="middle" rowspan="11">二、简易计税方法计税</td>
+          <td width="48" height="198" align="center" valign="middle" rowspan="9">全部征税项目</td>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">6%征收率</td>
+          <td width="33" height="22" align="center" valign="middle">8</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-8"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-8"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-8"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-8"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-8"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-8"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-8"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-8"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-8"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-8"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-8"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-8"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-8"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-8"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">5%征收率的货物及加工修理修配劳务</td>
+          <td width="33" height="22" align="center" valign="middle">9a</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-9"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-9"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-9"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-9"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-9"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-9"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-9"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-9"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-9"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-9"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-9"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-9"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-9"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-9"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">5%征收率的服务、不动产和无形资产</td>
+          <td width="33" height="22" align="center" valign="middle">9b</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-22"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-22"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-22"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-22"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-22"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">4%征收率</td>
+          <td width="33" height="22" align="center" valign="middle">10</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-10"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-10"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-10"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-10"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-10"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-10"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-10"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-10"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-10"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-10"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-10"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-10"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-10"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-10"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">3%征收率的货物及加工修理修配劳务</td>
+          <td width="33" height="22" align="center" valign="middle">11</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-11"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-11"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-11"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-11"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-11"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-11"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-11"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-11"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-11"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-11"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-11"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-11"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-11"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-11"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">3%征收率的服务、不动产和无形资产</td>
+          <td width="33" height="22" align="center" valign="middle">12</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-12"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-12"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-12"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-12"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-12"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="118" height="22" align="left" valign="middle">预征率</td>
+          <td width="107" height="22" align="right" valign="middle">0%</td>
+          <td width="33" height="22" align="center" valign="middle">13a</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-13"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-13"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-13"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-13"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-13"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="118" height="22" align="left" valign="middle">预征率</td>
+          <td width="107" height="22" align="right" valign="middle">0%</td>
+          <td width="33" height="22" align="center" valign="middle">13b</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-20"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-20"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-20"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-20"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-20"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="118" height="22" align="left" valign="middle">预征率</td>
+          <td width="107" height="22" align="right" valign="middle">0%</td>
+          <td width="33" height="22" align="center" valign="middle">13c</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-21"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-21"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-21"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-21"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-21"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="48" height="44" align="center" valign="middle" rowspan="2">其中：即征即退项目</td>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">即征即退货物及加工修理修配劳务</td>
+          <td width="33" height="22" align="center" valign="middle">14</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-14"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-14"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-14"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-14"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-14"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="225" height="22" align="left" valign="middle" colspan="2">即征即退服务、不动产和无形资产</td>
+          <td width="33" height="22" align="center" valign="middle">15</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-15"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-15"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXse='"ewbhxh-15"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-15"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXse='"ewbhxh-15"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-15"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-15"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-15"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-15"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.hjXxynse='"ewbhxh-15"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-15"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-15"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-15"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchXxynse='"ewbhxh-15"'>0.00</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="40" height="44" align="center" valign="middle" rowspan="2">三、免抵退税</td>
+          <td width="273" height="22" align="left" valign="middle" colspan="3">货物及加工修理修配劳务</td>
+          <td width="33" height="22" align="center" valign="middle">16</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-16"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-16"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-16"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.hjXxynse='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-16"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-16"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-16"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="273" height="22" align="left" valign="middle" colspan="3">服务、不动产和无形资产</td>
+          <td width="33" height="22" align="center" valign="middle">17</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-17"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-17"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-17"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-17"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-17"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-17"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-17"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-17"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-17"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.hjXxynse='"ewbhxh-17"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-17"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-17"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-17"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-17"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="40" height="44" align="center" valign="middle" rowspan="2">四、免税</td>
+          <td width="273" height="22" align="left" valign="middle" colspan="3">货物及加工修理修配劳务</td>
+          <td width="33" height="22" align="center" valign="middle">18</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-18"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-18"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-18"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-18"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-18"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-18"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-18"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-18"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-18"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.hjXxynse='"ewbhxh-18"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.jshj='"ewbhxh-18"'>--</td>
+          <td width="170" height="22" align="center" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-18"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchHsmsxse='"ewbhxh-18"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-18"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="273" height="22" align="left" valign="middle" colspan="3">服务、不动产和无形资产</td>
+          <td width="33" height="22" align="center" valign="middle">19</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXse='"ewbhxh-19"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjskzzszyfpXxynse='"ewbhxh-19"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kjqtfpXse='"ewbhxh-19"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kjqtfpXxynse='"ewbhxh-19"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.wkjfpXse='"ewbhxh-19"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.wkjfpXxynse='"ewbhxh-19"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzdxse='"ewbhxh-19"'>--</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.nsjctzXxynse='"ewbhxh-19"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.xse='"ewbhxh-19"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.hjXxynse='"ewbhxh-19"'>--</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.jshj='"ewbhxh-19"'>0.00</td>
+          <td width="170" height="22" align="right" valign="middle" v-fill.ysfwkcxmbqsjkcje='"ewbhxh-19"'>0.00</td>
+          <td width="160" height="22" align="right" valign="middle" v-fill.kchHsmsxse='"ewbhxh-19"'>0.00</td>
+          <td width="160" height="22" align="center" valign="middle" v-fill.kchXxynse='"ewbhxh-19"'>--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/fixTable.js"></script>
+</body>
+
+</html>

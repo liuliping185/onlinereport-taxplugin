@@ -1,0 +1,216 @@
+<html>
+<head>
+<title>文化事业建设费申报表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="810" height = "779" id="taxTable">
+<tr>
+<td  width="744" height="46"  align="center" valign="middle" colspan="6" class="noBorder"><B>文化事业建设费申报表</B></td>
+<td  width="34" height="46"  align="center" valign="middle"  class="noBorder"><B>&nbsp;</B></td>
+</tr>
+<tr v-for="item in json">
+<td  width="744" height="22"  align="left" valign="middle" colspan="6" class="noBorder">缴纳义务人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="34" height="22"  align="left" valign="middle"  class="noBorder"></td>
+</tr>
+<tr>
+<td  width="576" height="22"  align="left" valign="middle" colspan="5" class="noBorder">缴纳义务人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="175" height="22"  align="right" valign="middle"  class="noBorder">金额单位：元（列至角分）</td>
+<td  width="34" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="416" height="22"  align="left" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="328" height="22"  align="left" valign="middle" colspan="2"class="noBorder" >填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="34" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="247" height="30"  align="center" valign="middle" colspan="3" >项目</td>
+<td  width="169" height="30"  align="center" valign="middle"  >栏次</td>
+<td  width="160" height="30"  align="center" valign="middle"  >本月（期）数</td>
+<td  width="168" height="30"  align="center" valign="middle"  >本年累计</td>
+</tr>
+<tr>
+<td  width="40" height="44"  align="left" valign="middle"  rowspan="2">计费收入</td>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >应征收入</td>
+<td  width="169" height="22"  align="center" valign="middle"  >1</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yzsrbys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.yzsrbnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >免征收入</td>
+<td  width="169" height="22"  align="center" valign="middle"  >2</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.mzsrbys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.mzsrbnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="40" height="197"  align="center" valign="middle"  rowspan="8">费<br>额<br>计<br>算</td>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >减除项目期初金额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >3</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jcxmqcjeBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle" >--</td>
+</tr>
+<tr>
+<td  width="207" height="43"  align="left" valign="middle" colspan="2" >减除项目本期发生额</td>
+<td  width="169" height="43"  align="center" valign="middle"  >4</td>
+<td  width="160" height="43"  align="right" valign="middle"  v-fill.jcxmbqfseBys='""'>0.00</td>
+<td  width="168" height="43"  align="right" valign="middle"  v-fill.jcxmbqfseBnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="89" height="44"  align="left" valign="middle"  rowspan="2">本期减除额</td>
+<td  width="118" height="22"  align="left" valign="middle"  >应征收入减除额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >5</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.yzsrjceBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.yzsrjceBnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="118" height="22"  align="left" valign="middle"  >免征收入减除额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >6</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.mzsrjceBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.mzsrjcebnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >减除项目期末余额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >7=3+4-5-6</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jcxmqmyeBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.jcxmqmyeBnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >计费销售额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >8=1-5</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.jfxseBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.jfxsebnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >费率</td>
+<td  width="169" height="22"  align="center" valign="middle"  >9</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.flBys='""'>0.00</td>
+<td  width="168" height="22" align="center" valign="middle">--</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >应缴费额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >10=8*9</td>
+<td  width="160" height="22" align="right" valign="middle" v-fill.yjfeBys='""' >0.00</td>
+<td  width="168" height="22"  align="right" valign="middle" v-fill.yjfebnlj='""' >0.00</td>
+</tr>
+<tr>
+<td  width="40" height="198"  align="center" valign="middle"  rowspan="9">费<br>额<br>缴<br>纳</td>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >期初未缴费额（多缴为负）</td>
+<td  width="169" height="22"  align="center" valign="middle"  >11</td>
+<td  width="160" height="22"  align="right" valign="middle" v-fill.qcwjfeDjwfBys='""' >0.00</td>
+<td  width="168" height="22"  align="center" valign="middle">--</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >本期已缴费额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >12=13+14+15</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqyjfeBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.bqyjfebnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" > 其中：本期预缴费额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >13</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qzbqyjfeBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.bqyjfebnlj1='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >本期缴纳上期费额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >14</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qzbqjnsqfeBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.bqjnsqfebnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >本期缴纳欠费额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >15</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qzbqjnqfeBys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.bqjnqfebnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >期末未缴费额（多缴为负）</td>
+<td  width="169" height="22"  align="center" valign="middle"  >16=10+11-12</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qmwjfebys='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.qmwjfedjwfbnlj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >其中：欠缴费额（≧0）</td>
+<td  width="169" height="22"  align="center" valign="middle"  >17=11-14-15</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qzqjfe='""'>0.00</td>
+<td  width="168" height="22"  align="center" valign="middle">--</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >本期应补（退）费额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >18=10-13</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqybtfe='""'>0.00</td>
+<td  width="168" height="22"  align="center" valign="middle">--</td>
+</tr>
+<tr>
+<td  width="207" height="22"  align="left" valign="middle" colspan="2" >本期检查已补缴费额</td>
+<td  width="169" height="22"  align="center" valign="middle"  >19</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bqjcybjfe='""'>0.00</td>
+<td  width="168" height="22"  align="right" valign="middle"  v-fill.bqjcybjfeBnlj='""'>0.00</td>
+</tr>
+<!-- 2018-7-30 新增 -->
+<tr>
+<td  width="247" height="22"  align="center" valign="middle" colspan="3" >是否代理申报</td>
+<td  width="177" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E25" value="ON" :checked="json[0].sfdlsb === 'Y'" disabled>是</p></form></td>
+<td  width="169" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F25" value="ON" :checked="json[0].sfdlsb === 'N'" disabled>否</p></form></td>
+<td  width="169" height="22"  align="center" valign="middle"  >&nbsp;</td>
+</tr>
+<tr>
+<td  width="247" height="22"  align="center" valign="middle" colspan="3" >代理人名称</td>
+<td  width="177" height="22"  align="left" valign="middle"  >{{json[0].dlrmc}}</td>
+<td  width="169" height="22"  align="center" valign="middle"  >代理经办人</td>
+<td  width="169" height="22"  align="left" valign="middle"  >{{json[0].dljbr}}</td>
+</tr>
+<tr>
+<td  width="247" height="22"  align="center" valign="middle" colspan="3" >代理人员身份证件类型</td>
+<td  width="177" height="22"  align="left" valign="top"  >{{json[0].dlrysfzjlx}}</td>
+<td  width="169" height="22"  align="center" valign="middle"  >代理人联系电话</td>
+<td  width="169" height="22"  align="left" valign="middle"  >{{json[0].dlrlxdh}}</td>
+</tr>
+<tr>
+<td  width="247" height="22"  align="center" valign="middle" colspan="3" >代理人员身份证件号码</td>
+<td  width="177" height="22"  align="left" valign="middle"  >{{json[0].dlrysfzjhm}}</td>
+<td  width="169" height="22"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="169" height="22"  align="center" valign="middle"  >&nbsp;</td>
+</tr>
+<!-- /2018-7-30 新增 -->
+<tr>
+<td  width="247" height="132"  align="left" valign="middle" colspan="3" rowspan="6">缴纳义务人或代理人声明：<br>此申报表是根据国家相关税费规定填报的，我确定它是真实的、可靠的、完整的。<br></td>
+<td  width="497" height="22"  align="left" valign="middle" colspan="3" >如缴纳义务人填报，由缴纳义务人填写以下各栏：</td>
+</tr>
+<tr v-for="item in json">
+<td  width="329" height="22"  align="left" valign="middle" colspan="2" class="noBorder">办税人员（签章）：<span>{{item.bsrymc}}</span></td>
+<td  width="168" height="22"  align="left" valign="middle"  style="border-right: 1px solid #000;border-left:none;border-bottom:none">&nbsp;</td>
+</tr>
+<tr v-for="item in json">
+<td  width="329" height="22"  align="left" valign="middle" colspan="2" class="noBorder">法定代表人（签章）：<span>{{item.fddbrqz}}</span></td>
+<td  width="34" height="22"  align="left" valign="middle"  style="border-right: 1px solid #000;border-left:none;border-top:none">&nbsp;</td>
+</tr>
+<tr>
+<td  width="497" height="22"  align="left" valign="middle" colspan="3" >如委托代理人填报，由代理人填写以下各栏：</td>
+</tr>
+<tr v-for="item in json">
+<td  width="329" height="22"  align="left" valign="middle" colspan="2" class="noBorder">代理人名称：<span>{{item.dlrmc}}</span></td>
+<td  width="168" height="22"  align="left" valign="middle" style="border-right: 1px solid #000;border-left:none;border-bottom:none">&nbsp;</td>
+</tr>
+<tr>
+<td  width="329" height="22"  align="left" valign="middle" colspan="2" class="noBorder">代理人公章：</td>
+<td  width="168" height="22"  align="left" valign="middle" style="border-right: 1px solid #000;border-left:none;border-top:none">&nbsp;</td>
+</tr>
+<tr>
+<td  width="744" height="22"  align="left" valign="middle" colspan="6" class="noBorder">以下由税务机关填写：</td>
+</tr>
+<tr v-for="item in json">
+<td  width="129" height="22"  align="left" valign="middle" colspan="2" class="noBorder">收到日期：</td>
+<td  width="118" height="22"  align="left" valign="middle" class="noBorder" v-date>{{item.sdrq}}</td>
+<td  width="169" height="22"  align="left" valign="middle"  class="noBorder">接收人：</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">{{item.jsr}}</td>
+<td  width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

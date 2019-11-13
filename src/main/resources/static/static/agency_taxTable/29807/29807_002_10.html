@@ -1,0 +1,276 @@
+<html>
+
+<head>
+  <title>业务活动表（适用执行民间非营利组织会计制度的组织）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="1417" height="702" id="taxTable">
+    <tr>
+      <td width="1363" height="46" align="center" valign="middle" colspan="9" class="noBorder">
+        <B>业务活动表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1363" height="22" align="center" valign="middle" colspan="9" class="noBorder">（适用执行民间非营利组织会计制度的组织）</td>
+    </tr>
+    <tr>
+      <td width="1363" height="22" align="center" valign="middle" colspan="9" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="1363" height="22" align="left" valign="middle" colspan="9" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="1363" height="22" align="left" valign="middle" colspan="9" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="895" height="22" align="left" valign="middle" colspan="6" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="468" height="22" align="right" valign="middle" colspan="3" class="noBorder">金额单位: 人民币元(列至角分)</td>
+    </tr>
+    <tr>
+      <td width="357" height="44" align="center" valign="middle" colspan="2" rowspan="2">项 目</td>
+      <td width="70" height="44" align="center" valign="middle" rowspan="2">行次</td>
+      <td width="468" height="22" align="center" valign="middle" colspan="3">本月数</td>
+      <td width="468" height="22" align="center" valign="middle" colspan="3">本年累计数</td>
+    </tr>
+    <tr>
+      <td width="156" height="22" align="center" valign="middle">非限定性</td>
+      <td width="156" height="22" align="center" valign="middle">限定性</td>
+      <td width="156" height="22" align="center" valign="middle">合计</td>
+      <td width="156" height="22" align="center" valign="middle">非限定性</td>
+      <td width="156" height="22" align="center" valign="middle">限定性</td>
+      <td width="156" height="22" align="center" valign="middle">合计</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2">一、收 入</td>
+      <td width="70" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 其中：捐赠收入</td>
+      <td width="70" height="22" align="center" valign="middle">1</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-1"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-1"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-1"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-1"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-1"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-1"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 会费收入</td>
+      <td width="70" height="22" align="center" valign="middle">2</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-2"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-2"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-2"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-2"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-2"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 提供服务收入</td>
+      <td width="70" height="22" align="center" valign="middle">3</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-3"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-3"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-3"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-3"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-3"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-3"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 商品销售收入</td>
+      <td width="70" height="22" align="center" valign="middle">4</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-4"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-4"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-4"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-4"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-4"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 政府补助收入</td>
+      <td width="70" height="22" align="center" valign="middle">5</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-5"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-5"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-5"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-5"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-5"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-5"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 投资收益</td>
+      <td width="70" height="22" align="center" valign="middle">6</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-6"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-6"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-6"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-6"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-6"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-6"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 其他收入</td>
+      <td width="70" height="22" align="center" valign="middle">9</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-7"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-7"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-7"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-7"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-7"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-7"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 收入合计</td>
+      <td width="70" height="22" align="center" valign="middle">11</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-8"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-8"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-8"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-8"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-8"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-8"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2">二、费 用</td>
+      <td width="70" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+      <td width="156" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2">（一）业务活动成本</td>
+      <td width="70" height="22" align="center" valign="middle">12</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-9"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-9"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-9"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-9"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-9"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-9"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="60" height="22" align="left" valign="middle"> 其中：</td>
+      <td width="297" height="22" align="left" valign="middle">&nbsp;</td>
+      <td width="70" height="22" align="center" valign="middle">13</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-10"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-10"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-10"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-10"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-10"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-10"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="60" height="22" align="left" valign="middle">&nbsp;</td>
+      <td width="297" height="22" align="left" valign="middle">&nbsp;</td>
+      <td width="70" height="22" align="center" valign="middle">14</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-11"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-11"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-11"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-11"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-11"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-11"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="60" height="22" align="left" valign="middle">&nbsp;</td>
+      <td width="297" height="22" align="left" valign="middle">&nbsp;</td>
+      <td width="70" height="22" align="center" valign="middle">15</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-12"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-12"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-12"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-12"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-12"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-12"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="60" height="22" align="left" valign="middle">&nbsp;</td>
+      <td width="297" height="22" align="left" valign="middle">&nbsp;</td>
+      <td width="70" height="22" align="center" valign="middle">16</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-13"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-13"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-13"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-13"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-13"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-13"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2">（二）管理费用</td>
+      <td width="70" height="22" align="center" valign="middle">21</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-14"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-14"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-14"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-14"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-14"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-14"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2">（三）筹资费用</td>
+      <td width="70" height="22" align="center" valign="middle">24</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-15"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-15"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-15"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-15"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-15"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-15"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2">（四）其他费用</td>
+      <td width="70" height="22" align="center" valign="middle">28</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-16"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-16"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-16"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-16"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-16"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-16"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2"> 费用合计</td>
+      <td width="70" height="22" align="center" valign="middle">35</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-17"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-17"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-17"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-17"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-17"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-17"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2">三、限定性净资产转为非限定性净资产</td>
+      <td width="70" height="22" align="center" valign="middle">40</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-18"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-18"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-18"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-18"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-18"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-18"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="357" height="22" align="left" valign="middle" colspan="2">四、净资产变动额（若为净资产减少额，以"-"号填列）</td>
+      <td width="70" height="22" align="center" valign="middle">45</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbys='"ewbhxh-19"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbys='"ewbhxh-19"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbys='"ewbhxh-19"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.fxdxbnljs='"ewbhxh-19"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.xdxbnljs='"ewbhxh-19"'>0.00</td>
+      <td width="156" height="22" align="right" valign="middle" v-fill.hjbnljs='"ewbhxh-19"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="60" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="297" height="22" align="left" valign="middle" class="noBorder">受理日期：</td>
+      <td width="70" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="156" height="22" align="left" valign="middle" class="noBorder">受理人：</td>
+      <td width="156" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="156" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="156" height="22" align="left" valign="middle" class="noBorder">受理税务机关：</td>
+      <td width="156" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+      <td width="156" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

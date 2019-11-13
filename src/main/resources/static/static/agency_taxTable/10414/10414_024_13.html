@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>政策性搬迁纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="719" height = "726" id="taxTable">
+<tr>
+<td  width="687" height="46"  align="center" valign="middle" colspan="3" class="noBorder"><B>政策性搬迁纳税调整明细表</B></td>
+</tr>
+<tr>
+<td  width="483" height="22"  align="left" valign="middle" colspan="2" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="204" height="22"  align="right" valign="middle"  class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="483" height="22"  align="left" valign="middle" colspan="2" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="204" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="483" height="22"  align="left" valign="middle" colspan="2" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="204" height="22"  align="right" valign="middle"  class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >行次</td>
+<td  width="444" height="22"  align="center" valign="middle"  >项        目</td>
+<td  width="204" height="22"  align="center" valign="middle"  >金额</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >1</td>
+<td  width="444" height="22"  align="left" valign="middle"  >一、搬迁收入(2+8)</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.bqsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >2</td>
+<td  width="444" height="22"  align="left" valign="middle"  >   （一）搬迁补偿收入（3+4+5+6+7）</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.bqbcsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >3</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       1.对被征用资产价值的补偿</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.dbzyzcjzdbc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >4</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       2.因搬迁、安置而给予的补偿</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.ybqazegydbc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >5</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       3.对停产停业形成的损失而给予的补偿</td>
+<td  width="204" height="22"  align="right" valign="middle"   v-fill.dtctyxcd='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >6</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       4.资产搬迁过程中遭到毁损而取得的保险赔款</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.zcbqqdbx='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >7</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       5.其他补偿收入</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.qtbcsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >8</td>
+<td  width="444" height="22"  align="left" valign="middle"  >   （二）搬迁资产处置收入</td>
+<td  width="204" height="22"  align="right" valign="middle"   v-fill.bqzcczsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >9</td>
+<td  width="444" height="22"  align="left" valign="middle"  >二、搬迁支出(10+16)</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.bqzc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >10</td>
+<td  width="444" height="22"  align="left" valign="middle"  >   （一）搬迁费用支出(11+12+13+14+15)</td>
+<td  width="204" height="22"  align="right" valign="middle"   v-fill.bqfyzc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >11</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       1.安置职工实际发生的费用</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.azzgsjfsdfy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >12</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       2.停工期间支付给职工的工资及福利费</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.tgqjzfgzgdgzfl='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >13</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       3.临时存放搬迁资产而发生的费用</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.lscfbqzcefsdfy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >14</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       4.各类资产搬迁安装费用</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.glzcbqazfy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >15</td>
+<td  width="444" height="22"  align="left" valign="middle"  >       5.其他与搬迁相关的费用</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.qtybqxgfy='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >16</td>
+<td  width="444" height="22"  align="left" valign="middle"  >   （二）搬迁资产处置支出</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.bqzcczzc='""' >0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >17</td>
+<td  width="444" height="22"  align="left" valign="middle"  >三、搬迁所得或损失（1-9）</td>
+<td  width="204" height="22"  align="right" valign="middle"   v-fill.bqsdhss='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >18</td>
+<td  width="444" height="22"  align="left" valign="middle"  >四、应计入本年应纳税所得额的搬迁所得或损失（19+20+21）</td>
+<td  width="204" height="22"  align="right" valign="middle" v-fill.yjbnsbqsdhss='""' >0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >19</td>
+<td  width="444" height="22"  align="left" valign="middle"  >    其中：搬迁所得</td>
+<td  width="204" height="22"  align="right" valign="middle"   v-fill.bqsd='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >20</td>
+<td  width="444" height="22"  align="left" valign="middle"  >          搬迁损失一次性扣除</td>
+<td  width="204" height="22"  align="right" valign="middle"   v-fill.bqssycxkc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >21</td>
+<td  width="444" height="22"  align="left" valign="middle"  >          搬迁损失分期扣除</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.bqssfqkc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >22</td>
+<td  width="444" height="22"  align="left" valign="middle"  >五、计入当期损益的搬迁收益或损失</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.dqsybqsyss='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >23</td>
+<td  width="444" height="22"  align="left" valign="middle"  >六、以前年度搬迁损失当期扣除金额</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.yqbqsskcje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="39" height="22"  align="center" valign="middle"  >24</td>
+<td  width="444" height="22"  align="left" valign="middle"  >七、纳税调整金额（18-22-23）</td>
+<td  width="204" height="22"  align="right" valign="middle"  v-fill.nstzje='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

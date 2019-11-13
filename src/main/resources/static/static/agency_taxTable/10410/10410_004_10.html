@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body>
+<table id="taxTable" cellspacing="0" cellpadding="0" width="977" height="472" style="font-family: Arial; font-size: 16; border: 0">
+    <tr>
+        <td width="911" height="46" align="center" valign="middle" colspan="7" class="noBorder"><B>剩余财产计算和分配明细表</B></td>
+    </tr>
+    <tr>
+        <td width="489" height="22" align="left" valign="middle" colspan="4" class="noBorder"></td>
+        <td width="422" height="22" align="left" valign="middle" colspan="3" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+        <td width="90" height="22" align="center" valign="middle">类别</td>
+        <td width="53" height="22" align="center" valign="middle">行次</td>
+        <td width="476" height="22" align="center" valign="middle" colspan="3">项目</td>
+        <td width="292" height="22" align="center" valign="middle" colspan="2">金额</td>
+    </tr>
+    <tr>
+        <td width="90" height="264" align="center" valign="middle" rowspan="12">剩余财产计算</td>
+        <td width="53" height="22" align="center" valign="middle">1</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">资产可变现价值或交易价格</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].zckbxjzhjyjg==null?0.00:json.list[0].zckbxjzhjyjg.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">2</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">清算费用</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].qsfy==null?0.00:json.list[0].qsfy.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">3</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">职工工资</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].zggz==null?0.00:json.list[0].zggz.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">4</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">社会保险费用</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].shbxfy==null?0.00:json.list[0].shbxfy.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">5</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">法定补偿金</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].fdbcj==null?0.00:json.list[0].fdbcj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">6</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">清算税金及附加</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].qssjjfj==null?0.00:json.list[0].qssjjfj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">7</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">清算所得税额</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].qssdse==null?0.00:json.list[0].qssdse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">8</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">以前年度欠税额</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].yqndqse==null?0.00:json.list[0].yqndqse.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">9</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">其他债务</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].qtzw==null?0.00:json.list[0].qtzw.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">10</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3">剩余财产（1－2－…－9）</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].sycc==null?0.00:json.list[0].sycc.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">11</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3"> 其中：累计盈余公积</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].syccLjyygj==null?0.00:json.list[0].syccLjyygj.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">12</td>
+        <td width="476" height="22" align="left" valign="middle" colspan="3"> 累计未分配利润</td>
+        <td width="292" height="22" align="right" valign="middle" colspan="2">{{json.list[0].syccLjwfplr==null?0.00:json.list[0].syccLjwfplr.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="90" height="74" align="center" valign="middle" :rowspan= "2+json.listzb.length">剩余财产分配</td>
+        <td width="53" height="30" align="center" valign="middle">&nbsp;</td>
+        <td width="228" height="30" align="center" valign="middle">股东名称</td>
+        <td width="118" height="30" align="center" valign="middle">持有清算企业权益<br>性投资比例（%）</td>
+        <td width="130" height="30" align="center" valign="middle">投资额</td>
+        <td width="143" height="30" align="center" valign="middle">分配的财产金额</td>
+        <td width="149" height="30" align="center" valign="middle">确认为股息金额</td>
+    </tr>
+    <tr v-for="(item,index) in json.listzb" :key="item.id">
+        <td width="53" height="22" align="center" valign="middle">{{12+index+1}}</td>
+        <td width="228" height="22" align="left" valign="middle">{{item.gdmc==null?0.00:item.gdmc}}</td>
+        <td width="118" height="22" align="right" valign="middle" v-percent>{{item.cyqsqyqyxtzbl==null?0.00:item.cyqsqyqyxtzbl.toFixed(2)}}</td>
+        <td width="130" height="22" align="right" valign="middle">{{item.tze==null?0.00:item.tze.toFixed(2)}}</td>
+        <td width="143" height="22" align="right" valign="middle">{{item.fpccje==null?0.00:item.fpccje.toFixed(2)}}</td>
+        <td width="149" height="22" align="right" valign="middle">{{item.fpccjeqrwgxje==null?0.00:item.fpccjeqrwgxje.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="53" height="22" align="center" valign="middle">合计</td>
+        <td width="228" height="22" align="center" valign="middle">--</td>
+        <td width="118" height="22" align="center" valign="middle">--</td>
+        <td width="130" height="22" align="right" valign="middle">{{json.list[0].hjtze==null?0.00:json.list[0].hjtze.toFixed(2)}}</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].fpccje==null?0.00:json.list[0].fpccje.toFixed(2)}}</td>
+        <td width="149" height="22" align="right" valign="middle" >{{json.list[0].qrwgxje==null?0.00:json.list[0].qrwgxje.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="371" height="22" align="left" valign="middle" colspan="3"
+            class="noBorderBottom noBorderLeft noBorderRight">经办人签字：
+        </td>
+        <td width="540" height="22" align="left" valign="middle" colspan="4"
+            class="noBorderBottom noBorderLeft noBorderRight">纳税人盖章：
+        </td>
+    </tr>
+
+</table>
+
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

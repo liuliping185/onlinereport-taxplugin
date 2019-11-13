@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>资产损失税前扣除及纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1647" height = "518" id="taxTable">
+<tr>
+<td  width="1581" height="46"  align="center" valign="middle" colspan="8" class="noBorder"><B>资产损失税前扣除及纳税调整明细表</B></td>
+</tr>
+<tr>
+<td  width="589" height="22"  align="left" valign="middle" colspan="2" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="512" height="22"  align="right" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="589" height="22"  align="left" valign="middle" colspan="2" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="816" height="22"  align="left" valign="middle" colspan="5" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="176" height="22"  align="center" valign="middle"  class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="35" height="44"  align="left" valign="middle"  rowspan="2">行次</td>
+<td  width="554" height="44"  align="center" valign="middle"  rowspan="2">项        目</td>
+<td  width="160" height="22"  align="center" valign="middle"  >资产损失的账载金额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >资产处置收入</td>
+<td  width="160" height="22"  align="center" valign="middle"  >赔偿收入</td>
+<td  width="160" height="22"  align="center" valign="middle"  >资产计税基础</td>
+<td  width="176" height="22"  align="center" valign="middle"  >资产损失的税收金额</td>
+<td  width="176" height="22"  align="center" valign="middle"  >纳税调整金额</td>
+</tr>
+<tr>
+<td  width="160" height="22"  align="center" valign="middle"  >1</td>
+<td  width="160" height="22"  align="center" valign="middle"  >2</td>
+<td  width="160" height="22"  align="center" valign="middle"  >3</td>
+<td  width="160" height="22"  align="center" valign="middle"  >4</td>
+<td  width="176" height="22"  align="center" valign="middle"  >5（4-2-3）</td>
+<td  width="176" height="22"  align="center" valign="middle"  >6（1-5）</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >1</td>
+<td  width="554" height="22"  align="left" valign="middle"  >一、清单申报资产损失（2+3+4+5+6+7+8）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-1"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-1"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-1"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-1"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-1"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-1"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >2</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （一）正常经营管理活动中，按照公允价格销售、转让、变卖非货币资产的损失</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-2"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-2"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-2"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-2"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-2"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-2"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >3</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （二）存货发生的正常损耗</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-3"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-3"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-3"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-3"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >4</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （三）固定资产达到或超过使用年限而正常报废清理的损失</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-4"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-4"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-4"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-4"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-4"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-4"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >5</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （四）生产性生物资产达到或超过使用年限而正常死亡发生的资产损失</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-5"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-5"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-5"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-5"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-5"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-5"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="30"  align="center" valign="middle"  >6</td>
+<td  width="554" height="30"  align="left" valign="middle"  >   （五）按照市场公平交易原则，通过各种交易场所、市场等买卖债券、股票、期货、基金以及金融衍生产品等发生的损失</td>
+<td  width="160" height="30"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-6"'>0.00</td>
+<td  width="160" height="30"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-6"'>0.00</td>
+<td  width="160" height="30"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-6"'>0.00</td>
+<td  width="160" height="30"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-6"'>0.00</td>
+<td  width="176" height="30"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-6"'>0.00</td>
+<td  width="176" height="30"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-6"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >7</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （六）分支机构上报的资产损失</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-7"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-7"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-7"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-7"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-7"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-7"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >8</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （七）其他</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-8"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-8"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-8"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-8"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >9</td>
+<td  width="554" height="22"  align="left" valign="middle"  >二、专项申报资产损失（10+11+12+13）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-9"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-9"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-9"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-9"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-9"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-9"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >10</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （一）货币资产损失</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-10"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-10"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-10"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-10"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-10"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-10"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >11</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （二）非货币资产损失</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-11"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-11"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-11"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-11"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-11"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-11"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >12</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （三）投资损失</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-12"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-12"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-12"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-12"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-12"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-12"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >13</td>
+<td  width="554" height="22"  align="left" valign="middle"  >   （四）其他</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-13"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-13"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-13"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-13"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-13"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-13"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >14</td>
+<td  width="554" height="22"  align="left" valign="middle"  >合计（1+9）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-14"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcczsr='"ewbhxh-14"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.pcsr='"ewbhxh-14"'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zcjsjc='"ewbhxh-14"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-14"'>0.00</td>
+<td  width="176" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-14"'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

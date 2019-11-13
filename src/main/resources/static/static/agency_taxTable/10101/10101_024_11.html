@@ -1,0 +1,242 @@
+<html>
+
+<head>
+  <title>本期抵扣进项税额结构明细表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="717" height="934" id="taxTable">
+    <tr>
+      <td width="685" height="46" align="center" valign="middle" colspan="4" class="noBorder">
+        <B>本期抵扣进项税额结构明细表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="685" height="22" align="center" valign="middle" colspan="4" class="noBorder">税款所属时间：：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="685" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人识别号：<span id="nsrsbh">{{bt.customerStateTaxInfo.nsrsbh}}</span></td>
+    </tr>
+    <tr>
+      <td width="685" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：<span id="nsrmc">{{bt.customerStateTaxInfo.nsrmc}}</span></td>
+    </tr>
+    <tr>
+      <td width="528" height="22" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="157" height="22" align="right" valign="middle" class="noBorder">金额单位：元至角分</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="center" valign="middle">项目</td>
+      <td width="108" height="22" align="center" valign="middle">栏次</td>
+      <td width="157" height="22" align="center" valign="middle">金额</td>
+      <td width="157" height="22" align="center" valign="middle">税额</td>
+    </tr>
+    <tr>
+      <td width="263" height="30" align="left" valign="middle">合计</td>
+      <td width="108" height="30" align="center" valign="middle">1=2+4+5+11+16+18+27+29+30</td>
+      <td width="157" height="30" align="right" valign="middle" v-fill.je='"ewbhxh-1"'>0.00</td>
+      <td width="157" height="30" align="right" valign="middle" v-fill.se='"ewbhxh-1"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="685" height="22" align="center" valign="middle" colspan="4">
+        <B>一、按税率或征收率归集（不包括购建不动产、通行费）的进项</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">17%税率的进项</td>
+      <td width="108" height="22" align="center" valign="middle">2</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-2"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 其中：有形动产租赁的进项</td>
+      <td width="108" height="22" align="center" valign="middle">3</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-3"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-3"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">13%税率的进项</td>
+      <td width="108" height="22" align="center" valign="middle">4</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-4"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">11%税率的进项</td>
+      <td width="108" height="22" align="center" valign="middle">5</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-5"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-5"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 其中：运输服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">6</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-6"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-6"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 电信服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">7</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-7"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-7"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 建筑安装服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">8</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-8"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-8"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 不动产租赁服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">9</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-9"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-9"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 受让土地使用权的进项</td>
+      <td width="108" height="22" align="center" valign="middle">10</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-10"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-10"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">6%税率的进项</td>
+      <td width="108" height="22" align="center" valign="middle">11</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-11"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-11"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 其中：电信服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">12</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-12"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-12"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 金融保险服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">13</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-13"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-13"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 生活服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">14</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-14"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-14"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 取得无形资产的进项</td>
+      <td width="108" height="22" align="center" valign="middle">15</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-15"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-15"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">5%征收率的进项</td>
+      <td width="108" height="22" align="center" valign="middle">16</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-16"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-16"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 其中：不动产租赁服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">17</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-17"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-17"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">3%征收率的进项</td>
+      <td width="108" height="22" align="center" valign="middle">18</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-18"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-18"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 其中：货物及加工、修理修配劳务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">19</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-19"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-19"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 运输服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">20</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-20"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-20"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 电信服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">21</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-21"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-21"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 建筑安装服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">22</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-22"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-22"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 金融保险服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">23</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-23"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-23"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 有形动产租赁服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">24</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-24"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-24"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 生活服务的进项</td>
+      <td width="108" height="22" align="center" valign="middle">25</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-25"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-25"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle"> 取得无形资产的进项</td>
+      <td width="108" height="22" align="center" valign="middle">26</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-26"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-26"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">减按1.5%征收率的进项</td>
+      <td width="108" height="22" align="center" valign="middle">27</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-27"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-27"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="108" height="22" align="center" valign="middle">28</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-28"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-28"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="685" height="22" align="center" valign="middle" colspan="4">
+        <B>二、按抵扣项目归集的进项</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">用于购建不动产并一次性抵扣的进项</td>
+      <td width="108" height="22" align="center" valign="middle">29</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-29"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-29"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="left" valign="middle">通行费的进项</td>
+      <td width="108" height="22" align="center" valign="middle">30</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-30"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-30"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="108" height="22" align="center" valign="middle">31</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-31"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-31"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="263" height="22" align="center" valign="middle">&nbsp;</td>
+      <td width="108" height="22" align="center" valign="middle">32</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.je='"ewbhxh-32"'>0.00</td>
+      <td width="157" height="22" align="right" valign="middle" v-fill.se='"ewbhxh-32"'>0.00</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

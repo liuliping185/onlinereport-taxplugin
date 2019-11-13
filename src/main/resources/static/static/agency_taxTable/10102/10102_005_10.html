@@ -1,0 +1,190 @@
+<html>
+
+<head>
+  <title>发票领用存月报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+<div id="taxTable">
+  <table style="width:90%">
+    <tr>
+      <td width="1619" height="46" align="center" valign="middle" colspan="20" class="noBorder">
+        <B>发票领用存月报表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1619" height="22" align="center" valign="middle" colspan="20" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="354" height="22" align="left" valign="middle" colspan="20" class="noBorder">纳税人识别号：<span id="nsrsbh">{{bt.customerStateTaxInfo.nsrsbh}}</span></td>
+    </tr>
+    <tr>
+      <td width="671" height="22" align="left" valign="middle" colspan="12" class="noBorder">纳税人名称（公章）：<span id="nsrmc">{{bt.customerStateTaxInfo.nsrmc}}</span></td>
+      <td width="474" height="22" align="center" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="160" height="22" align="right" valign="middle" colspan="3" class="noBorder">发票单位：份</td>
+      <td class="noBorder lastCol"></td>
+    </tr>
+  </table>
+  <div id="outerDiv">
+    <div id="tableDiv">
+      <table cellspacing="0" cellpadding="0" width="1719" height="386">
+        <tr>
+          <td class="column-fixed" width="72" height="66" align="center" valign="middle" rowspan="3">发票种类</td>
+          <td class="column-fixed" width="125" height="66" align="center" valign="middle" rowspan="3">发票代码或版别</td>
+          <td width="237" height="22" align="center" valign="middle" colspan="3">期初库存</td>
+          <td width="237" height="22" align="center" valign="middle" colspan="3">本期预购</td>
+          <td width="237" height="22" align="center" valign="middle" colspan="3">本期开具</td>
+          <td width="237" height="22" align="center" valign="middle" colspan="3">本期作废或遗失</td>
+          <td width="237" height="22" align="center" valign="middle" colspan="3">交回未开发票</td>
+          <td width="237" height="22" align="center" valign="middle" colspan="3">期末库存</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="77" height="22" align="center" valign="middle">份数</td>
+          <td width="80" height="22" align="center" valign="middle">发票起号</td>
+          <td width="80" height="22" align="center" valign="middle">发票止号</td>
+          <td width="77" height="22" align="center" valign="middle">份数</td>
+          <td width="80" height="22" align="center" valign="middle">发票起号</td>
+          <td width="80" height="22" align="center" valign="middle">发票止号</td>
+          <td width="77" height="22" align="center" valign="middle">份数</td>
+          <td width="80" height="22" align="center" valign="middle">发票起号</td>
+          <td width="80" height="22" align="center" valign="middle">发票止号</td>
+          <td width="77" height="22" align="center" valign="middle">份数</td>
+          <td width="80" height="22" align="center" valign="middle">发票起号</td>
+          <td width="80" height="22" align="center" valign="middle">发票止号</td>
+          <td width="77" height="22" align="center" valign="middle">份数</td>
+          <td width="80" height="22" align="center" valign="middle">发票起号</td>
+          <td width="80" height="22" align="center" valign="middle">发票止号</td>
+          <td width="77" height="22" align="center" valign="middle">份数</td>
+          <td width="80" height="22" align="center" valign="middle">发票起号</td>
+          <td width="80" height="22" align="center" valign="middle">发票止号</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr>
+          <td width="77" height="22" align="center" valign="middle">1</td>
+          <td width="160" height="22" align="center" valign="middle" colspan="2">2</td>
+          <td width="77" height="22" align="center" valign="middle">3</td>
+          <td width="160" height="22" align="center" valign="middle" colspan="2">4</td>
+          <td width="77" height="22" align="center" valign="middle">5</td>
+          <td width="160" height="22" align="center" valign="middle" colspan="2">6</td>
+          <td width="77" height="22" align="center" valign="middle">7</td>
+          <td width="160" height="22" align="center" valign="middle" colspan="2">8</td>
+          <td width="77" height="22" align="center" valign="middle">9</td>
+          <td width="160" height="22" align="center" valign="middle" colspan="2">10</td>
+          <td width="77" height="22" align="center" valign="middle">11</td>
+          <td width="160" height="22" align="center" valign="middle" colspan="2">12</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr v-for='(item, index) in json.zyfp'>
+          <td width="72" height="30" align="center" valign="middle">{{item.fpLx == '0' ? '专用发票' : '普通发票'}}</td>
+          <td width="125" height="30" align="center" valign="middle">{{item.fpDm}}</td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.qcKcfs}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.qcFpqsh}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.qcFpzzh}}</td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.bqLgfs}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqlgFpqsh}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqlgFpzzh}}</td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.bqKjfs}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqkjFpqsh}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqkjFpzzh}}</td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.bqZffs}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqzfFpqsh}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqzfFpzzh}}</td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.jhfs}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.jhFpqsh}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.jhFpzzh}}</td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.qmKcfs}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.qmFpqsh}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.qmFpzzh}}</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr v-for='(item, index) in json.zyfphj'>
+          <td width="197" height="30" align="center" valign="middle" colspan="2">合计</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.qcKcfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.bqLgfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.bqKjfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.bqZffs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.jhfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.qmKcfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr v-for='(item, index) in json.ptfp'>
+          <td width="72" height="30" align="center" valign="middle">{{item.fpLx == '0' ? '专用发票' : '普通发票'}}</td>
+          <td width="125" height="30" align="center" valign="middle"> {{item.fpDm}}</td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.qcKcfs}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.qcFpqsh}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.qcFpzzh}}</td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.bqLgfs}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqlgFpqsh}}</td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqlgFpzzh}} </td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.bqKjfs}} </td>
+          <td width="80" height="30" align="left" valign="middle"> {{item.bqkjFpqsh}} </td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqkjFpzzh}} </td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.bqZffs}} </td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqzfFpqsh}} </td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.bqzfFpzzh}} </td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.jhfs}} </td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.jhFpqsh}} </td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.jhFpzzh}} </td>
+          <td width="77" height="30" align="right" valign="middle"> {{item.qmKcfs}} </td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.qmFpqsh}} </td>
+          <td width="80" height="30" align="right" valign="middle"> {{item.qmFpzzh}} </td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+        <tr v-for='(item, index) in json.ptfphj'>
+          <td width="197" height="30" align="center" valign="middle" colspan="2">合计</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.qcKcfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.bqLgfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.bqKjfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.bqZffs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.jhfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="77" height="30" align="right" valign="middle">{{item.qmKcfs}}</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td width="80" height="30" align="center" valign="middle">--</td>
+          <td class="noBorder lastCol"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <table style="width:90%">
+    <tr>
+      <td width="274" height="22" align="left" valign="middle" colspan="9" class="noBorder">会计主管签字：</td>
+      <td width="317" height="22" align="left" valign="middle" colspan="11" class="noBorder">代理申报人签字：</td>
+      <td class="noBorder lastCol"></td>
+    </tr>
+    <tr>
+      <td width="511" height="22" align="left" valign="middle" colspan="20" class="noBorder">栏次关系：11栏=1栏+3栏-5栏-7栏-9栏</td>
+      <td class="noBorder lastCol"></td>
+    </tr>
+  </table>
+  </div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/fixTable.js"></script>
+</body>
+
+</html>

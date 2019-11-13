@@ -1,0 +1,274 @@
+<html>
+
+<head>
+	<title>中华人民共和国企业所得税月（季）度预缴和年度 纳税申报表（B类，2018年版）</title>
+	<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+<table id="taxTable" cellspacing="0" cellpadding="0" width="909" height = "1056" style="margin-top: 10px">
+
+	<tr>
+		<td  width="843" height="42"  align="center" valign="middle" colspan="8"  class="noBorder"><B>中华人民共和国企业所得税月（季）度预缴和年度<br>	纳税申报表（B类，2018年版）<br></B></td>
+
+	</tr>
+	<tr>
+		<td  width="843" height="22"  align="center" valign="middle" colspan="8"   class="noBorder" >税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+
+	</tr>
+	<tr>
+		<td  width="843" height="22"  align="left" valign="middle" colspan="8"   class="noBorder" >纳税人识别号（统一社会信用代码）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+
+	</tr>
+	<tr>
+		<td  width="843" height="22"  align="left" valign="middle" colspan="8"  class="noBorder" >纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' :bt.customerStateTaxInfo.nsrmc}}</td>
+
+	</tr>
+	<tr>
+		<td  width="381" height="22"  align="left" valign="middle" colspan="4"   class="noBorder" >填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+		<td  width="120" height="22"  align="left" valign="middle"  class="noBorder" >&nbsp;</td>
+		<td  width="342" height="22"  align="right" valign="middle" colspan="3"  class="noBorder" >金额单位：人民币元（列至角分）</td>
+	</tr>
+	<tr>
+		<td  width="183" height="44"  align="center" valign="middle" colspan="2" rowspan="2">核定征收方式</td>
+		<td  width="318" height="22"  align="left" valign="middle" colspan="3" ><form><p><input type="checkbox" name="D7" value="ON" disabled :checked="json[0].zsfsDm=='403' ">核定应税所得率（能核算收入总额的）</p></form></td>
+		<td  width="342" height="22"  align="left" valign="middle" colspan="3" ><form><p><input type="checkbox" name="G7" value="ON" disabled :checked="json[0].zsfsDm=='404' ">核定应税所得率（能核算成本费用总额的）</p></form></td>
+
+	</tr>
+	<tr>
+		<td  width="660" height="22"  align="left" valign="middle" colspan="6" ><form><p><input type="checkbox" name="D8" value="ON" disabled :checked="json[0].zsfsDm=='402' ">核定应纳所得税额</p></form></td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >行次</td>
+		<td  width="637" height="22"  align="center" valign="middle" colspan="5" >项         目</td>
+		<td  width="160" height="22"  align="center" valign="middle" colspan="2" >本年累计金额</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >1</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >收入总额</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].srzeLj==null?"0.00":json[0].srzeLj.toFixed(2)}}</td>
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >2</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >减：不征税收入</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].bzssrLj==null?"0.00":json[0].bzssrLj.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >3</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >减：免税收入（4+5+10+11）</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].mssrLj==null?"0.00":json[0].mssrLj.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >4</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >    国债利息收入免征企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].gzlxsrLj==null?"0.00":json[0].gzlxsrLj.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >5</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >    符合条件的居民企业之间的股息、红利等权益性投资收益免征企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].jmqyzjgxhlqysyLj==null?"0.00":json[0].jmqyzjgxhlqysyLj.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >6</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >       其中：通过沪港通投资且连续持有H股满12个月取得的股息红利所得免征企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].hgttzgxhlsdmzqysdsLj==null?"0.00":json[0].hgttzgxhlsdmzqysdsLj.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >7</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >            通过深港通投资且连续持有H股满12个月取得的股息红利所得免征企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].sgttzgxhlsdmzqysdsLj==null?"0.00":json[0].sgttzgxhlsdmzqysdsLj.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >8</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >            居民企业持有创新企业CDR取得的股息红利所得免征企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].jmqycycxqycdr==null?"0.00":json[0].jmqycycxqycdr.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >9</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >            符合条件的居民企业之间属于股息、红利性质的永续债利息收入免征企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].fhtjjmqysygxhl==null?"0.00":json[0].fhtjjmqysygxhl.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >10</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >    投资者从证券投资基金分配中取得的收入免征企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].yssrehcbfyzeLj==null?"0.00":json[0].yssrehcbfyzeLj.toFixed(2)}}</td>
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >11</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >    取得的地方政府债券利息收入免征企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].swjghdyssdl==null?"0.00":json[0].swjghdyssdl.toFixed(2)}}</td>
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >12</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >应税收入额（1-2-3） \ 成本费用总额</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].zqjjzqddsymzqysdsLj==null?"0.00":json[0].zqjjzqddsymzqysdsLj.toFixed(2)}}</td>
+	</tr>
+	<tr>
+		<td  width="46" height="22"  align="center" valign="middle"  >13</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >税务机关核定的应税所得率（%）</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" v-percent ="4">{{json[0].dfzfzqlxsrLj}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="46" height="22"  align="center" valign="middle"  >14</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >应纳税所得额（第12×13行） \ [第12行÷（1-第13行）×第13行]</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].ynssdeLj==null?"0.00":json[0].ynssdeLj.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="46" height="22"  align="center" valign="middle"  >15</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >税率（25%）</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" v-percent>{{json[0].sl1}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="46" height="22"  align="center" valign="middle"  >16</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >应纳所得税额（14×15）</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].ynsdseLj==null?"0.00":json[0].ynsdseLj.toFixed(2)}}</td>
+	</tr>
+	<tr>
+
+		<td  width="46" height="22"  align="center" valign="middle"  >17</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >减：符合条件的小型微利企业减免企业所得税</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].fhtjxxwlqyjmsdseLj==null?"0.00":json[0].fhtjxxwlqyjmsdseLj.toFixed(2)}}</td>
+	</tr>
+	<tr>
+
+		<td  width="46" height="22"  align="center" valign="middle"  >18</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >减：实际已缴纳所得税额</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].yyjsdseLj==null?"0.00":json[0].yyjsdseLj.toFixed(2)}}</td>
+	</tr>
+	<tr>
+
+		<td  width="46" height="22"  align="center" valign="middle"  >19</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >本期应补（退）所得税额（16-17-18） \ 税务机关核定本期应纳所得税额</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].ybtsdseLj==null?"0.00":json[0].ybtsdseLj.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="46" height="44"  align="center" valign="middle"  rowspan="2">20</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >民族自治地方的自治机关对本民族自治地方的企业应缴纳的企业所得税中属于地方分享的部分减征或免征<br></td>
+		<td  width="160" height="44"  align="right" valign="middle" colspan="2" rowspan="2">{{json[0].mzzzzzjg==null?"0.00":json[0].mzzzzzjg.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="137" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="C30" value="ON" disabled :checked="json[0].jzmzlx=='2' ">免征</p></form></td>
+		<td  width="198" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="D30" value="ON" disabled :checked="json[0].jzmzlx=='1' ">减征：减征幅度</p></form></td>
+		<td  width="302" height="22"  align="right" valign="middle" colspan="2" v-percent ="2">{{json[0].jzfd}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="46" height="22"  align="center" valign="middle"  >21</td>
+		<td  width="637" height="22"  align="left" valign="middle" colspan="5" >本期实际应补（退）所得税额</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].bqsjybtsdse==null?"0.00":json[0].bqsjybtsdse.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="843" height="22"  align="center" valign="middle" colspan="8" >按   季   度   填   报   信   息</td>
+	</tr>
+	<tr>
+
+		<td  width="266" height="22"  align="center" valign="middle" colspan="3" >季初从业人数</td>
+		<td  width="235" height="22"  align="right" valign="middle" colspan="2" >{{json[0].qccyrs}}</td>
+		<td  width="182" height="22"  align="center" valign="middle"  >季末从业人数</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].qmcyrs}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="266" height="22"  align="center" valign="middle" colspan="3" >季初资产总额（万元）</td>
+		<td  width="235" height="22"  align="right" valign="middle" colspan="2" >{{json[0].qczcze==null?"0.00":json[0].qczcze.toFixed(2)}}</td>
+		<td  width="182" height="22"  align="center" valign="middle"  >季末资产总额（万元）</td>
+		<td  width="160" height="22"  align="right" valign="middle" colspan="2" >{{json[0].qmzcze==null?"0.00":json[0].qmzcze.toFixed(2)}}</td>
+
+	</tr>
+	<tr>
+
+		<td  width="266" height="22"  align="center" valign="middle" colspan="3" >国家限制或禁止行业</td>
+		<td  width="115" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E35" value="ON" disabled :checked="json[0].gjxzhjzhy=='Y' ">是</p></form></td>
+		<td  width="120" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F35" value="ON" disabled :checked="json[0].gjxzhjzhy=='N' ">否</p></form></td>
+		<td  width="182" height="22"  align="center" valign="middle"  >小型微利企业</td>
+		<td  width="80" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="H35" value="ON" disabled :checked="json[0].sfsyxxwlqy=='Y' ">是</p></form></td>
+		<td  width="80" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="I35" value="ON" disabled :checked="json[0].sfsyxxwlqy=='N' ">否</p></form></td>
+
+	</tr>
+	<tr>
+
+		<td  width="843" height="22"  align="center" valign="middle" colspan="8" >按   年   度   填   报   信   息</td>
+
+	</tr>
+	<tr>
+
+		<td  width="266" height="22"  align="center" valign="middle" colspan="3" >小型微利企业</td>
+		<td  width="115" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="E37" value="ON" disabled >是</p></form></td>
+		<td  width="120" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="F37" value="ON" disabled >否</p></form></td>
+		<td  width="182" height="22"  align="left" valign="middle"  >&nbsp;</td>
+		<td  width="160" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>
+
+	</tr>
+	<tr>
+
+		<td  width="843" height="66"  align="center" valign="middle" colspan="8" rowspan="3"><br>    谨声明：本纳税申报表是根据国家税收法律法规及相关规定填报的，是真实的、可靠的、完整的。                             <br>                                                     纳税人（签章）：      年   月   日<br></td>
+
+	</tr>
+	<tr>
+
+	</tr>
+	<tr>
+
+	</tr>
+	<tr>
+		<td  width="183" height="22"  align="left" valign="middle" colspan="2" >经办人：</td>
+		<td  width="198" height="22"  align="left" valign="top" colspan="2" >{{json[0].jbr}}</td>
+		<td  width="462" height="22"  align="left" valign="middle" colspan="4"  class="noBorderBottom" >受理人：</td>
+
+	</tr>
+	<tr>
+		<td  width="183" height="22"  align="left" valign="middle" colspan="2" >经办人身份证件类型：</td>
+		<td  width="198" height="22"  align="left" valign="top" colspan="2" >{{json[0].blrysfzjlxDm}}</td>
+		<td  width="462" height="22" align="left" valign="middle" colspan="4" class="noBorderTop noBorderBottom">&nbsp;</td>
+
+	</tr>
+	<tr>
+		<td  width="183" height="22"  align="left" valign="middle" colspan="2" >经办人身份证号：</td>
+		<td  width="198" height="22"  align="left" valign="top" colspan="2" >{{json[0].blrysfzjhm}}</td>
+		<td  width="462" height="22"  align="left" valign="middle" colspan="4" class="noBorderTop noBorderBottom">受理税务机关（章）：</td>
+
+	</tr>
+	<tr>
+		<td  width="183" height="22"  align="left" valign="middle" colspan="2" >代理机构签章：</td>
+		<td  width="198" height="22"  align="left" valign="middle" colspan="2" >{{json[0].dljgqz}}</td>
+		<td  width="462" height="22"  align="left" valign="middle" colspan="4" class="noBorderTop noBorderBottom">&nbsp;</td>
+
+	</tr>
+	<tr>
+		<td  width="183" height="22"  align="left" valign="middle" colspan="2" >代理机构统一社会信用代码： </td>
+		<td  width="198" height="22"  align="left" valign="middle" colspan="2" >{{json[0].dljgtyshxydm}}</td>
+		<td  width="462" height="22"  align="left" valign="middle" colspan="4" class="noBorderTop">受理日期：                    年    月     日</td>
+
+	</tr>
+
+</table>
+	<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+	<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <title>增值税纳税申报表附列资料（五）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+  <table cellspacing="0" cellpadding="0" width="836" height="271" id="taxTable">
+    <tr>
+      <td width="804" height="46" align="center" valign="middle" colspan="6" class="noBorder">
+        <B>增值税纳税申报表附列资料（五）</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="804" height="22" align="center" valign="middle" colspan="6" class="noBorder">（不动产分期抵扣计算表）</td>
+    </tr>
+    <tr>
+      <td width="804" height="22" align="center" valign="middle" colspan="6" class="noBorder">税款所属时间：：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="804" height="22" align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号:<span id="nsrsbh">{{bt.customerStateTaxInfo.nsrsbh}}</span></td>
+    </tr>
+    <tr>
+      <td width="804" height="22" align="left" valign="middle" colspan="6" class="noBorder">纳税人名称（公章）:<span id="nsrmc">{{bt.customerStateTaxInfo.nsrmc}}</span></td>
+    </tr>
+    <tr>
+      <td width="536" height="22" align="left" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="268" height="22" align="right" valign="middle" colspan="2" class="noBorder">金额单位：元至角分</td>
+    </tr>
+    <tr>
+      <td width="134" height="49" align="center" valign="middle">期初待抵扣不动产进项税额</td>
+      <td width="134" height="49" align="center" valign="middle">本期不动产进项税额增加额</td>
+      <td width="134" height="49" align="center" valign="middle">本期可抵扣不动产进项税额</td>
+      <td width="134" height="49" align="center" valign="middle">本期转入的待抵扣不动产进项税额</td>
+      <td width="134" height="49" align="center" valign="middle">本期转出的待抵扣不动产进项税额</td>
+      <td width="134" height="49" align="center" valign="middle">期末待抵扣不动产进项税额</td>
+    </tr>
+    <tr>
+      <td width="134" height="22" align="center" valign="middle">1</td>
+      <td width="134" height="22" align="center" valign="middle">2</td>
+      <td width="134" height="22" align="center" valign="middle">3≤1+2+4</td>
+      <td width="134" height="22" align="center" valign="middle">4</td>
+      <td width="134" height="22" align="center" valign="middle">5≤1+4</td>
+      <td width="134" height="22" align="center" valign="middle">6=1+2-3+4-5</td>
+    </tr>
+    <tr>
+      <td width="134" height="22" align="right" valign="middle" v-fill.qcye='"ewbhxh-1"'>0.00</td>
+      <td width="134" height="22" align="right" valign="middle" v-fill.bqfse='"ewbhxh-1"'>0.00</td>
+      <td width="134" height="22" align="right" valign="middle" v-fill.bqydjse='"ewbhxh-1"'>0.00</td>
+      <td width="134" height="22" align="right" valign="middle" v-fill.bqsjdjse='"ewbhxh-1"'>0.00</td>
+      <td width="134" height="22" align="right" valign="middle" v-fill.bqsjdjse1='"ewbhxh-1"'>0.00</td>
+      <td width="134" height="22" align="right" valign="middle" v-fill.qmye='"ewbhxh-1"'>0.00</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

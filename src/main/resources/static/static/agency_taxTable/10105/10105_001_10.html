@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>金融业营改增税负专项调查表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="910" height = "490" id="taxTable">
+<tr>
+<td  width="878" height="46"  align="center" valign="middle" colspan="3" class="noBorder"><B>金融业营改增税负专项调查表</B></td>
+</tr>
+<tr>
+<td  width="878" height="22"  align="center" valign="middle" colspan="3" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至 <span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="718" height="22"  align="left" valign="middle" colspan="2" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　　　纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  class="noBorder">金额单位： 元至角分</td>
+</tr>
+<tr>
+
+<td  width="531" height="44" align="center" valign="middle"  rowspan="2">项目名称</td>
+<td  width="187" height="44" align="center" valign="middle"  rowspan="2">行次</td>
+<td  width="160" height="44" align="center" valign="middle"  rowspan="2">含税利息收入</td>
+</tr>
+<tr>
+
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >1.质押式买入返售金融商品利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >1</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zyslxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >2.买断式买入返售金融商品利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >2</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.mdslxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >3.持有政策性金融债券利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >3</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.cyzcxlxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >4.持有金融债券利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >4</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.cyjrzqlxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >5.同业存款利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >5</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tycklxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >6.同业借款利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >6</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tyjklxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >7.同业代付利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >7</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tydflxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >8.同业存单利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >8</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.tycdlxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="22"  align="left" valign="middle"  >9.商业银行购买央行票据、与央行开展货币掉期和货币互存等业务的利息收入</td>
+<td  width="187" height="22"  align="center" valign="middle"  >9</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.syyhgmlxsr='""'>0.00</td>
+</tr>
+<tr>
+
+<td  width="531" height="30"  align="left" valign="middle"  >10.境内银行与其境外的总机构、母公司之间，以及境内银行与其境外的分支机构、全资子公司之间的资金往来业务的利息收入</td>
+<td  width="187" height="30"  align="center" valign="middle"  >10</td>
+<td  width="160" height="30"  align="right" valign="middle"  v-fill.jnyhzjwllxsr='""'>0.00</td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle"  >合计</td>
+<td  width="187" height="22"  align="center" valign="middle"  >11=1+2+3+4+5+6+7+8+9+10</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.hj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle"  >当期《营改增税负分析测算明细表》中增值税应纳税额</td>
+<td  width="187" height="22"  align="center" valign="middle"  >12</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.dqzzsynse='""'>0.00</td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle"  >当期《营改增税负分析测算明细表》中营业税应纳税额</td>
+<td  width="187" height="22"  align="center" valign="middle"  >13</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.dqyysynse='""'>0.00</td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle"  >当期计算的增减税净额</td>
+<td  width="187" height="22"  align="center" valign="middle"  >14=12-13</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.dqzjsje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="531" height="22"  align="left" valign="middle"  >上述收入未列入应税营业额的金额</td>
+<td  width="187" height="22"  align="center" valign="middle"  >15</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.sssrwlrje='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

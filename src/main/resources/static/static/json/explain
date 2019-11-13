@@ -1,0 +1,93 @@
+自定义指令：
+==>>作废     v-float="2"   保留两位小数
+     v-percent="2"  小数转成百分数
+     v-format-date  日期格式化，yyyy-mm-dd
+公共函数：
+     复选框赋值：checkChange(val,str); 参数val，需要修改的值；参数str，需要修改的对象名称
+     获取初始化数据：getInitialization();参数待定
+     获取字典表：getDict(url); url是字典表数据所存在的json的请求地址
+     表间取值：getSelectSbbInfo(batchData);参数为定义的batchData
+     获取地址栏参数：getUrlParam(name);参数为参数的key
+     监听键盘输入，只允许输入数字，包括整数和小数:onlyNumbers(key,type,'符号');key参数为v-model绑定的值  type为int，则只能输入正整数和0 type为all 则包含小数  标签内书写 @input="onlyNumbers('yycb_bqje',"all","%")"            html5的新特性 number 对ie和火狐的兼容性不好，在这里用键盘监听处理
+     鼠标失去焦点后保留有效小数:retainValidDecimal(key,float);参数为v-model绑定的值；保留小数点后有效位数 input标签内书写  @blur="retainValidDecimal('yycb_bqje','2')" 支持深层次节点
+     键盘切换单元格: keyboardSwitchingCell(tableId, inputType);参数tableid和input标签的type属性；在可编辑的input框中增加属性 type="text" 在vue实例中的mounted中调用此方法
+     计算属期：calculatingDate(当前属期,num),属期格式为yyyymmdd，num为正数，向下加一月，负数，向上减一月 返回值为yyyymmdd
+     自动赋值:automaticRecode(obj),已经保存数据自动赋值，参数是接口返回的表单数据
+     将字符串转换为js代码并执行：strToFun(str,val); 参数：str字符串，val：表达式等于的值
+     行合计：totalRows(list,hj)，监听中监听变化的list，例子：10102_005_10,参数：字符串list节点，hj：字符串合计行节点，暂时只支持多行的相加（如果有其他需求，在进行修改）
+     列合计：totalColumn(list,formula),list:多行，formula：公式,例子：10102_005_10,支持加减
+     this.tool.analyzingFixedColumns()   固定行列，在标签中加属性 freezeRowNum="2" freezeColumnNum="2"
+     初始化公共业务：this.initializationOfPublicServices() // 必须加，位置在created调用初始化接口之后
+     日期转时间戳:dataToTimestamp(data) // 返回时间戳 可用于时间比较
+     显示转百分数，原数据还保留小数   @input="percentageProcessing($event,'sjjfjbqje')"
+
+
+
+
+字典表接口地址：
+     身份字典表：/static/json/dict/certificateDict.json
+     城市字典表：/static/json/dict/cityDict.json
+
+
+
+
+验证规则:
+      type:验证类型，值为"null"、"lessThan"、"moreThan"、"absolute"、"fun"、"phone"
+      name:需要验证值得key值或者model的名称
+      reportErrors：错误的提示语句
+      color：提示语句颜色
+      function：自定义验证方法
+      location:用于定位的辅助参数
+      常用参数单词含义：comparisons 比较值 num类型
+      基本格式如下，将下方objpush到一个名为validationValue的数组中
+     [{type:"",name:"",reportErrors:"",color:"",comparisons:"",function:"函数名"},
+     {type:"",name:"",reportErrors:"",color:"",comparisons:"",function:"函数名"}]
+
+弹出框：
+_self.$elementUi.MessageBox.alert("请输入用于比对的json结构","警告",{type: 'warning'});   type:info\warning\error
+日期插件：
+                 <el-date-picker style="width: 140px"
+                                  v-model="tableData.pageData.value1"
+                                  type="date"
+                                  value-format="yyyy-MM-dd"
+                                  placeholder="">
+                  </el-date-picker>
+声明数据模板：
+tableData:{
+	header:{
+		//这个你们不用声明，我来抽方法
+	},
+	pageData{
+		json的节点:{
+			//从json中拿
+		},
+		checkData:{
+			//参与计算和校验的表间数据和初始化数据等
+		},
+		otherData:{
+			//与申报无关的表内数据
+		}
+	}
+}
+
+表样模板
+<el-container>
+    <el-header>
+      <app-header :parentData="tableData" :parentValidation="validationValue" :parentPdfName="name"></app-header>
+    </el-header>
+    <el-container>
+      <el-main id="allTable">
+        <el-scrollbar style="height: 100%;">
+          <div id="pdfDom"  name="pdfDomBranch" class="pdfDomBranch">
+            <!--将这行注释删掉，然后将table节点标签拷贝到此处，id统一为id="taxTable"-->
+          </div>
+        </el-scrollbar>
+      </el-main>
+      <el-aside class="bar">
+        <informationBar :parentName="name"></informationBar>
+      </el-aside>
+    </el-container>
+    <!--<el-footer>Footer</el-footer>-->
+  </el-container>
+
+

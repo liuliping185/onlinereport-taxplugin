@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>所有者权益变动表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="2942" height = "750"  id="taxTable">
+<tr>
+<td width="2838" height="46"  align="center" valign="middle" colspan="17" class="noBorder" ><FONT FACE="宋体"  ><B>所有者权益变动表</B></FONT></td>
+<td width="60px" height="46"  align="center" valign="middle"  class="noBorder"><FONT FACE="宋体" >    </td>
+</tr>
+<tr>
+<td width="2838" height="22"  align="center" valign="middle" colspan="17" class="noBorder" ><FONT FACE="宋体" SIZE=-1 ><B>（适用执行企业会计准则的证券公司）</B></FONT></td>
+</tr>
+<tr>
+<td width="2838" height="22"  align="center" valign="middle" colspan="17" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></FONT></td>
+</tr>
+<tr>
+<td width="2838" height="22"  align="left" valign="middle" colspan="17" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>纳税人识别号：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</FONT></td>
+</tr>
+<tr>
+<td width="2838" height="22"  align="left" valign="middle" colspan="17" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</FONT></td>
+</tr>
+<tr>
+<td width="1732" height="22" align="left" valign="middle" colspan="10" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></FONT></td>
+<td width="1106" height="22" align="right" valign="middle" colspan="7" class="noBorder" ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>金额单位：   人民币元(列至角分)</FONT></td>
+</tr>
+<tr>
+<td width="314" height="44" align="center" valign="middle"  rowspan="2"><FONT FACE="宋体" SIZE=-1 >项    目</FONT></td>
+<td width="1262" height="22" align="center" valign="middle" colspan="8" ><FONT FACE="宋体" SIZE=-1 >本年金额</FONT></td>
+<td width="1262" height="22" align="center" valign="middle" colspan="8" ><FONT FACE="宋体" SIZE=-1 >上年金额</FONT></td>
+</tr>
+<tr>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >实收资本（或股本）<br></FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >资本公积<br></FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >减：库存股</FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >盈余公积<br></FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >一般风险准备</FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >未分配利润<br></FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >外币报表折算差额</FONT></td>
+<td width="170" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >所有者权益（或股东）合计</FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >实收资本(或股本)<br></FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >资本公积<br></FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >减：库存股</FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >盈余公积<br></FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >一般风险准备</FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >未分配利润<br></FONT></td>
+<td width="156" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >外币报表折算差额</FONT></td>
+<td width="170" height="22" align="center" valign="middle"  ><FONT FACE="宋体" SIZE=-1 >所有者权益（或股东）合计</FONT></td>
+</tr>
+<tr v-for="item in json">
+<td width="314" height="22" align="left" valign="middle" v-space ><FONT FACE="宋体" SIZE=-1 >{{item.xmmc==null?"":item.xmmc}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.bnsszbhgb==null?'0.00':item.bnsszbhgb.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.bnzbgj==null?'0.00':item.bnzbgj.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.bnjkcg==null?'0.00':item.bnjkcg.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.bnyygj==null?'0.00':item.bnyygj.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.bnybfxzb==null?'0.00':item.bnybfxzb.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.bnwfplr==null?'0.00':item.bnwfplr.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.bnwbbbzsce==null?'0.00':item.bnwbbbzsce.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.bnsyzqyhj==null?'0.00':item.bnsyzqyhj.toFixed(2)}}</FONT></td>
+<td width="170" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#FF0000>{{item.snsszbhgb==null?'0.00':item.snsszbhgb.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.snzbgj==null?'0.00':item.snzbgj.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.snjkcg==null?'0.00':item.snjkcg.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.snyygj==null?'0.00':item.snyygj.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.snybfxzb==null?'0.00':item.snybfxzb.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.snwfplr==null?'0.00':item.snwfplr.toFixed(2)}}</FONT></td>
+<td width="156" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.snwbbbzsce==null?'0.00':item.snwbbbzsce.toFixed(2)}}</FONT></td>
+<td width="170" height="22" align="right" valign="middle"  ><FONT FACE="宋体" SIZE=-1 COLOR=#000000>{{item.snsyzqyhj==null?'0.00':item.snsyzqyhj.toFixed(2)}}</FONT></td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

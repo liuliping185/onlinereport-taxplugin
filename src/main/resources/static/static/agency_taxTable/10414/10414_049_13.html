@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>企业重组所得税特殊性税务处理报告表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="953" height = "715" id="taxTable">
+<tr>
+<td  width="887" height="46"  align="center" valign="middle" colspan="6" class="noBorder"><B>企业重组所得税特殊性税务处理报告表(债务重组)</B></td>
+</tr>
+<tr>
+<td  width="887" height="22"  align="center" valign="middle" colspan="6" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="887" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="887" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="443" height="22"  align="left" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="444" height="22"  align="right" valign="middle" colspan="2" class="noBorder">            金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="356" height="22"  align="center" valign="middle" colspan="3" >债务人名称</td>
+<td  width="315" height="22"  align="center" valign="middle" colspan="2" >债务人纳税识别号</td>
+<td  width="216" height="22"  align="center" valign="middle"  >债务人所属主管税务机关（全称）</td>
+</tr>
+<tr>
+<td  width="356" height="22"  align="left" valign="middle" colspan="3" v-fill.zwrmc='""'>&nbsp;</td>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" v-fill.zwrnsrsbh='""'>&nbsp;</td>
+<td  width="216" height="22"  align="left" valign="middle"  v-fill.zwrssswjg='""'>&nbsp;</td>
+</tr>
+<tr>
+<td  width="356" height="22"  align="center" valign="middle" colspan="3" >债权人名称</td>
+<td  width="315" height="22"  align="center" valign="middle" colspan="2" >债权人纳税识别号</td>
+<td  width="216" height="22"  align="center" valign="middle"  >债权人所属主管税务机关（全称）</td>
+</tr>
+<tr>
+<td  width="356" height="22"  align="left" valign="middle" colspan="3" v-fill.zqrmc='""'>&nbsp;</td>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" v-fill.zqrnsrsbh='""'>&nbsp;</td>
+<td  width="216" height="22"  align="left" valign="middle"  v-fill.zqrssswjg='""'>&nbsp;</td>
+</tr>
+<tr>
+<td  width="356" height="22"  align="center" valign="middle" colspan="3" >债务重组方式</td>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="checkbox" name="E10" value="ON" :checked="json[0].zwczfs === '1'" disabled>重组所得超过应纳税所得额50%</p></form></td>
+<td  width="216" height="22"  align="left" valign="middle"  ><form><p><input type="checkbox" name="G10" value="ON" :checked="json[0].zwczfs === '2'" disabled>债转股</p></form></td>
+</tr>
+<tr>
+<td  width="671" height="22"  align="center" valign="middle" colspan="5" >债务人重组业务涉及的债务账面价值 </td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.zmjz='""'>0.00</td>
+</tr>
+<tr>
+<td  width="189" height="88"  align="left" valign="middle" colspan="2" rowspan="4">债务人重组业务涉及的债务计税基础（1）</td>
+<td  width="167" height="88"  align="right" valign="middle"  rowspan="4" v-fill.zwjsjc='""'>0.00</td>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" >其中：①应付账款计税基础</td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.yfzkjsjc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" >      ②其他应付款计税基础</td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.qtyfkjsjc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" >      ③借款计税基础</td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.jkjsjc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" >      ④其他债务计税基础</td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.qtzwjsjc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="94" height="161"  align="left" valign="middle"  rowspan="6">除债转股方式外的债务重组</td>
+<td  width="95" height="88"  align="left" valign="middle"  rowspan="4">债务人用于偿付债务的资产公允价值（2）</td>
+<td  width="167" height="88"  align="right" valign="middle"  rowspan="4" v-fill.cfzwgyjz='""'>0.00</td>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" >其中：①现金</td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.xj='""'>0.00</td>
+</tr>
+<tr>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" >      ②银行存款</td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.yhck='""'>0.00</td>
+</tr>
+<tr>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" >      ③非货币资产</td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.fhbzc='""'>0.00</td>
+</tr>
+<tr>
+<td  width="315" height="22"  align="left" valign="middle" colspan="2" >      ④其他</td>
+<td  width="216" height="22"  align="right" valign="middle"  v-fill.qt='""'>0.00</td>
+</tr>
+<tr>
+<td  width="95" height="43"  align="left" valign="middle"  >债务人债务重组所得（3）=（1）-（2）</td>
+<td  width="167" height="43"  align="right" valign="middle"  v-fill.czsd='""'>0.00</td>
+<td  width="531" height="43"  align="center" valign="middle" colspan="3" >--</td>
+</tr>
+<tr>
+<td  width="95" height="30"  align="left" valign="middle"  >债务人本年度应纳税所得额</td>
+<td  width="167" height="30"  align="right" valign="middle"  v-fill.ynssde='""'>0.00</td>
+<td  width="315" height="30"  align="left" valign="middle" colspan="2" >债务重组所得占本年度应纳税所得额的比重%</td>
+<td  width="216" height="30"  align="right" valign="middle"  >{{(json[0].bz*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="94" height="112"  align="left" valign="middle"  rowspan="2">债转股方式的债务重组</td>
+<td  width="95" height="56"  align="left" valign="middle"  >债权人债转股后所拥有的股权占债务人全部股权比例%</td>
+<td  width="167" height="56"  align="right" valign="middle"  >{{(json[0].gqbl*100).toFixed(2)}}%</td>
+<td  width="315" height="56"  align="left" valign="middle" colspan="2" >债转股取得股权的公允价值（4）</td>
+<td  width="216" height="56"  align="right" valign="middle"  v-fill.gqgyjz='""'>0.00</td>
+</tr>
+<tr>
+<td  width="95" height="56"  align="left" valign="middle"  >债权人原债权的计税基础（即股权的计税基础）</td>
+<td  width="167" height="56"  align="right" valign="middle"  v-fill.zqjsjc='""'>0.00</td>
+<td  width="315" height="56"  align="left" valign="middle" colspan="2" >债务人暂不确认的债务重组所得（5）=（1）-（4）</td>
+<td  width="216" height="56"  align="right" valign="middle"  v-fill.bqrczsd='""'>0.00</td>
+</tr>
+<tr>
+<td  width="887" height="22"  align="left" valign="middle" colspan="6" >谨声明：本人知悉并保证本表填报内容及所附证明材料真实、完整，并承担因资料虚假而产生的法律和行政责任。</td>
+</tr>
+<tr>
+<td  width="887" height="22"  align="right" valign="middle" colspan="6" >法定代表人签章：                            年    月   日  </td>
+</tr>
+<tr>
+<td  width="887" height="22"  align="left" valign="middle" colspan="6" class="noBorder">填表人：                                          填表日期： </td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

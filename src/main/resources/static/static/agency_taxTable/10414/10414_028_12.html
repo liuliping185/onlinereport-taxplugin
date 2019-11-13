@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>符合条件的居民企业之间的股息、红利等权益性投资收益优惠明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="3028" height = "355" id="taxTable">
+<tr>
+<td  width="2996" height="39"  align="center" valign="middle" colspan="20" class="noBorder"><B>符合条件的居民企业之间的股息、红利等权益性投资收益优惠明细表</B></td>
+</tr>
+<tr>
+<td  width="997" height="22"  align="left" valign="middle" colspan="6" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="160" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="137" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="640" height="22"  align="right" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="1157" height="22"  align="left" valign="middle" colspan="7" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="137" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="800" height="22"  align="right" valign="middle" colspan="5" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="2996" height="22"  align="left" valign="middle" colspan="20" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="33" height="94"  align="center" valign="middle"  rowspan="3">行次</td>
+<td  width="350" height="72"  align="center" valign="middle"  rowspan="2">被投资企业</td>
+<td  width="160" height="72"  align="center" valign="middle"  rowspan="2">被投资企业统一社会信用代码（纳税人识别号）</td>
+<td  width="162" height="72"  align="center" valign="middle"  rowspan="2">投资性质</td>
+<td  width="160" height="72"  align="center" valign="middle"  rowspan="2">投资成本</td>
+<td  width="132" height="72"  align="center" valign="middle"  rowspan="2">投资比例</td>
+<td  width="320" height="22"  align="center" valign="middle" colspan="2" >被投资企业利润分配确认金额</td>
+<td  width="480" height="22"  align="center" valign="middle" colspan="3" >被投资企业清算确认金额</td>
+<td  width="937" height="22"  align="center" valign="middle" colspan="6" >撤回或减少投资确认金额</td>
+<td  width="160" height="72"  align="center" valign="middle"  rowspan="2">合计</td>
+</tr>
+<tr>
+<td  width="160" height="50"  align="center" valign="middle"  >被投资企业做出利润分配或转股决定时间</td>
+<td  width="160" height="50"  align="center" valign="middle"  >依决定归属于本公司的股息、红利等权益性投资收益金额</td>
+<td  width="160" height="50"  align="center" valign="middle"  >分得的被投资企业清算剩余资产</td>
+<td  width="160" height="50"  align="center" valign="middle"  >被清算企业累计未分配利润和累计盈余公积应享有部分</td>
+<td  width="160" height="50"  align="center" valign="middle"  >应确认的股息所得</td>
+<td  width="160" height="50"  align="center" valign="middle"  >从被投资企业撤回或减少投资取得的资产</td>
+<td  width="137" height="50"  align="center" valign="middle"  >减少投资比例</td>
+<td  width="160" height="50"  align="center" valign="middle"  >收回初始投资成本</td>
+<td  width="160" height="50"  align="center" valign="middle"  >取得资产中超过收回初始投资成本部分</td>
+<td  width="160" height="50"  align="center" valign="middle"  >撤回或减少投资应享有被投资企业累计未分配利润和累计盈余公积</td>
+<td  width="160" height="50"  align="center" valign="middle"  >应确认的股息所得</td>
+</tr>
+<tr>
+<td  width="350" height="22"  align="center" valign="middle"  >1</td>
+<td  width="160" height="22"  align="center" valign="middle"  >2</td>
+<td  width="162" height="22"  align="center" valign="middle"  >3</td>
+<td  width="160" height="22"  align="center" valign="middle"  >4</td>
+<td  width="132" height="22"  align="center" valign="middle"  >5</td>
+<td  width="160" height="22"  align="center" valign="middle"  >6</td>
+<td  width="160" height="22"  align="center" valign="middle"  >7</td>
+<td  width="160" height="22"  align="center" valign="middle"  >8</td>
+<td  width="160" height="22"  align="center" valign="middle"  >9</td>
+<td  width="160" height="22"  align="center" valign="middle"  >10(8与9孰小)</td>
+<td  width="160" height="22"  align="center" valign="middle"  >11</td>
+<td  width="137" height="22"  align="center" valign="middle"  >12</td>
+<td  width="160" height="22"  align="center" valign="middle"  >13(4×12)</td>
+<td  width="160" height="22"  align="center" valign="middle"  >14(11-13)</td>
+<td  width="160" height="22"  align="center" valign="middle"  >15</td>
+<td  width="160" height="22"  align="center" valign="middle"  >16(14与15孰小)</td>
+<td  width="160" height="22"  align="center" valign="middle"  >17(7+10+16)</td>
+</tr>
+<tr v-for="(item,index) in json" :key="index">
+<td  width="33" height="22"  align="center" valign="middle"  >00{{index + 1}}</td>
+<td  width="350" height="22"  align="left" valign="top"  >{{item.btzqy}}</td>
+<td  width="160" height="22"  align="left" valign="top"  >{{item.btzqyshxydm}}</td>
+<td  width="162" height="22"  align="left" valign="middle"  >{{item.tzxz}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.tzcb.toFixed(2)}}</td>
+<td  width="132" height="22"  align="right" valign="middle"  >{{(item.tzbl*100).toFixed(4)}}%</td>
+<td  width="160" height="22"  align="left" valign="middle"  >{{item.btzlrfpqrjejdsj}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.btzlrfpqrjesyje.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.btzqsqrjeqssyzc.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.btzqsqrjeljwfplryygj.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.btzqsqrjeyqrgxsd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.chjstzqrjezc.toFixed(2)}}</td>
+<td  width="137" height="22"  align="right" valign="middle"  >{{(item.chjstzqrjejstzbl*100).toFixed(4)}}%</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.chjstzqrjeshcstzcb.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.chjstzqrjeqdcgsh.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.chjstzqrjeljwfplryygj.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.chjstzqrjeyqrgxsd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.hj.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="33" height="22"  align="center" valign="middle"  >00{{json.length + 1}}</td>
+<td  width="2701" height="22"  align="left" valign="middle" colspan="16" >合计</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json[0].hjje.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="33" height="22"  align="center" valign="middle"  >00{{json.length + 2}}</td>
+<td  width="2701" height="22"  align="left" valign="middle" colspan="16" >   其中：股票投资-沪港通H股</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json[0].gptzhgthghj.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="33" height="22"  align="center" valign="middle"  >00{{json.length + 3}}</td>
+<td  width="2701" height="22"  align="left" valign="middle" colspan="16" >         股票投资-深港通H股</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json[0].gptzsgthghj.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

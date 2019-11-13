@@ -1,0 +1,211 @@
+<html>
+
+<head>
+  <title>环境保护税纳税申报表（B类）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+	<div id="taxTable">
+		<div v-for="items in json">
+      <table cellspacing="0" cellpadding="0" width="2261" height="376">
+        <tr>
+          <td width="2157" height="46" align="center" valign="middle" colspan="15" class="noBorder">
+            <B>环境保护税纳税申报表（B类）</B>
+          </td>
+        </tr>
+        <tr>
+          <td width="2157" height="22" align="center" valign="middle" colspan="15" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td></td>
+        </tr>
+        <tr>
+          <td width="861" height="22" align="left" valign="middle" colspan="12" class="noBorder">纳税人名称（公章）：<span>{{items.listSb[0].nsrmc}}</span></td>
+          <td width="423" height="22" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{items.listSb[0].tbrq}}</span></td>
+        </tr>
+        <tr>
+          <td width="985" height="22" align="left" valign="middle" colspan="12" class="noBorder">统一社会信用代码（纳税人识别号）：<span>{{items.listSb[0].nsrsbh}}</span></td>
+          <td width="286" height="22" align="right" valign="middle" colspan="3" class="noBorder">金额单位：元至角分</td>
+        </tr>
+        <tr>
+          <td width="65" height="22" align="center" valign="middle">*月份</td>
+          <td width="155" height="22" align="center" valign="middle">*污染物类别</td>
+          <td width="175" height="22" align="center" valign="middle">*征收品目</td>
+          <td width="234" height="22" align="center" valign="middle">征收子目（特征指标）</td>
+          <td width="106" height="22" align="center" valign="middle">单位</td>
+          <td width="126" height="22" align="center" valign="middle">特征指标数量</td>
+          <td width="124" height="22" align="center" valign="middle">特征系数</td>
+          <td width="145" height="22" align="center" valign="middle">污染当量值（特征值）</td>
+          <td width="142" height="22" align="center" valign="middle">计税依据</td>
+          <td width="142" height="22" align="center" valign="middle">*单位税额</td>
+          <td width="130" height="22" align="center" valign="middle">*本期应纳税额</td>
+          <td width="190" height="22" align="center" valign="middle">减免性质代码（减免项目名称）</td>
+          <td width="137" height="22" align="center" valign="middle">本期减免税额</td>
+          <td width="136" height="22" align="center" valign="middle">本期已缴税额</td>
+          <td width="150" height="22" align="center" valign="middle">*本期应补(退)税额</td>
+        </tr>
+        <tr>
+          <td width="65" height="22" align="center" valign="middle">(1)</td>
+          <td width="155" height="22" align="center" valign="middle">(2)</td>
+          <td width="175" height="22" align="center" valign="middle">(3)</td>
+          <td width="234" height="22" align="center" valign="middle">(4)</td>
+          <td width="106" height="22" align="center" valign="middle">(5)</td>
+          <td width="126" height="22" align="center" valign="middle">(6)</td>
+          <td width="124" height="22" align="center" valign="middle">(7)</td>
+          <td width="145" height="22" align="center" valign="middle">(8)</td>
+          <td width="142" height="22" align="center" valign="middle">(9)</td>
+          <td width="142" height="22" align="center" valign="middle">(10)</td>
+          <td width="130" height="22" align="center" valign="middle">(11)=(9)*(10)</td>
+          <td width="190" height="22" align="center" valign="middle">(12)</td>
+          <td width="137" height="22" align="center" valign="middle">(13)</td>
+          <td width="136" height="22" align="center" valign="middle">(14)</td>
+          <td width="150" height="22" align="center" valign="middle">(15)=(11)-(13)-(14)</td>
+        </tr>
+        <tr v-for='(item,index) in items.listZb'>
+          <td width="65" height="22" align="left" valign="middle">{{item.yf}}</td>
+          <td width="155" height="22" align="left" valign="middle">{{item.wrwlb}}</td>
+          <td width="175" height="22" align="left" valign="middle">{{item.fzspmDm}}</td>
+          <td width="234" height="22" align="left" valign="middle">{{item.zszmDm}}</td>
+          <td width="106" height="22" align="left" valign="middle">{{item.jsjsdwmc}}</td>
+          <td width="126" height="22" align="right" valign="middle">{{item.tzzbsl === null ? '' : parseFloat(item.tzzbsl).toFixed(6)}}</td>
+          <td width="124" height="22" align="right" valign="middle">{{item.tzcwxs.toFixed(8)}}</td>
+          <td width="145" height="22" align="right" valign="middle">{{item.wrdls === null ? '' : item.wrdls.toFixed(10)}}</td>
+          <td width="142" height="22" align="right" valign="middle">{{item.jsyj.toFixed(6)}}</td>
+          <td width="142" height="22" align="right" valign="middle">{{item.dwse.toFixed(6)}}</td>
+          <td width="130" height="22" align="right" valign="middle">{{item.ynse.toFixed(2)}}</td>
+          <td width="190" height="22" align="left" valign="middle">{{item.ssjmxzDm}}</td>
+          <td width="137" height="22" align="right" valign="middle">{{item.jmse.toFixed(2)}}</td>
+          <td width="136" height="22" align="right" valign="middle">{{item.yjse.toFixed(2)}}</td>
+          <td width="150" height="22" align="right" valign="middle">{{item.ybtse.toFixed(2)}}</td>
+        </tr>
+        <tr>
+          <td width="65" height="22" align="center" valign="middle">合计</td>
+          <td width="155" height="22" align="center" valign="middle">--</td>
+          <td width="175" height="22" align="center" valign="middle">--</td>
+          <td width="234" height="22" align="center" valign="middle">--</td>
+          <td width="106" height="22" align="center" valign="middle">--</td>
+          <td width="126" height="22" align="right" valign="middle">{{items.listSb[0].tzzbslhj.toFixed(6)}}</td>
+          <td width="124" height="22" align="center" valign="middle">--</td>
+          <td width="145" height="22" align="center" valign="middle">--</td>
+          <td width="142" height="22" align="right" valign="middle">{{items.listSb[0].jsyjhj.toFixed(6)}}</td>
+          <td width="142" height="22" align="center" valign="middle">--</td>
+          <td width="130" height="22" align="right" valign="middle"><span>{{items.listSb[0].bqynsehj.toFixed(2)}}</span></td>
+          <td width="190" height="22" align="center" valign="middle">--</td>
+          <td width="137" height="22" align="right" valign="middle"><span>{{items.listSb[0].bqjmsehj.toFixed(2)}}</span></td>
+          <td width="136" height="22" align="right" valign="middle"><span>{{items.listSb[0].bqyjsehj.toFixed(2)}}</span></td>
+          <td width="150" height="22" align="right" valign="middle"><span>{{items.listSb[0].bqybtsehj.toFixed(2)}}</span></td>
+        </tr>
+        <!-- 2018-7-30 新增  -->
+        <tr>
+			<td  width="220" height="22"  align="center" valign="middle" colspan="2" >办理人员身份证件类型</td>
+			<td  width="320" height="22"  align="left" valign="top" colspan="2" >{{items.listSb[0].blrysfzjlxDm}}</td>
+			<td  width="153" height="22"  align="center" valign="middle"  >办理人员身份证件号码</td>
+			<td  width="320" height="22"  align="left" valign="middle" colspan="2" >{{items.listSb[0].blrysfzjhm}}</td>
+			<td  width="145" height="22"  align="center" valign="middle"  >&nbsp;</td>
+			<td  width="142" height="22"  align="right" valign="middle"  >&nbsp;</td>
+			<td  width="142" height="22"  align="center" valign="middle"  >&nbsp;</td>
+			<td  width="130" height="22"  align="right" valign="middle"  >&nbsp;</td>
+			<td  width="190" height="22"  align="center" valign="middle"  >&nbsp;</td>
+			<td  width="137" height="22"  align="right" valign="middle"  >&nbsp;</td>
+			<td  width="136" height="22"  align="right" valign="middle"  >&nbsp;</td>
+			<td  width="150" height="22"  align="right" valign="middle"  >&nbsp;</td>
+		</tr>
+		<!-- /2018-7-30 新增  -->
+        <tr style="border-right:1px solid #333;">
+          <td width="220" height="110" align="center" valign="middle" colspan="2" rowspan="5">
+            <B style="font-size:14px;">授权声明</B>
+          </td>
+          <td width="910" height="22" align="left" valign="middle" colspan="6" class="noBorder"> 如果你已委托代理人申报，请填写下列资料：</td>
+          <td width="284" height="110" align="center" valign="middle" colspan="2" rowspan="5">
+            <B style="font-size:14px;">*申请人声明</B>
+          </td>
+          <td width="743" height="22" align="left" valign="middle" colspan="5" class="noBorder">&nbsp;</td>
+        </tr>
+        <tr style="border-right:1px solid #333;">
+          <td width="910" height="22" align="left" valign="middle" colspan="6" class="noBorder"> 为代理一切税务事宜，现授权 （地址） </td>
+          <td width="743" height="22" align="left" valign="middle" colspan="5" class="noBorder"> 本纳税申报表是根据国家税收法律法规及相关规定填写的，是真实的、可靠的、完整的。</td>
+        </tr>
+        <tr style="border-right:1px solid #333;">
+          <td width="910" height="22" align="left" valign="middle" colspan="6" class="noBorder">（统一社会信用代码） 为本纳税人的代理申</td>
+          <td width="320" height="22" align="left" valign="middle" colspan="2" class="noBorder">&nbsp;</td>
+          <td width="137" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="136" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="150" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+        </tr>
+        <tr style="border-right:1px solid #333;">
+          <td width="910" height="22" align="left" valign="middle" colspan="6" class="noBorder">报人，任何与本申报表有关的往来文件，都可寄予此人。</td>
+          <td width="320" height="22" align="left" valign="middle" colspan="2" class="noBorder">&nbsp;</td>
+          <td width="137" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="136" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="150" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+        </tr>
+        <tr style="border-bottom:1px solid #333;border-right:1px solid #333;">
+          <td width="175" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="234" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="106" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+          <td width="395" height="22" align="left" valign="middle" class="noBorder" colspan="3">授权人签字：</td>
+          <td width="320" height="22" align="left" valign="middle" class="noBorder" colspan="2">&nbsp;</td>
+          <td width="423" height="22" align="left" valign="middle" class="noBorder" colspan="3">声明人签字：</td>
+        </tr>
+        <tr>
+          <td width="395" height="22" align="left" valign="middle" colspan="3" class="noBorder">
+            <B style="font-size:14px;">经办人：{{items.listSb[0].jbr}}</B>
+          </td>
+          <td width="735" height="22" align="left" valign="middle" colspan="5" class="noBorder">
+            <B style="font-size:14px;">主管税务机关：{{items.listSb[0].slswjg}}</B>
+          </td>
+          <td width="284" height="22" align="left" valign="middle" colspan="2" class="noBorder">
+            <B style="font-size:14px;">受理人：{{items.listSb[0].slr}}</B>
+          </td>
+          <td width="130" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">受理日期：</B>
+          </td>
+          <td width="190" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;"><span v-date>{{items.listSb[0].slrq}}</span></B>
+          </td>
+          <td width="137" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;"></B>
+          </td>
+          <td width="136" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;"></B>
+          </td>
+          <td width="150" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+        </tr>
+        <tr>
+          <td width="985" height="22" align="left" valign="middle" colspan="7" class="noBorder">
+            <B style="font-size:14px;">本表一式两份，一份纳税人留存，一份税务机关留存。</B>
+          </td>
+          <td width="145" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+          <td width="142" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+          <td width="142" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+          <td width="130" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+          <td width="190" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+          <td width="137" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+          <td width="136" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+          <td width="150" height="22" align="left" valign="middle" class="noBorder">
+            <B style="font-size:14px;">&nbsp;</B>
+          </td>
+        </tr>
+      </table>
+      </div>
+      </div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<html>
+<head>
+<title>对外合作开采石油企业勘探开发费用年度明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="2334" height = "627" id="taxTable" style="margin-top:30px;">
+<tr>
+<td  width="2302" height="27"  align="center" valign="middle" colspan="15" class="noBorder"><B>对外合作开采石油企业勘探开发费用年度明细表</B></td>
+</tr>
+<tr>
+<td  width="2302" height="22"  align="center" valign="middle" colspan="15" class="noBorder">External Cooperative Exploration Petroleum Enterprise Annual Report of Expenses for Exploration and Development Period</td>
+</tr>
+<tr>
+<td  width="2302" height="22"  align="center" valign="middle" colspan="15" class="noBorder">税款所属时间:<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="921" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人名称（公章）:{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="750" height="22"  align="left" valign="middle" colspan="5" class="noBorder">纳税人识别号:{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="921" height="22"  align="left" valign="middle" colspan="6" class="noBorder">填表日期:<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="450" height="22"  align="right" valign="middle" colspan="3" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="621" height="68"  align="right" valign="middle" colspan="4" rowspan="3" style="padding:0;background-image:url('/static/images/index/81_line.png');background-repeat:no-repeat;position:relative;background-size:100% 100%;image-rendering: -webkit-optimize-contrast;">
+	<span style="position:absolute;right:10px;top:10px">Contract Area No. and Its Participation Percentage                  合同区号及其参股比例</span> 
+	<span style="position:absolute;left:10px;bottom:10px">Items 项目</span>
+</td>
+<td  width="1050" height="22"  align="center" valign="middle" colspan="5" >从联合帐本分摊费用 Allocated from Joint Account</td>
+<td  width="631" height="22"  align="center" valign="middle" colspan="6" >不能列入联合帐本的费用 Not Allowed into Joint Account</td>
+</tr>
+<tr>
+<td  width="150" height="22" align="left" valign="middle"  >1</td>
+<td  width="150" height="22" align="left" valign="middle"  >2</td>
+<td  width="150" height="22" align="left" valign="middle"  >3</td>
+<td  width="150" height="22"  align="center" valign="middle"  >本期数合计</td>
+<td  width="150" height="22"  align="center" valign="middle"  >累计总数</td>
+<td  width="181" height="22"  align="center" valign="middle"  >公司集团分摊的</td>
+<td  width="150" height="22"  align="center" valign="middle"  >单独发生的</td>
+<td  width="150" height="22"  align="center" valign="middle"  >本期合计</td>
+<td  width="150" height="22"  align="center" valign="middle"  >累计总数</td>
+</tr>
+<tr>
+<td  width="150" height="24"  align="right" valign="middle" v-percent="4" >{{json.list[0].g1abcdl}}</td>
+<td  width="150" height="24"  align="right" valign="middle"  v-percent="4">{{json.list[0].g2abcdl}}</td>
+<td  width="150" height="24"  align="right" valign="middle"  v-percent="4">{{json.list[0].g3abcdl}}</td>
+<td  width="150" height="24"  align="center" valign="middle"  >Total for the Period</td>
+<td  width="150" height="24"  align="center" valign="middle"  >Accumulated</td>
+<td  width="181" height="24"  align="center" valign="middle"  >Shared under Consortium</td>
+<td  width="150" height="24"  align="center" valign="middle"  >Proprietary</td>
+<td  width="150" height="24"  align="center" valign="middle"  >Total for the Period</td>
+<td  width="150" height="24"  align="center" valign="middle"  >Accumulated</td>
+</tr>
+<tr>
+<td  width="170" height="110"  align="center" valign="middle" colspan="2" rowspan="5">勘探费用支出额<br>Exploration <br>Capex <br>Expense </td>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>01 勘探作业费</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Exploration Operation Expenses  </td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[0].ahtblftfy1 === null ? '' : json.listZb[0].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[0].ahtblftfy2 === null ? '' : json.listZb[0].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[0].ahtblftfy3 === null ? '' : json.listZb[0].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[0].lhzbbqshj === null ? '' : json.listZb[0].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[0].lhzbljzs === null ? '' : json.listZb[0].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[0].gsjtft === null ? '' : json.listZb[0].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[0].ddfs === null ? '' : json.listZb[0].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[0].bqhj === null ? '' : json.listZb[0].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[0].ljzs === null ? '' : json.listZb[0].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>02 勘探借款利息</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Interest on Exploration Loans </td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[1].ahtblftfy1 === null ? '' : json.listZb[1].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[1].ahtblftfy2 === null ? '' : json.listZb[1].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[1].ahtblftfy3 === null ? '' : json.listZb[1].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[1].lhzbbqshj === null ? '' : json.listZb[1].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[1].lhzbljzs === null ? '' : json.listZb[1].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[1].gsjtft === null ? '' : json.listZb[1].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[1].ddfs === null ? '' : json.listZb[1].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[1].bqhj === null ? '' : json.listZb[1].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[1].ljzs === null ? '' : json.listZb[1].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>03 经营管理费</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Administration Expenses</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[2].ahtblftfy1 === null ? '' : json.listZb[2].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[2].ahtblftfy2 === null ? '' : json.listZb[2].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[2].ahtblftfy3 === null ? '' : json.listZb[2].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[2].lhzbbqshj === null ? '' : json.listZb[2].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[2].lhzbljzs === null ? '' : json.listZb[2].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[2].gsjtft === null ? '' : json.listZb[2].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[2].ddfs === null ? '' : json.listZb[2].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[2].bqhj === null ? '' : json.listZb[2].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[2].ljzs === null ? '' : json.listZb[2].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>04 上级管理费 </B></td>
+<td  width="281" height="22"  align="left" valign="middle"  >Head Office Overhead</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[3].ahtblftfy1 === null ? '' : json.listZb[3].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[3].ahtblftfy2 === null ? '' : json.listZb[3].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[3].ahtblftfy3 === null ? '' : json.listZb[3].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[3].lhzbbqshj === null ? '' : json.listZb[3].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[3].lhzbljzs === null ? '' : json.listZb[3].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[3].gsjtft === null ? '' : json.listZb[3].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[3].ddfs === null ? '' : json.listZb[3].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[3].bqhj === null ? '' : json.listZb[3].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[3].ljzs === null ? '' : json.listZb[3].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>05 合计</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Total</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[4].ahtblftfy1 === null ? '' : json.listZb[4].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[4].ahtblftfy2 === null ? '' : json.listZb[4].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[4].ahtblftfy3 === null ? '' : json.listZb[4].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[4].lhzbbqshj === null ? '' : json.listZb[4].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[4].lhzbljzs === null ? '' : json.listZb[4].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[4].gsjtft === null ? '' : json.listZb[4].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[4].ddfs === null ? '' : json.listZb[4].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[4].bqhj === null ? '' : json.listZb[4].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[4].ljzs === null ? '' : json.listZb[4].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="110"  align="center" valign="middle" colspan="2" rowspan="5">开发费用支出额<br>Development<br>Capex<br>Expense</td>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>06 开发作业费</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Development Operating Expenses</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[5].ahtblftfy1 === null ? '' : json.listZb[5].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[5].ahtblftfy2 === null ? '' : json.listZb[5].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[5].ahtblftfy3 === null ? '' : json.listZb[5].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[5].lhzbbqshj === null ? '' : json.listZb[5].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[5].lhzbljzs === null ? '' : json.listZb[5].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[5].gsjtft === null ? '' : json.listZb[5].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[5].ddfs === null ? '' : json.listZb[5].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[5].bqhj === null ? '' : json.listZb[5].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[5].ljzs === null ? '' : json.listZb[5].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>07 开发借款利息 </B></td>
+<td  width="281" height="22"  align="left" valign="middle"  >Interest on Development Loans</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[6].ahtblftfy1 === null ? '' : json.listZb[6].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[6].ahtblftfy2 === null ? '' : json.listZb[6].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[6].ahtblftfy3 === null ? '' : json.listZb[6].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[6].lhzbbqshj === null ? '' : json.listZb[6].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[6].lhzbljzs === null ? '' : json.listZb[6].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[6].gsjtft === null ? '' : json.listZb[6].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[6].ddfs === null ? '' : json.listZb[6].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[6].bqhj === null ? '' : json.listZb[6].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[6].ljzs === null ? '' : json.listZb[6].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>08 经营管理费</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Administration Expenses</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[7].ahtblftfy1 === null ? '' : json.listZb[7].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[7].ahtblftfy2 === null ? '' : json.listZb[7].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[7].ahtblftfy3 === null ? '' : json.listZb[7].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[7].lhzbbqshj === null ? '' : json.listZb[7].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[7].lhzbljzs === null ? '' : json.listZb[7].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[7].gsjtft === null ? '' : json.listZb[7].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[7].ddfs === null ? '' : json.listZb[7].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[7].bqhj === null ? '' : json.listZb[7].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[7].ljzs === null ? '' : json.listZb[7].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>09 上级管理费</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Head Office Overhead</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[8].ahtblftfy1 === null ? '' : json.listZb[8].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[8].ahtblftfy2 === null ? '' : json.listZb[8].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[8].ahtblftfy3 === null ? '' : json.listZb[8].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[8].lhzbbqshj === null ? '' : json.listZb[8].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[8].lhzbljzs === null ? '' : json.listZb[8].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[8].gsjtft === null ? '' : json.listZb[8].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[8].ddfs === null ? '' : json.listZb[8].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[8].bqhj === null ? '' : json.listZb[8].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[8].ljzs === null ? '' : json.listZb[8].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>10 合计</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Total</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[9].ahtblftfy1 === null ? '' : json.listZb[9].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[9].ahtblftfy2 === null ? '' : json.listZb[9].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[9].ahtblftfy3 === null ? '' : json.listZb[9].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[9].lhzbbqshj === null ? '' : json.listZb[9].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[9].lhzbljzs === null ? '' : json.listZb[9].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[9].gsjtft === null ? '' : json.listZb[9].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[9].ddfs === null ? '' : json.listZb[9].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[9].bqhj === null ? '' : json.listZb[9].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[9].ljzs === null ? '' : json.listZb[9].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="22"  align="center" valign="middle" colspan="2"></td>
+<td  width="170" height="22"  align="left" valign="middle"  ><B>11 总计</B> </td>
+<td  width="281" height="22"  align="left" valign="middle"  >Grand Total</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[10].ahtblftfy1 === null ? '' : json.listZb[10].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[10].ahtblftfy2 === null ? '' : json.listZb[10].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[10].ahtblftfy3 === null ? '' : json.listZb[10].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[10].lhzbbqshj === null ? '' : json.listZb[10].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[10].lhzbljzs === null ? '' : json.listZb[10].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[10].gsjtft === null ? '' : json.listZb[10].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[10].ddfs === null ? '' : json.listZb[10].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[10].bqhj === null ? '' : json.listZb[10].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[10].ljzs === null ? '' : json.listZb[10].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="104"  align="center" valign="middle" colspan="2" rowspan="4">按税法规定的摊销，折旧额<br>Amortization and<br>Depreciation<br>According<br>to<br>Tax Law </td>
+<td  width="170" height="26"  align="left" valign="middle"  ><B>12 勘探费用已摊销额</B></td>
+<td  width="281" height="26"  align="left" valign="middle"  >Amortized Exploration Expenses</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[11].ahtblftfy1 === null ? '' : json.listZb[11].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[11].ahtblftfy2 === null ? '' : json.listZb[11].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[11].ahtblftfy3 === null ? '' : json.listZb[11].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[11].lhzbbqshj === null ? '' : json.listZb[11].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[11].lhzbljzs === null ? '' : json.listZb[11].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[11].gsjtft === null ? '' : json.listZb[11].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[11].ddfs === null ? '' : json.listZb[11].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[11].bqhj === null ? '' : json.listZb[11].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[11].ljzs === null ? '' : json.listZb[11].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="26"  align="left" valign="middle"  ><B>13 开发费用已折旧额</B> </td>
+<td  width="281" height="26"  align="left" valign="middle"  >Depreciated Development Expense </td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[12].ahtblftfy1 === null ? '' : json.listZb[12].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[12].ahtblftfy2 === null ? '' : json.listZb[12].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[12].ahtblftfy3 === null ? '' : json.listZb[12].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[12].lhzbbqshj === null ? '' : json.listZb[12].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[12].lhzbljzs === null ? '' : json.listZb[12].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[12].gsjtft === null ? '' : json.listZb[12].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[12].ddfs === null ? '' : json.listZb[12].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[12].bqhj === null ? '' : json.listZb[12].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[12].ljzs === null ? '' : json.listZb[12].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="26"  align="left" valign="middle"  ><B>14 勘探费用待摊销额 </B></td>
+<td  width="281" height="26"  align="left" valign="middle"  >Exploration Expenses to be Amortized</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[13].ahtblftfy1 === null ? '' : json.listZb[13].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[13].ahtblftfy2 === null ? '' : json.listZb[13].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[13].ahtblftfy3 === null ? '' : json.listZb[13].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[13].lhzbbqshj === null ? '' : json.listZb[13].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[13].lhzbljzs === null ? '' : json.listZb[13].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[13].gsjtft === null ? '' : json.listZb[13].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[13].ddfs === null ? '' : json.listZb[13].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[13].bqhj === null ? '' : json.listZb[13].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[13].ljzs === null ? '' : json.listZb[13].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="170" height="26"  align="left" valign="middle"  ><B>15 开发费用待折旧额 </B></td>
+<td  width="281" height="26"  align="left" valign="middle"  >Development Expenses to be Depreciated</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[14].ahtblftfy1 === null ? '' : json.listZb[14].ahtblftfy1.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[14].ahtblftfy2 === null ? '' : json.listZb[14].ahtblftfy2.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[14].ahtblftfy3 === null ? '' : json.listZb[14].ahtblftfy3.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[14].lhzbbqshj === null ? '' : json.listZb[14].lhzbbqshj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[14].lhzbljzs === null ? '' : json.listZb[14].lhzbljzs.toFixed(2)}}</td>
+<td  width="181" height="22"  align="right" valign="middle"  >{{json.listZb[14].gsjtft === null ? '' : json.listZb[14].gsjtft.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[14].ddfs === null ? '' : json.listZb[14].ddfs.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[14].bqhj === null ? '' : json.listZb[14].bqhj.toFixed(2)}}</td>
+<td  width="150" height="22"  align="right" valign="middle"  >{{json.listZb[14].ljzs === null ? '' : json.listZb[14].ljzs.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="2302" height="30"  align="left" valign="middle" colspan="4" ><B>企业负责人（签字〕  Responsible Officer (Signature)</B> </td>
+<td  width="2302" height="30"  align="left" valign="middle" colspan="4" ><B>总会计师（签字〕Financial Controller (Signature)</B></td>
+<td  width="2302" height="30"  align="left" valign="middle" colspan="7" ><B>填表日期 Date of Filling    年    月    日 </B></td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

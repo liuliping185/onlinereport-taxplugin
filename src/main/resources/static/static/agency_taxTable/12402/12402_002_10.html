@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>车船税税源明细表（车辆）</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<style>
+  form {
+    margin: 0
+  }
+</style>
+<body "">
+<table cellspacing="0" cellpadding="0" width="4323" height = "244" id="taxTable">
+<tr>
+<td  width="3884" height="46"  align="center" valign="middle" colspan="24" class="noBorder"><B>车船税税源明细表（车辆）</B></td>
+</tr>
+<tr>
+<td  width="1668" height="22"  align="left" valign="middle" colspan="9" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="132" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="180" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="489" height="22"  align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="200" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="148" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="179" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="162" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="177" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="166" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="183" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="200" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="2469" height="22"  align="left" valign="middle" colspan="16" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="200" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="148" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="179" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="162" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="177" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="166" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="183" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="200" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="2469" height="22"  align="left" valign="middle" colspan="16" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="200" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="148" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="179" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="162" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="177" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="166" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="183" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="200" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="206" height="22" align="left" valign="middle" colspan="2" class="noBorder"><form><p><input type="checkbox" name="B5" value="ON" :checked="json.list[0].sbqk === '正常申报'" disabled>正常申报</p></form></td>
+<td  width="172" height="22" align="left" valign="middle"  class="noBorder"><form><p><input type="checkbox" name="D5" value="ON" :checked="json.list[0].sbqk === '车辆增加'" disabled>车辆增加</p></form></td>
+<td  width="306" height="22" align="left" valign="middle"  class="noBorder"><form><p><input type="checkbox" name="E5" value="ON" :checked="json.list[0].sbqk === '车辆删除'" disabled>车辆删除</p></form></td>
+<td  width="200" height="22" align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="200" height="22" align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="200" height="22" align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="200" height="22" align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="184" height="22" align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="132" height="22" align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="180" height="22" align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="489" height="22" align="right" valign="middle" colspan="5" class="noBorder">&nbsp;</td>
+<td  width="200" height="22" align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="148" height="22" align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="179" height="22" align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="162" height="22" align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="177" height="22" align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="166" height="22" align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="183" height="22" align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="200" height="22" align="right" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="206" height="22"  align="left" valign="middle" colspan="2" >申报车辆总数（辆）</td>
+<td  width="3678" height="22"  align="right" valign="middle" colspan="22" >{{json.listzb[0].sbczs}}</td>
+</tr>
+<tr>
+<td  width="56" height="22"  align="center" valign="middle"  >序号</td>
+<td  width="150" height="22"  align="center" valign="middle"  >车牌号码</td>
+<td  width="172" height="22"  align="center" valign="middle"  >*车辆识别代码（车架号码）</td>
+<td  width="306" height="22"  align="center" valign="middle"  >*车辆类型</td>
+<td  width="200" height="22"  align="center" valign="middle"  >征收子目</td>
+<td  width="200" height="22"  align="center" valign="middle"  >车辆厂牌</td>
+<td  width="200" height="22"  align="center" valign="middle"  >车辆型号</td>
+<td  width="200" height="22"  align="center" valign="middle"  >发动机号</td>
+<td  width="184" height="22"  align="center" valign="middle"  >*车辆发票日期或注册登记日期</td>
+<td  width="132" height="22"  align="center" valign="middle"  >*使用性质</td>
+<td  width="180" height="22"  align="center" valign="middle"  >燃料种类</td>
+<td  width="140" height="22"  align="center" valign="middle"  >排气量（毫升）</td>
+<td  width="172" height="22"  align="center" valign="middle" colspan="2" >核定载客</td>
+<td  width="177" height="22"  align="center" valign="middle" colspan="2" >整备质量（吨）</td>
+<td  width="200" height="22"  align="center" valign="middle"  >*主管税务所（科、分局）</td>
+<td  width="148" height="22"  align="center" valign="middle"  >*行政区划</td>
+<td  width="179" height="22"  align="center" valign="middle"  >*车辆所处街乡</td>
+<td  width="162" height="22"  align="center" valign="middle"  >注销日期</td>
+<td  width="177" height="22"  align="center" valign="middle"  >*申报期限</td>
+<td  width="166" height="22"  align="center" valign="middle"  >*缴款期限</td>
+<td  width="183" height="22"  align="center" valign="middle"  >*纳税期限</td>
+<td  width="200" height="22"  align="center" valign="middle"  >备注</td>
+</tr>
+<tr  v-for="(item, index) in json.listzb" :key="index">
+<td  width="56" height="22"  align="center" valign="middle"  >00{{index + 1}}</td>
+<td  width="150" height="22"  align="left" valign="middle"  >{{item.clpzh}}</td>
+<td  width="172" height="22"  align="left" valign="middle"  >{{item.clsbdh}}</td>
+<td  width="306" height="22"  align="left" valign="middle"  >{{item.zspmDm}}</td>
+<td  width="200" height="22"  align="left" valign="middle"  >{{item.zszmDm}}</td>
+<td  width="200" height="22"  align="left" valign="middle"  >{{item.clcp}}</td>
+<td  width="200" height="22"  align="left" valign="middle"  >{{item.ppxh}}</td>
+<td  width="200" height="22"  align="left" valign="middle"  >{{item.fdjhm}}</td>
+<td  width="184" height="22"  align="left" valign="middle"  v-date>{{item.clfprqhzcdjrq}}</td>
+<td  width="132" height="22"  align="left" valign="middle"  >{{item.syxz}}</td>
+<td  width="180" height="22"  align="left" valign="middle"  >{{item.jdcrlnyzlDm}}</td>
+<td  width="140" height="22"  align="right" valign="middle"  >{{item.pql.toFixed(4)}}</td>
+<td  width="172" height="22"  align="right" valign="middle" colspan="2" >{{item.hdzkrs}}</td>
+<td  width="177" height="22"  align="right" valign="middle" colspan="2" >{{item.zbzl.toFixed(4)}}</td>
+<td  width="200" height="22"  align="left" valign="middle"  >{{item.ssswjgDm}}</td>
+<td  width="148" height="22"  align="left" valign="middle"  >{{item.xzqhszDm}}</td>
+<td  width="179" height="22"  align="left" valign="middle"  >{{item.jdxzDm}}</td>
+<td  width="162" height="22"  align="left" valign="middle"  v-date>{{item.zxrq}}</td>
+<td  width="177" height="22"  align="left" valign="middle"  >{{item.sbqxDm}}</td>
+<td  width="166" height="22"  align="left" valign="middle"  >{{item.jkqxDm}}</td>
+<td  width="183" height="22"  align="left" valign="middle"  >{{item.nsqxDm}}</td>
+<td  width="200" height="22"  align="left" valign="middle"  >{{item.bz}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

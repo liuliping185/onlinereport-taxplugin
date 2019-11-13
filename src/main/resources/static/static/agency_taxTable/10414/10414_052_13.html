@@ -1,0 +1,278 @@
+<html>
+<head>
+<title>企业重组所得税特殊性税务处理报告表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1859" height = "700" id="taxTable">
+<tr>
+<td  width="1793" height="46"  align="center" valign="middle" colspan="9" class="noBorder"><B>企业重组所得税特殊性税务处理报告表(股权收购)</B></td>
+</tr>
+<tr>
+<td  width="1793" height="22"  align="center" valign="middle" colspan="9" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1793" height="22"  align="left" valign="middle" colspan="9" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1793" height="22"  align="left" valign="middle" colspan="9" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="1041" height="22"  align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="752" height="22"  align="right" valign="middle" colspan="4" class="noBorder">            金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="366" height="22"  align="left" valign="middle"  >被收购企业名称</td>
+<td  width="339" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].bsgqymc}}</td>
+<td  width="170" height="22"  align="left" valign="middle"  >被收购企业纳税识别号</td>
+<td  width="332" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].bsgqynsrsbh}}</td>
+<td  width="260" height="22"  align="left" valign="middle"  >被收购企业所属主管税务机关（全称）</td>
+<td  width="326" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].bsgqyssswjg}}</td>
+</tr>
+<tr>
+<td  width="366" height="22"  align="left" valign="middle"  >股权收购方名称</td>
+<td  width="339" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].sgfmc}}</td>
+<td  width="170" height="22"  align="left" valign="middle"  >股权收购方纳税识别号</td>
+<td  width="332" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].sgfnsrsbh}}</td>
+<td  width="260" height="22"  align="left" valign="middle"  >股权收购方所属主管税务机关（全称）</td>
+<td  width="326" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].sgfssswjg}}</td>
+</tr>
+<template  v-for="(item,index) in json.listzb4">
+<tr>
+<td  width="366" height="22"  align="left" valign="middle"  >股权转让方{{index+1}}（被收购企业的股东）名称</td>
+<td  width="339" height="22"  align="left" valign="middle" colspan="2" >{{item.gqzrfmc}}</td>
+<td  width="170" height="44"  align="left" valign="middle"  rowspan="2">转让被收购企业股权占被收购企业全部股权的比例% 1</td>
+<td  width="332" height="44"  align="right" valign="middle" colspan="2" rowspan="2">{{item.gqzrfgqbl==null?'0.00':(item.gqzrfgqbl*100).toFixed(2)}}%</td>
+<td  width="260" height="44"  align="left" valign="middle"  rowspan="2">股权转让方1所属主管税务机关（全称）</td>
+<td  width="326" height="44"  align="left" valign="middle" colspan="2" rowspan="2">{{item.gqzrfssswjg}}</td>
+</tr>
+<tr>
+<td  width="366" height="22"  align="left" valign="middle"  >股权转让方{{index+1}}（被收购企业的股东）纳税识别号</td>
+<td  width="339" height="22"  align="left" valign="middle" colspan="2" >{{item.gqzrfnsrsbh}}</td>
+</tr>
+</template>
+<tr>
+<td  width="366" height="30"  align="left" valign="middle"  >股权收购方购买的股权占被收购企业全部股权的比例%</td>
+<td  width="339" height="30"  align="right" valign="middle" colspan="2" >{{json.list[0].gqsgfqbgqbl==null?'0.00':(json.list[0].gqsgfqbgqbl*100).toFixed(2)}}%</td>
+<td  width="170" height="30"  align="left" valign="middle"  >股权收购方股权支付金额占交易支付总额的比例% </td>
+<td  width="332" height="30"  align="right" valign="middle" colspan="2" >{{json.list[0].gqsgfzjyzebl==null?'0.00':(json.list[0].gqsgfzjyzebl*100).toFixed(2)}}%</td>
+<td  width="586" height="30"  align="right" valign="middle" colspan="3" >&nbsp;</td>
+</tr>
+<tr>
+<td  width="366" height="22"  align="left" valign="middle"  >股权收购交易支付总额</td>
+<td  width="339" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].gqsgzfze==null?'0.00':json.list[0].gqsgzfze.toFixed(2)}}</td>
+<td  width="170" height="22"  align="left" valign="middle"  >其中：股权支付额</td>
+<td  width="332" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].qzgqzfe==null?'0.00':json.list[0].qzgqzfe.toFixed(2)}}</td>
+<td  width="260" height="22"  align="left" valign="middle"  >非股权支付额</td>
+<td  width="326" height="22"  align="right" valign="middle" colspan="2" >{{json.list[0].fgqzfe==null?'0.00':json.list[0].fgqzfe.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="366" height="30"  align="left" valign="middle"  >股权转让合同（协议）生效日</td>
+<td  width="339" height="30"  align="left" valign="middle" colspan="2" >{{json.list[0].sxr}}</td>
+<td  width="170" height="30"  align="left" valign="middle"  >股权收购方所收购股权的工商变更登记日</td>
+<td  width="332" height="30"  align="left" valign="middle" colspan="2" >{{json.list[0].djr}}</td>
+<td  width="260" height="30"  align="left" valign="middle"  >转让方与收购方是否为关联企业</td>
+<td  width="326" height="30"  align="left" valign="middle" colspan="2" ><form><p><input type="Radio" name="I12" value="1" :checked="json.list[0].sfglqy === 'Y'" disabled> 是                  <br><input type="Radio" name="I12" value="2" :checked="json.list[0].sfglqy === 'N'" disabled> 否</p></form></td>
+</tr>
+<tr>
+<td  width="366" height="22"  align="left" valign="middle"  >被收购企业原有各项资产和负债的计税基础是否保持不变</td>
+<td  width="339" height="22"  align="left" valign="middle" colspan="2" ><form><p><input type="Radio" name="C13" value="1" :checked="json.list[0].sfbcbb === 'Y'" disabled> 是                  <br><input type="Radio" name="C13" value="2" :checked="json.list[0].sfbcbb === 'N'" disabled> 否</p></form></td>
+<td  width="1088" height="22"  align="left" valign="middle" colspan="6" >&nbsp;</td>
+</tr>
+<!--<tr>
+<td  width="366" height="88"  align="center" valign="middle"  rowspan="4" id="rowspan1"><br>股权转让方1</td>
+<td  width="173" height="44"  align="center" valign="middle"  rowspan="2">项目名称</td>
+<td  width="166" height="44"  align="center" valign="middle"  rowspan="2">公允价值</td>
+<td  width="170" height="44"  align="center" valign="middle"  rowspan="2">账面价值</td>
+<td  width="166" height="44"  align="center" valign="middle"  rowspan="2">原计税基础</td>
+<td  width="166" height="44"  align="center" valign="middle"  rowspan="2">非股权支付对应的资产转让所得或损失</td>
+<td  width="586" height="22"  align="center" valign="middle" colspan="3" >实际取得股权及其他资产</td>
+</tr>
+<tr id="html1">
+<td  width="260" height="22"  align="center" valign="middle"  >项目名称</td>
+<td  width="163" height="22"  align="center" valign="middle"  >公允价值</td>
+<td  width="163" height="22"  align="center" valign="middle"  >计税基础</td>
+</tr>
+ <tr id="html1">
+<td  width="173" height="22"  align="left" valign="middle"  >&nbsp;</td>
+<td  width="166" height="22"  align="right" valign="middle"  >0.00</td>
+<td  width="170" height="22"  align="right" valign="middle"  >0.00</td>
+<td  width="166" height="22"  align="right" valign="middle"  >0.00</td>
+<td  width="166" height="22"  align="right" valign="middle"  >0.00</td>
+<td  width="260" height="22"  align="left" valign="middle"  >&nbsp;</td>
+<td  width="163" height="22"  align="right" valign="middle"  >0.00</td>
+<td  width="163" height="22"  align="right" valign="middle"  >0.00</td>
+</tr> 
+<tr id="html2">
+<td  width="841" height="22"  align="left" valign="middle" colspan="5" >&nbsp;</td>
+<td  width="260" height="22"  align="center" valign="middle"  >合计</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json.listzb5[0].sjgqgyjzhj === null ? '0.00' : json.listzb5[0].sjgqgyjzhj.toFixed(2)}}</td>
+<td  width="163" height="22"  align="right" valign="middle"  >{{json.listzb5[0].sjgqjsjchj === null ? '0.00' : json.listzb5[0].sjgqjsjchj.toFixed(2)}}</td>
+</tr>
+-->
+
+
+<template v-for="(item1, index) in json.listzb1">
+	<tr >
+	<td  width="366" height="88"  align="center" valign="middle" :rowspan="3+item1.length"><br>股权转让方{{index}}</td>
+	<td  width="173" height="44"  align="center" valign="middle" :rowspan="2">项目名称</td>
+	<td  width="166" height="44"  align="center" valign="middle" :rowspan="2">公允价值</td>
+	<td  width="170" height="44"  align="center" valign="middle" :rowspan="2">账面价值</td>
+	<td  width="166" height="44"  align="center" valign="middle" :rowspan="2">原计税基础</td>
+	<td  width="166" height="44"  align="center" valign="middle" :rowspan="2">非股权支付对应的资产转让所得或损失</td>
+	<td  width="586" height="22"  align="center" valign="middle" :colspan="3">实际取得股权及其他资产</td>
+	</tr>
+	<tr  >
+	<td  width="260" height="22"  align="center" valign="middle"  >项目名称</td>
+	<td  width="163" height="22"  align="center" valign="middle"  >公允价值</td>
+	<td  width="163" height="22"  align="center" valign="middle"  >计税基础</td>
+	</tr>
+	<tr v-for="(item, index1) in item1" >
+		<td  width="173" height="22"  align="left" valign="middle"  >{{item.zrfxmmc}}</td>
+		<td  width="166" height="22"  align="right" valign="middle"  >{{item.zrfgyjz==null?'0.00':item.zrfgyjz.toFixed(2)}}</td>
+		<td  width="170" height="22"  align="right" valign="middle"  >{{item.zrfzmjz==null?'0.00':item.zrfzmjz.toFixed(2)}}</td>
+		<td  width="166" height="22"  align="right" valign="middle"  >{{item.zrfjsjc==null?'0.00':item.zrfjsjc.toFixed(2)}}</td>
+		<td  width="166" height="22"  align="right" valign="middle" :rowspan="item1.length" v-if="index1==0">{{item.zrsdhss==null?'0.00':item.zrsdhss.toFixed(2)}}</td>
+		<td  width="260" height="22"  align="left" valign="middle"  >{{item.sjxmmc}}</td>
+		<td  width="163" height="22"  align="right" valign="middle"  >{{item.sjgyjz==null?'0.00':item.sjgyjz.toFixed(2)}}</td>
+		<td  width="163" height="22"  align="right" valign="middle"  >{{item.sjjsjc==null?'0.00':item.sjjsjc.toFixed(2)}}</td>
+	</tr>
+	<tr>
+		<td  width="586" height="22"  align="right" valign="middle"  colspan="5"></td>
+		<td  width="260" height="22"  align="center" valign="middle"  >合计</td>
+		<td  width="163" height="22"  align="right" valign="middle"  >{{item1[0].sjgqgyjzhj === null ? '0.00' :item1[0].sjgqgyjzhj.toFixed(2)}}</td>
+		<td  width="163" height="22"  align="right" valign="middle"  >{{item1[0].sjgqjsjchj === null ? '0.00' :item1[0].sjgqjsjchj.toFixed(2)}}</td>
+	</tr>	
+</template>
+<tr>
+<td  width="366" height="198"  align="center" valign="middle"  :rowspan="8 + json.listzb3.length">股权收购方</td>
+<td  width="173" height="44"  align="center" valign="middle"  rowspan="2">项目名称</td>
+<td  width="166" height="44"  align="center" valign="middle"  rowspan="2">公允价值</td>
+<td  width="170" height="44"  align="center" valign="middle"  rowspan="2">账面价值</td>
+<td  width="166" height="44"  align="center" valign="middle"  rowspan="2">原计税基础</td>
+<td  width="166" height="44"  align="center" valign="middle"  rowspan="2">非股权支付对应的资产转让所得或损失</td>
+<td  width="586" height="22"  align="center" valign="middle" colspan="3" >实际取得股权及其他资产</td>
+</tr>
+<tr>
+<td  width="260" height="22"  align="center" valign="middle"  >项目名称</td>
+<td  width="163" height="22"  align="center" valign="middle"  >公允价值</td>
+<td  width="163" height="22"  align="center" valign="middle"  >计税基础</td>
+</tr>
+<tr>
+<td  width="173" height="22"  align="left" valign="middle"  >1.股权支付额</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].gqsgfgqzfegyjz === null ? '0.00' : json.list[0].gqsgfgqzfegyjz.toFixed(2)}}</td>
+<td  width="170" height="22"  align="right" valign="middle"  >{{json.list[0].gqsgfgqzfezmjz === null ? '0.00' : json.list[0].gqsgfgqzfezmjz.toFixed(2)}}</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].gqsgfgqzfeyjsjc === null ? '0.00' : json.list[0].gqsgfgqzfeyjsjc.toFixed(2)}}</td>
+<td  width="166" height="154"  align="right" valign="middle"  :rowspan="6 + json.listzb3.length">{{json.list[0].sdhss === null ? '0.00' : json.list[0].sdhss.toFixed(2)}}</td>
+<td  width="260" height="154"  align="left" valign="middle"   :rowspan="6 + json.listzb3.length">被收购企业股权</td>
+<td  width="163" height="154"  align="right" valign="middle"  :rowspan="6 + json.listzb3.length">{{json.list[0].bsgqygqgyjz === null ? '0.00' : json.list[0].bsgqygqgyjz.toFixed(2)}}</td>
+<td  width="163" height="154"  align="right" valign="middle"  :rowspan="6 + json.listzb3.length">{{json.list[0].bsgqygqjsjc === null ? '0.00' : json.list[0].bsgqygqjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="173" height="22"  align="left" valign="middle"  >（1）本企业股权</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].bqygqgyjz === null ? '0.00' : json.list[0].bqygqgyjz.toFixed(2)}}</td>
+<td  width="170" height="22"  align="right" valign="middle"  >{{json.list[0].bqygqzmjz === null ? '0.00' : json.list[0].bqygqzmjz.toFixed(2)}}</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].bqygqjsjc === null ? '0.00' : json.list[0].bqygqjsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="173" height="22"  align="left" valign="middle"  >（2）其控股企业股权</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].kgqygyjz === null ? '0.00' : json.list[0].kgqygyjz.toFixed(2)}}</td>
+<td  width="170" height="22"  align="right" valign="middle"  >{{json.list[0].kgqyzmjz === null ? '0.00' : json.list[0].kgqyzmjz.toFixed(2)}}</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].kgqyjsjc === null ? '0.00' : json.list[0].kgqyjsjc.toFixed(2)}}</td>
+</tr>
+<tr v-for="(item,index) in json.listzb3" :key="item.id">
+<td  width="173" height="22"  align="left" valign="middle"  >{{item.xmmc}}</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{item.gyjz === null ? '0.00' : item.gyjz.toFixed(2)}}</td>
+<td  width="170" height="22"  align="right" valign="middle"  >{{item.zmjz === null ? '0.00' : item.zmjz.toFixed(2)}}</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{item.yjsjc === null ? '0.00' : item.yjsjc.toFixed(2)}}</td>
+</tr>
+
+<tr>
+<td  width="173" height="22"  align="left" valign="middle"  >2.非股权支付额</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].fgqzfegyjz === null ? '0.00' : json.list[0].fgqzfegyjz.toFixed(2)}}</td>
+<td  width="170" height="22"  align="right" valign="middle"  >{{json.list[0].fgqzfezmjz === null ? '0.00' : json.list[0].fgqzfezmjz.toFixed(2)}}</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].fgqzfejsjc === null ? '0.00' : json.list[0].fgqzfejsjc.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="173" height="22"  align="center" valign="middle"  >合计（1+2）</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].sgfgyjzhj === null ? '0.00' : json.list[0].sgfgyjzhj.toFixed(2)}}</td>
+<td  width="170" height="22"  align="right" valign="middle"  >{{json.list[0].sgfzmjzhj === null ? '0.00' : json.list[0].sgfzmjzhj.toFixed(2)}}</td>
+<td  width="166" height="22"  align="right" valign="middle"  >{{json.list[0].sgfyjsjchj === null ? '0.00' : json.list[0].sgfyjsjchj.toFixed(2)}}</td>
+</tr>
+<tr>
+    <td  width="1793" height="22"  align="left" valign="middle" colspan="9" style="border-bottom:none">谨声明：本人知悉并保证本表填报内容及所附证明材料真实、完整，并承担因资料虚假而产生的法律和行政责任。</td>
+    </tr>
+    <tr>
+    <td  width="1793" height="22"  align="right" valign="middle" colspan="9" style="border-top:none">法定代表人签章：                                          年     月     日</td>
+    </tr>
+<tr>
+<td  width="366" height="22"  align="left" valign="middle"  class="noBorder">填表人：</td>
+<td  width="173" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="166" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="170" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="332" height="22"  align="left" valign="middle" colspan="2" class="noBorder">填表日期：</td>
+<td  width="260" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="163" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="163" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+<script>
+  /* $(function () {
+    var html1 = '';
+    var rowspan1;
+    if (json.listzb1.length > json.listzb2.length) {
+      $('#html2').remove()
+      for(var i = 0; i < json.listzb1.length; i++) {
+        html1 += '<tr>'
+        html1 += '<td  width="173" height="22"  align="left" valign="middle"  >' + json.listzb1[i].xmmc + '</td>';
+        html1 += '<td  width="166" height="22"  align="right" valign="middle"  >' + (json.listzb1[i].gyjz === null ? '0.00' : json.listzb1[i].gyjz.toFixed(2)) + '</td>'
+        html1 += '<td  width="170" height="22"  align="right" valign="middle"  >' + (json.listzb1[i].zmjz === null ? '0.00' : json.listzb1[i].zmjz.toFixed(2)) + '</td>'
+        html1 += '<td  width="166" height="22"  align="right" valign="middle"  >' + (json.listzb1[i].jsjc === null ? '0.00' : json.listzb1[i].jsjc.toFixed(2)) + '</td>'
+        html1 += '<td  width="166" height="22"  align="right" valign="middle"  >' + (json.listzb1[i].zrsdhss === null ? '0.00' : json.listzb1[i].zrsdhss.toFixed(2)) + '</td>'
+        if (i < json.listzb2.length) {
+          html1 += '<td  width="260" height="22"  align="left" valign="middle"  >' + json.listzb2[i].xmmc + '</td>'
+          html1 += '<td  width="163" height="22"  align="right" valign="middle"  >' + (json.listzb2[i].gyjz === null ? '0.00' : json.listzb2[i].gyjz.toFixed(2)) + '</td>'
+          html1 += '<td  width="163" height="22"  align="right" valign="middle"  >' + (json.listzb2[i].jsjc === null ? '0.00' : json.listzb2[i].jsjc.toFixed(2)) + '</td>'
+        } else {
+          for(var j = 0; j < (json.listzb1.length - json.listzb2.length - 1); j++) {
+            html1 += '<td  width="586" height="22"  align="right" valign="middle"  colspan="3"></td>'
+          }
+          html1 += '<td  width="260" height="22"  align="center" valign="middle"  >合计</td>'
+          html1 += '<td  width="163" height="22"  align="right" valign="middle"  >' + (json.list[0].sjgqgyjzhj === null ? '0.00' : json.list[0].sjgqgyjzhj.toFixed(2)) + '</td>'
+          html1 += '<td  width="163" height="22"  align="right" valign="middle"  >' + (json.list[0].sjgqjsjc === null ? '0.00' : json.list[0].sjgqjsjc.toFixed(2)) + '</td>'
+        }
+      }
+    } else {
+      for(var i = 0; i < json.listzb2.length; i++) {
+        html1 += '<tr>'
+        if (i < json.listzb1.length) {
+          html1 += '<td  width="173" height="22"  align="left" valign="middle"  >' + json.listzb1[i].xmmc + '</td>';
+          html1 += '<td  width="166" height="22"  align="right" valign="middle"  >' + (json.listzb1[i].gyjz === null ? '0.00' : json.listzb1[i].gyjz.toFixed(2)) + '</td>'
+          html1 += '<td  width="170" height="22"  align="right" valign="middle"  >' + (json.listzb1[i].zmjz === null ? '0.00' : json.listzb1[i].zmjz.toFixed(2)) + '</td>'
+          html1 += '<td  width="166" height="22"  align="right" valign="middle"  >' + (json.listzb1[i].jsjc === null ? '0.00' : json.listzb1[i].jsjc.toFixed(2)) + '</td>'
+          html1 += '<td  width="166" height="22"  align="right" valign="middle"  >' + (json.listzb1[i].zrsdhss === null ? '0.00' : json.listzb1[i].zrsdhss.toFixed(2)) + '</td>'
+        } else {
+            for(var j = 0; j < (json.listzb2.length - json.listzb1.length); j++) {
+            html1 += '<td  width="841" height="22"  align="left" valign="middle" colspan="5" >&nbsp;</td>'
+          }
+        }
+        html1 += '<td  width="260" height="22"  align="left" valign="middle"  >' + json.listzb2[i].xmmc + '</td>'
+        html1 += '<td  width="163" height="22"  align="right" valign="middle"  >' + (json.listzb2[i].gyjz === null ? '0.00' : json.listzb2[i].gyjz.toFixed(2)) + '</td>'
+        html1 += '<td  width="163" height="22"  align="right" valign="middle"  >' + (json.listzb2[i].jsjc === null ? '0.00' : json.listzb2[i].jsjc.toFixed(2)) + '</td>'
+      }
+    }
+
+    if (json.listzb1.length > json.listzb2.length) {
+      rowspan1 = json.listzb1.length
+    } else {
+      rowspan1 = json.listzb2.length + 1
+    }
+    $('#rowspan1').attr('rowspan', rowspan1 + 2)
+    $('#html1').after(html1)
+  }) */
+</script>
+</body>
+</html>

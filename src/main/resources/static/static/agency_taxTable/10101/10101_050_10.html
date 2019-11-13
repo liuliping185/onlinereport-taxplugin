@@ -1,0 +1,174 @@
+<html>
+<head>
+    <title>适用加计抵减政策的声明</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="872" height = "970" id="taxTable">
+    <tr>
+        <td width="806" height="46"  align="center" valign="middle" colspan="5" class="noBorder" ><B>适用加计抵减政策的声明</B></td>
+    </tr>
+    <tr>
+        <td width="806" height="22"  align="center" valign="middle" colspan="5" class="noBorder" >税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+        <td width="806" height="22"  align="left" valign="middle" colspan="5" class="noBorder" >纳税人名称（公章）：<span>{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</span></td>
+    </tr>
+    <tr>
+        <td width="806" height="22"  align="left" valign="middle" colspan="5" class="noBorder" >纳税人识别号（统一社会信用代码）：<span>{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</span></td>
+    </tr>
+    <tr>
+        <td width="806" height="44" align="left" valign="middle" colspan="5" rowspan="2">    本纳税人符合《财政部 税务总局 海关总署关于深化增值税改革有关政策的公告》（财政部 税务总局 海关总署公告2019年第39号）规定，确定适用加计抵减政策。行业属于（请从下表勾选，只能选择其一）：</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="center" valign="middle" colspan="4" >行业</td>
+        <td width="128" height="22" align="center" valign="middle"  >选项</td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >邮政服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F8" value="ON" :checked="json.list[0].yzfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >电信服务业</td>
+        <td width="128" height="22" align="center" valign="middle"  >——</td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >  其中：1.基础电信业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F10" value="ON" :checked="json.list[0].jcdxy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     2.增值电信业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F11" value="ON" :checked="json.list[0].zzdxy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >现代服务业</td>
+        <td width="128" height="22" align="center" valign="middle"  >——</td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >  其中:1.研发和技术服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F13" value="ON"  :checked="json.list[0].yfhjsfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     2.信息技术服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F14" value="ON" :checked="json.list[0].xxjsfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     3.文化创意服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F15" value="ON" :checked="json.list[0].whcyfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     4.物流辅助服务</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F16" value="ON" :checked="json.list[0].wlfzfw=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     5.有形动产租赁服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F17" value="ON" :checked="json.list[0].yxdczlfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     6.鉴证咨询服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F18" value="ON" :checked="json.list[0].jzzxfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     7.广播影视服务</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F19" value="ON" :checked="json.list[0].gbysfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >生活服务业</td>
+        <td width="128" height="22" align="center" valign="middle"  >——</td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >  其中：1.文化艺术业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F21" value="ON" :checked="json.list[0].whysy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     2.体育业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F22" value="ON" :checked="json.list[0].tyy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     3.教育</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F23" value="ON" :checked="json.list[0].jy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     4.卫生</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F24" value="ON" :checked="json.list[0].ws=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     5.旅游业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F25" value="ON" :checked="json.list[0].lyy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     6.娱乐业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F26" value="ON" :checked="json.list[0].yly=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     7.餐饮业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F27" value="ON" :checked="json.list[0].cyy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     8.住宿业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F28" value="ON" :checked="json.list[0].zsy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     9.居民服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F29" value="ON" :checked="json.list[0].jmfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     10.社会工作</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F30" value="ON" :checked="json.list[0].shgz=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     11.公共设施管理业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F31" value="ON" :checked="json.list[0].ggssgly=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     12.不动产出租</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F32" value="ON" :checked="json.list[0].bdccz=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     13.商务服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F33" value="ON" :checked="json.list[0].swfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     14.专业技术服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F34" value="ON" :checked="json.list[0].zyjsfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     15.代理业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F35" value="ON" :checked="json.list[0].dly=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >     16.其他生活服务业</td>
+        <td width="128" height="22" align="right" valign="middle"  ><form><p><input type="checkbox" name="F36" value="ON" :checked="json.list[0].qtshfwy=='Y'"> </p></form></td>
+    </tr>
+    <tr>
+        <td width="439" height="22" align="left" valign="middle" colspan="2" >本纳税人用于判断是否符合加计抵减政策条件的销售额占比计算期为</td>
+        <td width="127" height="22" align="left" valign="middle"  >{{json.list[0].zb1}}</td>
+        <td width="112" height="22" align="center" valign="middle"  >至</td>
+        <td width="128" height="22" align="left" valign="middle"  >{{json.list[0].zb2}}</td>
+    </tr>
+    <tr>
+        <td width="439" height="22" align="left" valign="middle" colspan="2" >此期间提供邮政服务、电信服务、现代服务、生活服务销售额合计</td>
+        <td width="127" height="22" align="right" valign="middle"  >{{json.list[0].hj1==null?'0.00':json.list[0].hj1.toFixed(2)}}</td>
+        <td width="112" height="22" align="left" valign="middle"  >元，全部销售额</td>
+        <td width="128" height="22" align="right" valign="middle"  >{{json.list[0].hj2==null?'0.00':json.list[0].hj2.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="678" height="22" align="left" valign="middle" colspan="4" >元，占比为</td>
+        <td width="128" height="22" align="right" valign="middle"  >{{(json.list[0].zb3*100).toFixed(2)}}%</td>
+    </tr>
+    <tr>
+        <td width="806" height="22" align="left" valign="middle" colspan="5" >以上声明根据实际经营情况作出，我确定它是真实的、准确的、完整的。</td>
+    </tr>
+    <tr>
+        <td width="806" height="44" align="left" valign="middle" colspan="5" rowspan="2">                                                                      年    月    日<br>                                                                      (纳税人签章)</td>
+    </tr>
+    <tr>
+    </tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>软件、集成电路企业优惠情况及明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1300" height = "986" id="taxTable">
+<tr>
+<td  width="984" height="46"  align="center" valign="middle" colspan="10" class="noBorder"><B>软件、集成电路企业优惠情况及明细表</B></td>
+<td  width="83" height="46"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="984" height="22"  align="center" valign="middle" colspan="10" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="83" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="984" height="22"  align="left" valign="middle" colspan="10" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="83" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="984" height="22"  align="left" valign="middle" colspan="10" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="83" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="884" height="22"  align="left" valign="middle" colspan="7" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="183" height="22"  align="right" valign="middle" colspan="4" class="noBorder">金额单位:元（列至角分）</td>
+</tr>
+<tr>
+<td width="1099" height="22" align="center" valign="middle" colspan="11" ><B style="font-size:14px">税收优惠基本信息</B></td>
+</tr>
+<tr>
+<td width="97" height="22" align="center" valign="middle" colspan="2" >减免方式1</td>
+<td width="493" height="22" align="left" valign="middle" colspan="3" >{{json[0].jmfs1==null?'':json[0].jmfs1}}</td>
+<td width="298" height="22" align="left" valign="middle" colspan="3" >获利年度\开始计算优惠期年度1</td>
+<td width="211" height="22" align="left" valign="middle" colspan="3" >{{json[0].hlnd1==null?'':json[0].hlnd1}}</td>
+</tr>
+<tr>
+<td width="97" height="22" align="center" valign="middle" colspan="2" >减免方式2</td>
+<td width="493" height="22" align="left" valign="middle" colspan="3" >{{json[0].jmfs2==null?'':json[0].jmfs2}}</td>
+<td width="298" height="22" align="left" valign="middle" colspan="3" >获利年度\开始计算优惠期年度2</td>
+<td width="211" height="22" align="left" valign="middle" colspan="3" >{{json[0].hlnd2==null?'':json[0].hlnd2}}</td>
+</tr>
+<tr>
+<td width="1099" height="22" align="center" valign="middle" colspan="11" ><B style="font-size:14px">税收优惠有关情况</B></td>
+</tr>
+<tr>
+<td width="43" height="22" align="center" valign="middle"  >行次</td>
+<td width="845" height="22" align="center" valign="middle" colspan="7" >项        目</td>
+<td width="211" height="22" align="center" valign="middle" colspan="3" >金额（数量等）</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >1</td>
+<td  width="54" height="110"  align="center" valign="middle"  rowspan="5">人员指标</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >一、企业本年月平均职工总人数</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].qybnypjzgzrs}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >2</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >    其中：签订劳动合同关系且具有大学专科以上学历的职工人数</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].qdldhtgxdzyszgrs}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >3</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >          研究开发人员人数</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].yjkfryrs}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >4</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >二、大学专科以上职工占企业本年月平均职工总人数的比例（12÷11）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{(json[0].qdldhtdzyszpjzgbl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >5</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >三、研究开发人员占企业本年月平均职工总人数的比例（13÷11）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{(json[0].yfryzpjzgbl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >6</td>
+<td  width="54" height="88"  align="center" valign="middle"  rowspan="4">研发费用指标</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >四、研发费用总额</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].yffyze.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >7</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >   其中：企业在中国境内发生的研发费用金额</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].jnqyyffyje.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >8</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >五、研发费用占销售（营业）收入的比例</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{(json[0].yffyzzebl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >9</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >六、境内研发费用占研发费用总额的比例（17÷16）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{(json[0].jnqyyffyzyfzebl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >10</td>
+<td  width="54" height="264"  align="center" valign="middle"  rowspan="12">收入指标</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >七、企业收入总额</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].qysrze.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >11</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >八、符合条件的销售（营业）收入</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].fhtjxssr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >12</td>
+<td  width="784" height="22"  align="left" valign="middle" colspan="6" >九、符合条件的收入占收入总额的比例（21÷20）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{(json[0].fhtjsrzzsrbl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >13</td>
+<td  width="358" height="44"  align="left" valign="middle" colspan="3" rowspan="2">十、集成电路设计企业、软件企业填报</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >（一）自主设计/开发销售（营业）收入</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].zjsjkfsr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >14</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >（二）自主设计/开发收入占企业收入总额的比例（23÷20）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{(json[0].zjsjkfsrzbl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >15</td>
+<td  width="358" height="66"  align="left" valign="middle" colspan="3" rowspan="3">十一、重点软件企业或重点集成电路设计企业符合"领域"的填报</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >（一）适用的领域</td>
+<td  width="186" height="22"  align="left" valign="middle" colspan="3" >{{json[0].sdssylyDm}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >16</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >（二）选择备案领域的销售（营业）收入</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].xzbalysr.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >17</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >（三）领域内的销售收入占符合条件的销售收入的比例（26÷21）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{(json[0].lyxssrzfhtjsrbl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >18</td>
+<td  width="358" height="66"  align="left" valign="middle" colspan="3" rowspan="3">十二、重点软件企业符合"出口"的填报</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >（一）年度软件出口收入总额（美元）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].ndrjsrckzemy.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >19</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >（二）年度软件出口收入总额（人民币）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].ndrjsrckzermb.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >20</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >（三）软件出口收入总额占本企业年度收入总额的比例（29÷20）</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{(json[0].rjcksrzezbqyndsrzebl*100).toFixed(2)}}%</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >21</td>
+<td  width="358" height="22"  align="left" valign="middle" colspan="3" >十三、集成电路关键专用材料或专用设备生产企业填报</td>
+<td  width="426" height="22"  align="left" valign="middle" colspan="3" >产品适用目录</td>
+<td  width="186" height="22"  align="left" valign="middle" colspan="3" >{{json[0].cpsyml}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle"  >22</td>
+<td  width="838" height="22"  align="left" valign="middle" colspan="7" >减免税额</td>
+<td  width="186" height="22"  align="right" valign="middle" colspan="3" >{{json[0].jmsje.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="43" height="22"  align="center" valign="middle" class="noBorder" > </td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

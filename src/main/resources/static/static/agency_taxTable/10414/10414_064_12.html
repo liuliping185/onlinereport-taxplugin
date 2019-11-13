@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>居民企业资产（股权）划转特殊性税务处理申报表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+	<div id="taxTable">
+		<div v-for="items in json">
+<table cellspacing="0" cellpadding="0" width="1051" height = "794" id="taxTable">
+<tr>
+<td width="941" height="46"  align="center" valign="middle" colspan="7" class="noBorder" ><B>居民企业资产（股权）划转特殊性税务处理申报表</B></td>
+</tr>
+<tr>
+<td width="941" height="22"  align="center" valign="middle" colspan="7" class="noBorder">报告年度所属期间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+
+</tr>
+<tr>
+<td width="941" height="22"  align="left" valign="middle" colspan="7" class="noBorder">纳税人识别号：&nbsp;{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td width="941" height="22"  align="left" valign="middle" colspan="7" class="noBorder">纳税人名称（公章）：&nbsp;{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td width="530" height="22"  align="left" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td width="411" height="22"  align="right" valign="middle" colspan="3" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="66" height="308"  align="left" valign="middle" :rowspan="items.listZb.length+13">基本情况</td>
+<td  width="132" height="22"  align="left" valign="middle"  >划出方企业名称</td>
+<td  width="743" height="22"  align="left" valign="middle" colspan="5" >&nbsp;{{items.jbqkList[0].hcfqymc}}</td>
+</tr>
+<tr>
+<td  width="132" height="22"  align="left" valign="middle"  >划出方纳税人识别号</td>
+<td  width="332" height="22"  align="left" valign="middle" colspan="2" >&nbsp;{{items.jbqkList[0].hcfnsrsbh}}</td>
+<td  width="162" height="22"  align="left" valign="middle"  >主管税务机关名称</td>
+<td  width="249" height="22"  align="left" valign="middle" colspan="2" >&nbsp;{{items.jbqkList[0].hcfzgswjgmc}}</td>
+</tr>
+<tr>
+<td  width="132" height="22"  align="left" valign="middle"  >划入方企业名称</td>
+<td  width="743" height="22"  align="left" valign="middle" colspan="5" >&nbsp;{{items.jbqkList[0].hrfqymc}}</td>
+</tr>
+<tr>
+<td  width="132" height="22"  align="left" valign="middle"  >划入方纳税人识别号</td>
+<td  width="332" height="22"  align="left" valign="middle" colspan="2" >&nbsp;{{items.jbqkList[0].hrfnsrsbh}}</td>
+<td  width="162" height="22"  align="left" valign="middle"  >主管税务机关名称</td>
+<td  width="249" height="22"  align="left" valign="middle" colspan="2" >&nbsp;{{items.jbqkList[0].hrfzgswjgmc}}</td>
+</tr>
+<tr>
+<td  width="132" height="176"  align="left" valign="middle" :rowspan="items.listZb.length+7">划转双方关系</td>
+<td  width="743" height="22"  align="left" valign="middle" colspan="5" ><form><p><input :checked="items.jbqkList[0].hzsfgx === '1'" type="checkbox" name="D10" value="ON" >关系1：100%直接控制的母子公司		</p></form></td>
+</tr>
+<tr>
+<td  width="166" height="22"  align="left" valign="middle"  >母公司是：</td>
+<td  width="577" height="22"  align="left" valign="middle" colspan="4" ><form><p><input :checked="items.jbqkList[0].mgs === '1'" type="Radio" name="E11" value="1">划出方<br><input :checked="items.jbqkList[0].mgs === '2'" type="Radio" name="E11" value="2" >划入方</p></form></td>
+</tr>
+<tr>
+<td  width="332" height="22"  align="left" valign="middle" colspan="2" >100%控股起始时间：</td>
+<td  width="411" height="22"  align="left" valign="middle" colspan="3" >{{items.jbqkList[0].kgqssj}}&nbsp;</td>
+</tr>
+<tr>
+<td  width="743" height="22"  align="left" valign="middle" colspan="5" ><form><p><input :checked="items.jbqkList[0].hzsfgx === '2'" type="checkbox" name="D10" value="ON" >关系2：受同一或相同多家居民企业100%直接控制</p></form></td>
+</tr>
+<tr>
+<td  width="166" height="44"  align="center" valign="middle"  rowspan="2">股东名称(划转双方为关系2时填报)</td>
+<td  width="328" height="22"  align="center" valign="middle" colspan="2" >划出方</td>
+<td  width="249" height="22"  align="center" valign="middle" colspan="2" >划入方</td>
+</tr>
+<tr>
+<td  width="166" height="22"  align="center" valign="middle"  >持股比例</td>
+<td  width="162" height="22"  align="center" valign="middle"  >持股起始时间（年月日）</td>
+<td  width="82" height="22"  align="center" valign="middle"  >持股比例</td>
+<td  width="167" height="22"  align="center" valign="middle"  >持股起始时间（年月日）</td>
+</tr>
+<tr v-for="item in items.listZb">
+<td  width="166" height="22"  align="left" valign="middle"  >&nbsp;{{item.gdmc}}</td>
+<td  width="166" height="22"  align="right" valign="middle" v-percent="6" >{{item.cgbl}}</td>
+<td  width="162" height="22"  align="left" valign="middle"  >&nbsp;<span v-date>{{item.hcfcgqssj}}</span></td>
+<td  width="82" height="22"  align="right" valign="middle"  v-percent="6" >{{item.hrfcgbl}}</td>
+<td  width="167" height="22"  align="left" valign="middle"  >&nbsp;<span v-date>{{item.hrfcgqssj}}</td>
+</tr>
+<tr>
+<td  width="166" height="22"  align="center" valign="middle"  >合计</td>
+<td width="166" height="22"  align="right" valign="middle" v-percent="6" >{{items.jbqkList[0].hcfcgblhj}}</td>
+<td  width="162" height="22"  align="center" valign="middle"  >--</td>
+<td width="82" height="22"  align="right" valign="middle" v-percent="6" >{{items.jbqkList[0].hcfcgblhj}}</td>
+<td  width="167" height="22"  align="center" valign="middle"  >--</td>
+</tr>
+<tr>
+<td  width="298" height="22"  align="left" valign="middle" colspan="2" >划转完成日   &nbsp;</td>
+<td  width="577" height="22"  align="left" valign="middle" colspan="4" >&nbsp;{{items.jbqkList[0].hzwcr}}</td>
+</tr>
+<tr>
+<td  width="298" height="22"  align="left" valign="middle" colspan="2" >被划转资产（股权）账面净值</td>
+<td  width="166" height="22"  align="right" valign="middle" v-float="2">{{items.jbqkList[0].bhzzcgqzmjz===null?"0":items.jbqkList[0].bhzzcgqzmjz}}</td>
+<td  width="244" height="22"  align="left" valign="middle" colspan="2" >被划转资产（股权）计税基础</td>
+<td  width="167" height="22"  align="right" valign="middle"  v-float="2">{{items.jbqkList[0].bhzzcgqjsjc===null?"":items.jbqkList[0].bhzzcgqjsjc}}</td>
+</tr>
+<tr>
+<td  width="66" height="242"  align="left" valign="middle" :rowspan="items.hcfjList.length+items.hcfdList.length+items.hrfjList.length+items.hrfdList.length+3" >会计处理</td>
+<td  width="298" height="22"  align="left" valign="middle" colspan="2" >&nbsp;</td>
+<td  width="166" height="22"  align="center" valign="middle"  >会计科目</td>
+<td  width="162" height="22"  align="center" valign="middle"  >金额</td>
+<td  width="249" height="22"  align="center" valign="middle" colspan="2" >资产（股权）计税基础</td>
+</tr>
+<tr><td  width="132" height="22"  align="left" valign="middle" :rowspan="items.hcfjList.length+items.hcfdList.length+1">划出方</td></tr>
+<tr v-for="item in items.hcfjList">
+<td  width="166" height="22"  align="center" valign="middle"  >借</td>
+<td  width="166" height="22"  align="left" valign="middle">&nbsp;{{item.hcjkjkm}}</td>
+<td  width="162" height="22"  align="right" valign="middle" v-float="2">{{item.hcjje===null?'':item.hcjje}}</td>
+<td  width="249" height="22"  align="right" valign="middle" colspan="2" v-float="2">{{item.hcjzcgqjsjc===null?'':item.hcjzcgqjsjc}}</td>
+</tr>
+<tr v-for="item in items.hcfdList">
+<td  width="166" height="22"  align="center" valign="middle"  >贷</td>
+<td  width="166" height="22"  align="left" valign="middle" >&nbsp;{{item.hcdkjkm}}</td>
+<td  width="162" height="22"  align="right" valign="middle" v-float="2">{{item.hcdje===null?'':item.hcdje}}</td>
+<td  width="249" height="22"  align="right" valign="middle" colspan="2" v-float="2">{{item.hcdzcgqjsjc===null?'':item.hcdzcgqjsjc}}</td>
+</tr>
+<tr><td  width="132" height="22"  align="left" valign="middle" :rowspan="items.hrfjList.length+items.hrfdList.length+1" >划入方</td></tr>
+<tr v-for="item in items.hrfjList">
+<td  width="166" height="22"  align="center" valign="middle"  >借</td>
+<td  width="166" height="22"  align="left" valign="middle" >&nbsp;{{item.hrjkjkm}}</td>
+<td  width="162" height="22"  align="right" valign="middle" v-float="2">{{item.hrjje===null?'':item.hrjje}}</td>
+<td  width="249" height="22"  align="right" valign="middle" colspan="2" v-float="2">{{item.hrjzcgqjsjc===null?'':item.hrjzcgqjsjc}}</td>
+</tr>
+<tr v-for="item in items.hrfdList">
+<td  width="166" height="22"  align="center" valign="middle"  >贷</td>
+<td  width="166" height="22"  align="left" valign="middle"  >&nbsp;{{item.hrdkjkm}}</td>
+<td  width="162" height="22"  align="right" valign="middle"  v-float="2">{{item.hrdje===null?'':item.hrdje}}</td>
+<td  width="249" height="22"  align="right" valign="middle" colspan="2" v-float="2">{{item.hrdzcgqjsjc===null?'':item.hrdzcgqjsjc}}</td>
+</tr>
+<tr>
+<td  width="198" height="22"  align="left" valign="middle" colspan="2" >申报企业其他需说明的情况：</td>
+<td  width="743" height="22"  align="left" valign="middle" colspan="5" >&nbsp;{{items.jbqkList[0].sbqyqtxsmdqk}}</td>
+</tr>
+<tr>
+<td  width="941" height="22"  align="left" valign="middle" colspan="7" >谨声明：本人知悉并保证本表填报内容及所附证明材料真实、完整，并承担因资料虚假而产生的法律和行政责任。</td>
+</tr>
+<tr>
+<td  width="198" height="22"  align="left" valign="middle" colspan="4" class="noBorderRight"> </td>
+<td  width="941" height="22"  align="left" valign="middle" colspan="2" class="noBorderLeft noBorderRight"style="padding-left: 123px;">法定代表人签章： </td>
+<td  width="198" height="22"  align="left" valign="middle" colspan="2" class="noBorderLeft">年    月   日</td>
+</tr>
+<tr>
+<td width="941" height="22"  align="left" valign="middle" colspan="4" class="noBorder noBorderRight" style="border-right: 0px;">填表人：</td>
+<td width="198" height="22"  align="left" valign="middle" colspan="3" class="noBorder noBorderLeft" style="padding-left: 87px;" >填表日期：</td>
+</tr>
+</table>
+</div></div>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

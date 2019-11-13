@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>专项用途财政性资金纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="2165" height = "424" id="taxTable">
+<tr>
+<td  width="2133" height="46"  align="center" valign="middle" colspan="16" class="noBorder"><B>专项用途财政性资金纳税调整明细表</B></td>
+</tr>
+<tr>
+<td  width="538" height="22"  align="left" valign="middle" colspan="5" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="435" height="22"  align="right" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="2133" height="22"  align="left" valign="middle" colspan="16" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="828" height="22"  align="left" valign="middle" colspan="7" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="145" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="435" height="22"  align="right" valign="middle" colspan="3" class="noBorder">金额单位: 元（列至角分）</td>
+</tr>
+<tr>
+<td  width="42" height="90"  align="center" valign="middle"  rowspan="5">行次</td>
+<td  width="148" height="90"  align="center" valign="middle"  rowspan="5">项目</td>
+<td  width="58" height="68"  align="center" valign="middle"  rowspan="4">取得年度</td>
+<td  width="145" height="68"  align="center" valign="middle"  rowspan="4">财政性资金</td>
+<td  width="290" height="37"  align="center" valign="middle" colspan="2" rowspan="2">其中：符合不征税收入条件的财政性资金</td>
+<td  width="725" height="22"  align="center" valign="middle" colspan="5" >以前年度支出情况</td>
+<td  width="290" height="22"  align="center" valign="middle" colspan="2" >本年支出情况</td>
+<td  width="435" height="22"  align="center" valign="middle" colspan="3" >本年结余情况</td>
+</tr>
+<tr>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">前五年度</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">前四年度</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">前三年度</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">前二年度</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">前一年度</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">支出金额</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">其中：费用化支出金额</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">结余金额</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">其中：上缴财政金额</td>
+<td  width="145" height="46"  align="center" valign="middle"  rowspan="3">应计入本年应税收入金额</td>
+</tr>
+<tr>
+<td  width="145" height="31"  align="center" valign="middle"  rowspan="2">金额</td>
+<td  width="145" height="31"  align="center" valign="middle"  rowspan="2">其中：计入本年损益的金额</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td  width="58" height="22"  align="center" valign="middle"  >1</td>
+<td  width="145" height="22"  align="center" valign="middle"  >2</td>
+<td  width="145" height="22"  align="center" valign="middle"  >3</td>
+<td  width="145" height="22"  align="center" valign="middle"  >4</td>
+<td  width="145" height="22"  align="center" valign="middle"  >5</td>
+<td  width="145" height="22"  align="center" valign="middle"  >6</td>
+<td  width="145" height="22"  align="center" valign="middle"  >7</td>
+<td  width="145" height="22"  align="center" valign="middle"  >8</td>
+<td  width="145" height="22"  align="center" valign="middle"  >9</td>
+<td  width="145" height="22"  align="center" valign="middle"  >10</td>
+<td  width="145" height="22"  align="center" valign="middle"  >11</td>
+<td  width="145" height="22"  align="center" valign="middle"  >12</td>
+<td  width="145" height="22"  align="center" valign="middle"  >13</td>
+<td  width="145" height="22"  align="center" valign="middle"  >14</td>
+</tr>
+<tr>
+<td  width="42" height="22"  align="center" valign="middle"  >1</td>
+<td  width="148" height="22"  align="center" valign="middle"  >前五年度</td>
+<td  width="58" height="22"  align="left" valign="middle"  v-fill.qwndqdnd='""'>-5</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndczxzj='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndfhbzczxzjje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndfhbzczxzjjrbndje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndqwnd='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndqsind='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndqsand='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndqend='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndqynd='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndbnzcqkzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndbnzcqkfyhzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndbnjyjyje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndbnjysjczje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qwndbnjyyjrbnje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="42" height="22"  align="center" valign="middle"  >2</td>
+<td  width="148" height="22"  align="center" valign="middle"  >前四年度</td>
+<td  width="58" height="22"  align="left" valign="middle"  v-fill.qsindqdnd='""'>-4</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindczxzj='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindfhbzczxzjje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindfhbzczxzjjrbndje='""'>0.00</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindqsind='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindqsand='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindqend='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindqynd='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindbnzcqkzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindbnzcqkfyhzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindbnjyjyje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindbnjysjczje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsindbnjyyjrbnje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="42" height="22"  align="center" valign="middle"  >3</td>
+<td  width="148" height="22"  align="center" valign="middle"  >前三年度</td>
+<td  width="58" height="22"  align="left" valign="middle"  v-fill.qsandqdnd='""'>-3</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandczxzj='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandfhbzczxzjje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandfhbzczxzjjrbndje='""'>0.00</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandqsand='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsanndqend='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandqynd='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandbnzcqkzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandbnzcqkfyhzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandbnjyjyje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsnndbnjysjczje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qsandbnjyyjrbnje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="42" height="22"  align="center" valign="middle"  >4</td>
+<td  width="148" height="22"  align="center" valign="middle"  >前二年度</td>
+<td  width="58" height="22"  align="left" valign="middle"  v-fill.qendqdnd='""'>-2</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendczxzj='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendfhbzczxzjje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendfhbzczxzjjrbndje='""'>0.00</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendqend='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendqynd='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendbnzcqkzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle" v-fill.qendbnzcqkfyhje='""' >0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendbnjyjyje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendbnjysjczje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qendbnjyyjrbnje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="42" height="22"  align="center" valign="middle"  >5</td>
+<td  width="148" height="22"  align="center" valign="middle"  >前一年度</td>
+<td  width="58" height="22"  align="left" valign="middle"  v-fill.qyndqdnd='""'>-1</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qyndczxzj='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qyndfhbzczxzjje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qyndfhbzczxzjjrbnje='""'>0.00</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qyndqynd='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qyndbnzcqkzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle" v-fill.qyndbnzcqkfyhzcje='""' >0.00</td>
+<td  width="145" height="22"  align="right" valign="middle" v-fill.qyndbnjyjyje='""' >0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qyndbnjysjczje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.qyndbnjyyjrbnje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="42" height="22"  align="center" valign="middle"  >6</td>
+<td  width="148" height="22"  align="center" valign="middle"  >本    年</td>
+<td  width="58" height="22"  align="left" valign="middle"   v-fill.bnqdnd='""'>至</td>
+<td  width="145" height="22"  align="right" valign="middle"   v-fill.bnczxje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.bnfhbzczxzjje='""' >0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"   v-fill.bnfhbzczxzjjrbndje='""'>0.00</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="right" valign="middle"   v-fill.bnbnzcqkzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"   v-fill.bnbnzcqkfyhzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"   v-fill.bnbnjyjyje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"   v-fill.bnbnjysjczje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"   v-fill.bnbnjyyjrbnje='""'>0.00</td>
+</tr>
+<tr>
+<td  width="42" height="22"  align="center" valign="middle"  >7</td>
+<td  width="148" height="22"  align="center" valign="middle"  >合计（1+2+…+6）</td>
+<td  width="58" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.hjczxje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.hjfhbzczxzjje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.hjfhbzczxzjjrbndje='""'>0.00</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="center" valign="middle"  >*</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.hjbnzcqkzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.hjbnzcqkfyhzcje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.hjbnjyjyje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.hjbnsjczje='""'>0.00</td>
+<td  width="145" height="22"  align="right" valign="middle"  v-fill.hjbnjyyjrbnje='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

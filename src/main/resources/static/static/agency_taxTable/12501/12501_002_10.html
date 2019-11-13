@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>环境保护税按月计算报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="2366" height = "259" id="taxTable">
+<tr>
+<td width="2096" height="46"  align="center" valign="middle" colspan="15" class="noBorder"><B>环境保护税按月计算报表</B></td>
+</tr>
+<tr>
+<td width="2096" height="22"  align="center" valign="middle" colspan="15" class="noBorder">（大气污染物适用）</td>
+</tr>
+<tr>
+<td width="1208" height="22"  align="left" valign="middle" colspan="9" class="noBorder">纳税人名称（公章）：{{json.list[0].nsrmc}}</td>
+<td width="278" height="22"  align="right" valign="middle" colspan="2" class="noBorder">统一社会信用代码（纳税人识别号）：</td>
+<td width="450" height="22"  align="left" valign="middle" colspan="3" class="noBorder">{{json.list[0].nsrsbh}}</td>
+<td width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td width="150" height="22"  align="left" valign="middle" colspan="2" class="noBorder" >填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td width="101" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="957" height="22"  align="left" valign="middle" colspan="6" class="noBorder">税款所属时间：<span v-date>{{json.list[0].sssqQ}}</span>至<span v-date>{{json.list[0].sssqZ}}</span></td>
+<td width="143" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="135" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="130" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="160" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="160" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="160" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="73" height="60"  align="center" valign="middle"  rowspan="2">*月份</td>
+<td  width="77" height="60"  align="center" valign="middle"  rowspan="2">*税源编号</td>
+<td  width="101" height="60"  align="center" valign="middle"  rowspan="2">*排放口名称<br></td>
+<td  width="176" height="60"  align="center" valign="middle"  rowspan="2">*征收品目</td>
+<td  width="231" height="60"  align="center" valign="middle"  rowspan="2">征收子目</td>
+<td  width="94" height="60"  align="center" valign="middle"  rowspan="2">污染物排放量计算方法</td>
+<td  width="296" height="30"  align="center" valign="middle" colspan="2" >监测计算</td>
+<td  width="568" height="30"  align="center" valign="middle" colspan="4" >排污系数计算</td>
+<td  width="160" height="60"  align="center" valign="middle"  rowspan="2">污染物排放量(千克)</td>
+<td  width="160" height="60"  align="center" valign="middle"  rowspan="2">污染当量值（千克）</td>
+<td  width="160" height="60"  align="center" valign="middle"  rowspan="2">污染当量数</td>
+</tr>
+<tr>
+<td  width="151" height="30"  align="center" valign="middle"  >废气排放量(万标立方米)</td>
+<td  width="145" height="30"  align="center" valign="middle"  >实测浓度值（毫克/标立方米）</td>
+<td  width="160" height="30"  align="center" valign="middle"  >计算基数</td>
+<td  width="143" height="30"  align="center" valign="middle"  >产污系数</td>
+<td  width="135" height="30"  align="center" valign="middle"  >排污系数</td>
+<td  width="130" height="30"  align="center" valign="middle"  >污染物单位</td>
+</tr>
+<tr>
+<td  width="73" height="43"  align="center" valign="middle"  >⑴</td>
+<td  width="77" height="43"  align="center" valign="middle"  >⑵</td>
+<td  width="101" height="43"  align="center" valign="middle"  >⑶</td>
+<td  width="176" height="43"  align="center" valign="middle"  >⑷</td>
+<td  width="231" height="43"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="94" height="43"  align="center" valign="middle"  >⑸</td>
+<td  width="151" height="43"  align="center" valign="middle"  >⑹</td>
+<td  width="145" height="43"  align="center" valign="middle"  >⑺</td>
+<td  width="160" height="43"  align="center" valign="middle"  >⑻</td>
+<td  width="143" height="43"  align="center" valign="middle"  >⑼</td>
+<td  width="135" height="43"  align="center" valign="middle"  >⑽</td>
+<td  width="130" height="43"  align="center" valign="middle"  >⑾</td>
+<td  width="160" height="43"  align="center" valign="middle"  >⑿=⑹×⑺÷100<br>⑿=⑻×⑼×N<br>⑿=⑻×⑽×N</td>
+<td  width="160" height="43"  align="center" valign="middle"  >⒀</td>
+<td  width="160" height="43"  align="center" valign="middle"  >⒁=⑿÷⒀</td>
+</tr>
+<tr  v-for="(item,index) in json.listZb">
+<td  width="73" height="22"  align="left" valign="middle"  >{{item.yf}}</td>
+<td  width="77" height="22"  align="left" valign="middle"  >{{item.sybh1}}</td>
+<td width="101" height="22"  align="left" valign="middle"  >{{item.pfkmc}}</td>
+<td width="176" height="22"  align="left" valign="middle"  >{{item.zspmDm}}</td>
+<td  width="151" height="22"  align="right" valign="middle"  >{{item.zszmDm}}</td>
+<td  width="145" height="22"  align="right" valign="middle"  >{{item.wrwpfljsffDm}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.pfl.toFixed(6)}}</td>
+<td  width="143" height="22"  align="right" valign="middle"  >{{item.scldz.toFixed(8)}}</td>
+<td  width="135" height="22"  align="right" valign="middle"  >{{item.jsjs1.toFixed(8)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{item.cwxs.toFixed(8)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.pwxs.toFixed(8)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.wrwdwDm}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.wrwpfl.toFixed(9)}}</td>
+<td width="34" height="22"  align="right" valign="middle"  >{{item.wrdlz.toFixed(10)}}</td>
+<td width="34" height="22"  align="right" valign="middle"  >{{item.wrdls.toFixed(6)}}</td>
+</tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

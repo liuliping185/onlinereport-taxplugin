@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+</head>
+<body>
+<table id="taxTable" cellspacing="0" cellpadding="0" width="1103" height = "1279"  style=" margin-top: 10px;">
+<tr>
+
+<td  width="1037" height="23"  align="center" valign="middle" colspan="8" class="noBorder"><B>纳税调整项目明细表</B></td>
+
+</tr>
+<tr>
+
+<td  width="1037" height="22"  align="center" valign="middle" colspan="8" class="noBorder">税款所属时间至：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+
+</tr>
+<tr>
+
+<td  width="1037" height="22"  align="left" valign="middle" colspan="8" class="noBorder">纳税人识别号（统一社会信用代码）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+
+</tr>
+<tr>
+
+<td  width="1037" height="22"  align="left" valign="middle" colspan="8" class="noBorder">纳税人境内名称：{{bt.customerStateTaxInfo === null ? '' :bt.customerStateTaxInfo.nsrmc}}</td>
+
+</tr>
+<tr>
+
+<td  width="647" height="22"  align="left" valign="middle" colspan="5"class="noBorder" >填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="130" height="22"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+<td  width="260" height="22"  align="right" valign="middle" colspan="2" class="noBorder">金额单位：人民币元（列至角分）</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="44"  align="center" valign="middle"  rowspan="2">行次</td>
+<td  width="474" height="44"  align="center" valign="middle" colspan="3" rowspan="2">项        目</td>
+<td  width="130" height="22"  align="center" valign="middle"  >账载数额</td>
+<td  width="130" height="22"  align="center" valign="middle"  >税收数额</td>
+<td  width="130" height="22"  align="center" valign="middle"  >调增数额</td>
+<td  width="130" height="22"  align="center" valign="middle"  >调减数额</td>
+
+</tr>
+<tr>
+
+<td  width="130" height="22"  align="center" valign="middle"  >1</td>
+<td  width="130" height="22"  align="center" valign="middle"  >2</td>
+<td  width="130" height="22"  align="center" valign="middle"  >3</td>
+<td  width="130" height="22"  align="center" valign="middle"  >4</td>
+
+</tr>
+<tr >
+
+<td  width="43" height="22"  align="center" valign="middle"  >1</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >{{json.list[0].xmmc}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[0].tzje === null ? '0.00' : json.list[0].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[0].tjje === null ? '0.00' : json.list[0].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >2</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （一）视同销售收入</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[1].ssje === null ? '0.00' : json.list[1].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[1].tzje === null ? '0.00' : json.list[1].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >3</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （二）未按权责发生制原则确认的收入</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[2].zzje === null ? '0.00' : json.list[2].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[2].ssje === null ? '0.00' : json.list[2].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[2].tzje === null ? '0.00' : json.list[2].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[2].tjje === null ? '0.00' : json.list[2].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >4</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （三）投资收益</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[3].zzje === null ? '0.00' : json.list[3].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[3].ssje === null ? '0.00' : json.list[3].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[3].tzje === null ? '0.00' : json.list[3].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[3].tjje === null ? '0.00' : json.list[3].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >5</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （四）按权益法核算长期股权投资对初始投资成本调整确认收益</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[4].tjje === null ? '0.00' : json.list[4].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >6</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （五）交易性金融资产初始投资调整</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[5].tzje === null ? '0.00' : json.list[5].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >7</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （六）公允价值变动净损益</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[6].zzje === null ? '0.00' : json.list[6].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[6].tzje === null ? '0.00' : json.list[6].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[6].tjje === null ? '0.00' : json.list[6].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >8</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （七）不征税收入</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[7].tzje === null ? '0.00' : json.list[7].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[7].tjje === null ? '0.00' : json.list[7].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >9</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （八）销售折扣、折让和退回</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[8].zzje === null ? '0.00' : json.list[8].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[8].ssje === null ? '0.00' : json.list[8].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[8].tzje === null ? '0.00' : json.list[8].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[8].tjje === null ? '0.00' : json.list[8].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >10</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （九）其他</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[9].zzje === null ? '0.00' : json.list[9].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[9].ssje === null ? '0.00' : json.list[9].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[9].tzje === null ? '0.00' : json.list[9].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[9].tjje === null ? '0.00' : json.list[9].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >11</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >二、扣除类调整项目（12+…+30）</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[10].tzje === null ? '0.00' : json.list[10].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[10].tjje === null ? '0.00' : json.list[10].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >12</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （一）视同销售成本</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[11].ssje === null ? '0.00' : json.list[11].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[11].tjje === null ? '0.00' : json.list[11].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >13</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （二）职工薪酬</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[12].zzje === null ? '0.00' : json.list[12].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[12].ssje === null ? '0.00' : json.list[12].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[12].tzje === null ? '0.00' : json.list[12].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[12].tjje === null ? '0.00' : json.list[12].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >14</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （三）业务招待费支出</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[13].zzje === null ? '0.00' : json.list[13].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[13].ssje === null ? '0.00' : json.list[13].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[13].tzje === null ? '0.00' : json.list[13].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >15</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （四）广告费和业务宣传费支出</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[14].zzje === null ? '0.00' : json.list[14].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[14].ssje === null ? '0.00' : json.list[14].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[14].tzje === null ? '0.00' : json.list[14].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[14].tjje === null ? '0.00' : json.list[14].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >16</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （五）捐赠支出</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[15].zzje === null ? '0.00' : json.list[15].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[15].ssje === null ? '0.00' : json.list[15].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[15].tzje === null ? '0.00' : json.list[15].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[15].tjje === null ? '0.00' : json.list[15].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >17</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （六）利息支出</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[16].zzje === null ? '0.00' : json.list[16].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[16].ssje === null ? '0.00' : json.list[16].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[16].tzje === null ? '0.00' : json.list[16].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[16].tjje === null ? '0.00' : json.list[16].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >18</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （七）罚金、罚款和被没收财物的损失</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[17].zzje === null ? '0.00' : json.list[17].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[17].tzje === null ? '0.00' : json.list[17].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >19</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （八）税收滞纳金、加收利息</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[18].zzje === null ? '0.00' : json.list[18].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[18].tzje === null ? '0.00' : json.list[18].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >20</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （九）赞助支出</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[19].zzje === null ? '0.00' : json.list[19].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[19].tzje === null ? '0.00' : json.list[19].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >21</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十）与未实现融资收益相关在当期确认的财务费用</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[20].zzje === null ? '0.00' : json.list[20].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[20].ssje === null ? '0.00' : json.list[20].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[20].tzje === null ? '0.00' : json.list[20].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[20].tjje === null ? '0.00' : json.list[20].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >22</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十一）佣金和手续费支出</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[21].zzje === null ? '0.00' : json.list[21].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[21].ssje === null ? '0.00' : json.list[21].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[21].tzje === null ? '0.00' : json.list[21].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >23</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十二）不征税收入用于支出所形成的费用</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[22].tzje === null ? '0.00' : json.list[22].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >24</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十三）跨期扣除项目</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[23].zzje === null ? '0.00' : json.list[23].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[23].ssje === null ? '0.00' : json.list[23].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[23].tzje === null ? '0.00' : json.list[23].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[23].tjje === null ? '0.00' : json.list[23].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >25</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十四）与取得收入无关的支出</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[24].zzje === null ? '0.00' : json.list[24].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[24].tzje === null ? '0.00' : json.list[24].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >26</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十五）境外所得分摊的共同支出</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[25].tzje === null ? '0.00' : json.list[25].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >27</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十六）分摊境外总机构费用</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[26].zzje === null ? '0.00' : json.list[26].zzje.toFixed(2)}} </td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[26].ssje === null ? '0.00' : json.list[26].ssje.toFixed(2)}} </td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[26].tzje === null ? '0.00' : json.list[26].tzje.toFixed(2)}} </td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >28</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十七）向其他机构、场所分摊费用</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[27].zzje === null ? '0.00' : json.list[27].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[27].ssje === null ? '0.00' : json.list[27].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[27].tzje === null ? '0.00' : json.list[27].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >29</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十八）分摊资源勘探开发费用</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[28].ssje === null ? '0.00' : json.list[28].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[28].tjje === null ? '0.00' : json.list[28].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >30</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （十九）其他</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[29].zzje === null ? '0.00' : json.list[29].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[29].ssje === null ? '0.00' : json.list[29].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[29].tzje === null ? '0.00' : json.list[29].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[29].tjje === null ? '0.00' : json.list[29].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >31</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >三、资产类调整项目（32+34+35+36）</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[30].tzje === null ? '0.00' : json.list[30].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[30].tjje === null ? '0.00' : json.list[30].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >32</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （一）资产折旧、摊销</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[31].zzje === null ? '0.00' : json.list[31].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[31].ssje === null ? '0.00' : json.list[31].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[31].tzje === null ? '0.00' : json.list[31].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[31].tjje === null ? '0.00' : json.list[31].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr v-for="(item,index) in json.listzb" >
+<td  width="43" height="44"  align="center" valign="middle" v-if="index == 0" :rowspan="json.listzb.length">33</td>
+<td  width="281" height="44"  align="left" valign="middle"  v-if="index == 0" :rowspan="json.listzb.length" >    其中：固定资产加速折旧(扣除)调减额</td>
+<td  width="193" height="22"  align="left" valign="middle" colspan="2" >{{item.ssjmxzDm}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{item.qzgdzcjszjtjje==null?'0.00':item.qzgdzcjszjtjje.toFixed(2)}}</td>
+
+</tr>
+
+<!--<tr>
+<td  width="44" height="22"  align="left" valign="bottom" class="noBorder" >&nbsp;</td>
+<td  width="149" height="22"  align="left" valign="middle" class="noBorderLeft" >&nbsp;</td>
+<td  width="130" height="22"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="130" height="22"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="130" height="22"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="130" height="22"  align="right" valign="middle"  >0.00</td>
+</tr>-->
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >34</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （二）资产减值准备金</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[32].zzje === null ? '0.00' : json.list[32].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[32].tzje === null ? '0.00' : json.list[32].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[32].tjje === null ? '0.00' : json.list[32].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >35</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （三）资产损失</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[33].zzje === null ? '0.00' : json.list[33].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[33].ssje === null ? '0.00' : json.list[33].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[33].tzje === null ? '0.00' : json.list[33].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[33].tjje === null ? '0.00' : json.list[33].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >36</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （四）其他</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[34].zzje === null ? '0.00' : json.list[34].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[34].ssje === null ? '0.00' : json.list[34].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[34].tzje === null ? '0.00' : json.list[34].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[34].tjje === null ? '0.00' : json.list[34].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >37</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >四、特殊事项调整项目（38+…+43）</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[35].tzje === null ? '0.00' : json.list[35].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[35].tjje === null ? '0.00' : json.list[35].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >38</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （一）企业重组及递延纳税事项</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[36].zzje === null ? '0.00' : json.list[36].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[36].ssje === null ? '0.00' : json.list[36].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[36].tzje === null ? '0.00' : json.list[36].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[36].tjje === null ? '0.00' : json.list[36].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >39</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （二）政策性搬迁</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[37].tzje === null ? '0.00' : json.list[37].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[37].tjje === null ? '0.00' : json.list[37].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >40</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （三）特殊行业准备金</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[38].zzje === null ? '0.00' : json.list[38].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[38].ssje === null ? '0.00' : json.list[38].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[38].tzje === null ? '0.00' : json.list[38].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[38].tjje === null ? '0.00' : json.list[38].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >41</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （四）房地产开发企业特定业务计算的纳税调整额</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[39].ssje === null ? '0.00' : json.list[39].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[39].tzje === null ? '0.00' : json.list[39].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[39].tjje === null ? '0.00' : json.list[39].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >42</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （五）合伙企业法人合伙人应分得的应纳税所得额</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[40].zzje === null ? '0.00' : json.list[40].zzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[40].ssje === null ? '0.00' : json.list[40].ssje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[40].tzje === null ? '0.00' : json.list[40].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[40].tjje === null ? '0.00' : json.list[40].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >43</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >  （六）其他</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[41].tzje === null ? '0.00' : json.list[41].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[41].tjje === null ? '0.00' : json.list[41].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >44</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >五、特别纳税调整应税所得</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[42].tzje === null ? '0.00' : json.list[42].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[42].tjje === null ? '0.00' : json.list[42].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >45</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >六、其他</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  > *</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[43].tzje === null ? '0.00' : json.list[43].tzje.toFixed(2)}} </td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[43].tjje === null ? '0.00' : json.list[43].tjje.toFixed(2)}} </td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="center" valign="middle"  >46</td>
+<td  width="474" height="22"  align="left" valign="middle" colspan="3" >合计（1+11+31+37+44+45）</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="center" valign="middle"  >*</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[44].tzje === null ? '0.00' : json.list[44].tzje.toFixed(2)}}</td>
+<td  width="130" height="22"  align="right" valign="middle"  >{{json.list[44].tjje === null ? '0.00' : json.list[44].tjje.toFixed(2)}}</td>
+
+</tr>
+<tr>
+
+<td  width="43" height="22"  align="left" valign="middle"   class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+<td  width="281" height="22"  align="left" valign="middle"   class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+<td  width="44" height="22"  align="left" valign="middle"   class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+<td  width="149" height="22"  align="left" valign="middle"   class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+<td  width="130" height="22"  align="left" valign="middle"   class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+<td  width="130" height="22"  align="left" valign="middle"   class="noBorderBottom noBorderLeft noBorderRight">&nbsp;</td>
+<td  width="260" height="22"  align="left" valign="middle" colspan="2" class="noBorderBottom noBorderLeft noBorderRight" >国家税务总局监制</td>
+
+
+</table>
+
+
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html> 

@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>境外所得纳税调整后所得明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="3052" height = "298" id="taxTable">
+<tr>
+<td  width="3020" height="46"  align="center" valign="middle" colspan="19" class="noBorder"><B>境外所得纳税调整后所得明细表</B></td>
+</tr>
+<tr>
+<td  width="1740" height="22"  align="left" valign="middle" colspan="11" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="1280" height="22"  align="right" valign="middle" colspan="8" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="3020" height="22"  align="left" valign="middle" colspan="19" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1740" height="22"  align="left" valign="middle" colspan="11" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="1280" height="22"  align="right" valign="middle" colspan="8" class="noBorder">金额单元：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="40" height="74"  align="center" valign="middle"  rowspan="3">行次</td>
+<td  width="260" height="52"  align="center" valign="middle"  rowspan="2">国家<br>（地区）</td>
+<td  width="1280" height="22"  align="center" valign="middle" colspan="8" >境外税后所得</td>
+<td  width="640" height="22"  align="center" valign="middle" colspan="4" >境外所得可抵免的所得税额</td>
+<td  width="160" height="52"  align="center" valign="middle"  rowspan="2">境外税前所得</td>
+<td  width="160" height="52"  align="center" valign="middle"  rowspan="2">境外分支机构收入与支出纳税调整额</td>
+<td  width="160" height="52"  align="center" valign="middle"  rowspan="2">境外分支机构调整分摊扣除的有关成本费用</td>
+<td  width="160" height="52"  align="center" valign="middle"  rowspan="2">境外所得对应调整的相关成本费用支出</td>
+<td  width="160" height="52"  align="center" valign="middle"  rowspan="2">境外所得纳税调整后所得</td>
+</tr>
+<tr>
+<td  width="160" height="30"  align="center" valign="middle"  >分支机构营业利润所得</td>
+<td  width="160" height="30"  align="center" valign="middle"  >股息、红利等权益性投资所得</td>
+<td  width="160" height="30"  align="center" valign="middle"  >利息所得</td>
+<td  width="160" height="30"  align="center" valign="middle"  >租金所得</td>
+<td  width="160" height="30"  align="center" valign="middle"  >特许权使用费所得</td>
+<td  width="160" height="30"  align="center" valign="middle"  >财产转让所得</td>
+<td  width="160" height="30"  align="center" valign="middle"  >其他所得</td>
+<td  width="160" height="30"  align="center" valign="middle"  >小计</td>
+<td  width="160" height="30"  align="center" valign="middle"  >直接缴纳的所得税额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >间接负担的所得税额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >享受税收饶让抵免税额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >小计</td>
+</tr>
+<tr>
+<td  width="260" height="22"  align="center" valign="middle"  >1</td>
+<td  width="160" height="22"  align="center" valign="middle"  >2</td>
+<td  width="160" height="22"  align="center" valign="middle"  >3</td>
+<td  width="160" height="22"  align="center" valign="middle"  >4</td>
+<td  width="160" height="22"  align="center" valign="middle"  >5</td>
+<td  width="160" height="22"  align="center" valign="middle"  >6</td>
+<td  width="160" height="22"  align="center" valign="middle"  >7</td>
+<td  width="160" height="22"  align="center" valign="middle"  >8</td>
+<td  width="160" height="22"  align="center" valign="middle"  >9（2+3+4+5+6+7+8）</td>
+<td  width="160" height="22"  align="center" valign="middle"  >10</td>
+<td  width="160" height="22"  align="center" valign="middle"  >11</td>
+<td  width="160" height="22"  align="center" valign="middle"  >12</td>
+<td  width="160" height="22"  align="center" valign="middle"  >13（10+11+12）</td>
+<td  width="160" height="22"  align="center" valign="middle"  >14（9+10+11）</td>
+<td  width="160" height="22"  align="center" valign="middle"  >15</td>
+<td  width="160" height="22"  align="center" valign="middle"  >16</td>
+<td  width="160" height="22"  align="center" valign="middle"  >17</td>
+<td  width="160" height="22"  align="center" valign="middle"  >18（14+15-16-17）</td>
+</tr>
+<tr  v-for="(item, index) in json.listzb">
+<td  width="40" height="22"  align="center" valign="middle"  >00{{index +1}}</td>
+<td  width="260" height="22"  align="left" valign="middle"  >{{item.gjdq}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwshfzjgyylr.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwshgxhltzsd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwshlxsd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwshzjsd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwshtxqfysd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwshcczrsd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwshqtsd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwshxj.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwsdkdmzjjn.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwsdkdmjjfd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwsdkdmxssrrdm.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwsdkdmxj.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwsqsd.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwfzsrzctze.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwfztzftkccbfy.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwsdtzcbfyzc.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jwsdtzhsd.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="40" height="22"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="260" height="22"  align="center" valign="middle"  >合计</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj2.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj3.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj4.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj5.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj6.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj7.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj8.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj9.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj10.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj11.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj12.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj13.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj14.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj15.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj16.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj17.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].hj18.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

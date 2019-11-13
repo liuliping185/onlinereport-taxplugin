@@ -1,0 +1,155 @@
+﻿
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /*
+          * 外面盒子样式---自己定义
+          */
+
+        .page_div {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            font-family: "microsoft yahei";
+            color: #666666;
+            margin-right: 10px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        /*
+         * 页数按钮样式
+         */
+
+        .page_div a {
+            border-radius: 2px;;
+            min-width: 30px;
+            height: 30px;
+            border: 1px solid #d1d3d8!important;
+            text-align: center;
+            margin: 0 4px;
+            cursor: pointer;
+            line-height: 28px;
+            color: #666666;
+            font-size: 13px;
+            display: inline-block;
+        }
+        .page_div a:hover{
+            color: #53acf3;
+            border: 1px solid #53acf3!important;
+        }
+        #firstPage,
+        #lastPage {
+            width: 50px;
+            color: #0073A9;
+            border: 1px solid #d1d3d8!important;
+        }
+
+        .prePage,
+        .nextPage {
+            border-radius: 2px;
+            width: 30px;
+            color: #0073A9;
+            border: 1px solid #d1d3d8!important;
+        }
+
+        .prePage1,
+        .nextPage1 {
+            border-radius: 2px;
+            width: 30px;
+            color: #bbb!important;
+            background: #f1f6f9;
+            border: 1px solid #d1d3d8!important;
+        }
+        .page_div .prePage1:hover,
+        .page_div .nextPage1:hover{
+            color: #bbb!important;
+            background: #f1f6f9;
+            border: 1px solid #d1d3d8!important;
+            cursor: not-allowed;
+        }
+        .prePage:hover,
+        .nextPage:hover{
+            border: 1px solid #53acf3!important;
+            color: #53acf3;
+        }
+        .page_div .current {
+            border-radius: 2px;
+            background-color: #fff;
+            border-color: transparent!important;
+            color: #53acf3;
+        }
+        .totalPages {
+            margin: 0 10px;
+        }
+
+        .totalPages span,
+        .totalSize span {
+            color: #0073A9;
+            margin: 0 5px;
+        }
+        .pageTo{
+              padding-right:15px ;
+
+        }
+        .searchPage {
+            margin-right:15px ;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            padding: 4px 10px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #d0d0d0;
+            border-radius: 2px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        .searchPage:focus {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        }
+        .searchPage::-moz-placeholder {
+            color: #999;
+            opacity: 1;
+        }
+        .searchPage:-ms-input-placeholder {
+            color: #999;
+        }
+        .searchPage::-webkit-input-placeholder {
+            color: #999;
+        }
+        .searchPage[disabled],
+        .searchPage[readonly],
+        fieldset[disabled] .searchPage {
+            background-color: #eee;
+            opacity: 1;
+        }
+        .form-control[disabled],
+        fieldset[disabled] .searchPage {
+            cursor: not-allowed;
+        }
+        .pageSure{
+            margin-left: 15px;
+            height: 30px;
+            outline: none;
+            width: 55px;
+            padding: 5px 10px;
+            background: #fff;
+            border: 1px solid #d1d3d8;
+            color:#333;
+            border-radius: 2px;;
+        }
+        .pageSure:hover{
+            cursor: pointer;
+            color:#53acf3;
+            border: 1px solid #53acf3;
+        }

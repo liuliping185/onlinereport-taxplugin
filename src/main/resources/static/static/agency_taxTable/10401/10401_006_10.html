@@ -1,0 +1,392 @@
+<html>
+<head>
+<title>固定资产加速折旧(扣除)明细表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<div  id="taxTable"  style="margin-top:20px;">
+<!-- 7月之前 -->
+<div>
+  <table style="width:90%">
+    <tr>
+      <td width="2581" height="46" align="center" valign="middle" colspan="20" class="noBorder">
+        <B>固定资产加速折旧(扣除)明细表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="2581" height="22" align="center" valign="middle" colspan="20" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="2581" height="22" align="left" valign="middle" colspan="20" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="2581" height="22" align="left" valign="middle" colspan="20" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="2041" height="22" align="left" valign="middle" colspan="16" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="540" height="22" align="right" valign="middle" colspan="4" class="noBorder">金额单位: 人民币元(列至角分)</td>
+    </tr>
+  </table>
+  <div id="outerDiv">
+    <div id="tableDiv">
+      <table cellspacing="0" cellpadding="0" width="2613" height="571">
+        <tr>
+          <td class="column-fixed" width="53" height="107" align="center" valign="middle" rowspan="4">行次</td>
+          <td class="column-fixed" width="233" height="107" align="center" valign="middle" colspan="2" rowspan="4">项 目</td>
+          <td width="405" height="22" align="center" valign="middle" colspan="3">房屋、建筑物</td>
+          <td width="405" height="22" align="center" valign="middle" colspan="3">机器设备和其他固定资产</td>
+          <td width="1485" height="22" align="center" valign="middle" colspan="11">合计</td>
+        </tr>
+        <tr>
+          <td width="135" height="63" align="center" valign="middle" rowspan="2">原值</td>
+          <td width="270" height="22" align="center" valign="middle" colspan="2">税收折旧（扣除）额</td>
+          <td width="135" height="63" align="center" valign="middle" rowspan="2">原值</td>
+          <td width="270" height="22" align="center" valign="middle" colspan="2">税收折旧（扣除）额</td>
+          <td width="135" height="63" align="center" valign="middle" rowspan="2">原值</td>
+          <td width="675" height="22" align="center" valign="middle" colspan="5">本期折旧（扣除）额</td>
+          <td width="675" height="22" align="center" valign="middle" colspan="5">累计折旧（扣除）额</td>
+        </tr>
+        <tr>
+          <td width="135" height="41" align="center" valign="middle">本期</td>
+          <td width="135" height="41" align="center" valign="middle">累计</td>
+          <td width="135" height="41" align="center" valign="middle">本期</td>
+          <td width="135" height="41" align="center" valign="middle">累计</td>
+          <td width="135" height="41" align="center" valign="middle">会计折旧额</td>
+          <td width="135" height="41" align="center" valign="middle">正常折旧额</td>
+          <td width="135" height="41" align="center" valign="middle">税收折旧额</td>
+          <td width="135" height="41" align="center" valign="middle">纳税调整额</td>
+          <td width="135" height="41" align="center" valign="middle">加速折旧优惠统计额</td>
+          <td width="135" height="41" align="center" valign="middle">会计折旧额</td>
+          <td width="135" height="41" align="center" valign="middle">正常折旧额</td>
+          <td width="135" height="41" align="center" valign="middle">税收折旧额</td>
+          <td width="135" height="41" align="center" valign="middle">纳税调整额</td>
+          <td width="135" height="41" align="center" valign="middle">加速折旧优惠统计额</td>
+        </tr>
+        <tr>
+          <td width="135" height="22" align="center" valign="middle">1</td>
+          <td width="135" height="22" align="center" valign="middle">2</td>
+          <td width="135" height="22" align="center" valign="middle">3</td>
+          <td width="135" height="22" align="center" valign="middle">4</td>
+          <td width="135" height="22" align="center" valign="middle">5</td>
+          <td width="135" height="22" align="center" valign="middle">6</td>
+          <td width="135" height="22" align="center" valign="middle">7</td>
+          <td width="135" height="22" align="center" valign="middle">8</td>
+          <td width="135" height="22" align="center" valign="middle">9</td>
+          <td width="135" height="22" align="center" valign="middle">10</td>
+          <td width="135" height="22" align="center" valign="middle">11</td>
+          <td width="135" height="22" align="center" valign="middle">12</td>
+          <td width="135" height="22" align="center" valign="middle">13</td>
+          <td width="135" height="22" align="center" valign="middle">14</td>
+          <td width="135" height="22" align="center" valign="middle">15</td>
+          <td width="135" height="22" align="center" valign="middle">16</td>
+          <td width="135" height="22" align="center" valign="middle">17</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">1</td>
+          <td width="233" height="22" align="left" valign="middle" colspan="2">一、重要行业固定资产加速折旧</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwyz='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwbqzjkce='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwljzjkce='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-1"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-1"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">2</td>
+          <td width="126" height="44" align="left" valign="middle" rowspan="2">&nbsp;</td>
+          <td width="107" height="22" align="left" valign="middle">税会处理一致</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwyz='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwbqzjkce='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwljzjkce='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-2"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-2"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">3</td>
+          <td width="107" height="22" align="left" valign="middle">税会处理不一致</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwyz='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwbqzjkce='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwljzjkce='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-3"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">4</td>
+          <td width="233" height="22" align="left" valign="middle" colspan="2">二、其他行业研发设备加速折旧</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-4"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-4"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">5</td>
+          <td width="126" height="44" align="center" valign="middle" rowspan="2">单价100万元以上专用研发设备</td>
+          <td width="107" height="22" align="left" valign="middle">税会处理一致</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-5"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-5"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">6</td>
+          <td width="107" height="22" align="left" valign="middle">税会处理不一致</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-6"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">7</td>
+          <td width="233" height="22" align="left" valign="middle" colspan="2">三、允许一次性扣除的固定资产</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwyz='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwbqzjkce='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwljzjkce='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-7"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-7"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">8</td>
+          <td width="233" height="22" align="left" valign="middle" colspan="2">（一）单价不超过100万元研发设备</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-8"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-8"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">9</td>
+          <td width="126" height="44" align="center" valign="middle" rowspan="2" id="qylx1">{{json[9].qyLx == 0 ? '0 其他企业' : '1 重要行业小微'}}</td>
+          <td width="107" height="22" align="left" valign="middle">税会处理一致</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-9"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-9"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">10</td>
+          <td width="107" height="22" align="left" valign="middle">税会处理不一致</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-10"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">11</td>
+          <td width="233" height="22" align="left" valign="middle" colspan="2">（二）5000元以下固定资产</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwyz='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwbqzjkce='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwljzjkce='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-11"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-11"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">12</td>
+          <td width="126" height="44" align="center" valign="middle" rowspan="2">*</td>
+          <td width="107" height="22" align="left" valign="middle">税会处理一致</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwyz='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwbqzjkce='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwljzjkce='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-12"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-12"'>0.00</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">13</td>
+          <td width="107" height="22" align="left" valign="middle">税会处理不一致</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwyz='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwbqzjkce='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwljzjkce='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-13"'>0.00</td>
+          <td width="135" height="22" align="center" valign="middle">*</td>
+        </tr>
+        <tr>
+          <td width="53" height="22" align="center" valign="middle">14</td>
+          <td width="233" height="22" align="center" valign="middle" colspan="2">合 计</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwyz='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwbqzjkce='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.fwjzwljzjkce='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcyz='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcbqzjkce='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.jqsbhqtgdzcljzjkce='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjyz='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjebqzje='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjebqzje='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjbqzjkcebqzje='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzebqzje='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjebqzje='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjkjzjeljzjkce='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjzczjeljzjkce='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjnstzeljzjkce='"ewbhxh-14"'>0.00</td>
+          <td width="135" height="22" align="right" valign="middle" v-fill.hjjszjyhtjeljzjkce='"ewbhxh-14"'>0.00</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+ </div>
+ </div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/fixTable.js"></script>
+</body>
+</html>

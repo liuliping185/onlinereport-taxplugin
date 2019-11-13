@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>残疾人就业保障金缴费申报表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="2093" height = "264" id="taxTable">
+<tr>
+<td width="1893" height="46"  align="center" valign="middle" colspan="12" class="noBorder"><B>残疾人就业保障金缴费申报表</B></td>
+<td width="168" height="46"  align="center" valign="top"  class="noBorder"><B>&nbsp;</B></td>
+</tr>
+<tr>
+<td width="1893" height="22"  align="left" valign="middle" colspan="12" class="noBorder">税款所属时间：<span v-date>{{json.sblist.length === 0 ? '' : json.sblist[0].skssqq}}</span>至<span v-date>{{json.sblist.length === 0 ? '' : json.sblist[0].skssqz}}</span></td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td width="885" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号：{{json.sblist.length === 0 ? '' : json.sblist[0].nsrsbh}}</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td width="885" height="22"  align="left" valign="middle" colspan="6" class="noBorder">用人单位名称（公章）：{{json.sblist.length === 0 ? '' : json.sblist[0].nsrmc}}</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="168" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td width="336" height="22"  align="right" valign="middle" colspan="2" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="84" height="22"  align="left" valign="middle"  >联系电话：</td>
+<td  width="155" height="22"  align="left" valign="middle"  >{{json.sblist.length === 0 ? '' : json.list[0].scjydlxdh}}</td>
+<td  width="155" height="22"  align="left" valign="middle"  >通讯地址：</td>
+<td  width="323" height="22"  align="left" valign="middle" colspan="2" >{{json.sblist.length === 0 ? '' : json.sblist[0].scjydz}}</td>
+<td  width="168" height="22"  align="left" valign="middle"  >省份：</td>
+<td  width="168" height="22"  align="left" valign="middle"  >{{json.list[0].sf}}</td>
+<td  width="168" height="22"  align="left" valign="middle"  >地市：</td>
+<td  width="168" height="22"  align="left" valign="middle"  >{{json.list[0].ds}}</td>
+<td  width="168" height="22"  align="left" valign="middle"  >区县：</td>
+<td  width="168" height="22"  align="left" valign="middle"  >{{json.list[0].qx}}</td>
+<td  width="168" height="22"  align="left" valign="middle"  >街道乡镇：</td>
+<td  width="168" height="22"  align="left" valign="middle"  >{{json.list[0].jdxzDm}}</td>
+</tr>
+<tr>
+<td  width="84" height="18"  align="center" valign="middle"  >序号</td>
+<td  width="155" height="18"  align="center" valign="middle"  >费款所属期起</td>
+<td  width="155" height="18"  align="center" valign="middle"  >费款所属期止</td>
+<td  width="155" height="18"  align="center" valign="middle"  >在职职工工资总额</td>
+<td  width="168" height="18"  align="center" valign="middle"  >在职职工人数</td>
+<td  width="168" height="18"  align="center" valign="middle"  >应安排残疾人就业比例</td>
+<td  width="168" height="18"  align="center" valign="middle"  >实际安排残疾人就业人数</td>
+<td  width="168" height="18"  align="center" valign="middle"  >在职职工年平均工资</td>
+<td  width="168" height="18"  align="center" valign="middle"  >本期应纳费额</td>
+<td  width="168" height="18"  align="center" valign="middle"  >减免性质</td>
+<td  width="168" height="18"  align="center" valign="middle"  >本期减免费额</td>
+<td  width="168" height="18"  align="center" valign="middle"  >本期已缴费额</td>
+<td  width="168" height="18"  align="center" valign="middle"  >本期应补（退）费额</td>
+</tr>
+<tr>
+<td  width="84" height="18"  align="center" valign="middle"  >1</td>
+<td  width="155" height="18"  align="center" valign="middle"  >2</td>
+<td  width="155" height="18"  align="center" valign="middle"  >3</td>
+<td  width="155" height="18"  align="center" valign="middle"  >4</td>
+<td  width="168" height="18"  align="center" valign="middle"  >5</td>
+<td  width="168" height="18"  align="center" valign="middle"  >6</td>
+<td  width="168" height="18"  align="center" valign="middle"  >7</td>
+<td  width="168" height="18"  align="center" valign="middle"  >8=4/5</td>
+<td  width="168" height="18"  align="center" valign="middle"  >9=（5×6-7）×8</td>
+<td  width="168" height="18"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="168" height="18"  align="center" valign="middle"  >10</td>
+<td  width="168" height="18"  align="center" valign="middle"  >11</td>
+<td  width="168" height="18"  align="center" valign="middle"  >12=9-10-11</td>
+</tr>
+<tr v-if='json.sblist.length !== 0' v-for='(item, index) in json.sblist'>
+<td width="84" height="22"  align="center" valign="middle"  >00{{index+1}}</td>
+<td  width="155" height="22"  align="left" valign="middle"  >{{item.skssqq}}</td>
+<td  width="155" height="22"  align="left" valign="middle"  >{{item.skssqz}}</td>
+<td  width="155" height="22"  align="right" valign="middle"  >{{item.snzzzggzze.toFixed(2)}}</td>
+<td  width="168" height="22"  align="right" valign="middle"  >{{item.snzzzgrs.toFixed(4)}}</td>
+<td width="168" height="22"  align="right" valign="middle"  >{{(item.yapcjrjybl*100).toFixed(3)}}%</td>
+<td  width="168" height="22"  align="right" valign="middle"  >{{item.snsjapcjrjyrs.toFixed(4)}}</td>
+<td width="168" height="22"  align="right" valign="middle"  >{{item.snzzzgnpjgz.toFixed(2)}}</td>
+<td width="168" height="22"  align="right" valign="middle"  >{{item.bqynse.toFixed(2)}}</td>
+<td  width="168" height="22"  align="left" valign="middle"  >{{item.jmxzDm}}</td>
+<td  width="168" height="22"  align="right" valign="middle"  >{{item.bqjmse.toFixed(2)}}</td>
+<td  width="168" height="22"  align="right" valign="middle"  >{{item.bqyjse1.toFixed(2)}}</td>
+<td width="168" height="22"  align="right" valign="middle"  >{{item.bqybtse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td width="84" height="22"  align="center" valign="middle" colspan="2" >办理人员身份证件类型	</td>
+<td  width="155" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].blrysfzjlx}}</td>
+<td  width="168" height="22"  align="right" valign="middle"  >办理人员身份证件号码</td>
+<td width="168" height="22"  align="right" valign="middle"  >{{json.list[0].blrysfzjhm}}</td>
+<td  width="168" height="18"  align="left" valign="middle"  >*经 办 人</td>
+<td  width="504" height="18"  align="left" valign="middle" colspan="3" >&nbsp;</td>
+<td  width="168" height="18"  align="left" valign="middle"  >*申报日期</td>
+<td  width="336" height="18"  align="center" valign="middle" colspan="2" >&nbsp;</td>
+</tr>
+<tr>
+<td  width="84" height="54"  align="center" valign="middle"  rowspan="2">*申报 声明</td>
+<td  width="801" height="18"  align="left" valign="middle" colspan="5" style="border-bottom: none">本单位所申报的残疾人就业保障金相关信息真实、准确并完整，与事实相符。</td>
+<td  width="168" height="18"  align="left" valign="middle"  >*受理税务机关</td>
+<td  width="504" height="18"  align="center" valign="middle" colspan="3" >&nbsp;（公章）</td>
+<td  width="168" height="18"  align="left" valign="middle"  >*受理日期</td>
+<td  width="336" height="18"  align="center" valign="middle" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td  width="801" height="18"  align="left" valign="middle" colspan="5" style="border-top: none;">法定代表人（负责人）签名：{{json.list[0].fddbrxm}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span v-date>{{json.sblist.length === 0 ? '' : json.sblist[0].sbrq}}</span></td>
+<td  width="168" height="18"  align="left" valign="middle"  >*受 理 人</td>
+<td  width="504" height="18"  align="left" valign="middle" colspan="3" >&nbsp;</td>
+<td  width="504" height="18"  align="left" valign="middle" colspan="3" >&nbsp;</td>
+</tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

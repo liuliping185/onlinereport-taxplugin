@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>烟类应税消费品消费税纳税申报表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body>
+	<table cellspacing="0" cellpadding="0" width="1167" height="586" id="taxTable">
+		<tr>
+			<td width="900" height="46" align="center" valign="middle" colspan="7" class="noBorder">
+				<B>烟类应税消费品消费税纳税申报表</B>
+			</td>
+		</tr>
+		<tr>
+			<td width="900" height="22" align="left" valign="middle" colspan="7" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+		</tr>
+		<tr>
+			<td width="300" height="22" align="left" valign="middle" colspan="2" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+			<td width="600" height="22" align="left" valign="middle" colspan="5" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+		</tr>
+		<tr>
+			<td width="319" height="22" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+			<td width="581" height="22" align="right" valign="middle" colspan="4" class="noBorder">单位：卷烟万支、雪茄烟支、烟丝千克；金额单位：元（列至角分）</td>
+		</tr>
+		<tr>
+			<td width="214" height="44" align="center" valign="middle" colspan="2" rowspan="2" style="padding:0;background-image:url('/static/images/index/81_line.png');background-repeat:no-repeat;position:relative;background-size:100% 100%;image-rendering: -webkit-optimize-contrast;">
+				<span style="position:absolute;right:10px;top:10px">项目</span> 
+				<span style="position:absolute;left:10px;bottom:10px">应税消费品名称</span></td>
+			<td width="206" height="22" align="center" valign="middle" colspan="2">适用税率</td>
+			<td width="160" height="44" align="center" valign="middle" rowspan="2">销售数量</td>
+			<td width="160" height="44" align="center" valign="middle" rowspan="2">销售额</td>
+			<td width="160" height="44" align="center" valign="middle" rowspan="2">应纳税额</td>
+		</tr>
+		<tr>
+			<td width="105" height="22" align="center" valign="middle">定额税率</td>
+			<td width="101" height="22" align="center" valign="middle">比例税率</td>
+		</tr>
+		<tr v-for='(item,index) in json.listGrid'>
+			<td width="214" height="22" align="center" valign="middle"
+				colspan="2">{{item.zspmDm}}</td>
+			<td width="105" height="22" align="center" valign="middle">
+				{{item.desl === '' || item.desl === null ? '--' : item.desl}}</td>
+			<td width="101" height="22" align="center" valign="middle">
+				{{item.blsl === '' || item.blsl === null ? '--' : item.blsl}}</td>
+			<td width="160" height="22" align="right" valign="middle">
+				{{item.xssl === '' || item.xssl === null ? '--' : item.xssl.toFixed(3)}}</td>
+			<td width="160" height="22" align="right" valign="middle">
+				{{item.xse === '' || item.xse === null ? '--' : item.xse.toFixed(2)}}</td>
+			<td width="160" height="22" align="right" valign="middle">
+				{{item.ynse === '' || item.ynse === null ? '--' : item.ynse.toFixed(2)}}</td>
+		</tr>
+		<tr>
+			<td width="214" height="22" align="center" valign="middle" colspan="2">合计</td>
+			<td width="105" height="22" align="center" valign="middle">--</td>
+			<td width="101" height="22" align="center" valign="middle">--</td>
+			<td width="160" height="22" align="center" valign="middle">--</td>
+			<td width="160" height="22" align="center" valign="middle">--</td>
+			<td width="160" height="22" align="right" valign="middle">{{json.listGrid[0].ynsehj === null ? '' : json.listGrid[0].ynsehj.toFixed(2)}}</td>
+		</tr>
+		<tr style="border-right:1px solid #333">
+			<td width="214" height="30" align="center" valign="middle" colspan="2">本期准予扣除税额</td>
+			<td width="206" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.bqzykcse='""'>0.00</td>
+			<td width="480" height="60" align="center" valign="middle" colspan="3" rowspan="2" class="noBorder">
+				<B style="font-size:12px;">声明<br>此纳税申报表是根据国家税收法律的规定填报的，我确定它是真实的、可靠的、完整的。</B>
+			</td>
+		</tr>
+		<tr style="border-right:1px solid #333">
+			<td width="214" height="30" align="center" valign="middle" colspan="2">本期减（免）税额：</td>
+			<td width="206" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.bqjmse='""'>0.00</td>
+		</tr>
+		<tr style="border-right:1px solid #333;border-bottom:1px solid #333">
+			<td width="214" height="30" align="center" valign="middle" colspan="2">期初未缴税额:</td>
+			<td width="206" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.qcwjse='""'>0.00</td>
+			<td width="480" height="30" align="left" valign="middle" colspan="3" class="noBorder">经办人（签章）：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话：<br>财务负责人（签章）：</td>
+		</tr>
+		<tr style="border-right:1px solid #333" >
+			<td width="214" height="30" align="center" valign="middle" colspan="2">本期缴纳前期应纳税额：</td>
+			<td width="206" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.bqjnqqynse='""'>0.00</td>
+			<td width="480" height="30" align="center" valign="middle" colspan="3" class="noBorder">（如果你已委托代理人申报，请填写）</td>
+		</tr>
+		<tr style="border-right:1px solid #333">
+			<td width="214" height="30" align="center" valign="middle" colspan="2">本期预缴税额：</td>
+			<td width="206" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.bqyjse='""'>0.00</td>
+			<td width="480" height="30" align="center" valign="middle" colspan="3" class="noBorder"><B style="font-size:12px;">授权声明</B>
+			</td>
+		</tr>
+		<tr style="border-right:1px solid #333">
+			<td width="214" height="30" align="center" valign="middle" colspan="2">本期应补（退）税额：</td>
+			<td width="206" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.bqybtse='""'>0.00</td>
+			<td width="480" height="30" align="center" valign="middle" colspan="3" class="noBorder">为代理一切税务事宜，现授权 <br> （地址） 为<br></td>
+		</tr>
+		<tr style="border-right:1px solid #333;border-bottom:1px solid #333">
+			<td width="214" height="30" align="center" valign="middle" colspan="2">期末未缴税额:</td>
+			<td width="206" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.qmwjse='""'>0.00</td>
+			<td width="480" height="30" align="center" valign="middle" colspan="3" class="noBorder">本纳税人的代理申报人，任何与本申报表有关的往来文件，都可寄予此人。<br>授权人签章：<br></td>
+		</tr>
+		<tr style="border-right:1px solid #333">
+			<td width="214" height="30" align="center" valign="middle" colspan="2">办理人员身份证件类型</td>
+			<td width="206" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.sfzjlx='""'></td>
+			<td width="160" height="30" align="center" valign="middle">办理人员身份证件号码</td>
+			<td width="320" height="30" align="right" valign="middle" colspan="2" v-fill.listForm.sfzjhm='""'></td>
+		</tr>
+		<tr>
+			<td width="900" height="22" align="center" valign="middle" colspan="7" class="noBorder">
+				<B style="font-size:12px;">以下由税务机关填写</B>
+			</td>
+		</tr>
+		<tr>
+			<td width="214" height="22" align="left" valign="middle" colspan="2" class="noBorder">受理人（签章）：</td>
+			<td width="366" height="22" align="left" valign="middle" colspan="3" class="noBorder">受理日期： 年 月 日</td>
+			<td width="320" height="22" align="left" valign="middle" colspan="2" class="noBorder">受理税务机关（章）：</td>
+		</tr>
+	</table>
+	<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+	<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+	<script>
+	$(function(){
+    	$("table tr td").each(function(){
+    		if($.trim($(this).text()) == "--"){
+    			$(this).css("text-align","center");
+    		}
+    	})
+    })
+	</script>
+</body>
+</html>

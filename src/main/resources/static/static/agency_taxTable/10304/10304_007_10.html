@@ -1,0 +1,187 @@
+<html>
+
+<head>
+  <title>成品油库存报告表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+<div id="taxTable"></div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/fixTable.js"></script>
+  <script type="text/javascript">
+	function formatDate (date) {
+		    //判断是否为数字
+		var re = /^\d+(?=\.{0,1}\d+$|$)/ 
+	  	if (date != "") {
+      		// 是纯数字
+      		if (re.test(date)) {
+        	// 长度为6  比如 201802
+        	if (date.length == 6) {
+        		var y = date.slice(0,4);
+          		var m = date.slice(4,6);         
+          		date = y + '年' + m + '月';
+        	} else {
+          		// 长度为8 比如 20180219
+          		var y = date.slice(0,4);
+          		var m = date.slice(4,6);      
+          		var d = date.slice(6,8);      
+          		date = y + '年' + m + '月' + d + '日'
+        		}
+      		} else {
+       			// 不是纯数字 比如 2018-02-19
+       		 	var arr = date.split('-');
+        		date = arr[0] + '年' + arr[1] + '月' + arr[2] + '日'        
+      		}      
+	  	}
+	  	return date
+	}
+  var tableHtml="";
+  tableHtml+='<table style="width:90%">'
+  +'<tr>'
+  +'<td width="2550" height="46" align="center" valign="middle" colspan="18" class="noBorder">'
+  +'<B>成品油库存报告表</B>'
+  +'</td>'
+  +'</tr>'
+  +'<tr>'
+  +'<td width="1350" height="22" align="left" valign="middle" colspan="10" class="noBorder">税款所属时间：<span v-date>' + formatDate(bt.sbSbxxBbmx.sssqQ) + '</span>至<span v-date>' + formatDate(bt.sbSbxxBbmx.sssqZ) + '</span></td>'
+  +'<td width="1200" height="22" align="left" valign="middle" colspan="8" class="noBorder">填表日期：'+formatDate(bt.sbSbxxBbmx.saveTime)+'</td>'
+  +'</tr>'
+  +'<tr>'
+  +'<td width="1350" height="22" align="left" valign="middle" colspan="18" class="noBorder">纳税人识别号：'+bt.customerStateTaxInfo.nsrsbh+'</td>'
+  +'</tr>'
+  +'<tr>'
+  +'<td width="1350" height="22" align="left" valign="middle" colspan="15" class="noBorder">纳税人名称（公章）：'+bt.customerStateTaxInfo.nsrmc+'</td>'
+  +'<td width="450" height="22" align="right" valign="middle" colspan="3" class="noBorder">计量单位：吨</td>'
+  +'</tr>'
+  +'</table>'
+  +'<div id="outerDiv">'
+  +'<div id="tableDiv">'
+  +'<table cellspacing="0" cellpadding="0" width="2655">'
+  +'<tr>'
+  +'<td class="column-fixed" width="150" height="66" align="center" valign="middle" colspan="2" rowspan="3" style="padding:0;background-image:url(\'/static/images/index/81_line.png\');background-repeat:no-repeat;position:relative;background-size:100% 100%;image-rendering: -webkit-optimize-contrast;">'
+  +'<span style="position:absolute;right:10px;top:10px">项目</span>'
+  +'<span style="position:absolute;left:10px;bottom:10px">应税消费品</span>'
+  +'</td>'
+  +'<td width="150" height="66" align="center" valign="middle" rowspan="3">购进产品<br>2014年12<br>月13日期<br>初库存</td>'
+  +'<td width="1800" height="22" align="center" valign="middle" colspan="12">2014年12月13日至2015年1月12日购进产品</td>'
+  +'<td width="150" height="66" align="center" valign="middle" rowspan="3">购进产品2014<br>年12月13日<br>至2015年1月<br>12日已领用</td>'
+  +'<td width="150" height="66" align="center" valign="middle" rowspan="3">购进产品2015<br>年1月12日期<br>末库存</td>'
+  +'<td width="150" height="66" align="center" valign="middle" rowspan="3">自产产品<br>2015年1月<br>12日期<br>末库存</td>'
+  +'</tr>'
+  +'<tr>'
+  +'<td width="600" height="22" align="center" valign="middle" colspan="4">外购</td>'
+  +'<td width="600" height="22" align="center" valign="middle" colspan="4">委托加工收回</td>'
+  +'<td width="600" height="22" align="center" valign="middle" colspan="4">进口</td>'
+  +'</tr>'
+  +'<tr>'
+  +'<td width="150" height="22" align="center" valign="middle">有凭证已入库</td>'
+  +'<td width="150" height="22" align="center" valign="middle">有凭证未入库</td>'
+  +'<td width="150" height="22" align="center" valign="middle">已入库无凭证</td>'
+  +'<td width="150" height="22" align="center" valign="middle">小计</td>'
+  +'<td width="150" height="22" align="center" valign="middle">有凭证已入库</td>'
+  +'<td width="150" height="22" align="center" valign="middle">有凭证未入库</td>'
+  +'<td width="150" height="22" align="center" valign="middle">已入库无凭证</td>'
+  +'<td width="150" height="22" align="center" valign="middle">小计</td>'
+  +'<td width="150" height="22" align="center" valign="middle">有凭证已入库</td>'
+  +'<td width="150" height="22" align="center" valign="middle">有凭证未入库</td>'
+  +'<td width="150" height="22" align="center" valign="middle">已入库无凭证</td>'
+  +'<td width="150" height="22" align="center" valign="middle">小计</td>'
+  +'</tr>'
+  +'<tr>'
+  +'<td width="97" height="22" align="center" valign="middle">名称</td>'
+  +'<td width="53" height="22" align="center" valign="middle">税率</td>'
+  +'<td width="150" height="22" align="center" valign="middle">1</td>'
+  +'<td width="150" height="22" align="center" valign="middle">2</td>'
+  +'<td width="150" height="22" align="center" valign="middle">3</td>'
+  +'<td width="150" height="22" align="center" valign="middle">4</td>'
+  +'<td width="150" height="22" align="center" valign="middle">5=2+3+4</td>'
+  +'<td width="150" height="22" align="center" valign="middle">6</td>'
+  +'<td width="150" height="22" align="center" valign="middle">7</td>'
+  +'<td width="150" height="22" align="center" valign="middle">8</td>'
+  +'<td width="150" height="22" align="center" valign="middle">9=6+7+8</td>'
+  +'<td width="150" height="22" align="center" valign="middle">10</td>'
+  +'<td width="150" height="22" align="center" valign="middle">11</td>'
+  +'<td width="150" height="22" align="center" valign="middle">12</td>'
+  +'<td width="150" height="22" align="center" valign="middle">13=10+11+12</td>'
+  +'<td width="150" height="22" align="center" valign="middle">14</td>'
+  +'<td width="150" height="22" align="center" valign="middle">15=1+5+9+13-14</td>'
+  +'<td width="150" height="22" align="center" valign="middle">16</td>'
+  +'</tr>';
+  
+  for(i=0;i<json.length;i++){
+  tableHtml+='<tr>';
+	var j=i+1;
+	if((j%3)==1){
+	tableHtml+='<td width="97" height="66" align="center" valign="middle"  rowspan="3">'+json[i].zspmDm+'</td>';
+	}
+  tableHtml+='<td width="53" height="22" align="right" valign="middle">'+json[i].sl1.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].qckc.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].wgYpzyrk.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].wgYpzwrk.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].wgYrkwpz.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].wgxj.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].wtYpzyrk.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].wtYpzwrk.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].wtYrkwpz.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].wtxj.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].jkYpzyrk.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].jkYpzwrk.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].jkYrkwpz.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].jkxj.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].gjcpyly.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].gjcpqmkc.toFixed(2)+'</td>'
+  +'<td width="150" height="22" align="right" valign="middle">'+json[i].zccpqmkc.toFixed(2)+'</td>'
+  +'</tr>';
+  }
+  tableHtml+='<tr>'
+  +'<td width="150" height="22" align="center" valign="middle" colspan="2">合计</td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'<td width="150" height="22" align="right" valign="middle"></td>'
+  +'</tr>'
+  +'<tr style="border-left:1px solid #333;border-right:1px solid #333">'
+  +'<td width="1500" height="22" align="center" valign="middle" colspan="11" class="noBorder">'
+  +'<B style="font-size:12px;">声明</B>'
+  +'</td>'
+  +'<td width="1050" height="22" align="left" valign="middle" colspan="7" class="noBorder">（如果你已委托代理人申报，请填写）</td>'
+  +'</tr>'
+  +'<tr style="border-left:1px solid #333;border-right:1px solid #333">'
+  +'<td width="1500" height="22" align="center" valign="middle" colspan="11" class="noBorder">'
+  +'<B style="font-size:12px;">此成品油库存报告表是根据国家税收法律、法规的规定填报的，我确定它是真实的、可靠的、完整的。</B>'
+  +'</td>'
+  +'<td width="1050" height="22" align="center" valign="middle" colspan="7" class="noBorder">'
+  +'<B style="font-size:12px;">授权声明</B>'
+  +'</td>'
+  +'</tr>'
+  +'<tr style="border-left:1px solid #333;border-right:1px solid #333">'
+  +'<td width="1500" height="36" align="center" valign="middle" colspan="11" class="noBorder">财务负责人（签章）： 法定代表人（签章）：</td>'
+  +'<td width="1050" height="36" align="left" valign="middle" colspan="7" class="noBorder">为代理一切税务事宜，现授权 （地址） 为本纳税人的代理申报人，任何与本申报表有关的往来文件，都可寄予此人。</td>'
+  +'</tr>'
+  +'<tr style="border-left:1px solid #333;border-right:1px solid #333;border-bottom:1px solid #333">'
+  +'<td width="1500" height="22" align="left" valign="middle" colspan="11" class="noBorder">&nbsp;</td>'
+  +'<td width="1050" height="22" align="left" valign="middle" colspan="7" class="noBorder">授权人签字：</td>'
+  +'</tr>'
+  +'</table>'
+  +'</div>'
+  +'</div>';
+  $("#taxTable").html(tableHtml);
+  </script>
+</body>
+
+</html>

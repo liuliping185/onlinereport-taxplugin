@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>卷烟生产企业年度销售明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1398" height = "200" id="taxTable">
+<tr>
+<td width="1366" height="46"  align="center" valign="middle" colspan="9" class="noBorder"><B>卷烟生产企业年度销售明细表</B></td>
+</tr>
+<tr>
+<td width="1366" height="22"  align="left" valign="middle" colspan="9" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td width="800" height="22"  align="left" valign="middle" colspan="5" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td width="566" height="22"  align="right" valign="middle" colspan="4" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td width="800" height="22" align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td width="566" height="22" align="right" valign="middle" colspan="4" class="noBorder">单位：万支、元、元/条（200支）</td>
+</tr>
+<tr>
+<td width="160" height="22" align="center" valign="middle">卷烟条包装商品条码</td>
+<td width="160" height="22" align="center" valign="middle">卷烟牌号规格</td>
+<td width="160" height="22" align="center" valign="middle">产量</td>
+<td width="160" height="22" align="center" valign="middle">销量</td>
+<td width="160" height="22" align="center" valign="middle">销售价格</td>
+<td width="160" height="22" align="center" valign="middle">调拨价格</td>
+<td width="160" height="22" align="center" valign="middle">消费税计税价格</td>
+<td width="160" height="22" align="center" valign="middle">销售额</td>
+<td width="86" height="22" align="center" valign="middle">备注</td>
+</tr>
+<tr v-for='(item,index) in json'>
+<td width="160" height="22" align="center" valign="middle">{{item.jytbzsptm}}</td>
+<td width="160" height="22" align="center" valign="middle">{{item.gg}}</td>
+<td width="160" height="22" align="right" valign="middle" class="cl">{{item.cl.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle" class="sl">{{item.sl.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle" class="xsjg">{{item.xsjg.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle" class="dbjg">{{item.dbjg.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle" class="jsjg">{{item.jsjg.toFixed(2)}}</td>
+<td width="160" height="22" align="right" valign="middle" class="xse">{{item.xse.toFixed(2)}}</td>
+<td width="86" height="22" align="left" valign="middle">{{item.bz}}</td>
+</tr>
+<tr>
+<td width="160" height="22" align="center" valign="middle">合计</td>
+<td width="160" height="22" align="center" valign="middle">--</td>
+<td width="160" height="22" align="right" valign="middle" class="clhj"></td>
+<td width="160" height="22" align="right" valign="middle" class="slhj"></td>
+<td width="160" height="22" align="right" valign="middle" class="xsjghj"></td>
+<td width="160" height="22" align="right" valign="middle" class="dbjghj"></td>
+<td width="160" height="22" align="right" valign="middle" class="jsjghj"></td>
+<td width="160" height="22" align="right" valign="middle" class="xsehj"></td>
+<td width="86" height="22" align="center" valign="middle">--</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+<script>
+	function sum(arr) {
+    	return arr.reduce(function(prev, curr, idx, arr){
+        	return prev + curr;
+    	});
+	}
+	var cl = [];
+	var sl = [];
+	var xsjg = [];
+	var dbjg= [];
+	var jsjg = [];
+	var xse = [];
+	for (var i = 0 ; i < json.length; i++) {
+		cl.push(parseInt(json[i].cl));
+		sl.push(parseInt(json[i].sl));
+		xsjg.push(parseInt(json[i].xsjg));
+		dbjg.push(parseInt(json[i].dbjg));
+		jsjg.push(parseInt(json[i].jsjg));
+		xse.push(parseInt(json[i].xse));
+	}
+	$(".clhj").html(sum(cl).toFixed(2));
+	$(".slhj").html(sum(sl).toFixed(2));
+	$(".xsjghj").html(sum(xsjg).toFixed(2));
+	$(".dbjghj").html(sum(dbjg).toFixed(2));
+	$(".jsjghj").html(sum(jsjg).toFixed(2));
+	$(".xsehj").html(sum(xse).toFixed(2));
+</script>
+</body>
+</html>

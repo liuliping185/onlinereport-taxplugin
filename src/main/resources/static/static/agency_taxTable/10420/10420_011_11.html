@@ -1,0 +1,113 @@
+<html>
+
+<head>
+  <title>融通资金表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="1560" height="377" id="taxTable" style="margin-top:20px;">
+    <tr>
+      <td width="1312" height="23" align="center" valign="middle" colspan="9" class="noBorder">
+        <B>融通资金表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="1312" height="22" align="left" valign="middle" colspan="9" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="1312" height="22" align="left" valign="middle" colspan="9" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="1312" height="22" align="left" valign="middle" colspan="9" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="960" height="22" align="left" valign="middle" colspan="7" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="352" height="22" align="right" valign="middle" colspan="2" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+      <td width="1312" height="22" align="left" valign="middle" colspan="9">
+        <B style="font-size:14px">关联融入资金（全部）</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="47" height="22" align="center" valign="middle">行次</td>
+      <td width="164" height="22" align="center" valign="middle">关联交易类型</td>
+      <td width="130" height="22" align="center" valign="middle">关联方名称</td>
+      <td width="121" height="22" align="center" valign="middle">关联交易内容</td>
+      <td width="160" height="22" align="center" valign="middle">借贷金额</td>
+      <td width="160" height="22" align="center" valign="middle">本年实际占用天数</td>
+      <td width="178" height="22" align="center" valign="middle">境外关联交易金额（利息）</td>
+      <td width="178" height="22" align="center" valign="middle">境内关联交易金额（利息）</td>
+      <td width="174" height="22" align="center" valign="middle">年度平均关联债权投资金额</td>
+    </tr>
+    <tr v-for='(item,index) in json.list'>
+      <td width="47" height="22" align="center" valign="middle">00{{index + 1}}</td>
+      <td width="164" height="22" align="left" valign="middle">{{item.gljylx}}</td>
+      <td width="130" height="22" align="left" valign="middle">{{item.glfmc}}</td>
+      <td width="121" height="22" align="left" valign="middle">{{item.gljynr}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jdje.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bnsjzyts.toFixed(2)}}</td>
+      <td width="178" height="22" align="right" valign="middle">{{item.jwgljyjelx.toFixed(2)}}</td>
+      <td width="178" height="22" align="right" valign="middle">{{item.jngljyjelx.toFixed(2)}}</td>
+      <td width="174" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr>
+      <td width="47" height="22" align="center" valign="middle">合计</td>
+      <td width="164" height="22" align="center" valign="middle">--</td>
+      <td width="130" height="22" align="center" valign="middle">--</td>
+      <td width="121" height="22" align="center" valign="middle">--</td>
+      <td width="160" height="22" align="center" valign="middle">--</td>
+      <td width="160" height="22" align="center" valign="middle">--</td>
+      <td width="178" height="22" align="right" valign="middle">{{json.list[0].rrzjjwgljyje.toFixed(2)}}</td>
+      <td width="178" height="22" align="right" valign="middle">{{json.list[0].rrzjjngljyje.toFixed(2)}}</td>
+      <td width="174" height="22" align="right" valign="middle">{{json.list[0].rrzjglzqtzje.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="1312" height="22" align="right" valign="middle" colspan="9">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="1312" height="22" align="left" valign="middle" colspan="9">
+        <B style="font-size:14px">关联融出资金（全部）</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="47" height="22" align="center" valign="middle">行次</td>
+      <td width="164" height="22" align="center" valign="middle">关联交易类型</td>
+      <td width="130" height="22" align="center" valign="middle">关联方名称</td>
+      <td width="121" height="22" align="center" valign="middle">关联交易内容</td>
+      <td width="160" height="22" align="center" valign="middle">借贷金额</td>
+      <td width="160" height="22" align="center" valign="middle">本年实际占用天数</td>
+      <td width="178" height="22" align="center" valign="middle">境外关联交易金额（利息）</td>
+      <td width="178" height="22" align="center" valign="middle">境内关联交易金额（利息）</td>
+      <td width="174" height="22" align="center" valign="middle">年度平均关联债权投资金额</td>
+    </tr>
+    <tr v-for='(item,index) in json.listzb'>
+      <td width="47" height="22" align="center" valign="middle">00{{index + 1 + json.list.length}}</td>
+      <td width="164" height="22" align="left" valign="middle">{{item.gljylx}}</td>
+      <td width="130" height="22" align="left" valign="middle">{{item.glfmc}}</td>
+      <td width="121" height="22" align="left" valign="middle">{{item.gljynr}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jdje.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bnsjzyts.toFixed(2)}}</td>
+      <td width="178" height="22" align="right" valign="middle">{{item.jwgljyjelx.toFixed(2)}}</td>
+      <td width="178" height="22" align="right" valign="middle">{{item.jngljyjelx.toFixed(2)}}</td>
+      <td width="174" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr>
+      <td width="47" height="22" align="center" valign="middle">合计</td>
+      <td width="164" height="22" align="center" valign="middle">--</td>
+      <td width="130" height="22" align="center" valign="middle">--</td>
+      <td width="121" height="22" align="center" valign="middle">--</td>
+      <td width="160" height="22" align="center" valign="middle">--</td>
+      <td width="160" height="22" align="center" valign="middle">--</td>
+      <td width="178" height="22" align="right" valign="middle">{{json.listzb[0].rczjjwgljyje.toFixed(2)}}</td>
+      <td width="178" height="22" align="right" valign="middle">{{json.listzb[0].rczjjngljyje.toFixed(2)}}</td>
+      <td width="174" height="22" align="center" valign="middle">--</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

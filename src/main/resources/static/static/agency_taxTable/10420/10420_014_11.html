@@ -1,0 +1,155 @@
+<html>
+
+<head>
+  <title>成本分摊协议表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="2309" height="443" id="taxTable" style="margin-top:30px;">
+    <tr>
+      <td width="2277" height="23" align="center" valign="middle" colspan="16" class="noBorder">
+        <B>成本分摊协议表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="2277" height="22" align="left" valign="middle" colspan="16" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="2277" height="22" align="left" valign="middle" colspan="16" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="2277" height="22" align="left" valign="middle" colspan="16" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="2277" height="22" align="right" valign="middle" colspan="16" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+    </tr>
+    <tr>
+      <td width="2277" height="22" align="left" valign="middle" colspan="16">
+        <B style="font-size:14px">100基本信息</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="260" height="44" align="center" valign="middle" colspan="2" rowspan="2">序号</td>
+      <td width="192" height="44" align="center" valign="middle" rowspan="2">成本分摊协议名称</td>
+      <td width="249" height="44" align="center" valign="middle" colspan="2" rowspan="2">协议涉及内容</td>
+      <td width="132" height="44" align="center" valign="middle" rowspan="2">签订日期</td>
+      <td width="121" height="44" align="center" valign="middle" rowspan="2">协议期限起始日期</td>
+      <td width="121" height="44" align="center" valign="middle" rowspan="2">协议期限截止日期</td>
+      <td width="320" height="22" align="center" valign="middle" colspan="2">本年度预期收益总额</td>
+      <td width="562" height="22" align="center" valign="middle" colspan="4">本年度实际发生成本总额</td>
+      <td width="320" height="22" align="center" valign="middle" colspan="2">本年度实际收益总额</td>
+    </tr>
+    <tr>
+      <td width="160" height="22" align="center" valign="middle">币种</td>
+      <td width="160" height="22" align="center" valign="middle">金额</td>
+      <td width="281" height="22" align="center" valign="middle" colspan="2">币种</td>
+      <td width="281" height="22" align="center" valign="middle" colspan="2">金额</td>
+      <td width="160" height="22" align="center" valign="middle">币种</td>
+      <td width="160" height="22" align="center" valign="middle">金额</td>
+    </tr>
+    <tr v-for='(item,index) in json.listzb'>
+      <td width="260" height="22" align="center" valign="middle" colspan="2">00{{index+1}}</td>
+      <td width="192" height="22" align="left" valign="middle">{{item.cbftxymc}}</td>
+      <td width="249" height="22" align="left" valign="middle" colspan="2">{{item.cbftxysjnrlxDm}}</td>
+      <td width="132" height="22" align="left" valign="middle">{{item.qdrq1}}</td>
+      <td width="121" height="22" align="left" valign="middle">{{item.xyqxq}}</td>
+      <td width="121" height="22" align="left" valign="middle">{{item.xyqxz}}</td>
+      <td width="160" height="22" align="left" valign="middle">{{item.bndyqsybz}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bndyqsyje.toFixed(2)}}</td>
+      <td width="281" height="22" align="left" valign="middle" colspan="2">{{item.bndsjfscbbz}}</td>
+      <td width="281" height="22" align="right" valign="middle" colspan="2">{{item.bndsjfscbje.toFixed(2)}}</td>
+      <td width="160" height="22" align="left" valign="middle">{{item.bndsjsybz}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.bndsjsyje.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="2277" height="22" align="left" valign="middle" colspan="16">
+        <B style="font-size:14px">200参与方信息</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="68" height="66" align="center" valign="middle" rowspan="3">行次</td>
+      <td width="192" height="44" align="center" valign="middle" rowspan="2">成本分摊协议名称</td>
+      <td width="192" height="44" align="center" valign="middle" rowspan="2">协议各参与方名称</td>
+      <td width="129" height="44" align="center" valign="middle" rowspan="2">国家（地区）</td>
+      <td width="120" height="44" align="center" valign="middle" rowspan="2">关联关系类型</td>
+      <td width="132" height="44" align="center" valign="middle" rowspan="2">参与协议起始日期</td>
+      <td width="121" height="44" align="center" valign="middle" rowspan="2">参与协议截止日期</td>
+      <td width="441" height="22" align="center" valign="middle" colspan="3">本年度实际分摊成本金额</td>
+      <td width="441" height="22" align="center" valign="middle" colspan="3">本年度加入支付金额</td>
+      <td width="441" height="22" align="center" valign="middle" colspan="3">本年度退出补偿金额</td>
+    </tr>
+    <tr>
+      <td width="121" height="22" align="center" valign="middle">币种</td>
+      <td width="160" height="22" align="center" valign="middle">金额</td>
+      <td width="160" height="22" align="center" valign="middle">人民币金额</td>
+      <td width="121" height="22" align="center" valign="middle">币种</td>
+      <td width="160" height="22" align="center" valign="middle">金额</td>
+      <td width="160" height="22" align="center" valign="middle">人民币金额</td>
+      <td width="121" height="22" align="center" valign="middle">币种</td>
+      <td width="160" height="22" align="center" valign="middle">金额</td>
+      <td width="160" height="22" align="center" valign="middle">人民币金额</td>
+    </tr>
+    <tr>
+      <td width="192" height="22" align="center" valign="middle">0</td>
+      <td width="192" height="22" align="center" valign="middle">1</td>
+      <td width="129" height="22" align="center" valign="middle">2</td>
+      <td width="120" height="22" align="center" valign="middle">3</td>
+      <td width="132" height="22" align="center" valign="middle">4</td>
+      <td width="121" height="22" align="center" valign="middle">5</td>
+      <td width="121" height="22" align="center" valign="middle">6</td>
+      <td width="160" height="22" align="center" valign="middle">7</td>
+      <td width="160" height="22" align="center" valign="middle">8</td>
+      <td width="121" height="22" align="center" valign="middle">9</td>
+      <td width="160" height="22" align="center" valign="middle">10</td>
+      <td width="160" height="22" align="center" valign="middle">11</td>
+      <td width="121" height="22" align="center" valign="middle">12</td>
+      <td width="160" height="22" align="center" valign="middle">13</td>
+      <td width="160" height="22" align="center" valign="middle">14</td>
+    </tr>
+    <tr v-for='(item,index) in json.list'>
+      <td width="68" height="22" align="center" valign="middle">00{{index+1+json.listzb.length}}</td>
+      <td width="192" height="22" align="left" valign="middle">{{item.cbftxymc}}</td>
+      <td width="192" height="22" align="left" valign="middle">{{item.xygcyfmc}}</td>
+      <td width="129" height="22" align="left" valign="middle">{{item.gjhdqszDm}}</td>
+      <td width="120" height="22" align="center" valign="middle">{{!!item.glgxlxDm ? item.glgxlxDm : '--'}}</td>
+      <td width="132" height="22" align="left" valign="middle">{{item.xyzxrqq}}</td>
+      <td width="121" height="22" align="left" valign="middle">{{item.xyzxrqz}}</td>
+      <td width="121" height="22" align="left" valign="middle">{{item.ftcbbz}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.ftcbje.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.ftcbrmb == null ? '--' : item.ftcbrmb.toFixed(2)}}</td>
+      <td width="121" height="22" align="left" valign="middle">{{item.jrzfbz}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.jrzfje.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{!!item.jrzfrmb == null ? '--' : item.jrzfrmb.toFixed(2)}}</td>
+      <td width="121" height="22" align="left" valign="middle">{{item.tcbcbz}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{item.tcbcje.toFixed(2)}}</td>
+      <td width="160" height="22" align="right" valign="middle">{{!!item.tcbcrmb == null ? '--' : item.tcbcrmb.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="1075" height="22" align="center" valign="middle" colspan="8">300本年度存在非协议参与方使用协议成果情况</td>
+      <td width="1202" height="22" align="center" valign="middle" colspan="8">400成本分摊协议变更或者终止情况</td>
+    </tr>
+    <tr>
+      <td width="260" height="22" align="left" valign="middle" colspan="2">
+        <form>
+          <p><input type="Radio" name="B18" value="1" :checked="json.listzb[0].sfczfxycyf === '1'" disabled>是
+            <input type="Radio" name="B18" value="2" :checked="json.listzb[0].sfczfxycyf === '0'" disabled>否</p>
+        </form>
+      </td>
+      <td width="815" height="22" align="left" valign="middle" colspan="6">&nbsp;{{json.listzb[0].fxycyfsm==null?'':json.listzb[0].fxycyfsm}}</td>
+      <td width="320" height="22" align="left" valign="middle" colspan="2">
+        <form>
+          <p><input type="Radio" name="J18" value="1" :checked="json.listzb[0].bgzzqk === '1'" disabled>变更
+            <input type="Radio" name="J18" value="2" :checked="json.listzb[0].bgzzqk === '2'" disabled>终止
+            <input type="Radio" name="J18" value="0" :checked="json.listzb[0].bgzzqk === '0'" disabled>无变更终止</p>
+        </form>
+      </td>
+      <td width="882" height="22" align="left" valign="middle" colspan="6">&nbsp;{{json.listzb[0].bgzzsm==null?'':json.listzb[0].bgzzsm}}</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

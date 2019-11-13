@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>增值税纳税申报表附列资料（四）</title>
+<meta name="GENERATOR" content="Cell 2000">
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" width="1285" height = "420"  id="taxTable">
+<tr>
+<td width="1087" height="46"  align="center" valign="middle" class="noBorder"  colspan="7" ><B>增值税纳税申报表附列资料（四）</B></td>
+<td width="132" height="46"  align="center" valign="middle" class="noBorder"  ><B>&nbsp;</B></td>
+</tr>
+<tr>
+<td width="1087" height="22"  align="center" valign="middle" class="noBorder"  colspan="7" ><B>（税额抵减情况表）</B></td>
+<td width="132" height="22"  align="center" valign="middle" class="noBorder"  ><B>&nbsp;</B></td>
+</tr>
+<tr>
+<td width="635" height="22" align="left" valign="middle" class="noBorder"  colspan="4" >纳税人名称（公章）：<span>{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</span></td>
+<td width="320" height="22" align="left" valign="middle" class="noBorder"  colspan="2" >税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td width="264" height="22" align="right" valign="middle" class="noBorder"  colspan="2" >金额单位： 元至角分</td>
+</tr>
+<tr>
+<td width="1219" height="22"  align="center" valign="middle" colspan="8" >一、税额抵减情况</td>
+</tr>
+<tr>
+<td width="55" height="44"  align="center" valign="middle"  rowspan="2">序号</td>
+<td width="260" height="44"  align="center" valign="middle"  rowspan="2">抵减项目</td>
+<td width="160" height="22"  align="center" valign="middle"  >期初余额</td>
+<td width="160" height="22"  align="center" valign="middle"  >本期发生额</td>
+<td width="160" height="22"  align="center" valign="middle"  >本期应抵减税额</td>
+<td width="160" height="22"  align="center" valign="middle"  >本期实际抵减税额</td>
+<td width="264" height="22"  align="center" valign="middle" colspan="2" >期末余额</td>
+</tr>
+<tr>
+<td width="160" height="22"  align="center" valign="middle"  >1</td>
+<td width="160" height="22"  align="center" valign="middle"  >2</td>
+<td width="160" height="22"  align="center" valign="middle"  >3=1+2</td>
+<td width="160" height="22"  align="center" valign="middle"  >4≤3</td>
+<td width="264" height="22"  align="center" valign="middle" colspan="2" >5=3-4</td>
+</tr>
+<tr v-for="(item,index) in json.list1">
+<td width="55" height="22"  align="center" valign="middle"  >{{item.ewbhxh}}</td>
+<td width="260" height="22"  align="left" valign="middle"  >{{item.hmc}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.qcye==null?0.00:item.qcye.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.bqfse==null?0.00:item.bqfse.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.bqydjse==null?0.00:item.bqydjse.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.bqsjdjse==null?0.00:item.bqsjdjse.toFixed(2)}}</td>
+<td width="264" height="22"  align="right" valign="middle" colspan="2" >{{item.qmye==null?0.00:item.qmye.toFixed(2)}}</td>
+</tr>
+<tr>
+<td width="1219" height="22"  align="center" valign="middle" colspan="8" >二、加计抵减情况</td>
+</tr>
+<tr>
+<td width="55" height="44"  align="center" valign="middle"  rowspan="2">序号</td>
+<td width="260" height="44"  align="center" valign="middle"  rowspan="2">加计抵减项目</td>
+<td width="160" height="22"  align="center" valign="middle"  >期初余额</td>
+<td width="160" height="22"  align="center" valign="middle"  >本期发生额</td>
+<td width="160" height="22"  align="center" valign="middle"  >本期调减额</td>
+<td width="160" height="22"  align="center" valign="middle"  >本期可抵减额</td>
+<td width="132" height="22"  align="center" valign="middle"  >本期实际抵减额</td>
+<td width="132" height="22"  align="center" valign="middle"  >期末余额</td>
+</tr>
+<tr>
+<td width="160" height="22"  align="center" valign="middle"  >1</td>
+<td width="160" height="22"  align="center" valign="middle"  >2</td>
+<td width="160" height="22"  align="center" valign="middle"  >3</td>
+<td width="160" height="22"  align="center" valign="middle"  >4=1+2-3</td>
+<td width="132" height="22"  align="center" valign="middle"  >5</td>
+<td width="132" height="22"  align="center" valign="middle"  >6=4-5</td>
+</tr>
+<tr  v-for="(item,index) in json.list2">
+<td width="55" height="22"  align="center" valign="middle"  >{{item.ewbhxh}}</td>
+<td width="260" height="22"  align="left" valign="middle"  >{{item.hmc}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.qcye==null?0.00:item.qcye.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.bqfse==null?0.00:item.bqfse.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.bqtje==null?0.00:item.bqtje.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.bqkdjse==null?0.00:item.bqkdjse.toFixed(2)}}</td>
+<td width="132" height="22"  align="right" valign="middle"  >{{item.bqsjdje==null?0.00:item.bqsjdje.toFixed(2)}}</td>
+<td width="132" height="22"  align="right" valign="middle"  >{{item.qmye==null?0.00:item.qmye.toFixed(2)}}</td>
+</tr>
+
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

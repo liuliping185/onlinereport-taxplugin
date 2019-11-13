@@ -1,0 +1,357 @@
+<html>
+
+<head>
+    <title>中华人民共和国扣缴企业所得税报告表</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body>
+    <div id="taxTable">
+        <div v-for="items in json">
+            <table cellspacing="0" cellpadding="0" width="1190" height="1300" style="margin-bottom:50px;">
+                <tr>
+                    <td width="1124" height="46" align="center" valign="middle" colspan="11" class="noBorder">
+                        <B>中华人民共和国扣缴企业所得税报告表</B>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="1124" height="22" align="center" valign="middle" colspan="11" class="noBorder">税款所属时间：
+                        <span v-date>{{items.nsrjbxxList[0].bcsbsdqdrq === '' || items.nsrjbxxList[0].bcsbsdqdrq === null ? bt.sbSbxxBbmx.saveTime : items.nsrjbxxList[0].bcsbsdqdrq}}</span>
+                        至<span v-date>{{items.nsrjbxxList[0].bcsbsdqdrq === '' || items.nsrjbxxList[0].bcsbsdqdrq === null ? bt.sbSbxxBbmx.saveTime : items.nsrjbxxList[0].bcsbsdqdrq}}</span></td>
+                </tr>
+                <tr v-for="item in items.nsrxxList">
+                    <td width="1124" height="22" align="left" valign="middle" colspan="11" class="noBorder">纳税人识别号：{{item.kjywrsbh}}</td>
+                </tr>
+                <tr v-for="item in items.nsrxxList">
+                    <td width="1124" height="22" align="left" valign="middle" colspan="11" class="noBorder">纳税人名称（公章）：{{item.kjywrmc}}</td>
+                </tr>
+                <tr>
+                    <td width="640" height="22" align="left" valign="middle" colspan="7" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+                    <td width="121" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+                    <td width="363" height="22" align="right" valign="middle" colspan="3" class="noBorder">金额单位： 人民币元（列至角分）</td>
+                </tr>
+                <tr>
+                    <td width="1124" height="22" align="left" valign="middle" colspan="11" class="noBorder">
+                        <form>
+                            <p>
+                                <input type="Radio" name="B6" value="1" checked disabled="disabled">扣缴申报
+                                <br>
+                                <input type="Radio" name="B6" value="2" disabled="disabled">自行申报</p>
+                        </form>
+                    </td>
+                </tr>
+                <tr v-for="item in items.nsrxxList">
+                    <td width="169" height="22" align="center" valign="middle" colspan="2">扣缴义务类型</td>
+                    <td width="296" height="22" align="left" valign="middle" colspan="3">{{item.kjywrlx}}</td>
+                    <td width="175" height="22" align="center" valign="middle" colspan="2">登记注册类型</td>
+                    <td width="484" height="22" align="left" valign="middle" colspan="4">{{item.djzclxDm}}</td>
+                </tr>
+                <tr>
+                    <td width="1124" height="22" align="left" valign="middle" colspan="11">
+                        <B>扣缴义务人基本信息：</B>
+                    </td>
+                </tr>
+                <tr v-for="item in items.kjywrjbxxList">
+                    <td width="169" height="22" align="center" valign="middle" colspan="2">纳税人识别号</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">{{item.kjywrnsrsbh}}</td>
+                    <td width="296" height="22" align="center" valign="middle" colspan="3">经济类型</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">{{item.kjywrJjlxDm}} {{item.kjywrJjlxmc}}</td>
+                </tr>
+                <tr v-for="item in items.kjywrjbxxList">
+                    <td width="223" height="22" align="center" valign="middle" colspan="3">中文名称</td>
+                    <td width="363" height="22" align="left" valign="middle" colspan="3">{{item.kjywrmc1}}</td>
+                    <td width="296" height="22" align="center" valign="middle" colspan="3">经济行业分类</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">{{item.kjywrjjhyflDm}} {{item.kjywrJjxyflmc}}</td>
+                </tr>
+                <tr v-for="item in items.kjywrjbxxList">
+                    <td width="223" height="22" align="center" valign="middle" colspan="3">英文名称</td>
+                    <td width="363" height="22" align="left" valign="middle" colspan="3">{{item.kjywrywmc}}</td>
+                    <td width="296" height="22" align="center" valign="middle" colspan="3">联系人</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">{{item.kjywrLxr}}</td>
+                </tr>
+                <tr v-for="item in items.kjywrjbxxList">
+                    <td width="223" height="22" align="center" valign="middle" colspan="3">中文地址</td>
+                    <td width="363" height="22" align="left" valign="middle" colspan="3">{{item.kjywrZwdz}}</td>
+                    <td width="296" height="22" align="center" valign="middle" colspan="3">联系电话</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">{{item.kjywrLxdh}}</td>
+                </tr>
+                <tr v-for="item in items.kjywrjbxxList">
+                    <td width="223" height="22" align="center" valign="middle" colspan="3">英文地址</td>
+                    <td width="363" height="22" align="left" valign="middle" colspan="3">{{item.kjywrYwdz}}</td>
+                    <td width="296" height="22" align="center" valign="middle" colspan="3">邮政编码</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">{{item.kjywryzbm}}</td>
+                </tr>
+                <tr>
+                    <td width="1124" height="22" align="left" valign="middle" colspan="11" font-size="14px">
+                        <B>纳税人基本信息：</B>
+                    </td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="169" height="22" align="center" valign="middle" colspan="2">在中国纳税人识别号</td>
+                    <td width="955" height="22" align="left" valign="middle" colspan="9">{{item.zqjmgnssbh}}</td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="169" height="22" align="center" valign="middle" colspan="2">在其居民国纳税识别号</td>
+                    <td width="296" height="22" align="left" valign="middle" colspan="3">{{item.nsrzqjmgnssbh}}</td>
+                    <td width="175" height="22" align="center" valign="middle" colspan="2">在中国境内的中文名称</td>
+                    <td width="484" height="22" align="left" valign="middle" colspan="4">{{item.nsrzwmc}}</td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="169" height="22" align="center" valign="middle" colspan="2">居民国（地区）名称及代码</td>
+                    <td width="296" height="22" align="left" valign="middle" colspan="3">{{item.nsrzqjmgDqMcjdm}}</td>
+                    <td width="175" height="22" align="center" valign="middle" colspan="2">在中国境内的英文名称</td>
+                    <td width="484" height="22" align="left" valign="middle" colspan="4">{{item.nsrywmc}}</td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="223" height="22" align="center" valign="middle" colspan="3">在其居民国中文名称</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">{{item.jmgnsrZwmc}}</td>
+                    <td width="175" height="22" align="center" valign="middle" colspan="2">在其居民国中文地址</td>
+                    <td width="484" height="22" align="left" valign="middle" colspan="4">{{item.nsrzqjmgzwdz}}</td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="223" height="22" align="center" valign="middle" colspan="3">在其居民国英文名称</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">{{item.jmgnsrYwmc}}</td>
+                    <td width="175" height="22" align="center" valign="middle" colspan="2">在其居民国英文地址 </td>
+                    <td width="484" height="22" align="left" valign="middle" colspan="4">{{item.nsrzqjmgywdz}}</td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="169" height="22" align="left" valign="middle" colspan="2">申报所得类型及代码</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">{{item.sbsdlxjdm}}</td>
+                    <td width="175" height="22" align="left" valign="middle" colspan="2">本次申报所得取得日期</td>
+                    <td width="363" height="22" align="left" valign="middle" colspan="3">{{item.bcsbsdqdrq}}</td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="169" height="22" align="left" valign="middle" colspan="2">合同名称</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">{{item.htmc}}</td>
+                    <td width="175" height="22" align="left" valign="middle" colspan="2">合同编号</td>
+                    <td width="363" height="22" align="left" valign="middle" colspan="3">{{item.htbh}}</td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="169" height="22" align="left" valign="middle" colspan="2">合同执行起始时间</td>
+                    <td width="175" height="22" align="left" valign="middle" colspan="2">{{item.htzxqssj}}</td>
+                    <td width="121" height="22" align="left" valign="middle">合同执行终止时间</td>
+                    <td width="121" height="22" align="left" valign="middle">{{item.htzxzzsj}}</td>
+                    <td width="175" height="22" align="left" valign="middle" colspan="2">合同总金额</td>
+                    <td width="121" height="22" align="right" valign="middle">{{item.htzje.toFixed(2)}}</td>
+                    <td width="121" height="22" align="left" valign="middle">合同总金额币种</td>
+                    <td width="121" height="22" align="left" valign="middle">{{item.htbz}}</td>
+                </tr>
+                <tr v-for="item in items.nsrjbxxList">
+                    <td width="169" height="22" align="left" valign="middle" colspan="2">是否享受税收协定待遇</td>
+                    <td width="296" height="22" align="left" valign="middle" colspan="3">
+	                    <input type="Radio" :checked="item.sfxsssxddy == 'Y'"  disabled>是
+	                    <input type="Radio" :checked='item.sfxsssxddy == "N"' disabled>否
+                    </td>
+                    <td width="121" height="22" align="left" valign="middle">适用税收协定条款</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">{{item.syssxdtk}}</td>
+                </tr>
+                <tr>
+                    <td width="169" height="22" align="left" valign="middle" colspan="2">是否享受其他类协定待遇</td>
+                    <td width="296" height="22" align="left" valign="middle" colspan="3">
+	                    <input type="Radio" :checked='items.nsrjbxxList[0].sfxsqtlxddy === "Y"' disabled>是
+	                    <input type="Radio" :checked='items.nsrjbxxList[0].sfxsqtlxddy === "N"' disabled>否
+                    </td>
+                    <td width="121" height="22" align="left" valign="middle">其他类协定名称</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">{{items.nsrjbxxList[0].qtlxdmc}}</td>
+                </tr>
+                <tr>
+                    <td width="169" height="22" align="left" valign="middle" colspan="2">是否享受国内税法优惠</td>
+                    <td width="296" height="22" align="left" valign="middle" colspan="3">
+	                    <input type="Radio" :checked='items.nsrjbxxList[0].sfxsgnsfyh === "Y"'  disabled>是
+	                    <input type="Radio" :checked='items.nsrjbxxList[0].sfxsgnsfyh === "N"'  disabled>否
+                    </td>
+                    <td width="121" height="22" align="left" valign="middle">国内税法优惠项目</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">{{items.nsrjbxxList[0].gnsfyhxm}}</td>
+                </tr>
+                <tr>
+                    <td width="1124" height="22" align="left" valign="middle" colspan="11">
+                        <B>以下内容适用于法定源泉扣缴和自行申报情况填写：</B>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="48" height="22" align="center" valign="middle">行次</td>
+                    <td width="538" height="22" align="center" valign="middle" colspan="5">项　　　　目</td>
+                    <td width="538" height="22" align="center" valign="middle" colspan="5">依法申报数据</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">1</td>
+                    <td width="121" height="132" align="center" valign="middle" rowspan="6">本次申报收入</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">人民币金额</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.rmbje == null ? '' : item.rmbje.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">2</td>
+                    <td width="175" height="88" align="left" valign="middle" colspan="2" rowspan="4">外　　币</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">名称</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.mc}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">3</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">金额</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.je == null ? '' : item.je.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">4</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">汇率</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.sl == null ? '' : item.sl.toFixed(6)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">5</td>
+                    <td width="242" height="22" align="left" valign="middle" colspan="2">折算人民币金额　5=3×4</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.zsrmbje == null ? '' : item.zsrmbje.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">6</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">人民币金额合计　6=1+5</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.rmbjehj == null ? '' : item.rmbjehj.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">7</td>
+                    <td width="121" height="66" align="center" valign="middle" rowspan="3">应纳税所得额的计算</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">扣除额</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.kce == null ? '' : item.kce.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">8</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">所得税减免 </td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.sdsjmse == null ? '' : item.sdsjmse.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">9</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">应纳税所得额　9=6-7-8</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.ynsdse == null ? '' : item.ynsdse.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">10</td>
+                    <td width="121" height="110" align="center" valign="middle" rowspan="5">应纳企业所得税额的计算</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">适用税率（10%）</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5" v-percent>{{item.sysl}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">11</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">应缴纳的企业所得税额　11=9×10</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.yjndqysdse == null ? '' : item.yjndqysdse.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">12</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">实际征收率（%）</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{(item.sjzsl * 100).toFixed(4) + '%'}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">13</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">实际应缴纳的企业所得税额　13=9×12</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.ysjjndqysdse == null ? '' : item.ysjjndqysdse.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.fsyqkjqkList">
+                    <td width="48" height="22" align="center" valign="middle">14</td>
+                    <td width="417" height="22" align="left" valign="middle" colspan="4">减免企业所得税额　14=11-13</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.jmqysdse == null ? '' : item.jmqysdse.toFixed(2)}}</td>
+                </tr>
+                <tr>
+                    <td width="1124" height="22" align="left" valign="middle" colspan="11">
+                        <B>以下内容适用于主管税务机关指定扣缴情况填写：</B>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="48" height="22" align="center" valign="middle">行次</td>
+                    <td width="538" height="22" align="center" valign="middle" colspan="5">项　　　　目</td>
+                    <td width="538" height="22" align="center" valign="middle" colspan="5">依法申报数据</td>
+                </tr>
+                <tr>
+                    <td width="48" height="22" align="center" valign="middle">15</td>
+                    <td width="121" height="22" align="left" valign="middle">行业</td>
+                    <td width="955" height="22" align="left" valign="middle" colspan="9">
+                        <form>
+                            <p>
+                                <input type="Radio" value="1" :checked='items.zdkjkList[0].kjhyDm === "1"' disabled>1 承包工程作业、设计和咨询劳务
+                                <input type="Radio" value="2" :checked='items.zdkjkList[0].kjhyDm === "2"' disabled>2 管理服务
+                                <input type="Radio" value="3" :checked='items.zdkjkList[0].kjhyDm === "3"' disabled>3 其他劳务或劳务以外经营活动
+                                <input type="Radio" value="4" :checked='items.zdkjkList[0].kjhyDm === "4"' disabled>4 国际运输</p>
+                        </form>
+                    </td>
+                </tr>
+                <tr v-for="item in items.zdkjkList">
+                    <td width="48" height="22" align="center" valign="middle">16</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">本次申报的收入总额</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.bcsbdsrze == null ? '' : item.bcsbdsrze.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.zdkjkList">
+                    <td width="48" height="22" align="center" valign="middle">17</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">税务机关核定的利润率（%）</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{(item.swjghdlrl * 100).toFixed(4) + '%'}}</td>
+                </tr>
+                <tr v-for="item in items.zdkjkList">
+                    <td width="48" height="22" align="center" valign="middle">18</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">应纳税所得额　18=16×17</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.ynssde == null ? '' : item.ynssde.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.zdkjkList">
+                    <td width="48" height="22" align="center" valign="middle">19</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">税率（25%）</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5" v-percent>{{item.sysl1}}</td>
+                </tr>
+                <tr v-for="item in items.zdkjkList">
+                    <td width="48" height="22" align="center" valign="middle">20</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">应纳企业所得税额　20=18×19</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.ynqysdse == null ? '' : item.ynqysdse.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.zdkjkList">
+                    <td width="48" height="22" align="center" valign="middle">21</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">减免所得税额 </td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.jmqysdse1 == null ? '' : item.jmqysdse1.toFixed(2)}}</td>
+                </tr>
+                <tr v-for="item in items.zdkjkList">
+                    <td width="48" height="22" align="center" valign="middle">22</td>
+                    <td width="538" height="22" align="left" valign="middle" colspan="5">实际应缴纳的企业所得税额 22=20-21</td>
+                    <td width="538" height="22" align="right" valign="middle" colspan="5">{{item.sjyjnedqysdse == null ? '' : item.sjyjnedqysdse.toFixed(2)}}</td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:none" width="1124" height="22" align="left" valign="middle" colspan="11">　谨声明：此扣缴所得税报告是根据《中华人民共和国企业所得税法》及其实施条例和相关协定和国家有关税收规定填报的，是真实的、可靠的、完整的。</td>
+
+                </tr>
+                <tr>
+                    <td style="border-top:none" width="1124" height="22" align="center" valign="middle" colspan="11">声明人签字： 年　月　日 </td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:none" width="344" height="22" align="left" valign="middle" colspan="4">扣缴义务人（纳税人）公章：</td>
+                    <td style="border-bottom:none" width="296" height="22" align="left" valign="middle" colspan="3">代理申报中介机构公章：</td>
+                    <td style="border-bottom:none" width="484" height="22" align="left" valign="middle" colspan="4">主管税务机关受理专用章：</td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:none;border-top:none" style="border-top:none" width="344" height="22" align="left" valign="middle"
+                        colspan="4">经办人：</td>
+                    <td style="border-bottom:none;border-top:none" style="border-top:none" width="296" height="22" align="left" valign="middle"
+                        colspan="3">经办人及其执业证件号码：</td>
+                    <td style="border-bottom:none;border-top:none" style="border-top:none" width="484" height="22" align="left" valign="middle"
+                        colspan="4">受理人：</td>
+                </tr>
+                <tr v-for="item in items.nsrxxList">
+                    <td style="border-top:none" width="344" height="22" align="left" valign="middle" colspan="4">申报日期：
+                        <span v-date>{{item.sbrq1}}</span>
+                    </td>
+                    <td style="border-top:none" width="296" height="22" align="left" valign="middle" colspan="3">代理申报日期：
+                        <span>年 月 日</span>
+                    </td>
+                    <td style="border-top:none" width="484" height="22" align="left" valign="middle" colspan="4">受理日期：
+                        <span>年 月 日</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="48" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+                    <td width="121" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+                    <td width="54" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+                    <td width="121" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+                    <td width="121" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+                    <td width="121" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+                    <td width="54" height="22" align="left" valign="middle" class="noBorder">&nbsp;</td>
+                    <td width="484" height="22" align="right" valign="middle" colspan="4" class="noBorder">国家税务总局监制</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+    <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

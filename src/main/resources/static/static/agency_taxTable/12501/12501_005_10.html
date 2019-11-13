@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>环境保护税按月计算报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1899" height = "229" id="taxTable">
+<tr>
+<td width="1561" height="46"  align="center" valign="middle" colspan="13"  class="noBorder"><B>环境保护税按月计算报表</B></td>
+</tr>
+<tr>
+<td width="1561" height="22"  align="center" valign="middle" colspan="13"  class="noBorder">（噪声适用）</td>
+</tr>
+<tr>
+<td width="954" height="22"  align="left" valign="middle" colspan="8"  class="noBorder">纳税人名称（公章）：{{json.list[0].nsrmc}}</td>
+<td width="240" height="22"  align="right" valign="middle" colspan="2"  class="noBorder">统一社会信用代码（纳税人识别号）：</td>
+<td width="367" height="22"  align="left" valign="middle" colspan="3"  class="noBorder">{{json.list[0].nsrsbh}}</td>
+</tr>
+<tr>
+<td width="193" height="22" align="left" valign="middle" colspan="2"  class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td width="156" height="22" align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td width="605" height="22" align="left" valign="middle" colspan="5"  class="noBorder">税款所属时间：<span v-date>{{json.list[0].sssqQ}}</span>至<span v-date>{{json.list[0].sssqZ}}</span></td>
+<td width="131" height="22" align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td width="109" height="22" align="left" valign="middle"   class="noBorder">&nbsp;</td>
+<td width="134" height="22" align="right" valign="middle"   class="noBorder">&nbsp;</td>
+<td width="115" height="22" align="right" valign="middle"   class="noBorder">&nbsp;</td>
+<td width="118" height="22" align="right" valign="middle"   class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="56" height="30"  align="center" valign="middle"  >*月份</td>
+<td  width="137" height="30"  align="center" valign="middle"  >*税源编号</td>
+<td  width="156" height="30"  align="center" valign="middle"  >*噪声源名称</td>
+<td  width="73" height="30"  align="center" valign="middle"  >*噪声时段</td>
+<td  width="91" height="30"  align="center" valign="middle"  >*监测分贝数</td>
+<td  width="98" height="30"  align="center" valign="middle"  >*标准限值</td>
+<td  width="103" height="30"  align="center" valign="middle"  >*超标分贝数</td>
+<td  width="240" height="30"  align="center" valign="middle"  >*征收品目</td>
+<td  width="131" height="30"  align="center" valign="middle"  >*超标不足15天</td>
+<td  width="109" height="30"  align="center" valign="middle"  >*超标天数系数</td>
+<td  width="134" height="30"  align="center" valign="middle"  >*两处以上噪声超标</td>
+<td  width="115" height="30"  align="center" valign="middle"  >*边界超标系数</td>
+<td  width="118" height="30"  align="center" valign="middle"  >*超标噪声综合系数</td>
+</tr>
+<tr>
+<td  width="56" height="43"  align="center" valign="middle"  >⑴</td>
+<td  width="137" height="43"  align="center" valign="middle"  >⑵</td>
+<td  width="156" height="43"  align="center" valign="middle"  >⑶</td>
+<td  width="73" height="43"  align="center" valign="middle"  >⑷</td>
+<td  width="91" height="43"  align="center" valign="middle"  >⑸</td>
+<td  width="98" height="43"  align="center" valign="middle"  >⑹</td>
+<td  width="103" height="43"  align="center" valign="middle"  >⑺=⑸-⑹</td>
+<td  width="240" height="43"  align="center" valign="middle"  >⑻</td>
+<td  width="131" height="43"  align="center" valign="middle"  >⑼</td>
+<td  width="109" height="43"  align="center" valign="middle"  >⑽</td>
+<td  width="134" height="43"  align="center" valign="middle"  >⑾</td>
+<td  width="115" height="43"  align="center" valign="middle"  >⑿</td>
+<td  width="118" height="43"  align="center" valign="middle"  >⒀=⑽×⑿</td>
+</tr>
+<tr v-for="(item,index) in json.listZb">
+<td  width="56" height="22"  align="left" valign="middle"  >{{item.yf}}</td>
+<td  width="137" height="22"  align="left" valign="middle"  >{{item.sybh1}}</td>
+<td width="156" height="22"  align="left" valign="middle"  >{{item.pfkmc}}</td>
+<td  width="73" height="22"  align="left" valign="middle"  >{{item.zssdDm === '1' ? '昼' : '夜'}}</td>
+<td  width="91" height="22"  align="right" valign="middle"  >{{item.jcfbs1}}</td>
+<td  width="98" height="22"  align="right" valign="middle"  >{{item.bzz}}</td>
+<td width="103" height="22"  align="right" valign="middle"  >{{item.cbfbs}}</td>
+<td width="240" height="22"  align="left" valign="middle"  >{{item.zspmDm}}</td>
+<td  width="131" height="22"  align="left" valign="middle"  >{{item.cbts === '1' ? '是' : '否'}}</td>
+<td width="109" height="22"  align="right" valign="middle"  >{{item.cbtsxs.toFixed(2)}}</td>
+<td  width="134" height="22"  align="left" valign="middle"  >{{item.lcyszscb === 'Y' ? '是' : '否'}}</td>
+<td width="115" height="22"  align="right" valign="middle"  >{{item.bjcbxs.toFixed(2)}}</td>
+<td width="118" height="22"  align="right" valign="middle"  >{{item.jsyj.toFixed(2)}}</td>
+</tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

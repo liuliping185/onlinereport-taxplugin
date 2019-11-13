@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>非税收入通用申报表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="3050" height = "442" id="taxTable">
+<tr>
+<td  width="2560" height="58"  align="center" valign="middle" colspan="16" class="noBorder"><B>非税收入通用申报表</B></td>
+</tr>
+<tr>
+<td  width="2560" height="27"  align="center" valign="middle" colspan="16" class="noBorder">（参考版）</td>
+</tr>
+<tr>
+<td  width="2560" height="25"  align="center" valign="middle" colspan="16" class="noBorder">税款所属时间:<span v-date>{{json.list[0].skssqq}}</span>至<span v-date>{{json.list[0].skssqz}}</span></td>
+</tr>
+<tr>
+<td  width="1919" height="3"  align="left" valign="middle" colspan="12" class="noBorder">纳税人识别号:{{json.list[0].nsrsbh}}　　　纳税人名称（公章）:{{json.list[0].nsrmc}}</td>
+<td  width="160" height="3"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="154" height="3"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="144" height="3"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="183" height="3"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="1919" height="28"  align="left" valign="middle" colspan="12" class="noBorder">&nbsp;</td>
+<td  width="160" height="28"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="154" height="28"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="327" height="28"  align="right" valign="middle" colspan="2" class="noBorder">金额单位：元至角分</td>
+</tr>
+<tr>
+<td  width="1342" height="28"  align="left" valign="middle" colspan="8" >纳税人识别号（统一社会信用代码）:{{json.list[0].nsrsbh}}</td>
+<td width="165" height="28" align="center" valign="middle" >&nbsp;</td>
+<td  width="1053" height="28"  align="left" valign="middle" colspan="7" >缴费人名称:{{json.list[0].nsrmc}}</td>
+</tr>
+<tr>
+<td  width="160" height="28"  align="center" valign="middle"  >征收项目</td>
+<td  width="139" height="28"  align="center" valign="middle"  >征收品目</td>
+<td  width="194" height="28"  align="center" valign="middle"  >征收子目</td>
+<td  width="153" height="28"  align="center" valign="middle"  >缴费所属期起</td>
+<td  width="153" height="28"  align="center" valign="middle"  >缴费所属期止</td>
+<td  width="165" height="28"  align="center" valign="middle"  >应缴费基数</td>
+<td  width="175" height="28"  align="center" valign="middle"  >应缴费基数减除额</td>
+<td  width="203" height="28"  align="center" valign="middle"  >计费依据</td>
+<td  width="165" height="28"  align="center" valign="middle"  >征收标准</td>
+<td  width="165" height="28"  align="center" valign="middle"  >扣除数</td>
+<td  width="165" height="28"  align="center" valign="middle"  >征收比例</td>
+<!-- <td  width="175" height="28"  align="center" valign="middle"  >费率或单位费额</td>
+<td  width="97" height="28"  align="center" valign="middle"  >速算扣除数</td> -->
+<td  width="140" height="28"  align="center" valign="middle"  >本期应纳费额</td>
+<td  width="160" height="28"  align="center" valign="middle"  >减免费额</td>
+<td  width="154" height="28"  align="center" valign="middle"  >减免性质</td>
+<td  width="144" height="28"  align="center" valign="middle"  >本期已缴费额</td>
+<td  width="183" height="28"  align="center" valign="middle"  >本期应补（退）费额</td>
+</tr>
+<tr>
+<td  width="160" height="32"  align="center" valign="middle"  >(1)</td>
+<td  width="139" height="32"  align="center" valign="middle"  >(2)</td>
+<td  width="194" height="32"  align="center" valign="middle"  >(3)</td>
+<td  width="153" height="32"  align="center" valign="middle"  >(4)</td>
+<td  width="153" height="32"  align="center" valign="middle"  >(5)</td>
+<td  width="165" height="32"  align="center" valign="middle"  >(6)</td>
+<td  width="175" height="32"  align="center" valign="middle"  >(7)</td>
+<td  width="203" height="32"  align="center" valign="middle"  >(8)=(6)-(7)</td>
+<td  width="165" height="32"  align="center" valign="middle"  >(9)</td>
+<td  width="175" height="32"  align="center" valign="middle"  >(10)</td>
+<td  width="97" height="32"  align="center" valign="middle"  >(11)</td>
+<td  width="140" height="32"  align="center" valign="middle"  >(12)=((8)*(10)-(11))*(9)</td>
+<td  width="160" height="32"  align="center" valign="middle"  >(13)</td>
+<td  width="154" height="32"  align="center" valign="middle"  >(14)</td>
+<td  width="144" height="32"  align="center" valign="middle"  >(15)</td>
+<td  width="183" height="32"  align="center" valign="middle"  >(16)=(12)-(13)-(15)</td>
+</tr>
+<tr v-for='(item, index) in json.listzb'>
+<td  width="160" height="27"  align="left" valign="top"  >{{item.zsxmDm}}</td>
+<td  width="139" height="27"  align="left" valign="top"  >{{item.zspmDm}}</td>
+<td  width="194" height="27"  align="left" valign="top"  >{{item.zszmDm}}</td>
+<td  width="153" height="27"  align="left" valign="middle"  >{{item.sfkssqq}}</td>
+<td  width="153" height="27"  align="left" valign="middle"  >{{item.sfkssqz}}</td>
+<td  width="165" height="27"  align="right" valign="middle"  >{{item.yjfjs === null ? '' : item.yjfjs.toFixed(2)}}</td>
+<td  width="175" height="27"  align="right" valign="middle"  >{{item.yjfjsjce === null ? '' : item.yjfjsjce.toFixed(2)}}</td>
+<td  width="203" height="27"  align="right" valign="middle"  >{{item.jfyj === null ? '' : item.jfyj.toFixed(2)}}</td>
+<td  width="165" height="27"  align="right" valign="middle"  >{{item.zsbl === null ? '' : item.zsbl.toFixed(6)}}</td>
+<td  width="175" height="27"  align="right" valign="middle"  >{{item.flhdwfe === null ? '' : item.flhdwfe.toFixed(2)}}</td>
+<td  width="97" height="27"  align="right" valign="middle"  >{{item.sskcs === null ? '' : item.sskcs.toFixed(2)}}</td>
+<td  width="140" height="27"  align="right" valign="middle"  >{{item.bqynfe === null ? '' : item.bqynfe.toFixed(2)}}</td>
+<td  width="160" height="27"  align="right" valign="middle"  >{{item.jmfe === null ? '' : item.jmfe.toFixed(2)}}</td>
+<td  width="154" height="27"  align="left" valign="top"  >{{item.jmxz}}</td>
+<td  width="144" height="27"  align="right" valign="middle"  >{{item.bqyjfe === null ? '' : item.bqyjfe.toFixed(2)}}</td>
+<td  width="183" height="27"  align="right" valign="middle"  >{{item.jsfyj === null ? '' : item.jsfyj.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="160" height="28"  align="center" valign="middle"  >合计</td>
+<td  width="139" height="28"  align="center" valign="middle"  >--</td>
+<td  width="194" height="28"  align="center" valign="middle"  >--</td>
+<td  width="153" height="28"  align="center" valign="middle"  >--</td>
+<td  width="153" height="28"  align="center" valign="middle"  >--</td>
+<td  width="165" height="28"  align="center" valign="middle"  >--</td>
+<td  width="175" height="28"  align="center" valign="middle"  >--</td>
+<td  width="203" height="28"  align="right" valign="middle"  >{{json.list[0].jcxhj === null ? '' : json.list[0].jcxhj.toFixed(2)}}</td>
+<td  width="165" height="28"  align="center" valign="middle"  >--</td>
+<td  width="175" height="28"  align="center" valign="middle"  >--</td>
+<td  width="97" height="28"  align="center" valign="middle"  >--</td>
+<td  width="140" height="28"  align="right" valign="middle"  >{{json.list[0].bqynsfehj === null ? '' : json.list[0].bqynsfehj.toFixed(2)}}</td>
+<td  width="160" height="28"  align="right" valign="middle"  >{{json.list[0].bqjmsfehj === null ? '' : json.list[0].bqjmsfehj.toFixed(2)}}</td>
+<td  width="154" height="28"  align="center" valign="middle"  >--</td>
+<td  width="144" height="28"  align="right" valign="middle"  >{{json.list[0].bqyjsfehj === null ? '' : json.list[0].bqyjsfehj.toFixed(2)}}</td>
+<td  width="183" height="28"  align="right" valign="middle"  >{{json.list[0].bqybtsfehj === null ? '' : json.list[0].bqybtsfehj.toFixed(2)}}</td>
+</tr>
+<tr style="border-left:1px solid; border-right:1px  solid ">
+<td  width="2560" height="28"  align="left" valign="middle" colspan="16" class="noBorder">谨声明：</td>
+</tr>
+<tr style="border-left:1px solid; border-right:1px  solid ">
+<td  width="2560" height="28"  align="left" valign="middle" colspan="16" class="noBorder">         本非税收入通用申报表是根据国家非税收入法律法规及相关规定填报的，内容是真实的、可靠的、完整的。</td>
+</tr>
+<tr style="border-left:1px solid; border-right:1px  solid ">
+<td  width="2560" height="28"  align="left" valign="middle" colspan="16" class="noBorder" >
+</tr>
+<tr>
+<td  width="160" height="28"  align="center" valign="middle"  >办理人</td>
+<td  width="486" height="28"  align="left" valign="middle" colspan="3" >{{json.list[0].blr}}</td>
+<td  width="153" height="28"  align="center" valign="middle"  >办理人联系电话</td>
+<td  width="340" height="28"  align="left" valign="middle" colspan="2" >{{json.list[0].blrlxdh}}</td>
+<td  width="203" height="28"  align="center" valign="middle"  >办理人身份证件种类</td>
+<td  width="437" height="28"  align="left" valign="top" colspan="3" >{{json.list[0].blrsfzjzl}}</td>
+<td  width="300" height="28"  align="center" valign="middle" colspan="2" >办理人身份证件号码</td>
+<td  width="481" height="28"  align="left" valign="middle" colspan="3" >{{json.list[0].blrsfzjhm}}</td>
+</tr>
+<tr>
+<td  width="160" height="23"  align="center" valign="middle"  >主管单位识别号</td>
+<td  width="486" height="23"  align="left" valign="middle" colspan="3" >{{json.list[0].swdlrjbr}}</td>
+<td  width="153" height="23"  align="center" valign="middle"  >主管单位名称</td>
+<td  width="340" height="23"  align="left" valign="middle" colspan="2" >{{json.list[0].swdlrmc}}</td>
+<td  width="203" height="23"  align="center" valign="middle"  >备注</td>
+<td  width="437" height="23"  align="left" valign="middle" colspan="3" >{{json.list[0].bz}}</td>
+<td  width="781" height="23"  align="center" valign="middle" colspan="5" >&nbsp;</td>
+</tr>
+ <tr>
+  <td  width="160" height="28"  align="center" valign="middle"  >代理机构</td>
+  <td  width="486" height="28"  align="left" valign="middle" colspan="6" >{{json.list[0].smrxm}}</td>
+  <td  width="153" height="28"  align="center" valign="middle"  >代理机构统一社会信用代码：</td>
+  <td  width="340" height="28"  align="left" valign="middle" colspan="2" class="noBorderRight">{{json.list[0].dzdw}}</td>
+  <td  width="203" height="28"  align="center" valign="middle"    colspan="6" class="noBorderLeft">&nbsp;</td>
+
+ </tr>
+
+<tr>
+<td  width="160" height="23"  align="left" valign="middle"  class="noBorder">受理人（签章）</td>
+<td  width="139" height="23"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="194" height="23"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="153" height="23"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="153" height="23"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="165" height="23"  align="left" valign="middle"  class="noBorder">受理日期</td>
+<td  width="718" height="23"  align="right" valign="middle" colspan="4" class="noBorder">年     月   日   </td>
+<td  width="97" height="23"  align="left" valign="middle"  class="noBorder">受理税务机关（章）</td>
+<td  width="140" height="23"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="23"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+<td  width="154" height="23"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+<td  width="144" height="23"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+<td  width="183" height="23"  align="left" valign="middle" class="noBorder" >&nbsp;</td>
+</tr>
+</table>
+ <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

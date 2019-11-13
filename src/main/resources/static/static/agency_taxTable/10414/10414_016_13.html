@@ -1,0 +1,197 @@
+<html>
+<head>
+<title>职工薪酬支出及纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1520" height = "510" id="taxTable">
+<tr>
+<td  width="1454" height="46"  align="center" valign="middle" colspan="9" class="noBorder"><B>职工薪酬支出及纳税调整明细表</B></td>
+</tr>
+<tr>
+<td  width="814" height="22"  align="left" valign="middle" colspan="5" class="noBorder"></td>
+<td  width="160" height="22"  align="center" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="480" height="22"  align="right" valign="middle" colspan="3" class="noBorder"></td>
+</tr>
+<tr>
+<td  width="814" height="22"  align="left" valign="middle" colspan="5" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="814" height="22"  align="left" valign="middle" colspan="5" class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="320" height="22"  align="right" valign="middle" colspan="2" class="noBorder">金额单位: 元（列至角分）</td>
+</tr>
+<tr>
+<td  width="50" height="44"  align="center" valign="middle"  rowspan="2">行次</td>
+<td  width="311" height="44"  align="center" valign="middle"  rowspan="2">项     目</td>
+<td  width="160" height="22"  align="center" valign="middle"  >账载金额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >实际发生额</td>
+<td  width="133" height="22"  align="center" valign="middle"  >税收规定扣除率</td>
+<td  width="160" height="22"  align="center" valign="middle"  >以前年度累计结转扣除额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >税收金额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >纳税调整金额</td>
+<td  width="160" height="22"  align="center" valign="middle"  >累计结转以后年度扣除额</td>
+</tr>
+<tr>
+<td  width="160" height="22"  align="center" valign="middle"  >1</td>
+<td  width="160" height="22"  align="center" valign="middle"  >2</td>
+<td  width="133" height="22"  align="center" valign="middle"  >3</td>
+<td  width="160" height="22"  align="center" valign="middle"  >4</td>
+<td  width="160" height="22"  align="center" valign="middle"  >5</td>
+<td  width="160" height="22"  align="center" valign="middle"  >6（1-5）</td>
+<td  width="160" height="22"  align="center" valign="middle"  >7（1+4-5）</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >1</td>
+<td  width="311" height="22"  align="left" valign="middle"  >一、工资薪金支出</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.gzxjzczzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.gzxjzcsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.gzxjzcssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.gzxjzcnstzje='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >2</td>
+<td  width="311" height="22"  align="left" valign="middle"  >    其中：股权激励</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.gqjlzzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.gqjlsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.gqjlssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.gqjlnstzje='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >3</td>
+<td  width="311" height="22"  align="left" valign="middle"  >二、职工福利费支出</td>
+<td  width="160" height="22"  align="right" valign="middle" v-fill.zgflfzczzje='""' >0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zgflfzcsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="right" valign="middle" >{{(json[0].zgflfzcssgdkcl*100).toFixed(2)}}%</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zgflfzcssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle" v-fill.zgflfzcnstzje='""' >0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >4</td>
+<td  width="311" height="22"  align="left" valign="middle"  >三、职工教育经费支出</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zgjyjfzczzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zgjyjfzcsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zgjyjfzcjzkce='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zgjyjfzcssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle" v-fill.zgjyjfzcnstzje='""' >0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zgjyjfzcndkce='""'>0.00</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >5</td>
+<td  width="311" height="22"  align="left" valign="middle"  >    其中：按税收规定比例扣除的职工教育经费</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.blkcjyjfzzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.blkcjyjfsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="right" valign="middle"  >{{(json[0].blkcjyjfssgdkcl*100).toFixed(2)}}%</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.blkcjyjfjzkce='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.blkcjyjfssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.blkcjyjfnstzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.blkcjyjfndkce='""'>0.00</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >6</td>
+<td  width="311" height="22"  align="left" valign="middle"  >          按税收规定全额扣除的职工培训费用</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qekcpxfyzzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qekcpxfysjfse='""'>0.00</td>
+<td  width="133" height="22"  align="right" valign="middle"  >{{(json[0].qekcpxfyssgdkcl*100).toFixed(2)}}%</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qekcpxfyssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qekcpxfynstzje='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >7</td>
+<td  width="311" height="22"  align="left" valign="middle"  >四、工会经费支出</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ghjfzczzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ghjfzcsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="right" valign="middle"  >{{(json[0].ghjfzcssgdkcl*100).toFixed(2)}}%</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle" v-fill.ghjfzcssje='""' >0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.ghjfzcnstzje='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >8</td>
+<td  width="311" height="22"  align="left" valign="middle"  >五、各类基本社会保障性缴款</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bzxjkzzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bzxjksjfse='""'>0.00</td>
+<td  width="133" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bzxjkssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bzxjknstzje='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >9</td>
+<td  width="311" height="22"  align="left" valign="middle"  >六、住房公积金</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-fill.zfgjjzzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.zfgjjsjfse='""' >0.00</td>
+<td  width="133" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-fill.zfgjjssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"   v-fill.zfgjjnstzje='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >10</td>
+<td  width="311" height="22"  align="left" valign="middle"  >七、补充养老保险</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bcylbxzzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bcylbxsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="right" valign="middle"  >{{(json[0].bcylbxssgdkcl*100).toFixed(2)}}%</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bcylbxssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bcylbxnstzje='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >11</td>
+<td  width="311" height="22"  align="left" valign="middle"  >八、补充医疗保险</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bcylbxzzje1='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bcylbxsjfse1='""'>0.00</td>
+<td  width="133" height="22"  align="right" valign="middle"  >{{(json[0].bcylbxssgdkcl1*100).toFixed(2)}}%</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bcylbxssje1='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.bcylbxnstzje1='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >12</td>
+<td  width="311" height="22"  align="left" valign="middle"  >九、其他</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qtzzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qtsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qtssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.qtnstzje='""'>0.00</td>
+<td  width="160" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td  width="50" height="22"  align="center" valign="middle"  >13</td>
+<td  width="311" height="22"  align="left" valign="middle"  >合计（1+3+4+7+8+9+10+11+12）</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.hjzzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.hjsjfse='""'>0.00</td>
+<td  width="133" height="22"  align="center" valign="middle"  >*</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.hjjzkce='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.hjssje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.hjnstzje='""'>0.00</td>
+<td  width="160" height="22"  align="right" valign="middle"  v-fill.hjndkce='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

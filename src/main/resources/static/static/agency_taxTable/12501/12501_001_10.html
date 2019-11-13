@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>环境保护税纳税申报表（A类）</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1802" height = "336" id="taxTable">
+<tr>
+<td  width="1600" height="46"  align="center" valign="middle" colspan="10" class="noBorder"><B>环境保护税纳税申报表（A类）</B></td>
+</tr>
+<tr>
+<td  width="960" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号：{{json.list[0].nsrsbh}}　　　纳税人名称（公章）：{{json.list[0].nsrmc}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="bottom"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="320" height="22"  align="left" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="640" height="22"  align="left" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{json.list[0].sssqQ}}</span>至<span v-date>{{json.list[0].sssqZ}}</span></td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="right" valign="middle"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="160" height="22"  align="center" valign="middle"  >*纳税人名称</td>
+<td  width="640" height="22"  align="left" valign="middle" colspan="4" >{{json.list[0].nsrmc}}</td>
+<td  width="320" height="22"  align="center" valign="middle" colspan="2" >*统一社会信用代码（纳税人识别号）</td>
+<td  width="480" height="22"  align="left" valign="middle" colspan="3" >{{json.list[0].nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="160" height="30"  align="center" valign="middle"  >税源编号</td>
+<td  width="160" height="30"  align="center" valign="middle"  >排放口名称或噪声源名称<br></td>
+<td  width="160" height="30"  align="center" valign="middle"  >*征收品目</td>
+<td  width="160" height="30"  align="center" valign="middle"  >征收子目</td>
+<td  width="160" height="30"  align="center" valign="middle"  >*计税依据或超标噪声综合系数</td>
+<td  width="160" height="30"  align="center" valign="middle"  >*单位税额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >*本期应纳税额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >本期减免税额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >*本期已缴税额</td>
+<td  width="160" height="30"  align="center" valign="middle"  >*本期应补（退）税额</td>
+</tr>
+<tr>
+<td  width="160" height="22"  align="center" valign="middle"  >⑴</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑵</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑶</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑷</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑸</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑹</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑺=⑸×⑹</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑻</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑼</td>
+<td  width="160" height="22"  align="center" valign="middle"  >⑽=⑺-⑻-⑼</td>
+</tr>
+<tr  v-for="(item,index) in json.listZb">
+<td  width="160" height="22"  align="left" valign="middle"  >{{item.sybh1}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  >{{item.pfkmc}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  >{{item.zspmDm}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  >{{item.zszmDm}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jsyj.toFixed(6)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.sl1.toFixed(6)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.ynse.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jmse.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.yjse.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.ybtse.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="160" height="22"  align="center" valign="middle"  >合计</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].jsyjzhxshj.toFixed(6)}}</td>
+<td  width="160" height="22"  align="center" valign="middle"  >--</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].bqynsehj.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].bqjmsehj.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].mqyjnsehj.toFixed(2)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{json.list[0].bqybtsehj.toFixed(2)}}</td>
+</tr>
+<tr>
+<td  width="155" height="22"  align="center" valign="middle"  >办理人员身份证件类型</td>
+<td  width="320" height="22"  align="left" valign="top" colspan="2" >{{json.list[0].blrysfzjlxDm}}</td>
+<td  width="160" height="22"  align="center" valign="middle"  >办理人员身份证件号码</td>
+<td  width="320" height="22"  align="left" valign="middle" colspan="2" >{{json.list[0].blrysfzjhm}}</td>
+<td  width="160" height="22"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  >&nbsp;</td>
+<td  width="160" height="22"  align="center" valign="middle"  >&nbsp;</td>
+</tr>
+<tr>
+<td  width="160" height="66"  align="center" valign="middle"  rowspan="3">授权声明</td>
+<td  width="640" height="66"  align="center" valign="middle" colspan="4" rowspan="3">    如果你已委托代理人申报，请填写下列资料：                                                 <br> 为代理一切税务事宜，现授权            （地址）                        （统一社会信用代码）                    为本纳税人的代理申报人，任何与本申报表有关的往来文件，都可寄予此人。<br>                              授权人签字：<br></td>
+<td  width="160" height="66"  align="center" valign="middle"  rowspan="3">*申报人声明</td>
+<td  width="640" height="66"  align="center" valign="middle" colspan="4" rowspan="3">本纳税申报表是根据国家税收法律法规及相关规定填写的，是真实的、可靠的、完整的。<br><br>                                  声明人签字：<br></td>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">经办人：</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">{{json.list[0].jbr}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">主管税务机关：</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">{{json.list[0].slswjg}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="160" height="22"  align="left" valign="middle" class="noBorder" >受理人：</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">{{json.list[0].slr}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  class="noBorder">受理日期：</td>
+<td  width="320" height="22"  align="left" valign="middle" colspan="2" class="noBorder"><span v-date v-if="json.list[0].slrq !== ''">{{json.list[0].slrq}}</span></td>
+</tr>
+<tr>
+<td  width="32" height="18"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="1600" height="18"  align="left" valign="middle" colspan="10" class="noBorder">本表一式两份，一份纳税人留存，一份税务机关留存。</td>
+</tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

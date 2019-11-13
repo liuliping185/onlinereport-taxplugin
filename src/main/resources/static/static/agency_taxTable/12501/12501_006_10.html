@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>环境保护税减免税明细计算报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="2632" height = "238" id="taxTable">
+<tr>
+<td  width="2120" height="46"  align="center" valign="middle" colspan="15"  class="noBorder"><B>环境保护税减免税明细计算报表</B></td>
+</tr>
+<tr>
+<td  width="1233" height="22"  align="left" valign="middle" colspan="9"  class="noBorder"></td>
+<td  width="887" height="22"  align="right" valign="middle" colspan="6"  class="noBorder"></td>
+</tr>
+<tr>
+<td  width="1233" height="22"  align="left" valign="middle" colspan="9"  class="noBorder"></td>
+<td  width="887" height="22"  align="right" valign="middle" colspan="6"  class="noBorder">&nbsp;</td>
+</tr>
+<tr>
+<td  width="1233" height="22"  align="left" valign="middle" colspan="9"  class="noBorder"></td>
+<td  width="887" height="22"  align="right" valign="middle" colspan="6"  class="noBorder">金额单位:元至角分</td>
+</tr>
+<tr>
+<td width="63" height="52"  align="center" valign="middle"  rowspan="2">*月份</td>
+<td width="111" height="52"  align="center" valign="middle"  rowspan="2">税源编号</td>
+<td width="165" height="52"  align="center" valign="middle"  rowspan="2">排放口（噪声源）名称</td>
+<td width="142" height="52"  align="center" valign="middle"  rowspan="2">征收品目</td>
+<td width="201" height="52"  align="center" valign="middle"  rowspan="2">征收子目</td>
+<td width="122" height="52"  align="center" valign="middle"  rowspan="2">污染物排放量计算方法</td>
+<td width="280" height="22"  align="center" valign="middle" colspan="2" >监测数据</td>
+<td width="149" height="52"  align="center" valign="middle"  rowspan="2">执行标准</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">标准浓度值（毫克/升，毫克/标立方米）</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">污染物排放量(千克)</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">*减免性质代码<br>(减免项目名称)</td>
+<td width="131" height="52"  align="center" valign="middle"  rowspan="2">*污染当量数或综合利用量</td>
+<td width="116" height="52"  align="center" valign="middle"  rowspan="2">*单位税额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">*本期减免税额</td>
+</tr>
+<tr>
+<td width="140" height="30"  align="center" valign="middle"  >月均浓度（毫克/升，毫克/标立方米）</td>
+<td width="140" height="30"  align="center" valign="middle"  >最高浓度（毫克/升，毫克/标立方米）</td>
+</tr>
+<tr>
+<td width="63" height="30"  align="center" valign="middle"  >⑴</td>
+<td width="111" height="30"  align="center" valign="middle"  >⑵</td>
+<td width="165" height="30"  align="center" valign="middle"  >⑶</td>
+<td width="142" height="30"  align="center" valign="middle"  >⑷</td>
+<td width="201" height="30"  align="center" valign="middle"  >⑸</td>
+<td width="122" height="30"  align="center" valign="middle"  >⑹</td>
+<td width="140" height="30"  align="center" valign="middle"  >⑺</td>
+<td width="140" height="30"  align="center" valign="middle"  >⑻</td>
+<td width="149" height="30"  align="center" valign="middle"  >⑼</td>
+<td width="160" height="30"  align="center" valign="middle"  >⑽</td>
+<td width="160" height="30"  align="center" valign="middle"  >⑾</td>
+<td width="160" height="30"  align="center" valign="middle"  >⑿</td>
+<td width="131" height="30"  align="center" valign="middle"  >⒀</td>
+<td width="116" height="30"  align="center" valign="middle"  >⒁</td>
+<td width="160" height="30"  align="center" valign="middle"  >⒂=⒀×⒁<br>⒂=⒀×⒁×N</td>
+</tr>
+<tr  v-for="(item,index) in json.listZb">
+<td  width="63" height="22"  align="left" valign="middle"  >{{item.yf}}</td>
+<td  width="111" height="22"  align="left" valign="middle"  >{{item.sybh1}}</td>
+<td  width="165" height="22"  align="left" valign="middle"  >{{item.pfkmc}}</td>
+<td  width="142" height="22"  align="left" valign="middle"  >{{item.zspmDm}}</td>
+<td  width="201" height="22"  align="left" valign="middle"  >{{item.zszmDm}}</td>
+<td  width="122" height="22"  align="left" valign="middle"  >{{item.wrwpfljsffDm}}</td>
+<td  width="140" height="22"  align="right" valign="middle"  >{{item.dyyxyjld.toFixed(8)}}</td>
+<td  width="140" height="22"  align="right" valign="middle"  >{{item.zgscldz.toFixed(8)}}</td>
+<td  width="149" height="22"  align="left" valign="middle"  >{{item.zxbz1}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.bzndz.toFixed(8)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.wrwpfl.toFixed(9)}}</td>
+<td  width="160" height="22"  align="left" valign="middle"  >{{item.ssjmxzDm}}</td>
+<td  width="131" height="22"  align="right" valign="middle"  >{{item.jmwrdls.toFixed(6)}}</td>
+<td  width="116" height="22"  align="right" valign="middle"  >{{item.sl1.toFixed(6)}}</td>
+<td  width="160" height="22"  align="right" valign="middle"  >{{item.jmse.toFixed(2)}}</td>
+</tr>
+</table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<html>
+
+<head>
+  <title>单一产品工业企业信息采集表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="1829" height="410" id="taxTable">
+    <tr>
+      <td width="1797" height="46" align="center" valign="middle" colspan="12" class="noBorder">
+        <B>单一产品工业企业信息采集表</B>
+      </td>
+    </tr>
+    <tr  v-for="(item,index) in json">
+      <td width="1797" height="22" align="center" valign="middle" colspan="12" class="noBorder">税款所属时间 ：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span> </td>
+    </tr>
+    <tr>
+      <td width="717" height="22" align="left" valign="middle" colspan="6" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+      <td width="1080" height="22" align="left" valign="middle" colspan="6" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+      <td width="35" height="66" align="center" valign="middle" rowspan="3">序号</td>
+      <td width="208" height="22" align="center" valign="middle" colspan="2">主要原材料名称（货物劳务代码）</td>
+      <td width="114" height="44" align="center" valign="middle" rowspan="2">计量单位<br><br></td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">期初库存</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">本期购进（累计）</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">本期领用（累计）</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">期末库存 <br></td>
+    </tr>
+    <tr>
+      <td width="98" height="22" align="center" valign="middle">原材料名称</td>
+      <td width="110" height="22" align="center" valign="middle">原材料代码</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+    </tr>
+    <tr>
+      <td width="208" height="22" align="center" valign="middle" colspan="2">1</td>
+      <td width="114" height="22" align="center" valign="middle">2</td>
+      <td width="180" height="22" align="center" valign="middle">3</td>
+      <td width="180" height="22" align="center" valign="middle">4</td>
+      <td width="180" height="22" align="center" valign="middle">5</td>
+      <td width="180" height="22" align="center" valign="middle">6</td>
+      <td width="180" height="22" align="center" valign="middle">7</td>
+      <td width="180" height="22" align="center" valign="middle">8</td>
+      <td width="180" height="22" align="center" valign="middle">9</td>
+      <td width="180" height="22" align="center" valign="middle">10</td>
+    </tr>
+    <tr  v-for="(item,index) in json">
+      <td width="35" height="22" align="center" valign="middle">1</td>
+      <td width="98" height="22" align="center" valign="middle">{{item.zyyclMc}}</td>
+      <td width="110" height="22" align="center" valign="middle">{{item.zyyclDm}}</td>
+      <td width="114" height="22" align="center" valign="middle">{{item.zyyclJldw}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zyyclQckcSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zyyclQckcJe.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zyyclBqgjSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zyyclBqgjJe.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zyyclBqlySl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zyyclBqlyJe.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zyyclQmkcSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zyyclQmkcJe.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="35" height="22" align="center" valign="middle">2</td>
+      <td width="208" height="44" align="center" valign="middle" colspan="2" rowspan="2">燃料动力名称</td>
+      <td width="114" height="44" align="center" valign="middle" rowspan="2">计量单位<br></td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">期初库存</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">本期购进（累计）</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">本期耗用（累计）</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">期末库存</td>
+    </tr>
+    <tr>
+      <td width="35" height="22" align="center" valign="middle">3</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+    </tr> 
+    <tr v-for="(item,index) in json">
+      <td width="35" height="22" align="center" valign="middle">4</td>
+      <td width="208" height="22" align="center" valign="middle" colspan="2">{{item.rldlMc}}</td>
+      <td width="114" height="22" align="center" valign="middle">{{item.rldlJldw}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.rldlQckcSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.rldlQckcJe.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.rldlBqgjSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.rldlBqgjJe.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.rldlBqhySl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.rldlBqhyJe.toFixed(2)}}</sstd>
+      <td width="180" height="22" align="right" valign="middle">{{item.rldlQmkcSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.rldlQmkcJe.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="35" height="22" align="center" valign="middle">5</td>
+      <td width="208" height="22" align="center" valign="middle" colspan="2">生产工人人数</td>
+      <td width="114" height="22" align="center" valign="middle">生产工人工资总额</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr v-for="(item,index) in json">
+      <td width="35" height="22" align="center" valign="middle">6</td>
+      <td width="208" height="22" align="right" valign="middle" colspan="2">{{item.scgrRs}}</td>
+      <td width="114" height="22" align="right" valign="middle">{{item.scgrGzze.toFixed(2)}}</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+      <td width="180" height="22" align="center" valign="middle">--</td>
+    </tr>
+    <tr>
+      <td width="35" height="22" align="center" valign="middle">7</td>
+      <td width="208" height="22" align="center" valign="middle" colspan="2">主要产品名称（货物劳务代码）</td>
+      <td width="114" height="44" align="center" valign="middle" rowspan="2">计量单位</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">期初库存</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">本期产量（累计）</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">本期销量（累计）</td>
+      <td width="360" height="22" align="center" valign="middle" colspan="2">期末库存</td>
+    </tr>
+    <tr>
+      <td width="35" height="22" align="center" valign="middle">8</td>
+      <td width="98" height="22" align="center" valign="middle">产品名称</td>
+      <td width="110" height="22" align="center" valign="middle">产品代码</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+      <td width="180" height="22" align="center" valign="middle">数量</td>
+      <td width="180" height="22" align="center" valign="middle">金额</td>
+    </tr>
+    <tr  v-for="(item,index) in json">
+      <td width="35" height="22" align="center" valign="middle">9</td>
+      <td width="98" height="22" align="center" valign="middle">{{item.zycpMc}}</td>
+      <td width="110" height="22" align="center" valign="middle">{{item.zycpDm}}</td>
+      <td width="114" height="22" align="center" valign="middle">{{item.zycpJldw}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zycpQckcSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zycpQckcJe.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zycpBqclSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zycpBqclJe.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zycpBqxsSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zycpBqxsJe.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zycpQmkcSl.toFixed(2)}}</td>
+      <td width="180" height="22" align="right" valign="middle">{{item.zycpQmkcJe.toFixed(2)}}</td>
+    </tr>
+    <tr>
+      <td width="1797" height="56" align="left" valign="middle" colspan="12" rowspan="2" class="noBorder">填表说明：<br>1、填报数据期限：正常经营企业自当年1月1日至报表所属月份最后一日。年度中间开业企业，填报实际生产经营当月1日至报表所属月份最后一日。<br>2、主要原材料和主要产品名称按全国统一的货物劳务代码填写 ，并且与行业明细匹配。 </td>
+    </tr>
+  </table>
+    <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+<html>
+<head>
+<title>期间费用明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1356" height = "799" id="taxTable">
+<tr>
+<td width="1290" height="46"  align="center" valign="middle" colspan="8" class="noBorder"><B>期间费用明细表</B></td>
+</tr>
+<tr>
+<td width="610" height="22"  align="left" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td width="680" height="22"  align="right" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td width="1290" height="22"  align="left" valign="middle" colspan="8" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td width="780" height="22"  align="left" valign="middle" colspan="5" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td width="510" height="22"  align="right" valign="middle" colspan="3" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td width="64" height="47"  align="center" valign="middle"  rowspan="3">行次</td>
+<td width="209" height="47"  align="center" valign="middle"  rowspan="3">项        目</td>
+<td width="167" height="25"  align="center" valign="middle"  rowspan="2">销售费用</td>
+<td width="170" height="25"  align="center" valign="middle"  rowspan="2">其中：境外支付</td>
+<td width="170" height="25"  align="center" valign="middle"  rowspan="2">管理费用</td>
+<td width="170" height="25"  align="center" valign="middle"  rowspan="2">其中：境外支付</td>
+<td width="170" height="25"  align="center" valign="middle"  rowspan="2">财务费用</td>
+<td width="170" height="25"  align="center" valign="middle"  rowspan="2">其中：境外支付</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td width="167" height="22"  align="center" valign="middle"  >1</td>
+<td width="170" height="22"  align="center" valign="middle"  >2</td>
+<td width="170" height="22"  align="center" valign="middle"  >3</td>
+<td width="170" height="22"  align="center" valign="middle"  >4</td>
+<td width="170" height="22"  align="center" valign="middle"  >5</td>
+<td width="170" height="22"  align="center" valign="middle"  >6</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >1</td>
+<td width="209" height="22"  align="left" valign="middle"  >一、职工薪酬</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.zgxcxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zgxcglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >2</td>
+<td width="209" height="22"  align="left" valign="middle"  >二、劳务费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.lwfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.lwfjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.lwfglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.lwfjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >3</td>
+<td width="209" height="22"  align="left" valign="middle"  >三、咨询顾问费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.zxgwfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zxgwfjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zxgwfglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zxgwfjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >4</td>
+<td width="209" height="22"  align="left" valign="middle"  >四、业务招待费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.ywzdfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ywzdfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >5</td>
+<td width="209" height="22"  align="left" valign="middle"  >五、广告费和业务宣传费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.ggxcfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ggxcfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >6</td>
+<td width="209" height="22"  align="left" valign="middle"  >六、佣金和手续费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.yjsxfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjsxfjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjsxfglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjsxfjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjsxfcwfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjsxfjwzf2='""'>0.00</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >7</td>
+<td width="209" height="22"  align="left" valign="middle"  >七、资产折旧摊销费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.zczjtxfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zczjtxfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >8</td>
+<td width="209" height="22"  align="left" valign="middle"  >八、财产损耗、盘亏及毁损损失</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.ccshpkxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ccshpkglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >9</td>
+<td width="209" height="22"  align="left" valign="middle"  >九、办公费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.bgfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.bgfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >10</td>
+<td width="209" height="22"  align="left" valign="middle"  >十、董事会费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.dshfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle" v-fill.dshfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >11</td>
+<td width="209" height="22"  align="left" valign="middle"  >十一、租赁费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.zlfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zlfjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zlfglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.zlfjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >12</td>
+<td width="209" height="22"  align="left" valign="middle"  >十二、诉讼费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.ssfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ssfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >13</td>
+<td width="209" height="22"  align="left" valign="middle"  >十三、差旅费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.clfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.clfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >14</td>
+<td width="209" height="22"  align="left" valign="middle"  >十四、保险费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.bxfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.bxfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >15</td>
+<td width="209" height="22"  align="left" valign="middle"  >十五、运输、仓储费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.ysccfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ysccfjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ysccfglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.ysccfjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >16</td>
+<td width="209" height="22"  align="left" valign="middle"  >十六、修理费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.xlfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.xlfjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.xlfglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.xlfjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >17</td>
+<td width="209" height="22"  align="left" valign="middle"  >十七、包装费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.bzfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.bzfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >18</td>
+<td width="209" height="22"  align="left" valign="middle"  >十八、技术转让费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.jszrfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.jszrfjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"   v-fill.jszrfglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"   v-fill.jszrfjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >19</td>
+<td width="209" height="22"  align="left" valign="middle"  >十九、研究费用</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.yjfyxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjfyjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjfyglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.yjfyjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >20</td>
+<td width="209" height="22"  align="left" valign="middle"  >二十、各项税费</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.gxsfxsfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.gxsfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >21</td>
+<td width="209" height="22"  align="left" valign="middle"  >二十一、利息收支</td>
+<td width="167" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.lxszcwfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.lxszjwzf2='""'>0.00</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >22</td>
+<td width="209" height="22"  align="left" valign="middle"  >二十二、汇兑差额</td>
+<td width="167" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.hdcecwfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.hdcejwzf2='""'>0.00</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >23</td>
+<td width="209" height="22"  align="left" valign="middle"  >二十三、现金折扣</td>
+<td width="167" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.xjzkcwfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >24</td>
+<td width="209" height="22"  align="left" valign="middle"  >二十四、党组织工作经费</td>
+<td width="167" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.dzzgzjfglfy='""'>0.00</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+<td width="170" height="22"  align="center" valign="middle"  >*</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >25</td>
+<td width="209" height="22"  align="left" valign="middle"  >二十五、其他</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.qtxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.qtjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.qtglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.qtjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.qtcwfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.qtjwzf2='""'>0.00</td>
+</tr>
+<tr>
+<td width="64" height="22"  align="center" valign="middle"  >26</td>
+<td width="209" height="22"  align="left" valign="middle"  >合计(1+2+3+…25)</td>
+<td width="167" height="22"  align="right" valign="middle"  v-fill.hjxsfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.hjjwzf='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.hjglfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.hjjwzf1='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.hjcwfy='""'>0.00</td>
+<td width="170" height="22"  align="right" valign="middle"  v-fill.hjjwzf2='""'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

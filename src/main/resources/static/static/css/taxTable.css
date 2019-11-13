@@ -1,0 +1,283 @@
+body {
+  padding: 0px 0;
+}
+
+#pdfDom table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  /* margin: 0px 0px 0px 30px;*/
+  font-size: 12px;
+  background-color: #fff;
+}
+div{
+  border-collapse: collapse;
+}
+#pdfDom table b {
+  font-size: 16px;
+}
+
+#pdfDom table tr td {
+  /*padding: 5px 10px;*/
+  border: solid #333;
+  border-width: 1px;
+  padding: 1px 3px;
+}
+.noPadding{
+  padding: 0px !important;
+}
+.divBorder{
+  border: solid #333;
+  border-width: 1px;
+}
+.divBorder-left{
+  border-left: solid #333;
+  border-width: 1px;
+}
+.divBorder-top{
+  border-top: solid #333;
+  border-width: 1px;
+}
+.div-position{
+  width: 100%;
+  height: 100%;
+  position:relative;
+  display:table;
+  margin:0 auto;
+}
+.div-position>p{
+  display:table-cell;
+  vertical-align:middle;
+  font-size:12px;
+  text-align: center;
+}
+.div-position>input{
+  display:table-cell;
+  vertical-align:middle;
+  font-size:12px;
+  text-align: center;
+}
+
+.divBorder-bottom{
+  border-bottom: solid #333;
+  border-width: 1px;
+}
+.divBorder-right{
+  border-right: solid #333;
+  border-width: 1px;
+}
+.noBorder {
+  border: 0 !important;
+}
+
+.noBorderLeft {
+  border-left-width: 0px !important;
+}
+
+.noBorderRight {
+  border-right-width: 0 !important;
+}
+
+.noBorderTop {
+  border-top-width: 0 !important;
+}
+
+.noBorderBottom {
+  border-bottom-width: 0 !important;
+}
+
+/*�̶���*/
+#tableDiv {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0 auto;
+}
+
+#outerDiv {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.column-fixed-block {
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  /* border-right: 1px solid #ddd; */
+  z-index: 10;
+}
+
+.block-shadow {
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, .12); */
+}
+
+form {
+  margin-bottom: 0
+}
+
+.lastCol {
+  width: 10px !important;
+  padding: 0 !important;
+}
+
+.uneditable-bgColor {
+  background-color: #A6CAF0 !important;
+}
+.white-bgColor{
+  background-color: #fff !important;
+}
+.editable-bgColor {
+  background-color: #C0DCC0;
+}
+/*清除浮动代码*/
+.clearfloat{clear:both}
+#pdfDom table  input {
+  border: 0px;
+  background-color: transparent!important;
+  text-align: right;
+  outline: none;
+}
+.input-WidthHeight{
+  height: 100%;
+  width: 100%;
+}
+.font-color-red {
+  color: red;
+}
+
+.select-bgcolor {
+  background-color: #C0DCC0;
+
+}
+
+.select-border {
+  width: 100%;
+  border: 0px;
+  outline: none;
+}
+
+.errorDiv {
+  line-height: 25px;
+  cursor:pointer
+}
+
+select option {
+  background-color: #fff;
+}
+
+.el-date-editor--date input {
+  background-color: #fff !important;
+}
+.error-input{
+  background-color: #ffff00 !important;
+}
+.el-header, .el-footer {
+  background-color: #B3C0D1;
+  color: #E4E7ED;
+ /* text-align: center;*/
+  line-height: 60px;
+  height: auto !important;
+}
+
+.el-aside {
+  background-color: #E4E7ED;
+  color: #333;
+  /*text-align: center;
+  line-height: 200px;*/
+}
+
+.el-main {
+  background-color: #FFF;
+  text-align: center;
+  padding: 0px !important;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside, .el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+.bar{
+  width: 38% !important;
+}
+.el-tab-pane1{
+  height: 789px !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+}
+
+.el-scrollbar {
+  margin: 0px 0px 0px 20px;
+  height: 100%;
+}
+.el-tab-pane1 .el-scrollbar__wrap{
+  overflow: scroll;
+  width: 110% !important;
+  height: 103% !important;
+}
+#allTable .el-scrollbar__wrap{
+  overflow: scroll;
+  width: 102% !important;
+  height: 103% !important;
+}
+#allTable{
+  height: 842px !important;
+}
+#pdfDom{
+  padding-left: 1px;
+  margin: 20px;
+}
+/* td右上角有个三角形标记*/
+.td-Position{
+position: relative;
+  background-clip:padding-box
+}
+/* td右上角有个三角形标记的div*/
+.corner{
+  /* margin-left:200px;*/
+  width: 0;
+  height: 0;
+  border-top: 5px solid red;
+  border-left: 5px solid transparent;
+  right: 1px;
+  position: absolute;
+  top: 1px;
+}
+.el-input__inner{
+  background-color: transparent !important;
+  border: 0px !important;
+}
+.popUpMessage{
+  border: 1px solid #CCCCCC;
+  background-color: #FFFFCC;
+  position: absolute;
+  top: -20px;
+  z-index: 200;
+  padding: 2px;
+  line-height: 20px;
+  text-align: left;
+}
+.lineDiv{
+  height:0px;
+  border: 1px solid #CCCCCC;
+  width: 20px;
+  transform:rotate(125deg);
+  -o-transform:rotate(125deg);
+  -moz-transform:rotate(125deg);
+  -webkit-transform:rotate(125deg);
+  position: absolute;
+  left: 172px; /*157px;*/
+  top: -10px;
+}

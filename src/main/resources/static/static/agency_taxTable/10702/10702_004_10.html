@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>房产税减免税明细申报表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<div  id="taxTable">
+  <div v-for="items in json" >
+    <table cellspacing="0" cellpadding="0" width="1670" height = "288" >
+      <tr>
+        <td  width="1638" height="46"  align="center" valign="middle" colspan="10" class="noBorder"><B>房产税减免税明细申报表</B></td>
+      </tr>
+      <tr>
+        <td  width="1638" height="22"  align="left" valign="middle" colspan="10" class="noBorder">税款所属时间：<span v-date>{{items.list[0].skssqq}}</span>至<span v-date>{{items.list[0].skssqz}}</span></td>
+      </tr>
+      <tr>
+        <td  width="1638" height="22"  align="left" valign="middle" colspan="10" class="noBorder">纳税人识别号：{{items.list[0].nsrsbh}}</td>
+      </tr>
+      <tr>
+        <td  width="1638" height="22"  align="left" valign="middle" colspan="10" class="noBorder">纳税人名称（公章）：{{items.list[0].nsrmc}}</td>
+      </tr>
+      <tr>
+        <td  width="1098" height="22"  align="left" valign="middle" colspan="8" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+        <td  width="540" height="22"  align="right" valign="middle" colspan="2" class="noBorder">金额单位：元（列至角分）</td>
+      </tr>
+      <tr>
+        <td  width="1638" height="22"  align="left" valign="middle" colspan="10" >从价计征房产税减免信息</td>
+      </tr>
+      <tr>
+        <td  width="59" height="22"  align="center" valign="middle"  >序号</td>
+        <td  width="156" height="22"  align="center" valign="middle"  >房产编号</td>
+        <td  width="143" height="22"  align="center" valign="middle"  >所属期起</td>
+        <td  width="146" height="22"  align="center" valign="middle"  >所属起止</td>
+        <td  width="191" height="22"  align="center" valign="middle"  >减免税房产原值</td>
+        <td  width="120" height="22"  align="center" valign="middle"  >计税比例</td>
+        <td  width="130" height="22"  align="center" valign="middle"  >税率</td>
+        <td  width="153" height="22"  align="center" valign="middle"  >税收减免性质代码</td>
+        <td  width="394" height="22"  align="center" valign="middle"  >减免项目名称</td>
+        <td  width="146" height="22"  align="center" valign="middle"  >本期减免税额</td>
+      </tr>
+      <tr  v-for="(item,index) in items.listZb1">
+        <td  width="59" height="22"  align="center" valign="middle"  >00{{index + 1}}</td>
+        <td  width="156" height="22"  align="left" valign="middle"  >{{item.fybh}}</td>
+        <td  width="143" height="22"  align="left" valign="middle"  >{{item.sssqQ}}</td>
+        <td  width="146" height="22"  align="left" valign="middle"  >{{item.sssqZ}}</td>
+        <td  width="191" height="22"  align="right" valign="middle"  >{{item.jmyz.toFixed(2)}}</td>
+        <td  width="120" height="22"  align="right" valign="middle"  v-percent>{{item.jsbl}}</td>
+        <td  width="130" height="22"  align="right" valign="middle"  >{{(item.sl1*100).toFixed(4)}}%</td>
+        <td  width="153" height="22"  align="left" valign="middle"  >{{item.ssjmxzDm}}</td>
+        <td  width="394" height="22"  align="left" valign="middle"  >{{item.ssjmxzmc}}</td>
+        <td  width="146" height="22"  align="right" valign="middle"  >{{item.jmse.toFixed(6)}}</td>
+      </tr>
+      <tr>
+        <td  width="1638" height="22"  align="left" valign="middle" colspan="10" >从租计征房产税减免信息</td>
+      </tr>
+      <tr >
+        <td  width="59" height="22"  align="center" valign="middle"  >序号</td>
+        <td  width="156" height="22"  align="center" valign="middle"  >房产编号</td>
+        <td  width="143" height="22"  align="center" valign="middle"  >所属期起</td>
+        <td  width="146" height="22"  align="center" valign="middle"  >所属期止</td>
+        <td  width="311" height="22"  align="center" valign="middle" colspan="2" >本期减免税租金收入</td>
+        <td  width="130" height="22"  align="center" valign="middle"  >税率</td>
+        <td  width="153" height="22"  align="center" valign="middle"  >税收减免性质代码</td>
+        <td  width="394" height="22"  align="center" valign="middle"  >减免项目名称</td>
+        <td  width="146" height="22"  align="center" valign="middle"  >本期减免税额</td>
+      </tr>
+      <tr v-for="(item,index) in items.listZb2">
+        <td  width="59" height="22"  align="center" valign="middle"  >00{{index + 1}}</td>
+        <td  width="156" height="22"  align="left" valign="middle"  >{{item.fybh}}</td>
+        <td  width="143" height="22"  align="left" valign="middle"  >{{item.sssqQ}}</td>
+        <td  width="146" height="22"  align="left" valign="middle"  >{{item.sssqZ}}</td>
+        <td  width="311" height="22"  align="right" valign="middle" colspan="2" >{{item.jmyz.toFixed(2)}}</td>
+        <td  width="130" height="22"  align="right" valign="middle"  >{{(item.sl1*100).toFixed(4)}}%</td>
+        <td  width="153" height="22"  align="left" valign="middle"  >{{item.ssjmxzDm}}</td>
+        <td  width="394" height="22"  align="left" valign="middle"  >{{item.ssjmxzmc}}</td>
+        <td  width="146" height="22"  align="right" valign="middle"  >{{item.jmse.toFixed(6)}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

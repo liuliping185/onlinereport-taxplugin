@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body>
+<table id="taxTable" cellspacing="0" cellpadding="0" width="1090" height="803">
+    <tr>
+        <td width="914" height="46" align="center" valign="middle" colspan="7" class="noBorder"><B>自查结果统计表</B></td>
+    </tr>
+    <tr>
+        <td width="914" height="22" align="center" valign="middle" colspan="7" class="noBorder">税款所属时间：自<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+        <td width="914" height="22" align="left" valign="middle" colspan="7" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+    </tr>
+    <tr>
+        <td width="914" height="22" align="left" valign="middle" colspan="7" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+        <td width="614" height="22" align="left" valign="middle" colspan="5" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+        <td width="300" height="22" align="right" valign="top" colspan="2" class="noBorder">金额单位：元（列至角分）</td>
+    </tr>
+    <tr>
+        <td width="179" height="22" align="center" valign="middle" colspan="2" class="noBorder">纳税人识别号：</td>
+        <td width="735" height="22" align="left" valign="middle" colspan="5" class="noBorder">12010500000003</td>
+    </tr>
+    <tr>
+        <td width="179" height="22" align="center" valign="middle" colspan="2" class="noBorder">纳税人名称：</td>
+        <td width="735" height="22" align="left" valign="middle" colspan="5" class="noBorder">天津神州浩天科技集团</td>
+    </tr>
+    <tr>
+        <td width="179" height="119" align="center" valign="middle" colspan="2">主要经营项目<br>（含产品或服务）<br></td>
+        <td width="735" height="119" align="left" valign="top" colspan="5">&nbsp;</td>
+    </tr>
+    <tr>
+        <td width="77" height="330" align="center" valign="middle" rowspan="15">自查提纲</td>
+        <td width="102" height="88" align="center" valign="middle" rowspan="4">增值税</td>
+        <td width="292" height="22" align="left" valign="middle" colspan="2">
+            <form><p><input type="checkbox" name="D9" value="ON" :checked="json.list[0].zzswagdsjqrsr=='1' " disabled>未按规定时间确认收入</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3">
+            <form><p><input type="checkbox" name="F9" value="ON" :checked="json.list[0].zzsbjhsjsr=='1'" disabled>不计或少计收入</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="292" height="22" align="left" valign="middle" colspan="2" >
+            <form><p><input type="checkbox" name="D10" value="ON" :checked="json.list[0].zzswgdkjxse=='1' " disabled>违规抵扣进项税额</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3" >
+            <form><p><input type="checkbox" name="F10" value="ON" :checked="json.list[0].zzswagdjxjxsezc=='1' " disabled>未按规定进行进项税额转出</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="292" height="22" align="left" valign="middle" colspan="2" >
+            <form><p><input type="checkbox" name="D11" value="ON" :checked="json.list[0].zzswagdxsjmssyh =='1' " disabled>未按规定享受减免税收优惠</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3">
+            <form><p><input type="checkbox" name="F11" value="ON" :checked="json.list[0].zzsqtwazczxdxw =='1' " disabled>其他未按政策执行的行为</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="735" height="22" align="left" valign="middle" colspan="5">
+            <form><p><input type="checkbox" name="D12" value="ON" :checked="json.list[0].zzsqt =='1' " disabled>其他</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="102" height="66" align="center" valign="middle" rowspan="3">消费税</td>
+        <td width="292" height="22" align="left" valign="middle" colspan="2">
+            <form><p><input type="checkbox" name="D13" value="ON" :checked="json.list[0].xfsyzxfscpwjtxfs =='1'" disabled>应征消费税产品未计提消费税</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3">
+            <form><p><input type="checkbox" name="F13" value="ON" :checked="json.list[0].xfssysmhslcw =='1'" disabled>适用税目或税率错误</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="735" height="22" align="left" valign="middle" colspan="5">
+            <form><p><input type="checkbox" name="D14" value="ON" :checked="json.list[0].xfsjsyjbzq =='1'" disabled>计税依据不正确或多加扣除形成少征、漏征消费税款</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="735" height="22" align="left" valign="middle" colspan="5">
+            <form><p><input type="checkbox" name="D15" value="ON" :checked="json.list[0].xfsqt =='1'" disabled>其他</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="102" height="110" align="center" valign="middle" rowspan="5">所得税</td>
+        <td width="292" height="22" align="left" valign="middle" colspan="2">
+            <form><p><input type="checkbox" name="D16" value="ON" :checked="json.list[0].sdsbjhsjsr=='1' " disabled>不计或少计收入</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3">
+            <form><p><input type="checkbox" name="F16" value="ON" :checked="json.list[0].sdsdlbhllz =='1' " disabled>多列、不合理列支或虚假列支成本、费用</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="292" height="22" align="left" valign="middle" colspan="2">
+            <form><p><input type="checkbox" name="D17" value="ON" :checked="json.list[0].sdsbagdjxsqkc=='1' " disabled>不按规定进行税前扣除</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3">
+            <form><p><input type="checkbox" name="F17" value="ON" :checked="json.list[0].sdssyzchczcw =='1' " disabled>适用政策或操作错误</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="292" height="22" align="left" valign="middle" colspan="2">
+            <form><p><input type="checkbox" name="D18" value="ON" :checked="json.list[0].zzsbjhsjsr=='1' " disabled>税会差异未做纳税调整</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3">
+            <form><p><input type="checkbox" name="F18" value="ON" :checked="json.list[0].sdswagdxsssyh=='1'" disabled>未按规定享受税收优惠、不再享受税收优惠政策后未及时补税</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="735" height="22" align="left" valign="middle" colspan="5">
+            <form><p><input type="checkbox" name="D19" value="ON" :checked="json.list[0].sdshdzstbbstz=='1'" disabled>核定征收、特别纳税调整、源泉扣缴、房地产开发企业所得税预缴、政策性搬迁等事项未按规定处理</p>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td width="735" height="22" align="left" valign="middle" colspan="5">
+            <form><p><input type="checkbox" name="D20" value="ON" :checked="json.list[0].sdsqt=='1'" disabled>其他</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="102" height="44" align="center" valign="middle" rowspan="2">其他税种</td>
+        <td width="292" height="22" align="left" valign="middle" colspan="2">
+            <form><p><input type="checkbox" name="D21" value="ON" :checked="json.list[0].qtssjsrhqdsr=='1' " disabled>少计收入或取得收入未按规定计税</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3">
+            <form><p><input type="checkbox" name="F21" value="ON" :checked="json.list[0].qtswagdjxdkdj=1" disabled>未按规定进行代扣代缴</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="292" height="22" align="left" valign="middle" colspan="2">
+            <form><p><input type="checkbox" name="D22" value="ON" :checked="json.list[0].qtsbagdxsssyhz=='1' " disabled>不按规定享受税收优惠政策</p></form>
+        </td>
+        <td width="443" height="22" align="left" valign="middle" colspan="3">
+            <form><p><input type="checkbox" name="F22" value="ON" :checked="json.list[0].qtsqt=='1'" disabled>其他</p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="102" height="22" align="center" valign="middle">个性化</td>
+        <td width="593" height="22" align="left" valign="middle" colspan="4">&nbsp;</td>
+        <td width="142" height="22" align="left" valign="middle">
+            <form><p><input type="Radio" name="H23" value="1" :checked="json.list[0].zcjg=='1'" disabled>有问题 <br><input :checked="json.list[0].zcjg=='0'"type="Radio" name="H23" value="2" disabled>无问题
+            </p></form>
+        </td>
+    </tr>
+    <tr>
+        <td width="179" height="22" align="center" valign="middle" colspan="2">自查结果</td>
+        <td width="292" height="22" align="left" valign="middle" colspan="2">无问题</td>
+        <td width="143" height="22" align="center" valign="middle">补税合计</td>
+        <td width="300" height="22" align="right" valign="middle" colspan="2">{{json.list[0].bshj==null?0.00:json.list[0].bshj.toFixed(2)}}</td>
+
+    </tr>
+    <tr>
+        <td width="914" height="22" align="center" valign="middle" colspan="7">补缴税款明细</td>
+    </tr>
+    <tr>
+        <td width="77" height="22" align="center" valign="middle">增值税</td>
+        <td width="102" height="22" align="center" valign="middle">应补缴入库</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].zzsbjrk==null?0.00:json.list[0].zzsbjrk.toFixed(2)}}</td>
+        <td width="149" height="22" align="center" valign="middle">应抵减退税</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].zzsdjts==null?0.00:json.list[0].zzsdjts.toFixed(2)}};</td>
+        <td width="158" height="22" align="center" valign="middle">应调减留抵</td>
+        <td width="142" height="22" align="right" valign="middle">{{json.list[0].zzstjld==null?0.00:json.list[0].zzstjld.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="77" height="22" align="center" valign="middle">消费税</td>
+        <td width="102" height="22" align="center" valign="middle">应补缴入库</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].xfsbjrk==null?0.00:json.list[0].xfsbjrk.toFixed(2)}}</td>
+        <td width="149" height="22" align="center" valign="middle">应抵减退税</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].xfsdjts==null?0.00:json.list[0].xfsdjts.toFixed(2)}}</td>
+        <td width="158" height="22" align="center" valign="middle">应调减留抵</td>
+        <td width="142" height="22" align="right" valign="middle">{{json.list[0].xfstjld==null?0.00:json.list[0].xfstjld.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="77" height="22" align="center" valign="middle">所得税</td>
+        <td width="102" height="22" align="center" valign="middle">应补缴入库</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].sdsbjrk==null?0.00:json.list[0].sdsbjrk.toFixed(2)}}</td>
+        <td width="149" height="22" align="center" valign="middle">应抵减退税</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].sdsdjts==null?0.00:json.list[0].sdsdjts.toFixed(2)}}</td>
+        <td width="158" height="22" align="center" valign="middle">应弥补亏损</td>
+        <td width="142" height="22" align="right" valign="middle">{{json.list[0].sdsmbks==null?0.00:json.list[0].sdsmbks.toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td width="77" height="22" align="center" valign="middle">其他税种</td>
+        <td width="102" height="22" align="center" valign="middle">应补缴入库</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].qtsbjrk==null?0.00:json.list[0].qtsbjrk.toFixed(2)}}</td>
+        <td width="149" height="22" align="center" valign="middle">应抵减退税</td>
+        <td width="143" height="22" align="right" valign="middle">{{json.list[0].qtsdjts==null?0.00:json.list[0].qtsdjts.toFixed(2)}}</td>
+        <td width="300" height="22" align="center" valign="middle" colspan="2">&nbsp;</td>
+    </tr>
+</table>
+
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

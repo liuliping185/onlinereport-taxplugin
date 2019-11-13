@@ -1,0 +1,346 @@
+<html>
+<head>
+<title>特殊行业准备金及纳税调整明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="947" height = "1148" id="taxTable">
+<tr>
+<td  width="882" height="46"  align="center" valign="middle" colspan="7" class="noBorder"><B>特殊行业准备金及纳税调整明细表</B></td>
+</tr>
+<tr>
+<td  width="522" height="22"  align="left" valign="middle" colspan="5" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td  width="360" height="22"  align="right" valign="middle" colspan="2" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td  width="882" height="22"  align="left" valign="middle" colspan="7" class="noBorder">纳税人统一社会信用代码（纳税人识别号）：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="702" height="22"  align="left" valign="middle" colspan="6" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+<td  width="180" height="22"  align="right" valign="middle"  class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="35" height="44"  align="center" valign="middle"  rowspan="2">行次</td>
+<td  width="307" height="44"  align="center" valign="middle" colspan="3" rowspan="2">项        目</td>
+<td  width="180" height="22"  align="center" valign="middle"  >账载金额</td>
+<td  width="180" height="22"  align="center" valign="middle"  >税收金额</td>
+<td  width="180" height="22"  align="center" valign="middle"  >纳税调整金额</td>
+</tr>
+<tr>
+<td  width="180" height="22"  align="center" valign="middle"  >1</td>
+<td  width="180" height="22"  align="center" valign="middle"  >2</td>
+<td  width="180" height="22"  align="center" valign="middle"  >3（1-2）</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >1</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >一、保险公司（2+13+14+15+16+19+20）</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-1"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-1"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-1"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >2</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （一）保险保障基金（3+4+5+…+12）</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-2"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-2"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-2"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >3</td>
+<td  width="164" height="66"  align="left" valign="middle"  rowspan="3">     1.财产保险业务</td>
+<td  width="143" height="22"  align="left" valign="middle" colspan="2" >非投资型</td>
+<td  width="180" height="22"  align="right" valign="middle" v-fill.zzje='"ewbhxh-3"' >0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-3"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-3"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >4</td>
+<td  width="64" height="44"  align="left" valign="middle"  rowspan="2">投资型</td>
+<td  width="79" height="22"  align="left" valign="middle"  >保证收益</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-4"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-4"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-4"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >5</td>
+<td  width="79" height="22"  align="left" valign="middle"  >无保证收益</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-5"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-5"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-5"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >6</td>
+<td  width="164" height="44"  align="left" valign="middle"  rowspan="2">     2.人寿保险业务</td>
+<td  width="143" height="22"  align="left" valign="middle" colspan="2" >保证收益</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-6"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-6"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-6"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >7</td>
+<td  width="143" height="22"  align="left" valign="middle" colspan="2" >无保证收益</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-7"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-7"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-7"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >8</td>
+<td  width="164" height="44"  align="left" valign="middle"  rowspan="2">     3.健康保险业务</td>
+<td  width="143" height="22"  align="left" valign="middle" colspan="2" >短期</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-8"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-8"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-8"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >9</td>
+<td  width="143" height="22"  align="left" valign="middle" colspan="2" >长期</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-9"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-9"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-9"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >10</td>
+<td  width="164" height="66"  align="left" valign="middle"  rowspan="3">     4.意外伤害保险业务</td>
+<td  width="143" height="22"  align="left" valign="middle" colspan="2" >非投资型</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-10"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-10"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-10"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >11</td>
+<td  width="64" height="44"  align="left" valign="middle"  rowspan="2">投资型</td>
+<td  width="79" height="22"  align="left" valign="middle"  >保证收益</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-11"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-11"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-11"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >12</td>
+<td  width="79" height="22"  align="left" valign="middle"  >无保证收益</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-12"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-12"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-12"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >13</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （二）未到期责任准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-13"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-13"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-13"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >14</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （三）寿险责任准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-14"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-14"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-14"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >15</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （四）长期健康险责任准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-15"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-15"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-15"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >16</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （五）未决赔款准备金（17+18）</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-16"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-16"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-16"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >17</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >     1.已发生已报案未决赔款准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-17"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-17"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-17"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >18</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >     2.已发生未报案未决赔款准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-18"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-18"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-18"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >19</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （六）大灾风险准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-19"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-19"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-19"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >20</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （七）其他</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-20"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-20"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-20"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >21</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >二、证券行业（22+23+24+25）</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-21"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-21"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-21"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >22</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （一）证券交易所风险基金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-22"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-22"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-22"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >23</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （二）证券结算风险基金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-23"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-23"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-23"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >24</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （三）证券投资者保护基金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-24"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-24"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-24"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >25</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （四）其他</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-25"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-25"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-25"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >26</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >三、期货行业（27+28+29+30）</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-26"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-26"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-26"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >27</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （一）期货交易所风险准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-27"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-27"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-27"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >28</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （二）期货公司风险准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-28"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-28"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-28"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >29</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （三）期货投资者保障基金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-29"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-29"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-29"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >30</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （四）其他</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-30"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-30"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-30"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >31</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >四、金融企业（32+33+34)</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-31"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-31"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-31"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >32</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （一）涉农和中小企业贷款损失准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-32"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-32"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-32"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >33</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （二）贷款损失准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-33"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-33"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-33"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >34</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （三）其他</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-34"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-34"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-34"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >35</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >五、中小企业融资（信用）担保机构(36+37+38)</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-35"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-35"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-35"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >36</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （一）担保赔偿准备</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-36"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-36"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-36"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >37</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （二）未到期责任准备</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-37"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-37"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-37"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >38</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （三）其他</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-38"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-38"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-38"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >39</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >六、小额贷款公司(40+41)</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-39"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-39"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-39"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >40</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （一）贷款损失准备金</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-40"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-40"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-40"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >41</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >   （二）其他</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-41"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-41"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-41"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >42</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >七、其他</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-42"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-42"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-42"'>0.00</td>
+</tr>
+<tr>
+<td  width="35" height="22"  align="center" valign="middle"  >43</td>
+<td  width="307" height="22"  align="left" valign="middle" colspan="3" >合计(1+21+26+31+35+39+42)</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.zzje='"ewbhxh-43"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.ssje='"ewbhxh-43"'>0.00</td>
+<td  width="180" height="22"  align="right" valign="middle"  v-fill.nstzje='"ewbhxh-43"'>0.00</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

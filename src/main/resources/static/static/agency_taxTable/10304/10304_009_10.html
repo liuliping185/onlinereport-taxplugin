@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>代收代缴税款报告表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body>
+<div  id="taxTable">
+	<table style="width:90%">
+		<tr>
+			<td width="1800" height="46" align="center" valign="middle" colspan="3" class="noBorder"><B>代收代缴税款报告表</B>
+			</td>
+			<td class="noBorder lastCol"></td>
+		</tr>
+		<tr>
+			<td width="1800" height="22" align="left" valign="middle" colspan="3" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+			<td class="noBorder lastCol"></td>
+		</tr>
+		<tr>
+			<td width="1800" height="22" align="left" valign="middle" colspan="3" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+			<td class="noBorder lastCol"></td>
+		</tr>
+		<tr>
+			<td width="800" height="22" align="left" valign="middle" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+			<td width="1000" height="22" align="right" valign="middle" colspan="2" class="noBorder">计量单位：升；&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额单位：元（列至角分）</td>
+			<td class="noBorder lastCol"></td>
+		</tr>
+	</table>
+	<div id="outerDiv">
+		<div id="tableDiv">
+			<table cellspacing="0" cellpadding="0" width="1800">
+				<tr id="line1">
+					<td class="column-fixed" width="300" height="44" align="center" valign="middle" style="padding:0;background-image:url('/static/images/index/81_line.png');background-repeat:no-repeat;position:relative;background-size:100% 100%;image-rendering: -webkit-optimize-contrast;">
+						<span style="position:absolute;right:10px;top:10px">应税消费品名称</span>
+						<span style="position:absolute;left:10px;bottom:10px">项目</span>
+					</td>
+					<td width="180" height="44" align="center" valign="middle">合计</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line2">
+					<td width="300" height="22" align="center" valign="middle">适用税率（元/升）</td>
+					<td width="180" height="22" align="center" valign="middle">--</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line3">
+					<td width="300" height="22" align="center" valign="middle">受托加工数量</td>
+					<td width="180" height="22" align="center" valign="middle">--</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line4">
+					<td width="300" height="22" align="center" valign="middle">
+					<B style="font-size:12px;">本期代收代缴税款</B>
+					</td>
+					<td width="180" height="22" align="right" valign="middle"></td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+	<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+	<script type="text/javascript" src="/static/common/frame/taxTable/fixTable.js"></script>
+	<script type="text/javascript">
+		var line1 = "";
+		var line2 = "";
+		var line3 = "";
+		var line4 = "";
+		for (i = 0; i < json.length; i++) {
+			line1 += '<td height="44" align="center" valign="middle">' + json[i].zspmDm + '</td>';
+			line2 += '<td height="22" align="right" valign="middle">' + json[i].sysl.toFixed(2) + '</td>';
+			line3 += '<td height="22" align="right" valign="middle">' + json[i].stjgsl.toFixed(2) + '</td>';
+			line4 += '<td height="22" align="right" valign="middle">' + json[i].bqdsdjsk.toFixed(2) + '</td>';
+		}
+		$("#line1 td").eq(0).after(line1);
+		$("#line2 td").eq(0).after(line2);
+		$("#line3 td").eq(0).after(line3);
+		$("#line4 td").eq(0).after(line4);
+	</script>
+</body>
+</html>

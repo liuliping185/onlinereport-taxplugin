@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>企业所得税弥补亏损明细表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="1924" height = "492" id="taxTable">
+<tr>
+<td width="1042" height="46"  align="left" valign="middle" colspan="13" class="noBorder" >A106000</td>
+</tr>
+<tr>
+<td width="1842" height="42"  align="center" valign="middle" colspan="13" class="noBorder" ><B>企业所得税弥补亏损明细表<br></B></td>
+</tr>
+<tr>
+<td width="665" height="22"  align="left" valign="middle" colspan="6" class="noBorder" >税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+<td width="1177" height="22"  align="right" valign="middle" colspan="7" class="noBorder" >填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+</tr>
+<tr>
+<td width="825" height="22"  align="left" valign="middle" colspan="7" class="noBorder" >纳税人统一社会信用代码（纳税人识别号）：<span id="nsrsbh">{{bt.customerStateTaxInfo.nsrsbh}}</span></td>
+<td width="697" height="22"  align="left" valign="middle" colspan="4" class="noBorder" >纳税人名称（公章）:<span id="nsrmc">{{bt.customerStateTaxInfo.nsrmc}}</span></td>
+<td width="320" height="22"  align="right" valign="middle" colspan="2" class="noBorder" >金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td width="34" height="74"  align="center" valign="middle"  rowspan="3">行次</td>
+<td width="93" height="74"  align="center" valign="middle"  rowspan="3">项目</td>
+<td width="58" height="52"  align="center" valign="middle"  rowspan="2">年度</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">当年境内所得额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">分立转出的亏损额</td>
+<td width="320" height="30"  align="center" valign="middle" colspan="2" >合并、分立转入<br>的亏损额<br></td>
+<td width="217" height="52"  align="center" valign="middle"  rowspan="2">弥补亏损企业类型</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">当年亏损额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">当年待弥补的亏损额</td>
+<td width="320" height="30"  align="center" valign="middle" colspan="2" >用本年度所得额弥补的以前年度亏损额</td>
+<td width="160" height="52"  align="center" valign="middle"  rowspan="2">当年可结转以后年度弥补的亏损额</td>
+</tr>
+<tr>
+<td width="160" height="22"  align="center" valign="middle"  >可弥补年限5年</td>
+<td width="160" height="22"  align="center" valign="middle"  >可弥补年限10年</td>
+<td width="160" height="22"  align="center" valign="middle"  >使用境内所得弥补</td>
+<td width="160" height="22"  align="center" valign="middle"  >使用境外所得弥补</td>
+</tr>
+<tr>
+<td width="58" height="22"  align="center" valign="middle"  >1</td>
+<td width="160" height="22"  align="center" valign="middle"  >2</td>
+<td width="160" height="22"  align="center" valign="middle"  >3</td>
+<td width="160" height="22"  align="center" valign="middle"  >4</td>
+<td width="160" height="22"  align="center" valign="middle"  >5</td>
+<td width="217" height="22"  align="center" valign="middle"  >6</td>
+<td width="160" height="22"  align="center" valign="middle"  >7</td>
+<td width="160" height="22"  align="center" valign="middle"  >8</td>
+<td width="160" height="22"  align="center" valign="middle"  >9</td>
+<td width="160" height="22"  align="center" valign="middle"  >10</td>
+<td width="160" height="22"  align="center" valign="middle"  >11</td>
+</tr>
+<tr v-for="(item,index) in json">
+<td width="34" height="22"  align="center" valign="middle"  >{{index+1}}</td>
+<td width="93" height="22"  align="center" valign="middle"  >{{item.xmmc}}</td>
+<td width="93" height="22"  align="center" valign="middle"  >{{item.nd}}</td>
+<td width="58" height="22"  align="left" valign="middle"  >{{item.kshylje==null?"":item.kshylje.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.flzckse==null?"":item.flzckse.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.hbqyzrkse==null?"":item.hbqyzrkse.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.hbqyzrkseSn==null?"":item.hbqyzrkseSn.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.qysdsmbksqylxDm==null?"":item.qysdsmbksqylxDm}}</td>
+<td width="217" height="22"  align="left" valign="middle"  >{{item.kmbdsdehj==null?"":item.kmbdsdehj.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.dndmbdksehj==null?"":item.dndmbdksehj.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.bnjnmbyjndksjehj==null?"":item.bnjnmbyjndksjehj.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.bnjwmbyjndksjehj==null?"":item.bnjwmbyjndksjehj.toFixed(2)}}</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{item.kjzwmbwdksjehj==null?"":item.kjzwmbwdksjehj.toFixed(2)}}</td>
+</tr>
+<tr>
+<td width="34" height="22"  align="center" valign="middle"  >12</td>
+<td width="1648" height="22"  align="left" valign="middle" colspan="11" >可结转以后年度弥补的亏损额合计</td>
+<td width="160" height="22"  align="right" valign="middle"  >{{json[0].kjzyhndmbdksehj==null?"":json[0].kjzyhndmbdksehj.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

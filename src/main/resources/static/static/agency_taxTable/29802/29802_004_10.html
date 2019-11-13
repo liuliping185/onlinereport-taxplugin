@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>所有者权益变动表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<table cellspacing="0" cellpadding="0" width="2550" height = "706" id="taxTable">
+<tr>
+<td  width="2496" height="46"  align="center" valign="middle" colspan="16" class="noBorder"><B>所有者权益变动表</B></td>
+</tr>
+<tr>
+<td  width="2496" height="22"  align="center" valign="middle" colspan="16" class="noBorder"><B>（适用执行企业会计准则的一般企业）</B></td>
+</tr>
+<tr>
+<td  width="2496" height="22"  align="center" valign="middle" colspan="16" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="2496" height="22"  align="left" valign="middle" colspan="16" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="2496" height="22"  align="left" valign="middle" colspan="16" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="1872" height="22"  align="left" valign="middle" colspan="12" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="156" height="22"  align="left" valign="bottom"  class="noBorder">&nbsp;</td>
+<td  width="468" height="22"  align="right" valign="middle" colspan="3" class="noBorder">金额单位:   人民币元(列至角分)</td>
+</tr>
+<tr>
+<td  width="299" height="44"  align="center" valign="middle"  rowspan="2">项     目</td>
+<td  width="1092" height="22"  align="center" valign="middle" colspan="7" >本年金额</td>
+<td  width="1092" height="22"  align="center" valign="middle" colspan="7" >上年金额</td>
+</tr>
+<tr>
+<td  width="156" height="22"  align="center" valign="middle"  >实收资本(或股本)</td>
+<td  width="156" height="22"  align="center" valign="middle"  >资本公积<br></td>
+<td  width="156" height="22"  align="center" valign="middle"  >减：库存股</td>
+<td  width="156" height="22"  align="center" valign="middle"  >其他综合收益</td>
+<td  width="156" height="22"  align="center" valign="middle"  >盈余公积<br></td>
+<td  width="156" height="22"  align="center" valign="middle"  >未分配利润<br></td>
+<td  width="156" height="22"  align="center" valign="middle"  >所有者权益合计</td>
+<td  width="156" height="22"  align="center" valign="middle"  >实收资本(或股本)<br></td>
+<td  width="156" height="22"  align="center" valign="middle"  >资本公积<br></td>
+<td  width="156" height="22"  align="center" valign="middle"  >减：库存股<br></td>
+<td  width="156" height="22"  align="center" valign="middle"  >其他综合收益</td>
+<td  width="156" height="22"  align="center" valign="middle"  >盈余公积<br></td>
+<td  width="156" height="22"  align="center" valign="middle"  >未分配利润<br></td>
+<td  width="156" height="22"  align="center" valign="middle"  >所有者权益合计</td>
+</tr>
+<tr>
+<td  width="299" height="22"  align="left" valign="bottom"  >&nbsp;</td>
+<td  width="156" height="22"  align="center" valign="middle"  >1</td>
+<td  width="156" height="22"  align="center" valign="middle"  >2</td>
+<td  width="156" height="22"  align="center" valign="middle"  >3</td>
+<td  width="156" height="22"  align="center" valign="middle"  >4</td>
+<td  width="156" height="22"  align="center" valign="middle"  >5</td>
+<td  width="156" height="22"  align="center" valign="middle"  >6</td>
+<td  width="156" height="22"  align="center" valign="middle"  >7</td>
+<td  width="156" height="22"  align="center" valign="middle"  >8</td>
+<td  width="156" height="22"  align="center" valign="middle"  >9</td>
+<td  width="156" height="22"  align="center" valign="middle"  >10</td>
+<td  width="156" height="22"  align="center" valign="middle"  >11</td>
+<td  width="156" height="22"  align="center" valign="middle"  >12</td>
+<td  width="156" height="22"  align="center" valign="middle"  >13</td>
+<td  width="156" height="22"  align="center" valign="middle"  >14</td>
+</tr>
+<tr v-for="(item,index) in json" :key="item.id">
+<td  width="299" height="22"  align="left" valign="middle"  >{{item.hmc}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.bnsszbhgb.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.bnzbgj.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.bnjkcg.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.bnqtzhsy.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.bnyygj.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.bnwfply.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.bnsyzqyhj.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.snsszbhgb.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.snzbgj.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.snjkcg.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.snqtzhsy.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.snyygj.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.snwfply.toFixed(2)}}</td>
+<td  width="156" height="22"  align="right" valign="middle"  >{{item.snsyzqyhj.toFixed(2)}}</td>
+</tr>
+</table>
+<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>

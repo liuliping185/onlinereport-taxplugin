@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>本期代收代缴税额计算表</title>
+<link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+<style>
+</style>
+</head>
+<body>
+<div  id="taxTable">
+	<table style="width:90%">
+		<tr>
+			<td width="1800" height="46" align="center" valign="middle" colspan="10" class="noBorder"><B>本期代收代缴税额计算表</B></td>
+		</tr>
+		<tr>
+			<td width="1800" height="22" align="left" valign="middle" colspan="10" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+		</tr>
+		<tr>
+			<td width="720" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+			<td width="1080" height="22" align="right" valign="middle" colspan="6" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+		</tr>
+		<tr>
+			<td width="720" height="22" align="left" valign="middle" colspan="4" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+			<td width="1080" height="22" align="right" valign="middle" colspan="6" class="noBorder">金额单位：元（列至角分）</td>
+			<td class="noBorder lastCol"></td>
+		</tr>
+	</table>
+	<div id="outerDiv">
+		<div id="tableDiv">
+			<table cellspacing="0" cellpadding="0" width="1800">
+				<tr id="line1">
+					<td class="column-fixed" width="300" height="44" align="center" valign="middle" style="padding:0;background-image:url('/static/images/index/81_line.png');background-repeat:no-repeat;position:relative;background-size:100% 100%;image-rendering: -webkit-optimize-contrast;">
+						<span style="position:absolute;right:10px;top:10px">应税消费品名称</span>
+						<span style="position:absolute;left:10px;bottom:10px">项目</span>
+					</td>
+					<td width="160" height="44" align="center" valign="middle">合计</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line2">
+					<td width="300" height="22" align="center" valign="middle">适用税率</td>
+					<td width="160" height="22" align="center" valign="middle">--</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line3">
+					<td width="300" height="22" align="center" valign="middle">受托加工数量</td>
+
+					<td width="160" height="22" align="center" valign="middle">--</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line4">
+					<td width="300" height="22" align="center" valign="middle">同类产品销售价格</td>
+					<td width="160" height="22" align="center" valign="middle">--</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line5">
+					<td width="300" height="22" align="center" valign="middle">材料成本</td>
+					<td width="160" height="22" align="center" valign="middle">--</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line6">
+					<td width="300" height="22" align="center" valign="middle">加工费</td>
+					<td width="160" height="22" align="center" valign="middle">--</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line7">
+					<td width="300" height="22" align="center" valign="middle">组成计税价格</td>
+					<td width="160" height="22" align="center" valign="middle">--</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+				<tr id="line8">
+					<td width="300" height="22" align="center" valign="middle"><B style="font-size:12px;">本期代收代缴税款</B></td>
+					<td width="160" height="22" align="right" valign="middle">{{json[0].hj === null ? '' : json[0].hj.toFixed(2)}}</td>
+					<td class="noBorder lastCol"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+	<script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+	<script type="text/javascript" src="/static/common/frame/taxTable/fixTable.js"></script>
+	<script type="text/javascript">
+		var line1 = "";
+		var line2 = "";
+		var line3 = "";
+		var line4 = "";
+		var line5 = "";
+		var line6 = "";
+		var line7 = "";
+		var line8 = "";
+		for (i = 0; i < json.length; i++) {
+			line1 += '<td height="44" align="center" valign="middle">' + json[i].zspmDm + '</td>';
+			line2 += '<td height="22" align="right" valign="middle">' + (json[i].sysl * 100).toFixed(0) + '%</td>';
+			line3 += '<td height="22" align="right" valign="middle">' + json[i].stjgsl.toFixed(2) + '</td>';
+			line4 += '<td height="22" align="right" valign="middle">' + json[i].tlcpxsjg.toFixed(2) + '</td>';
+			line5 += '<td height="22" align="right" valign="middle">' + json[i].clcb.toFixed(2) + '</td>';
+			line6 += '<td height="22" align="right" valign="middle">' + json[i].jgf.toFixed(2) + '</td>';
+			line7 += '<td height="22" align="right" valign="middle">' + json[i].zcjsjg.toFixed(2) + '</td>';
+			line8 += '<td height="22" align="right" valign="middle">' + json[i].bqdsdjsk.toFixed(2) + '</td>';
+		}
+		$("#line1 td").eq(0).after(line1);
+		$("#line2 td").eq(0).after(line2);
+		$("#line3 td").eq(0).after(line3);
+		$("#line4 td").eq(0).after(line4);
+		$("#line5 td").eq(0).after(line5);
+		$("#line6 td").eq(0).after(line6);
+		$("#line7 td").eq(0).after(line7);
+		$("#line8 td").eq(0).after(line8);
+	</script>
+</body>
+</html>

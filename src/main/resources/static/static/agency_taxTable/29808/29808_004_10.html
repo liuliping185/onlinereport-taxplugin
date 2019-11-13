@@ -1,0 +1,341 @@
+<html>
+
+<head>
+  <title>所有者权益（或股东权益）增减变动表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+
+<body "">
+  <table cellspacing="0" cellpadding="0" width="768" height="1344" id="taxTable">
+    <tr>
+      <td width="736" height="46" align="center" valign="middle" colspan="4" class="noBorder">
+        <B>所有者权益（或股东权益）增减变动表</B>
+      </td>
+    </tr>
+    <tr>
+      <td width="736" height="22" align="center" valign="middle" colspan="4" class="noBorder"><B>(适用执行企业会计制度的企业)</B></td>
+    </tr>
+    <tr>
+      <td width="736" height="22" align="center" valign="middle" colspan="4" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+    </tr>
+    <tr>
+      <td width="577" height="22" align="left" valign="middle" colspan="3" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrsbh}}</td>
+      <td width="159" height="22" align="left" valign="middle" class="noBorder">会企01表附表2</td>
+    </tr>
+    <tr>
+      <td width="577" height="22" align="left" valign="middle" colspan="4" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo === null ? '' : bt.customerStateTaxInfo.nsrmc}}</td>
+    </tr>
+    <tr>
+      <td width="577" height="22" style="border-bottom: 1 solid rgb(0,0,0);" align="left" valign="middle" colspan="3" class="noBorder">填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+      <td width="159" height="22" style="border-bottom: 1 solid rgb(0,0,0);" align="left" valign="middle" class="noBorder">单位：元</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="center" valign="middle">项 目</td>
+      <td width="78" height="22" align="center" valign="middle">行次</td>
+      <td width="159" height="22" align="center" valign="middle">本年数</td>
+      <td width="159" height="22" align="center" valign="middle">上年数</td>
+    </tr>
+    <tr>
+      <td width="736" height="22" align="left" valign="middle" colspan="4">一、实收资本(或股本)：</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年初余额</td>
+      <td width="78" height="22" align="center" valign="middle">1</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-1"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-1"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年增加数</td>
+      <td width="78" height="22" align="center" valign="middle">2</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-2"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-2"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：资本公积转入</td>
+      <td width="78" height="22" align="center" valign="middle">3</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-3"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-3"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 盈余公积转入</td>
+      <td width="78" height="22" align="center" valign="middle">4</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-4"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-4"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 利润分配转入</td>
+      <td width="78" height="22" align="center" valign="middle">5</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-5"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-5"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 新增资本(或股本)</td>
+      <td width="78" height="22" align="center" valign="middle">6</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-6"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-6"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年减少数</td>
+      <td width="78" height="22" align="center" valign="middle">10</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-7"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-7"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年末余额</td>
+      <td width="78" height="22" align="center" valign="middle">15</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-8"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-8"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="736" height="22" align="left" valign="middle" colspan="4">二、资本公积</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年初余额</td>
+      <td width="78" height="22" align="center" valign="middle">16</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-9"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-9"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年增加数</td>
+      <td width="78" height="22" align="center" valign="middle">17</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-10"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-10"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：资本(或股本)溢价</td>
+      <td width="78" height="22" align="center" valign="middle">18</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-11"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-11"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 接受捐赠非现金资产准备</td>
+      <td width="78" height="22" align="center" valign="middle">19</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-12"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-12"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 接受现金捐赠</td>
+      <td width="78" height="22" align="center" valign="middle">20</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-13"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-13"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 股权投资准备</td>
+      <td width="78" height="22" align="center" valign="middle">21</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-14"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-14"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 拨款转入</td>
+      <td width="78" height="22" align="center" valign="middle">22</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-15"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-15"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 外币资本折算差额</td>
+      <td width="78" height="22" align="center" valign="middle">23</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-16"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-16"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其他资本公积</td>
+      <td width="78" height="22" align="center" valign="middle">30</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-17"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-17"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年减少数</td>
+      <td width="78" height="22" align="center" valign="middle">40</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-18"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-18"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：转增资本(或股本)</td>
+      <td width="78" height="22" align="center" valign="middle">41</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-19"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-19"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年末余额</td>
+      <td width="78" height="22" align="center" valign="middle">45</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-20"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-20"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="736" height="22" align="left" valign="middle" colspan="4">三、法定和任意盈余公积</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年初余额</td>
+      <td width="78" height="22" align="center" valign="middle">46</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-21"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-21"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年增加数</td>
+      <td width="78" height="22" align="center" valign="middle">47</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-22"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-22"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：从净利润中提取数</td>
+      <td width="78" height="22" align="center" valign="middle">48</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-23"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-23"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：法定盈余公积</td>
+      <td width="78" height="22" align="center" valign="middle">49</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-24"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-24"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 任意盈余公积</td>
+      <td width="78" height="22" align="center" valign="middle">50</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-25"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-25"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 储备基金</td>
+      <td width="78" height="22" align="center" valign="middle">51</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-26"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-26"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 企业发展基金</td>
+      <td width="78" height="22" align="center" valign="middle">52</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-27"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-27"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 法定公益金转入数</td>
+      <td width="78" height="22" align="center" valign="middle">53</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-28"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-28"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年减少数</td>
+      <td width="78" height="22" align="center" valign="middle">54</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-29"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-29"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：弥补亏损</td>
+      <td width="78" height="22" align="center" valign="middle">55</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-30"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-30"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 转增资本(或股本)</td>
+      <td width="78" height="22" align="center" valign="middle">56</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-31"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-31"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 分派现金股利或利润</td>
+      <td width="78" height="22" align="center" valign="middle">57</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-32"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-32"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 分派股票股利</td>
+      <td width="78" height="22" align="center" valign="middle">58</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-33"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-33"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年末余额</td>
+      <td width="78" height="22" align="center" valign="middle">62</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-34"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-34"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：法定盈余公积</td>
+      <td width="78" height="22" align="center" valign="middle">63</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-35"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-35"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 储备基金</td>
+      <td width="78" height="22" align="center" valign="middle">64</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-36"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-36"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 企业发展基金</td>
+      <td width="78" height="22" align="center" valign="middle">65</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-37"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-37"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="736" height="22" align="left" valign="middle" colspan="4">四、法定公益金</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年初余额</td>
+      <td width="78" height="22" align="center" valign="middle">66</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-38"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-38"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年增加数</td>
+      <td width="78" height="22" align="center" valign="middle">67</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-39"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-39"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：从净利润中提取数</td>
+      <td width="78" height="22" align="center" valign="middle">68</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-40"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-40"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年减少数</td>
+      <td width="78" height="22" align="center" valign="middle">70</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-41"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-41"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 其中：集体福利支出</td>
+      <td width="78" height="22" align="center" valign="middle">71</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-42"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-42"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年末余额</td>
+      <td width="78" height="22" align="center" valign="middle">75</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-43"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-43"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="736" height="22" align="left" valign="middle" colspan="4">五、未分配利润：</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年初未分配利润</td>
+      <td width="78" height="22" align="center" valign="middle">76</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-44"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-44"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年净利润(净亏损以"－"号填列)</td>
+      <td width="78" height="22" align="center" valign="middle">77</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-45"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-45"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 本年利润分配</td>
+      <td width="78" height="22" align="center" valign="middle">78</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-46"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-46"'>0.00</td>
+    </tr>
+    <tr>
+      <td width="340" height="22" align="left" valign="middle"> 年末未分配利润(未弥补亏损以"－"号填列)</td>
+      <td width="78" height="22" align="center" valign="middle">80</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.bns='"ewbhxh-47"'>0.00</td>
+      <td width="159" height="22" align="right" valign="middle" v-fill.sns='"ewbhxh-47"'>0.00</td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+
+</html>

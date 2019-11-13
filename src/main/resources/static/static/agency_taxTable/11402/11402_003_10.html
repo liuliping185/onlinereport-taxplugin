@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>城镇土地使用税申报表减免税附表</title>
+  <link rel="stylesheet" type="text/css" href="/static/common/frame/taxTable/taxTable.css">
+</head>
+<body "">
+<div  id="taxTable">
+  <div v-for="items in items" >
+<table cellspacing="0" cellpadding="0" width="1530" height = "200" >
+<tr>
+<td  width="1498" height="46"  align="center" valign="middle" colspan="10" class="noBorder"><B>城镇土地使用税申报表减免税附表</B></td>
+</tr>
+<tr>
+<td  width="1498" height="22"  align="center" valign="middle" colspan="10" class="noBorder">税款所属时间：<span v-date>{{bt.sbSbxxBbmx.sssqQ}}</span>至<span v-date>{{bt.sbSbxxBbmx.sssqZ}}</span></td>
+</tr>
+<tr>
+<td  width="1498" height="22"  align="left" valign="middle" colspan="10" class="noBorder">纳税人识别号：{{bt.customerStateTaxInfo.nsrsbh}}</td>
+</tr>
+<tr>
+<td  width="1498" height="22"  align="left" valign="middle" colspan="10" class="noBorder">纳税人名称（公章）：{{bt.customerStateTaxInfo.nsrmc}}</td>
+</tr>
+<tr>
+<td  width="632" height="22"  align="left" valign="middle" colspan="5"class="noBorder" >填表日期：<span v-date>{{bt.sbSbxxBbmx.saveTime}}</span></td>
+<td  width="290" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="144" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="144" height="22"  align="left" valign="middle"  class="noBorder">&nbsp;</td>
+<td  width="288" height="22"  align="right" valign="middle" colspan="2" class="noBorder">金额单位：元（列至角分）</td>
+</tr>
+<tr>
+<td  width="56" height="22" align="center" valign="middle"  >序号</td>
+<td  width="144" height="22" align="center" valign="middle"  >土地编号</td>
+<td  width="144" height="22" align="center" valign="middle"  >税款所属期起</td>
+<td  width="144" height="22" align="center" valign="middle"  >税款所属期止</td>
+<td  width="144" height="22" align="center" valign="middle"  >减免性质代码</td>
+<td  width="290" height="22" align="center" valign="middle"  >减免项目名称</td>
+<td  width="144" height="22" align="center" valign="middle"  >减免面积</td>
+<td  width="144" height="22" align="center" valign="middle"  >土地等级</td>
+<td  width="144" height="22" align="center" valign="middle"  >税额标准</td>
+<td  width="144" height="22" align="center" valign="middle"  >本期减免税额</td>
+</tr>
+<tr v-for="(item,index) in items">
+<td  width="56" height="22" align="center" valign="middle"  >00{{index + 1}}</td>
+<td  width="144" height="22" align="left" valign="middle"  >{{item.tdsybh}}</td>
+<td  width="144" height="22" align="left" valign="middle"  >{{item.skssqq}}</td>
+<td  width="144" height="22" align="left" valign="middle"  >{{item.skssqz}}</td>
+<td  width="144" height="22" align="left" valign="middle"  >{{item.ssjmxzDm}}</td>
+<td  width="290" height="22" align="left" valign="middle"  >{{item.ssjmxzMc}}</td>
+<td  width="144" height="22" align="right" valign="middle"  >{{item.jmmj.toFixed(2)}}</td>
+<td  width="144" height="22" align="left" valign="middle"  >{{item.tddjDm}}</td>
+<td  width="144" height="22" align="right" valign="middle"  >{{item.dwse.toFixed(2)}}</td>
+<td  width="144" height="22" align="right" valign="middle"  >{{item.jmse.toFixed(2)}}</td>
+</tr>
+</table>
+  </div></div>
+  <script type="text/javascript" src="/static/common/frame/jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="/static/common/frame/vue/vue.js"></script>
+  <script type="text/javascript" src="/static/common/frame/taxTable/taxTable.js"></script>
+</body>
+</html>
